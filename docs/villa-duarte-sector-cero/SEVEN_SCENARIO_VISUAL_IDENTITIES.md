@@ -3,7 +3,8 @@
 **Versión:** 0.1 · **Fecha:** 27 de octubre de 2026  
 **Estado:** dirección visual inicial; pendiente validación con referencias por zona y prueba dentro del juego.  
 **Documento rector:** [Estado de continuidad del proyecto](PROJECT_STATE_HANDOFF.md)  
-**Lámina editable:** [Atlas visual de siete escenarios (SVG)](../../assets/concept/latino-america-zector-cero-seven-scenarios.svg)
+**Lámina editable:** [Atlas visual de siete escenarios (SVG)](../../assets/concept/latino-america-zector-cero-seven-scenarios.svg)  
+**Primer paquete de producción:** [Escenario 1 — tiles, capas y catálogo](../../assets/tiles/scenario-01/README.md)
 
 ## Principio visual
 
@@ -128,6 +129,7 @@ Las referencias fotográficas son fuentes de observación, no recursos de juego 
 - [x] Siete identidades diferenciadas descritas.
 - [x] Paletas y elementos principales propuestos.
 - [x] Diferencia entre fuentes reales y escenario ficticio explicitada.
+- [x] Primer atlas modular y composición por capas del escenario 1 creados como borradores editables.
 - [ ] Referencias específicas recopiladas para cada zona.
 - [ ] Atlas visual revisado y aprobado.
 - [ ] Tilesets originales preparados.
