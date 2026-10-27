@@ -36,6 +36,16 @@ No te limites automáticamente a Codespaces. Inspecciona el entorno de trabajo a
 - Considera legibilidad a resolución nativa, cambios de pantalla, orientación móvil, tamaño de archivos, rendimiento y facilidad para revertir.
 - Verifica licencias y riesgos de distribución; el carácter gratuito o no lucrativo no elimina por sí solo los derechos de terceros.
 
+## Herramientas y skills de apoyo
+
+- **Ponytail:** cuando esté instalado, úsalo para mantener los cambios pequeños y completos sin sacrificar pruebas, seguridad ni accesibilidad.
+- **Humanizer:** úsalo solo para mejorar prosa/documentación y conservar siempre hechos, significado y voz. No lo uses para ocultar que una prueba no se ejecutó.
+- **Impeccable + UI/UX Pro Max:** utilízalos como guías de dirección visual, UI y UX cuando la tarea sea diseñar interfaces, paneles, menús o herramientas; no son generadores de sprites.
+- **Scrapling:** úsalo para buscar y extraer referencias web relevantes cuando esté instalado y el acceso sea permitido. No intentes saltar login, paywalls ni controles de acceso, y registra URL, fecha y fuente.
+- **ComfyUI + Stable Diffusion:** utilízalos para concept art, estudios de iluminación y variantes visuales. No declares que están listos para generar hasta verificar un checkpoint y producir una imagen de prueba. El arte generado no es un sprite GBA listo: adapta y valida paleta, transparencia, dimensiones, tiles, animación y lectura a tamaño nativo.
+- **OmniRoute:** puede enrutar solicitudes a proveedores de IA configurados por el usuario. Sin una credencial/proveedor configurado y un test que responda, no afirmar que hay conexión funcional.
+- Estas tools son auxiliares. Cuando estén instaladas, comprueba su presencia y versión antes de invocarlas; si faltan, explica el bloqueo y usa una alternativa accesible.
+
 ## 1. Ingeniería inversa de la ROM GBA
 
 - Usa la sonda `python3 tools/metroid_gba_probe.py private-roms/MetroidFusion.gba --json` cuando esa ruta exista. También puedes inspeccionar la ROM local proporcionada por el usuario si su ruta está disponible y el archivo es accesible.
