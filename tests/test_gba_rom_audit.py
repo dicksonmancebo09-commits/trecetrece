@@ -44,6 +44,16 @@ class TestGbaRomAudit(unittest.TestCase):
         self.assertEqual(ranges[0]["changed_bytes"], 3)
         self.assertEqual(ranges[1]["start"], 30)
 
+    def test_gba_lz77_literal_stream_decodes(self):
+        stream = bytes([0x10, 0x03, 0x00, 0x00, 0x00, ord("A"), ord("B"), ord("C")])
+        decoded, consumed = audit.gba_lz77_decompress(stream)
+        self.assertEqual(decoded, b"ABC")
+        self.assertEqual(consumed, len(stream))
+
+    def test_gba_lz77_rejects_truncated_stream(self):
+        with self.assertRaisesRegex(ValueError, "truncated"):
+            audit.gba_lz77_decompress(bytes([0x10, 0x03, 0x00, 0x00, 0x00, ord("A")]))
+
     def test_no_changes(self):
         data = synthetic_gba()
         count, ranges = audit.changed_ranges(data, data)
@@ -71,6 +81,14 @@ class TestGbaRomAudit(unittest.TestCase):
                         "game_code": "TEST",
                         "header_complement": f"0x{target[0xBD]:02X}",
                         "expected_bytes": [{"offset": "0x120", "bytes_le": "78563412", "description": "test pointer"}],
+                        "resource_ranges": [{
+                            "name": "synthetic-lz77",
+                            "offset": "0x150",
+                            "used_bytes": 8,
+                            "reserved_bytes": 16,
+                            "encoding": "gba_lz77",
+                            "expected_uncompressed_bytes": 3
+                        }],
                         "must_match_reference_ranges": [{"offset": "0x100", "length": "0x10", "description": "reserved bytes"}]
                     }
                 }
@@ -87,7 +105,8 @@ class TestGbaRomAudit(unittest.TestCase):
             report = audit.run(args)
             self.assertEqual(len(report["errors"]), 0)
             self.assertTrue(report["summary"]["passed"])
-            self.assertEqual(report["delta"]["changed_byte_count"], 4)
+            self.assertEqual(report["delta"]["changed_byte_count"], 12)
+            self.assertEqual(report["resources"][0]["decoded_bytes"], 3)
             self.assertTrue(report_path.parent.exists())
 
     def test_invalid_expected_bytes_are_detected(self):
