@@ -99,3 +99,11 @@ Para cada cambio futuro:
 - Cuban Spanish Academy: https://www.cubanspanishclasses.com/es/common-cuban-phrases/
 - Academia Mexicana de la Lengua: https://academia.org.mx/consultas/consultas-frecuentes/item/no-mames
 - Diccionario de Jergas de Habla Hispana: https://www.jergasdehablahispana.org/
+
+## 2026-10-27 — Prueba 01 del prototipo ROM v1.0
+
+- Se recuperaron de la biblioteca del usuario la ROM base `MetroidFusion_original_backup.gba`, el prototipo archivado `Villa_Duarte_Sector_Cero_v1.0_URBAN_OPENING.gba`, el parche `Villa_Duarte_Sector_Cero_v1.0_full.ips` y la reconstrucción de sala para referencia.
+- Se aplicó el IPS de forma estática a la base de 8 MiB: 7.892 registros; 59.501 bytes distintos de la ROM base; salida de 8.388.608 bytes. El SHA-256 de salida `8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5` coincide exactamente con el prototipo archivado. Se conserva código GBA `AMTE`, título de cabecera `METROID4USA` y checksum de cabecera `0x98`.
+- Se guardó una versión optimizada del arte de sala como `assets/test-builds/test-01/v1.0-urban-opening-room-reconstruction.png` y se documentó el resultado en `TEST_01_ROM_INTEGRITY.md`.
+- **No se ejecutó la ROM en mGBA/MAGE.** La imagen es una reconstrucción de sala a partir del mapa, no una captura de emulador. El paquete de descarga para el usuario contiene el IPS y la vista; no contiene la ROM completa y el IPS no se publica en el repositorio público.
+- Esta build v1.0 es un prototipo previo y no contiene los nuevos escenarios 1/2 ni el paquete es-419. La prueba de ROM en ejecución sigue pendiente.
