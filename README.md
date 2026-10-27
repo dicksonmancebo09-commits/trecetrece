@@ -1,9 +1,13 @@
 # trecetrece
 
-Repositorio de trabajo para investigar herramientas, organizar recursos con licencia compatible y desarrollar un videojuego original de acción/plataformas con identidad dominicana. Nombre de trabajo: **Villa Duarte — Sector Cero** (relacionado con la línea creativa Barrio Z).
+Repositorio de trabajo para investigar herramientas, organizar recursos con licencia compatible y desarrollar un videojuego original de acción/plataformas con identidad dominicana.
+
+**Título oficial del juego: LATINO AMÉRICA Zector Cero.**  
+La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domingo Este. «Villa Duarte — Sector Cero» aparece en documentos previos como nombre provisional o etiqueta de desarrollo; no es el título oficial vigente.
 
 ## Documentación del proyecto
 
+- [Estado de continuidad del proyecto — LATINO AMÉRICA Zector Cero](docs/villa-duarte-sector-cero/PROJECT_STATE_HANDOFF.md)
 - [Resumen y estado actual](docs/villa-duarte-sector-cero/README.md)
 - [Herramientas y repositorios de referencia](docs/villa-duarte-sector-cero/research/TOOLS_AND_REPOSITORIES.md)
 - [Notas técnicas de la ROM de referencia](docs/villa-duarte-sector-cero/research/ROM_TECHNICAL_NOTES.md)
@@ -37,7 +41,6 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 
 > **Aviso:** este repositorio está configurado como público. Los documentos y nombres de archivo que se añadan a una rama pueden ser visibles públicamente, aunque no contengan el material del juego.
 
-
 ## Transformación visual
 
 - [Plan maestro de transformación visual](docs/villa-duarte-sector-cero/VISUAL_TRANSFORMATION_PLAN.md)
@@ -45,10 +48,9 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - [Tarea 1: línea base visual](docs/villa-duarte-sector-cero/BASELINE_VISUAL_TAREA_01.md)
 - [Agente Metroid RE Visual Lab](.github/agents/metroid-re.agent.md)
 
-
 ## Herramientas de IA para el proyecto
 
-- Instalación completa: `bash tools/install_all_tools.sh` (Linux/Codespaces) o `.\tools\install_all_tools.ps1` (Windows).
+- Instalación completa: `bash tools/install_all_tools.sh` (Linux/Codespaces) o `.\\tools\\install_all_tools.ps1` (Windows).
 - Arrancar ComfyUI y OmniRoute: `bash tools/start_ai_stack.sh`.
 - Modelo de Stable Diffusion de 4.27 GB: instalar opcionalmente con `bash tools/install_ai_stack.sh --with-model`.
 - Instalación completa con checkpoint y navegadores de Scrapling: `bash tools/install_all_tools.sh --with-model --with-browsers`.
