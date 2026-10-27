@@ -91,6 +91,14 @@
           "description": "Tramo original donde v1.4/v1.5 sobrescribían recursos; debe coincidir con la ROM base limpia"
         }
       ]
+    },
+    "gba_candidate_unpinned": {
+      "description": "Perfil genérico para ROM candidata con tamaño GBA esperado; no fija hash ni bytes de una build anterior",
+      "size_bytes": 8388608,
+      "title": null,
+      "game_code": null,
+      "sha256": null,
+      "header_complement": null
     }
   },
   "gba_hardware": {
