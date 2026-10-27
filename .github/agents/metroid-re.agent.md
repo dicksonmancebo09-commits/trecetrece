@@ -207,6 +207,9 @@ The first diagnostic records the title screen and the screen after one START/Ent
 
 ## 12. Parámetros técnicos centralizados y patching con precondiciones
 
+- Para una traza de bajo nivel, **no mantengas offsets/teclas duplicados en un Lua escrito a mano**. Edita `config/gba_lab.json`, ejecuta `python3 tools/generate_mgba_lua_trace.py` y carga `private-roms/diagnostics/mgba-trace-generated.lua` desde **Tools → Scripting → Load Script** en una build de mGBA con Lua. El generador se prueba en CI con `luac5.4 -p`. La configuración mantiene las entradas automáticas deshabilitadas por defecto.
+- El Lua loguea PC/LR/SP/CPSR, los modos globales y registros de vídeo cada 30 frames y toma screenshots en los frames configurados. Esto ayuda a ubicar dónde deja de avanzar el estado; **no es un crash trace de sistema operativo ni certifica por sí solo la jugabilidad**.
+
 No inventes offsets, tamaños de slots, paletas ni direcciones VRAM en cada tarea. Antes de editar, lee `config/gba_lab.json` y declara si cada parámetro es confirmado, heredado de una build concreta o aún una hipótesis.
 
 - **Auditoría de solo lectura:** ejecuta `python3 tools/gba_rom_audit.py --rom private-roms/CANDIDATE.gba --profile gba_candidate_unpinned --baseline private-roms/BASE.gba --report private-roms/diagnostics/static-audit.json`.
