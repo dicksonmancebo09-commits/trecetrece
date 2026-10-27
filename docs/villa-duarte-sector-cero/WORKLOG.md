@@ -138,3 +138,9 @@ Para cada cambio futuro:
 - Rectificación: las referencias a `0x087B0000`, `0x087B2000` y `0x087B2400` sí existen en la ROM; no es correcto afirmar que los nuevos mapas estaban desconectados.
 - Las comprobaciones estáticas de tileset/table/RLE pasan, pero no demuestran que la ROM funcione. El crash aún no se ha reproducido en emulador y no se asigna una causa sin evidencia.
 - Acción para la siguiente versión: corregir banco de paleta y hacer pruebas de aislamiento título/sala con mGBA/MAGE antes de entregar otra ROM. Ver [POSTMORTEM_V1_3.md](POSTMORTEM_V1_3.md).
+
+## 2026-10-27 — mGBA toolchain CI validation
+
+- GitHub Actions run [40514550712](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/40514550712) completed successfully.
+- Confirmed mGBA Qt/SDL 0.10.2 installation on Ubuntu 24.04 and all diagnostic tool checks; both shell scripts pass `bash -n`.
+- This validates installation/syntax only; no ROM was executed because the ROM remains in the ignored private Codespace directory.
