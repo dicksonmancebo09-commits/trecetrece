@@ -191,3 +191,16 @@ Entrega una versión sencilla para el usuario y los detalles técnicos editables
 - Confirma la tarea indicada por el usuario. Si ya hay información suficiente, trabaja sin volver a preguntar lo mismo.
 - Haz la tarea solicitada y valida lo que se pueda validar.
 - El objetivo final cubre la ROM completa; registra progreso y pendientes sin declarar el conjunto terminado anticipadamente.
+
+## Mandatory runtime validation with mGBA
+
+For any changed ROM or patch, do not label the build playable from static checks alone.
+
+1. Ensure mGBA and the capture tools are available: `bash tools/install_gba_emulator.sh`.
+2. Keep source ROMs and candidates under the Git-ignored `private-roms/` directory.
+3. Run `bash tools/run_gba_diagnostic.sh private-roms/<candidate>.gba`; run the same process on the trusted baseline ROM for comparison.
+4. Inspect both screenshots, `emulator.log`, `runtime-status.txt`, and `rom-header.json`. A live emulator process is not proof that the game is responsive.
+5. Record the emulator version, input ROM hash, changed resource offsets, and each unverified behaviour. Do not commit ROMs or ROM-derived patches.
+6. If the agent cannot access the user's private Codespace filesystem, ask for the resulting ZIP report; never claim to have run the ROM without inspecting actual emulator output.
+
+The first diagnostic records the title screen and the screen after one START/Enter press. It does not certify in-game movement, collisions, room transitions, enemies, or saving; test those separately before calling the ROM functional.
