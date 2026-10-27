@@ -131,7 +131,27 @@
       "map_width_blocks": 34,
       "map_height_blocks": 14,
       "transparent_metatile_id": 383,
-      "transparent_tile_hardware_id": 560
+      "transparent_tile_hardware_id": 560,
+      "pointer_sites": [
+        {
+          "file_offset": "0x3C0014",
+          "expected_target_bus_address": "0x087B0000",
+          "purpose": "puntero a tabla de metatiles del tileset usado por Main Deck sala 0"
+        },
+        {
+          "file_offset": "0x3C2C58",
+          "expected_target_bus_address": "0x087B2000",
+          "purpose": "puntero al mapa BG1 de Main Deck sala 0"
+        },
+        {
+          "file_offset": "0x3C2C5C",
+          "expected_target_bus_address": "0x087B2400",
+          "purpose": "puntero al mapa BG2 de Main Deck sala 0"
+        }
+      ],
+      "tile_graphics_compressed_slot_bytes": 5532,
+      "tile_graphics_compressed_bytes_v1_5": 2843,
+      "tile_graphics_decompressed_bytes_v1_5": 11808
     },
     "custom_title_v1_5": {
       "gfx_rom_offset": "0x7C4000",
@@ -140,7 +160,27 @@
       "gfx_reserved_length": "0x4000",
       "palette_reserved_length": "0x0100",
       "map_reserved_length": "0x1000",
-      "map_palette_bank": 8
+      "map_palette_bank": 8,
+      "pointer_sites": [
+        {
+          "file_offset": "0x86AB0",
+          "expected_target_bus_address": "0x087C4000",
+          "purpose": "GFX urbano solo para la pantalla de título"
+        },
+        {
+          "file_offset": "0x86AC4",
+          "expected_target_bus_address": "0x087C0000",
+          "purpose": "tilemap urbano solo para la pantalla de título"
+        },
+        {
+          "file_offset": "0x86AD4",
+          "expected_target_bus_address": "0x087C1000",
+          "purpose": "paleta urbana solo para la pantalla de título"
+        }
+      ],
+      "gfx_decompressed_bytes": 20480,
+      "map_decompressed_bytes": 2048,
+      "palette_bytes": 256
     }
   },
   "emulator": {
