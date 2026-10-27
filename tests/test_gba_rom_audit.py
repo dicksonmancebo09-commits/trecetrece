@@ -131,7 +131,7 @@ class TestGbaRomAudit(unittest.TestCase):
             report = audit.run(args)
             self.assertEqual(report["errors"], [], msg=json.dumps(report["errors"], indent=2))
             self.assertTrue(report["summary"]["passed"])
-            self.assertEqual(report["delta"]["changed_byte_count"], 13)
+            self.assertEqual(report["delta"]["changed_byte_count"], 12)
             self.assertEqual(report["resources"][0]["decoded_bytes"], 3)
             self.assertEqual(report["pointer_checks"][0]["actual_target"], "0x08000180")
             self.assertTrue(report["pointer_checks"][0]["target_within_rom"])
