@@ -54,3 +54,14 @@ Se ha añadido un entorno de diagnóstico para Codespaces:
 - Workflow de comprobación de herramientas: [`gba-diagnostic-toolchain.yml`](../../.github/workflows/gba-diagnostic-toolchain.yml).
 
 **Límite actual:** el workflow de GitHub Actions valida las herramientas y la sintaxis, no ejecuta una ROM privada. Las ROMs permanecen en `private-roms/`, excluidas de Git. El diagnóstico de una compilación requiere guardar y revisar las capturas/logs reales producidos por mGBA.
+
+## Flujo de edición seguro y parámetros
+
+- Parámetros GBA centralizados en [`config/gba_lab.json`](../../config/gba_lab.json).
+- Auditoría de ROM de solo lectura: [`tools/gba_rom_audit.py`](../../tools/gba_rom_audit.py).
+- Parches binarios con hash/precondiciones, salida nueva y checksum: [`tools/apply_guarded_patch.py`](../../tools/apply_guarded_patch.py).
+- Ejecución escalonada en mGBA con ROM/saves aislados: [`tools/run_gba_diagnostic.py`](../../tools/run_gba_diagnostic.py).
+- [Guía del flujo mGBA](MGBA_CODESPACES_SETUP.md).
+
+No se considera una build jugable solo por pasar el chequeo estático, ni se almacenan ROMs o parches derivados en el repositorio público.
+
