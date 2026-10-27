@@ -14,3 +14,12 @@
 
 # Project-scoped third-party skills are downloaded at Codespace creation; do not commit copies by default.
 /.github/skills/
+
+# Game Boy/Game Boy Advance commercial ROMs, save data and derived patches stay private.
+*.gba
+*.gbc
+*.gb
+*.ips
+*.bps
+*.sav
+*.ss0
