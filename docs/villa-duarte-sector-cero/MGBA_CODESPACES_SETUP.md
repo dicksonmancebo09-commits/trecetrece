@@ -128,7 +128,34 @@ Las ROMs se copian a un directorio temporal privado para que las partidas guarda
 
 El resultado se guarda en `private-roms/diagnostics/`. Si la ventana del emulador no se pudo identificar, el script lo marca como fallo de diagnóstico aunque haya logrado capturar el escritorio virtual.
 
-## 7. Compartir el resultado para diagnosticar
+## 7. Traza Lua en mGBA para el diagnóstico de bajo nivel
+
+La guía oficial de mGBA confirma que, desde la versión 0.10, las builds con scripting habilitado pueden ejecutar Lua desde **Tools → Scripting** y exponer callbacks de fotogramas, capturas de pantalla, lectura de memoria y registros de CPU: [documentación oficial de la API](https://mgba.io/docs/scripting.html). No se asume que todas las builds de consola soporten `--script`; por eso este paso usa el menú de la interfaz.
+
+Genera una traza a partir del perfil central:
+
+```bash
+python3 tools/generate_mgba_lua_trace.py
+```
+
+El archivo generado está aquí:
+
+```
+private-roms/diagnostics/mgba-trace-generated.lua
+```
+
+Luego, en una compilación de mGBA que incluya scripting y con la ROM cargada:
+
+1. Abre **Tools → Scripting → Load Script**.
+2. Selecciona `mgba-trace-generated.lua`.
+3. Deja que avance la emulación. La traza registra PC, LR, SP, CPSR, modos principales/submodos del juego y registros de vídeo cada 30 frames; también toma capturas en los fotogramas declarados en `config/gba_lab.json`.
+4. Al alcanzar el límite configurado, la traza cierra el CSV. Los resultados se escriben bajo `private-roms/diagnostics/`.
+
+El perfil mantiene `auto_input_enabled_by_default=false`: la traza **no pulsa botones automáticamente**. Para reproducir inputs de forma automatizada, cambia el parámetro solo si se está usando una partida y una copia de ROM aisladas, vuelve a generar el Lua y anota ese cambio en el informe. No actives entradas automáticas en tu partida principal.
+
+Esta traza es complementaria a `run_gba_diagnostic.sh`. Sus datos de memoria dependen del layout AMTE que hemos anotado en el perfil; verifica las direcciones contra la build real antes de interpretar un valor como prueba definitiva. El archivo Lua de salida no contiene la ROM.
+
+## 8. Compartir el resultado para diagnosticar
 
 Adjunta el ZIP de `private-roms/diagnostics/` en la conversación. Con esos datos podemos comparar de forma reproducible la base y la candidata.
 
