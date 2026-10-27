@@ -153,3 +153,12 @@ Para cada cambio futuro:
 - Header checksum, LZ77 map round-trip, ID range checks, and BPS reapplication passed.
 - Not run in mGBA in this container; do not claim the previous crash is resolved without runtime evidence.
 - Details: [V1_4_RENDER_FIX.md](V1_4_RENDER_FIX.md).
+
+## 2026-10-27 — v1.5 Actual Render Fix, tras capturas reales de VBA-M
+
+- Hallazgo confirmado: el fondo de título comprimido ocupaba 12.808 bytes frente a un slot de 3.320 bytes; el mapa ocupaba 1.473 frente a un slot de 688. Esto sobrescribía recursos vecinos, incluidos datos de intro.
+- v1.5 restaura desde la base limpia el tramo 0x605D08–0x609F10, traslada los recursos gráficos del título a espacio libre de ROM y cambia las referencias de código.
+- Hallazgo de sala: el índice de color 0 se usaba en píxeles visibles del escenario, aunque en tiles 4bpp de GBA es transparente. Los colores se remapean a índices 1–13 y el índice 0 queda transparente.
+- El metatile BG1 383 apunta ahora a un tile completamente vacío local 368 / hardware 560.
+- Round-trip de los recursos, referencias, checksum y reaplicación del BPS pasan validaciones estáticas; ZIP comprobado.
+- mGBA CPU test aún pendiente. Documento: [V1_5_ACTUAL_RENDER_FIX.md](V1_5_ACTUAL_RENDER_FIX.md).
