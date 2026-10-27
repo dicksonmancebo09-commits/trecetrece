@@ -8,7 +8,8 @@
   "files": {
     "atlas": "assets/tiles/scenario-01/scenario-01-villa-duarte-tiles.svg",
     "catalogue": "assets/tiles/scenario-01/README.md",
-    "preview": "assets/tiles/scenario-01/scenario-01-native-preview.svg"
+    "preview": "assets/tiles/scenario-01/scenario-01-native-preview.svg",
+    "layered_composition": "assets/tiles/scenario-01/scenario-01-layered-composition.svg"
   },
   "grid": {
     "canvas_width_px": 256,
@@ -231,7 +232,9 @@
     "game_engine_test": "not_run",
     "rom_compatible": "not_verified",
     "rom_modified": false,
-    "palette_mapping": "not mapped to ROM yet; BG and OBJ transparency semantics must be checked separately"
+    "palette_mapping": "not mapped to ROM yet; BG and OBJ transparency semantics must be checked separately",
+    "layer_groups": 9,
+    "layer_structure": "present in SVG via Inkscape layer groups; not yet checked in an external editor"
   },
   "notes": [
     "SVG source uses alpha transparency outside object silhouettes.",
