@@ -5,7 +5,7 @@
 - Se inició trabajo en el repositorio trecetrece con imágenes y referencias visuales de proyecto.
 - En la rama main revisada posteriormente, el archivo asset juego barrio z tenía 1 byte y no contenía material útil; el inventario completo no mostraba archivos llamados REA o MAGE.
 
-## 2026-10-26 — prototipo de sala inicial
+## Fecha exacta no verificada — prototipo de sala inicial
 
 - Se produjo una prueba de integración visual con ambientación urbana dominicana.
 - Resultado real: sustitución gráfica de una sola sala (sala 0 de MAIN_DECK), no de todo el juego.
