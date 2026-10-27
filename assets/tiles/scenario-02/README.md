@@ -6,9 +6,11 @@
 
 ## Archivos
 
-- [Atlas modular de tiles (SVG, 256 × 256)](scenario-02-el-caliche-tiles.svg)
-- [Composición por capas (SVG, 240 × 160 de coordenadas)](scenario-02-layered-composition.svg)
+- [Atlas modular de tiles (SVG editable, 256 × 256)](scenario-02-el-caliche-tiles.svg)
+- [Atlas modular exportado (PNG indexado, 256 × 256)](scenario-02-el-caliche-tiles.png)
+- [Composición por capas (SVG editable, 240 × 160 de coordenadas)](scenario-02-layered-composition.svg)
 - [Vista previa nativa (SVG)](scenario-02-native-preview.svg)
+- [Vista previa rasterizada nativa (PNG indexado, 240 × 160)](scenario-02-native-preview.png)
 - [Metadatos y paleta (JSON)](tile-atlas-metadata.json)
 
 ## Dirección visual
@@ -58,9 +60,9 @@ Estas fuentes apoyan rasgos visuales generales, pero no dan permiso automático 
 - [x] Atlas SVG creado.
 - [x] Composición separada en 11 capas SVG.
 - [x] Paleta provisional y coordenadas documentadas.
-- [ ] Exportación PNG a 256 × 256 y 240 × 160 inspeccionada.
-- [ ] Comprobar que no aparecen colores antialias fuera de paleta.
-- [ ] Comparar la referencia con la captura real de una sala y su sistema de colisiones.
+- [x] Exportación PNG a 256 × 256 y 240 × 160 creada con dimensiones exactas.
+- [x] Comprobar que no aparecen colores antialias fuera de la paleta: el atlas usa 15 colores visibles y transparencia de origen; la vista usa los mismos 15 colores, sin alfa.
+- [ ] Revisar manualmente la composición en un editor gráfico y compararla con la captura real de una sala y su sistema de colisiones.
 - [ ] Importar en herramienta compatible y probar en juego/emulador.
 - [ ] Mapear de forma segura las paletas GBA; no sobrescribir la ROM original.
 
