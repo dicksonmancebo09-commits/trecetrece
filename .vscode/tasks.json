@@ -6,6 +6,12 @@
       "type": "promptString",
       "description": "Ruta a una ROM local dentro de private-roms/",
       "default": "private-roms/candidate.gba"
+    },
+    {
+      "id": "gbaBasePath",
+      "type": "promptString",
+      "description": "Ruta a la ROM base/referencia, guardada en private-roms/",
+      "default": "private-roms/MetroidFusion_original_backup.gba"
     }
   ],
   "tasks": [
@@ -19,6 +25,18 @@
       "label": "GBA: diagnosticar ROM (capturas + log)",
       "type": "shell",
       "command": "bash tools/run_gba_diagnostic.sh \"${input:gbaRomPath}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "GBA: auditar ROM contra base",
+      "type": "shell",
+      "command": "python3 tools/gba_rom_audit.py --rom \"${input:gbaRomPath}\" --profile gba_candidate_unpinned --baseline \"${input:gbaBasePath}\" --report private-roms/diagnostics/static-audit.json",
+      "problemMatcher": []
+    },
+    {
+      "label": "GBA: aplicar parche con precondiciones",
+      "type": "shell",
+      "command": "python3 tools/apply_guarded_patch.py --base \"${input:gbaBasePath}\" --manifest \"private-roms/patch-manifest.json\" --output \"private-roms/candidate-patched.gba\" --report \"private-roms/diagnostics/patch-report.json\"",
       "problemMatcher": []
     }
   ]
