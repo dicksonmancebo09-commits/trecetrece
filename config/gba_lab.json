@@ -282,7 +282,8 @@
         "BG3CNT": "0x0400000E",
         "VCOUNT": "0x04000006",
         "KEYINPUT": "0x04000130"
-      }
+      },
+      "stop_after_frame": 1800
     }
   },
   "quality_gates": {
