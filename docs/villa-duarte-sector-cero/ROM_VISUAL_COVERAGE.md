@@ -54,15 +54,9 @@ Estado permitido: **Sin auditar**, **Inventariado**, **Diseño aprobado**, **Mod
 
 ## Registro por cada lote o categoría
 
-Añadir una fila al avanzar:
-
 | Fecha | ID de recurso/sala | Categoría | Versión de entrada | Cambios realizados | Archivo de salida/hash | Verificación | Reversión |
 |---|---|---|---|---|---|---|---|
-| Fecha | ID de recurso/sala | Categoría | Versión de entrada | Cambios realizados | Archivo de salida/hash | Verificación | Reversión |
-|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — |
-| 2026-10-27 | MAIN_DECK room 0 / Urban Opening v1.0 | ROM/IPS integrity | Base SHA `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8` | Applied archived IPS to local base; 7,892 records, 59,501 changed bytes | Output SHA `8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5` | Static only; byte-for-byte matches archived prototype; no emulator run | Re-apply original base / retain original backup |
-
+| 2026-10-27 | MAIN_DECK room 0 / Urban Opening v1.0 | Integridad ROM/IPS | ROM base SHA `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8` | Aplicado IPS archivado; 7.892 registros y 59.501 bytes distintos | Salida SHA `8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5` | Comprobado estáticamente: coincide byte por byte con el prototipo archivado; no se ejecutó en emulador | Conservar base original y reaplicar el IPS solo sobre una copia |
 
 ## Criterio para declarar la transformación completa
 
