@@ -88,3 +88,14 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 
 - [v1.6 — limpieza del título y salto directo al hangar](docs/villa-duarte-sector-cero/V1_6_TITLE_AND_INTRO_FLOW.md)
 - [v1.7 — corrección del flujo de título y hangar](docs/villa-duarte-sector-cero/V1_7_TITLE_HANGAR_FIX.md)
+
+## ROM editing toolchain (private builds only)
+
+- Parameter profile: [`config/gba_lab.json`](config/gba_lab.json).
+- Read-only audit: [`tools/gba_rom_audit.py`](tools/gba_rom_audit.py).
+- Guarded local patching: [`tools/apply_guarded_patch.py`](tools/apply_guarded_patch.py).
+- Staged mGBA capture runner: [`tools/run_gba_diagnostic.py`](tools/run_gba_diagnostic.py).
+- Setup and usage: [mGBA Codespaces guide](docs/villa-duarte-sector-cero/MGBA_CODESPACES_SETUP.md).
+
+ROMs, save files, manifests containing ROM-derived bytes, and binary patches must remain under `private-roms/` (Git-ignored). GitHub Actions validates tools and unit tests but does not run a private ROM. Never label a build playable without inspecting real emulator screenshots and logs.
+
