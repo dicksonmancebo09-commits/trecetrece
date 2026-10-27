@@ -51,3 +51,13 @@ Para cada cambio futuro:
 - Benchmark visual provisional seleccionado: `AREA_MAIN_DECK`, room index 1 (Docking Bays), por la disponibilidad del atlas BG3, preview CC0 y variante de paleta.
 - No se modificó ningún archivo ROM ni recurso visual durante esta tarea. La captura original en emulador/MAGE queda pendiente porque esas herramientas no aparecieron en el PATH de esta sesión.
 - Informe: [BASELINE_VISUAL_TAREA_01.md](BASELINE_VISUAL_TAREA_01.md).
+
+## 2026-10-27 — identidad visual de los siete escenarios
+
+- Se fijó como título oficial **LATINO AMÉRICA Zector Cero** y se organizó una primera familia visual de siete zonas diferenciadas.
+- Se añadió el atlas editable [`assets/concept/latino-america-zector-cero-seven-scenarios.svg`](../../assets/concept/latino-america-zector-cero-seven-scenarios.svg), con las siete escenas conceptuales, dos paneles de sistema visual y una paleta provisional.
+- Se añadió la guía [`SEVEN_SCENARIO_VISUAL_IDENTITIES.md`](SEVEN_SCENARIO_VISUAL_IDENTITIES.md), que define atmósfera, composición, paleta, elementos clave y función narrativa de cada zona.
+- Las referencias consultadas respaldan rasgos generales de los callejones de El Caliche y las vías residenciales de La Francia Nueva; el resto de escenarios se etiqueta como composición creativa pendiente de referencias locales más concretas.
+- Se enlazaron los nuevos artefactos desde el README y el estado de continuidad, y se sincronizaron los títulos de la Biblia Visual y del Plan Maestro.
+- **Estado real:** documentación y atlas vectorial guardados en GitHub; el SVG pasó una comprobación estructural de etiquetas. El arte no se ha dividido en tiles nativos, no se ha integrado en la ROM y no se ha probado en emulador.
+- Próximo paso: concretar la referencia técnica de cada zona y desglosar el escenario 1 en tiles originales manteniendo una copia intacta del recurso base.
