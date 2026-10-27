@@ -34,3 +34,9 @@ Metroid Fusion es una referencia de estudio para comprender estructura, ritmo, m
 Los enlaces a herramientas y repositorios externos documentan fuentes de investigación; no implican afiliación ni aprobación de sus autores.
 
 > **Aviso:** este repositorio está configurado como público. Los documentos y nombres de archivo que se añadan a una rama pueden ser visibles públicamente, aunque no contengan el material del juego.
+
+
+## Transformación visual
+
+- [Plan maestro de transformación visual](docs/villa-duarte-sector-cero/VISUAL_TRANSFORMATION_PLAN.md)
+- [Agente Metroid RE Visual Lab](.github/agents/metroid-re.agent.md)
