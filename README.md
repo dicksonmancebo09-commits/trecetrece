@@ -11,6 +11,7 @@ La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domin
 - [Identidad visual de los siete escenarios](docs/villa-duarte-sector-cero/SEVEN_SCENARIO_VISUAL_IDENTITIES.md)
 - [Atlas vectorial editable de los siete escenarios](assets/concept/latino-america-zector-cero-seven-scenarios.svg)
 - [Paquete de producción del escenario 1 — tiles, capas y catálogo](assets/tiles/scenario-01/README.md)
+- [Paquete de producción del escenario 2 — Callejones del Caliche](assets/tiles/scenario-02/README.md)
 - [Atlas modular de tiles del escenario 1](assets/tiles/scenario-01/scenario-01-villa-duarte-tiles.svg)
 - [Composición del escenario 1 por capas](assets/tiles/scenario-01/scenario-01-layered-composition.svg)
 - [Concepto vectorial editable de la primera calle](assets/concept/latino-america-zector-cero-villa-duarte-street.svg)
