@@ -18,57 +18,102 @@ bash tools/install_gba_emulator.sh
 
 Instala mGBA Qt/SDL, Xvfb (pantalla virtual), xdotool (entrada de teclado), ImageMagick (capturas), zip y Python. No descarga ni instala ROMs.
 
-## 2. Guardar ROMs de prueba de forma privada
+## 2. Perfil central de parámetros
 
-\`\`\`bash
+La configuración central está en [`config/gba_lab.json`](../../config/gba_lab.json). Evita repetir valores a mano. Incluye:
+
+- Perfiles con título/código/hash para la ROM base y las versiones conocidas.
+- Mapa de hardware GBA: VRAM, BGR555, tiles 4bpp, banco de paleta, índice transparente y posiciones de recursos conocidas.
+- Binarios de emulador, resolución virtual, niveles de log, tiempos de arranque, mapeo de teclas y secuencia de checkpoints.
+- Puertas mínimas de calidad estática y de ejecución.
+
+Los perfiles de versiones conocidas son identificadores exactos. Si la ROM cambia, el perfil debe fallar por SHA o bytes esperados; para una build nueva usa `gba_candidate_unpinned` hasta registrar un perfil nuevo.
+
+## 3. Guardar ROMs de prueba de forma privada
+
+```bash
 mkdir -p private-roms
-\`\`\`
+```
 
 Copia ahí la ROM base y la candidata, por ejemplo:
 
-- \`private-roms/Urban_Opening_v1.0.gba\`
-- \`private-roms/LATINO_AMERICA_Zector_Cero_v1.3.gba\`
+- `private-roms/MetroidFusion_original_backup.gba`
+- `private-roms/LATINO_AMERICA_Zector_Cero_v1.7_TITLE_HANGAR_FIX.gba`
 
-El directorio \`private-roms/\` está excluido de Git. **No subas una ROM comercial, una ROM modificada ni un parche derivado al repositorio público.**
+El directorio `private-roms/` y las extensiones de ROM/parches/save están ignorados por Git. **No subas una ROM comercial, ROM modificada ni un parche derivado al repositorio público.**
 
-## 3. Ejecutar pruebas comparables
+## 4. Auditoría estática antes de ejecutar
 
-\`\`\`bash
-bash tools/run_gba_diagnostic.sh private-roms/Urban_Opening_v1.0.gba
-bash tools/run_gba_diagnostic.sh private-roms/LATINO_AMERICA_Zector_Cero_v1.3.gba
-\`\`\`
+Para auditar la build conocida v1.7 contra la base limpia:
 
-Cada ejecución abre la ROM en mGBA dentro de una pantalla virtual, captura la pantalla inicial, envía Enter (el control START por defecto en mGBA) una vez, captura la siguiente pantalla, guarda los mensajes del emulador y ejecuta la sonda de cabecera.
+```bash
+python3 tools/gba_rom_audit.py \
+  --rom private-roms/LATINO_AMERICA_Zector_Cero_v1.7_TITLE_HANGAR_FIX.gba \
+  --profile zector_cero_v1_7 \
+  --baseline private-roms/MetroidFusion_original_backup.gba \
+  --report private-roms/diagnostics/v1.7-static-audit.json
+```
 
-El paquete se genera en:
+Para una candidata nueva cuyo SHA aún no esté registrado:
 
-\`\`\`
-private-roms/diagnostics/NOMBRE-ROM-FECHA.zip
-\`\`\`
+```bash
+python3 tools/gba_rom_audit.py \
+  --rom private-roms/candidate.gba \
+  --profile gba_candidate_unpinned \
+  --baseline private-roms/MetroidFusion_original_backup.gba \
+  --report private-roms/diagnostics/candidate-static-audit.json
+```
 
-Ejecuta la base y la candidata por separado con la misma configuración. Así podremos comparar exactamente el título, los mensajes, y la pantalla que aparece tras START.
+El informe registra SHA-256, título/código, checksum, bytes esperados (si el perfil los declara), cantidad de bytes cambiados y rangos del delta. Los rangos protegidos solo se comparan si pasas una ROM de referencia. La herramienta es de solo lectura: no repara ni modifica la entrada.
 
-## 4. Compartir el resultado para diagnosticar
+## 5. Pruebas de ejecución comparables
 
-Adjunta los ZIPs de \`private-roms/diagnostics/\` en la conversación. Contienen capturas, log, versión de mGBA, hash y metadatos de cabecera, **pero no incluyen la ROM**. Con esos datos se puede diferenciar mejor entre un problema visual del título, error de carga, pantalla negra y fallo posterior a START.
+La tarea **GBA: diagnosticar ROM (capturas + log)** usa el archivo central de parámetros. Desde la terminal:
+
+```bash
+bash tools/run_gba_diagnostic.sh private-roms/MetroidFusion_original_backup.gba \
+  --profile gba_candidate_unpinned \
+  --baseline private-roms/MetroidFusion_original_backup.gba
+
+bash tools/run_gba_diagnostic.sh private-roms/LATINO_AMERICA_Zector_Cero_v1.7_TITLE_HANGAR_FIX.gba \
+  --profile zector_cero_v1_7 \
+  --baseline private-roms/MetroidFusion_original_backup.gba
+```
+
+Se ejecutan los siguientes checkpoints (ajustables en `config/gba_lab.json`):
+
+1. Arranque y pantalla principal.
+2. Pulsación START y pantalla siguiente.
+3. Confirmación con A para entrar en la nueva partida.
+4. Espera para observar la llegada al hangar.
+5. Pulsación derecha para observar si el juego responde al movimiento.
+
+Las ROMs se copian a un directorio temporal privado para que las partidas guardadas generadas no alteren el archivo fuente. El directorio temporal se elimina al terminar. El ZIP final incluye capturas de ventana, log de mGBA, hash, perfil, estado de proceso e informe estático opcional, **pero no la ROM ni los saves**.
+
+El resultado se guarda en `private-roms/diagnostics/`. Si la ventana del emulador no se pudo identificar, el script lo marca como fallo de diagnóstico aunque haya logrado capturar el escritorio virtual.
+
+## 6. Compartir el resultado para diagnosticar
+
+Adjunta el ZIP de `private-roms/diagnostics/` en la conversación. Con esos datos podemos comparar de forma reproducible la base y la candidata.
 
 ## Alcance y límites
 
-- Una captura a los 5 segundos y otra después de una pulsación no demuestra que el juego entero funcione.
-- Que el proceso de mGBA siga vivo **no** significa que el juego no se haya quedado bloqueado. Hay que inspeccionar las capturas y los mensajes.
-- Este script todavía no valida movimiento, colisiones, puertas, transiciones, enemigos ni guardado; esos pasos se reproducirán después con controles y capturas adicionales.
-- GitHub Actions comprobará la instalación del emulador y la sintaxis de los scripts, pero no puede probar una ROM que permanece dentro del Codespace privado y no está en el repositorio.
-- Este flujo usa el paquete estable de mGBA para el primer diagnóstico visual. Un diagnóstico de bajo nivel con breakpoints y memoria podrá añadirse después de reproducir el fallo.
+- Una captura a los 7 segundos y otra tras START/A/derecha no certifican todo el juego.
+- Que el proceso de mGBA siga vivo **no** significa que el juego esté respondiendo; hay que inspeccionar las capturas.
+- Esta smoke test no certifica colisiones, puertas, todos los enemigos, guardado o transiciones de áreas.
+- GitHub Actions comprueba dependencias, perfiles, sintaxis y pruebas unitarias, pero no ejecuta ROMs privadas que no se encuentran en el repositorio.
+- El paquete de mGBA instalado en Ubuntu se usa sin depender de la opción de autorrecarga `--script`, cuya disponibilidad varía según la compilación de mGBA. Para scripting de bajo nivel, usa el menú Tools → Scripting de una instalación que lo incluya y registra su versión.
 
 ## Recuperación manual
 
-Para abrir el emulador con ventana (si el entorno tiene escritorio remoto disponible):
+Para abrir una ROM en ventana si tienes un escritorio disponible:
 
-\`\`\`bash
-mgba-qt private-roms/LATINO_AMERICA_Zector_Cero_v1.3.gba
-\`\`\`
+```bash
+mgba-qt private-roms/LATINO_AMERICA_Zector_Cero_v1.7_TITLE_HANGAR_FIX.gba
+```
 
-Teclas predeterminadas en mGBA: Enter = START, X = A y Z = B.
+Teclas predeterminadas configuradas en este perfil: Enter = START, X = A, Z = B, Backspace = SELECT, flechas = dirección, A/S = L/R.
+
 
 ## Verificación de la instalación mGBA (27-10-2026)
 
