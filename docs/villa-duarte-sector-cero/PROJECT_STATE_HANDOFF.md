@@ -60,6 +60,14 @@ Recursos registrados en `assets/tiles/scenario-02/`:
 
 **Referencias observadas:** un reportaje de Hoy sobre El Caliche muestra un callejón angosto, fachadas pintadas, muros de bloque y pavimento irregular; Diario Libre aporta referencias de frentes domésticos y ventanas con rejas. Las fotos no se incorporan como texturas ni se copian directamente.
 
+## Puerta de localización antes de probar la ROM
+
+- **Estado auditado:** en el árbol de la rama `main` revisado el 27 de octubre de 2026 no se encontró una tabla de traducción ni un archivo de diálogos conectado a la ROM.
+- Se creó una guía y un paquete original de voz en `localization/es-419/`: [README](../../localization/es-419/README.md), [guía de voz y jerga](../../localization/es-419/VOICE_AND_SLANG_GUIDE.md), [diálogo de muestra](../../localization/es-419/dialogue.json) y [glosario regional](../../localization/es-419/glossary.json).
+- Se creó el validador [`tools/check_localization_es419.py`](../../tools/check_localization_es419.py) y [pruebas unitarias](../../tests/test_localization_es419.py). Resultado ejecutado fuera del editor del usuario: 27 entradas de diálogo, 81 líneas; las 81 cumplen el límite provisional de 28 caracteres; tres pruebas unitarias pasan.
+- Las muestras priorizan español dominicano, con registros asignados a personajes cubanos, puertorriqueños y jamaiquinos; México, Colombia y Argentina se ofrecen como cameos opcionales. Los recursos son texto original de preproducción, **no se han insertado en la ROM**.
+- **Bloqueo previo a la prueba de ROM:** falta localizar la traducción real instalada, identificar la tabla/encoding y mapear las cadenas reales con IDs confirmados. Hasta completar esta auditoría y comprobar cortes, tildes, signos, apóstrofos y tamaño de cuadro, no presentar una ejecución en emulador como prueba de localización. Las pruebas actuales validan únicamente los archivos JSON y su formato editorial.
+
 ## Punto técnico de partida documentado
 
 Consultar:
