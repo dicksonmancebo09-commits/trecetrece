@@ -32,3 +32,12 @@ Para cada cambio futuro:
 7. Prueba de ejecución y evidencia.
 8. Método de reversión.
 9. Licencia y procedencia de cualquier recurso nuevo.
+
+
+## 2026-10-27 — objetivo global de ROM y regla de veracidad
+
+- El alcance del proyecto se actualiza explícitamente: la meta es transformar visualmente la ROM completa, no detenerse en la sala inicial. La primera sala será solo una prueba de calibración; tras aprobar el método, se propagará por todas las categorías y salas con matriz de cobertura.
+- El entorno de trabajo contiene la ROM base local de 8 MiB. La sonda de solo lectura confirmó código `AMTE`, título de cabecera `METROID4USA.`, checksum de cabecera `0x98` válido y SHA-256 `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8`.
+- También están presentes localmente los prototipos v0.8, v0.9 visual y v1.0 urban opening. Sus hashes y los límites de conocimiento están en `ROM_VISUAL_COVERAGE.md`; no se publicó ningún binario en el repositorio.
+- Se actualiza el agente para estudiar antes de actuar el **pasado** (versiones anteriores y errores), el **presente** (archivos y herramientas realmente accesibles) y el **futuro** (regresiones, compatibilidad, reversión y pruebas necesarias).
+- Regla operativa: jamás decir que una aplicación se abrió o que el juego funciona sin evidencia. Distinguir archivos generados, validación estática, prueba en herramienta y prueba en juego.
