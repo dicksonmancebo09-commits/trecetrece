@@ -29,6 +29,9 @@ La nomenclatura técnica entre paréntesis es una referencia para estudiar la es
 
 ### 2. Callejones del Caliche — (Sector 1 / SRX)
 
+**Paquete de producción editable v0.1:** [catálogo y especificación](../../assets/tiles/scenario-02/README.md), [atlas de tiles SVG](../../assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg), [vista previa PNG de 240 × 160](../../assets/tiles/scenario-02/scenario-02-native-preview.png) y [composición por 11 capas](../../assets/tiles/scenario-02/scenario-02-layered-composition.svg). El PNG se ha exportado con 15 colores visibles de la paleta provisional y se comprobó el tamaño; todavía no es un tileset importado a la ROM.
+
+
 - **Función narrativa:** compresión espacial, tensión y recorridos cortos con esquinas.
 - **Composición:** pasaje estrecho, muros próximos, puertas protegidas por rejas, ventanas pequeñas, pintura descascarada y suelo irregular. Las fachadas forman un corredor que guía la mirada.
 - **Luz:** tiras de luz cálida en la entrada, sombra fría en el fondo; mantener una zona de contraste detrás del personaje.
