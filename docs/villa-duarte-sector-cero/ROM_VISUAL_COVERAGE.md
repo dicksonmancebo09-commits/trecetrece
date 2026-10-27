@@ -73,3 +73,7 @@ Una matriz sin completar no es un defecto: sirve para que el progreso sea medibl
 ## Candidata v1.1 QA Viewer — 2026-10-27
 
 Se generó una ROM privada con una pantalla de revisión previa al juego para inspeccionar dos conceptos originales (Entrada al Barrio y Callejones del Caliche) a 240 × 160. El parche BPS se reaplicó sobre v1.0 y la salida coincidió byte por byte; la cabecera conserva checksum 0x98. **Pendiente de prueba en emulador.** Esta herramienta no cuenta como reemplazo de tilesets/mapas del juego ni como integración de la traducción completa. Detalles y hashes en [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
+
+## 2026-10-27 — v1.2: título real, sin visor de arranque
+
+El nuevo build sustituye los recursos reales de la pantalla de título (fondo gráfico, paleta, tilemap, gráficos del logo y objetos de menú) dentro de sus bloques ROM; no añade código de arranque. La cabecera cambia a `LATINO ZCERO`. LZ77, límites de recursos, checksum y BPS pasan validaciones estáticas; no hay prueba en emulador. El reskin anterior de la sala 0 se conserva, aunque su apariencia aún no se certifica como prueba en juego. Los demás niveles, sprites y UI siguen pendientes. Ver [REAL_TITLE_RESKIN_V1_2.md](REAL_TITLE_RESKIN_V1_2.md).
