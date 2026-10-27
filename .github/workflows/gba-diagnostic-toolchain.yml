@@ -5,14 +5,22 @@ on:
   push:
     paths:
       - ".devcontainer/devcontainer.json"
+      - "config/gba_lab.json"
       - "tools/install_gba_emulator.sh"
       - "tools/run_gba_diagnostic.sh"
+      - "tools/run_gba_diagnostic.py"
+      - "tools/gba_rom_audit.py"
+      - "tests/test_gba_rom_audit.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
       - ".devcontainer/devcontainer.json"
+      - "config/gba_lab.json"
       - "tools/install_gba_emulator.sh"
       - "tools/run_gba_diagnostic.sh"
+      - "tools/run_gba_diagnostic.py"
+      - "tools/gba_rom_audit.py"
+      - "tests/test_gba_rom_audit.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
 
 permissions:
@@ -45,13 +53,22 @@ jobs:
           xdotool --version
           import -version | head -n 2
 
-      - name: Check diagnostic script syntax
+      - name: Validate parameter profile
         run: |
+          python3 -m json.tool config/gba_lab.json >/dev/null
+          python3 tools/gba_rom_audit.py --help >/dev/null
+          python3 tools/run_gba_diagnostic.py --help >/dev/null
+
+      - name: Check Python and shell syntax
+        run: |
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
-          python3 -m py_compile tools/metroid_gba_probe.py
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
 
       - name: State test boundary
         run: |
-          echo "mGBA and diagnostic scripts are installed and syntactically checked."
+          echo "mGBA and the profile-driven tools are installed and tested."
           echo "No ROM was run: test ROMs remain in ignored private-roms/ and are not stored in GitHub."
