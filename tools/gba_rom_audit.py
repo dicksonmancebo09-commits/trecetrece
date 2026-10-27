@@ -62,6 +62,88 @@ def gba_lz77_decompress(data: bytes) -> tuple[bytes, int]:
     return bytes(output), cursor
 
 
+def gba_room_rle_decompress_map(
+    data: bytes, offset: int, reserved_bytes: int
+) -> tuple[int, int, list[int], int]:
+    """Decode the game's two-plane RLE format into 16-bit room map entries.
+
+    The room header stores width and height as two bytes. Each following RLE
+    stream becomes one byte lane of the destination u16 map (first stream =
+    low byte, second stream = high byte), matching RoomRleDecompress(type=1).
+    Return width, height, tile/metatile IDs, and bytes consumed from offset.
+    """
+    if offset < 0 or reserved_bytes < 2 or offset + reserved_bytes > len(data):
+        raise ValueError("room RLE range is outside ROM bounds")
+    end = offset + reserved_bytes
+    width, height = data[offset], data[offset + 1]
+    expected_count = width * height
+    if width == 0 or height == 0:
+        raise ValueError(f"invalid room RLE dimensions {width}x{height}")
+    cursor = offset + 2
+
+    def take_u8() -> int:
+        nonlocal cursor
+        if cursor >= end:
+            raise ValueError(f"truncated room RLE stream at 0x{cursor:X}")
+        value = data[cursor]
+        cursor += 1
+        return value
+
+    def take_bytes(count: int) -> list[int]:
+        nonlocal cursor
+        if count < 0 or cursor + count > end:
+            raise ValueError(f"truncated room RLE literal at 0x{cursor:X} (length {count})")
+        result = list(data[cursor:cursor + count])
+        cursor += count
+        return result
+
+    def decode_lane() -> list[int]:
+        first = take_u8()
+        output: list[int] = []
+        if first == 1:
+            count = take_u8()
+            while count != 0:
+                if count & 0x80:
+                    repeat_count = count & 0x7F
+                    if repeat_count == 0:
+                        raise ValueError("zero-length repeat run in room RLE stream")
+                    value = take_u8()
+                    output.extend([value] * repeat_count)
+                else:
+                    output.extend(take_bytes(count))
+                if len(output) > expected_count:
+                    raise ValueError(
+                        f"room RLE lane overflow: {len(output)} entries; expected {expected_count}"
+                    )
+                count = take_u8()
+        else:
+            count = (first << 8) | take_u8()
+            while count != 0:
+                if count & 0x8000:
+                    repeat_count = count & 0x7FFF
+                    if repeat_count == 0:
+                        raise ValueError("zero-length 16-bit repeat run in room RLE stream")
+                    value = take_u8()
+                    output.extend([value] * repeat_count)
+                else:
+                    output.extend(take_bytes(count))
+                if len(output) > expected_count:
+                    raise ValueError(
+                        f"room RLE lane overflow: {len(output)} entries; expected {expected_count}"
+                    )
+                count = (take_u8() << 8) | take_u8()
+        if len(output) != expected_count:
+            raise ValueError(
+                f"room RLE lane decoded {len(output)} entries; expected {expected_count}"
+            )
+        return output
+
+    low = decode_lane()
+    high = decode_lane()
+    values = [lo | (hi << 8) for lo, hi in zip(low, high)]
+    return width, height, values, cursor - offset
+
+
 def header_info(data: bytes, name: str) -> dict[str, Any]:
     if len(data) < 0xC0:
         raise ValueError(f"{name}: file too short for GBA header ({len(data)} bytes)")
