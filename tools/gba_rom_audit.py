@@ -13,6 +13,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+ROM_BASE = 0x08000000
+
 
 def parse_int(value: str | int) -> int:
     return value if isinstance(value, int) else int(value, 0)
