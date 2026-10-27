@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960">
+<title>LATINO AMÉRICA Zector Cero — Concepto de calle de Villa Duarte</title>
+<desc>Concepto vectorial editable, no captura de juego. Calle dominicana inspirada en Villa Duarte: colmado, fachadas de hormigón pintadas, rejas, balcones, cables aéreos, motor y explorador.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#202b58"/><stop offset=".55" stop-color="#96506b"/><stop offset="1" stop-color="#f2a16c"/></linearGradient>
+ <linearGradient id="road" x2="0" y2="1"><stop stop-color="#505b6c"/><stop offset="1" stop-color="#202b39"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#3f6278"/><stop offset="1" stop-color="#142439"/></linearGradient>
+ <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 0H8V8" stroke="#c3d8e0" stroke-opacity=".07" fill="none"/></pattern>
+</defs>
+<rect width="1600" height="960" fill="#07111e"/>
+<rect x="18" y="18" width="1564" height="130" rx="5" fill="#0b1929" stroke="#294a62" stroke-width="2"/>
+<text x="42" y="69" font-family="Arial,sans-serif" font-size="43" font-weight="900" letter-spacing="1.2" fill="#f1f2e9">LATINO AMÉRICA</text>
+<text x="43" y="119" font-family="Georgia,serif" font-size="54" font-style="italic" font-weight="bold" fill="#f03a50">Zector Cero</text>
+<path d="M42 130H393" stroke="#f03a50" stroke-width="4"/>
+<text x="470" y="61" font-family="Arial,sans-serif" font-size="17" letter-spacing="3" fill="#69d5df">CONCEPTO VISUAL · V0.1</text>
+<text x="470" y="95" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#eef1ee">VILLA DUARTE, SANTO DOMINGO ESTE</text>
+<text x="470" y="124" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4" fill="#9fb5c4">INSPIRACIÓN LOCAL · IDENTIDAD PROPIA · PIXEL-ART POR DESARROLLAR</text>
+<!-- street scene -->
+<rect x="18" y="166" width="1564" height="500" rx="4" fill="url(#sky)" stroke="#2a5069" stroke-width="2"/>
+<rect x="18" y="166" width="1564" height="500" fill="url(#grid)"/>
+<circle cx="821" cy="354" r="83" fill="#ffc27e" opacity=".72"/>
+<path d="M18 388L104 343 198 374 286 328 378 371 472 328 570 369 660 312 762 360 856 321 955 366 1060 311 1159 363 1255 323 1356 368 1457 319 1582 369V486H18Z" fill="#343651" opacity=".7"/>
+<!-- trees -->
+<g fill="#1b5b4d" stroke="#132337" stroke-width="4">
+<path d="M20 492L35 433 53 464 75 415 98 462 118 431 138 493Z"/>
+<path d="M1470 489L1488 426 1509 454 1528 411 1545 455 1575 429 1580 500Z"/>
+<path d="M405 501L420 464 438 483 454 445 474 490 490 467 505 504Z"/>
+</g>
+<!-- left shop -->
+<g stroke="#152336" stroke-width="6">
+<rect x="28" y="316" width="418" height="254" fill="#d7d1b8"/>
+<rect x="28" y="316" width="418" height="37" fill="#337fae"/>
+<rect x="45" y="365" width="244" height="156" fill="#193043"/>
+<rect x="51" y="371" width="232" height="143" fill="#142537"/>
+<rect x="45" y="359" width="244" height="22" fill="#f2e2c7"/>
+<text x="167" y="376" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="#c64e43" stroke="none">COLMADO</text>
+<text x="167" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e9d8b7" stroke="none">LA ESQUINA</text>
+<g fill="#e7b763" stroke="none"><rect x="61" y="411" width="31" height="17"/><rect x="101" y="411" width="27" height="17"/><rect x="137" y="411" width="35" height="17"/><rect x="183" y="411" width="30" height="17"/><rect x="223" y="411" width="48" height="17"/><rect x="62" y="443" width="39" height="14"/><rect x="109" y="443" width="27" height="14"/><rect x="145" y="443" width="42" height="14"/><rect x="198" y="443" width="72" height="14"/></g>
+<g fill="#d14e47" stroke="none"><rect x="61" y="432" width="25" height="8"/><rect x="95" y="432" width="26" height="8"/><rect x="144" y="432" width="34" height="8"/><rect x="201" y="432" width="41" height="8"/><rect x="60" y="465" width="51" height="31"/><rect x="119" y="465" width="44" height="31"/><rect x="171" y="465" width="51" height="31"/><rect x="230" y="465" width="42" height="31"/></g>
+<rect x="305" y="365" width="123" height="157" fill="#c9c4ad"/>
+<rect x="316" y="377" width="101" height="132" fill="url(#glass)"/>
+<path d="M336 379V509M356 379V509M376 379V509M396 379V509M316 405H417M316 432H417M316 459H417M316 486H417" stroke="#b9c8c0" stroke-width="4" fill="none"/>
+<rect x="45" y="529" width="383" height="29" fill="#8a9996"/>
+<g fill="#2f6591" stroke="none"><rect x="324" y="531" width="38" height="24"/><rect x="369" y="531" width="38" height="24"/></g>
+</g>
+<!-- warm two-storey home -->
+<g stroke="#182337" stroke-width="6">
+<rect x="465" y="275" width="393" height="295" fill="#d99050"/>
+<rect x="454" y="264" width="415" height="22" fill="#9f4937"/>
+<rect x="490" y="300" width="133" height="80" fill="#e9ba7d"/>
+<rect x="502" y="311" width="109" height="56" fill="url(#glass)"/>
+<path d="M557 311V367M502 339H611" stroke="#c7c9b8" stroke-width="4" fill="none"/>
+<rect x="675" y="300" width="147" height="80" fill="#e9ba7d"/>
+<rect x="687" y="311" width="123" height="56" fill="url(#glass)"/>
+<path d="M749 311V367M687 339H810" stroke="#c7c9b8" stroke-width="4" fill="none"/>
+<rect x="485" y="395" width="351" height="19" fill="#edb46c"/>
+<rect x="498" y="414" width="326" height="54" fill="#1d2f42"/>
+<path d="M519 414V468M549 414V468M579 414V468M609 414V468M639 414V468M669 414V468M699 414V468M729 414V468M759 414V468M789 414V468" stroke="#e0cdb0" stroke-width="4" fill="none"/>
+<rect x="594" y="477" width="119" height="93" fill="#302b3a"/>
+<rect x="608" y="490" width="90" height="80" fill="#122133"/>
+<path d="M653 490V570" stroke="#8197a5" stroke-width="3"/>
+<rect x="641" y="426" width="34" height="28" fill="#f1ead8" stroke="#bfcbbd" stroke-width="2"/>
+<path d="M641 426L658 438 675 426" stroke="#bfcbbd" stroke-width="2" fill="none"/>
+</g>
+<!-- teal house -->
+<g stroke="#172438" stroke-width="6">
+<rect x="887" y="295" width="335" height="275" fill="#347c7a"/>
+<rect x="876" y="283" width="357" height="22" fill="#22545e"/>
+<rect x="915" y="318" width="103" height="88" fill="#aebdaa"/>
+<rect x="928" y="331" width="77" height="62" fill="url(#glass)"/>
+<path d="M966 331V393M928 361H1005" stroke="#c7d2c2" stroke-width="4" fill="none"/>
+<rect x="1045" y="318" width="137" height="88" fill="#b8c2ae"/>
+<rect x="1058" y="331" width="111" height="62" fill="url(#glass)"/>
+<path d="M1113 331V393M1058 361H1169" stroke="#c7d2c2" stroke-width="4" fill="none"/>
+<rect x="912" y="420" width="284" height="20" fill="#5f9b91"/>
+<rect x="923" y="440" width="262" height="47" fill="#183044"/>
+<path d="M944 440V487M974 440V487M1004 440V487M1034 440V487M1064 440V487M1094 440V487M1124 440V487M1154 440V487M1180 440V487" stroke="#d0d4c2" stroke-width="4" fill="none"/>
+<rect x="1005" y="495" width="87" height="75" fill="#283143"/>
+</g>
+<!-- rose-lavender corner building -->
+<g stroke="#182337" stroke-width="6">
+<rect x="1244" y="330" width="312" height="240" fill="#9a688b"/>
+<rect x="1233" y="318" width="335" height="22" fill="#704967"/>
+<rect x="1271" y="355" width="112" height="83" fill="#c1c6b2"/>
+<rect x="1283" y="367" width="88" height="59" fill="url(#glass)"/>
+<path d="M1327 367V426M1283 397H1371" stroke="#c8d2c2" stroke-width="4" fill="none"/>
+<rect x="1402" y="355" width="118" height="83" fill="#c1c6b2"/>
+<rect x="1414" y="367" width="94" height="59" fill="url(#glass)"/>
+<path d="M1461 367V426M1414 397H1508" stroke="#c8d2c2" stroke-width="4" fill="none"/>
+<rect x="1277" y="451" width="246" height="119" fill="#37334a"/>
+<text x="1400" y="487" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#f2d6a4" stroke="none">VILLA DUARTE</text>
+<path d="M1302 503H1497" stroke="#e0b56a" stroke-width="3" fill="none"/>
+<path d="M1320 526l9 7 9-7 9 7 9-7" stroke="#6bb48b" stroke-width="3" fill="none"/>
+</g>
+<!-- utility poles, overhead wires -->
+<g fill="none" stroke="#101b2c" stroke-width="5">
+<path d="M454 175V570M1226 170V570M1518 170V570"/>
+<path d="M425 218Q716 282 1001 211T1518 216"/>
+<path d="M425 237Q719 302 1001 231T1518 236"/>
+<path d="M425 254Q718 317 1002 250T1518 254"/>
+<path d="M1210 195H1242M1206 208H1250M1501 194H1536M1498 209H1535"/>
+</g>
+<g fill="#121f32"><circle cx="454" cy="218" r="7"/><circle cx="1226" cy="195" r="7"/><circle cx="1518" cy="216" r="7"/></g>
+<!-- pavement and road -->
+<rect x="18" y="570" width="1564" height="29" fill="#c8bea6" stroke="#192739" stroke-width="5"/>
+<path d="M18 583H1582M18 594H1582" stroke="#74838b" stroke-width="3"/>
+<rect x="18" y="599" width="1564" height="67" fill="url(#road)"/>
+<path d="M18 633H1582" stroke="#eac16e" stroke-width="3" stroke-dasharray="34 24" opacity=".8"/>
+<!-- parked motorbike -->
+<g stroke="#121e30" stroke-width="5" stroke-linejoin="round">
+<circle cx="70" cy="578" r="18" fill="none"/><circle cx="133" cy="578" r="18" fill="none"/>
+<path d="M70 578L91 548 111 578H70L105 554 133 578" fill="none"/>
+<path d="M76 560L98 542H119L131 560H145L133 578H112L102 562Z" fill="#d34c40"/>
+<rect x="96" y="536" width="25" height="8" fill="#17283b"/><path d="M115 537L123 529H138" fill="none"/>
+</g>
+<!-- player silhouette original -->
+<g stroke="#0d1728" stroke-width="5" stroke-linejoin="round">
+<path d="M548 557L552 529 564 511 586 511 600 531 603 557 586 568 556 567Z" fill="#1d5489"/>
+<path d="M555 521L564 495H587L596 521L589 534H561Z" fill="#286da2"/>
+<rect x="562" y="504" width="27" height="9" fill="#75e6ef" stroke-width="3"/>
+<path d="M554 536L538 550 544 560 560 551M597 536L610 550 604 561 591 551" fill="#2a709e"/>
+<path d="M561 564L556 591 568 591 578 568M586 564L591 591 603 591 596 560" fill="#172b45"/>
+<path d="M573 534L590 540V551L573 554Z" fill="#4ccbd7" stroke-width="3"/>
+</g>
+<!-- footer status panel -->
+<rect x="18" y="688" width="1564" height="252" rx="5" fill="#0b1929" stroke="#294a62" stroke-width="2"/>
+<g font-family="Arial,sans-serif">
+<text x="42" y="729" font-size="23" font-weight="bold" fill="#b9cbd4" letter-spacing="1.2">DIRECCIÓN VISUAL Y PRÓXIMOS ASSETS</text>
+<path d="M42 744H1557" stroke="#294a62" stroke-width="2"/>
+<rect x="42" y="763" width="345" height="126" rx="4" fill="#101f30" stroke="#385773" stroke-width="2"/>
+<text x="60" y="794" font-size="17" font-weight="bold" fill="#61d5e1">ARQUITECTURA</text>
+<text x="60" y="824" font-size="16" fill="#d7e0e4">Hormigón, fachadas, rejas,</text><text x="60" y="848" font-size="16" fill="#d7e0e4">balcones y callejones</text>
+<rect x="406" y="763" width="345" height="126" rx="4" fill="#101f30" stroke="#385773" stroke-width="2"/>
+<text x="424" y="794" font-size="17" font-weight="bold" fill="#e8b76d">COMERCIO Y CALLE</text>
+<text x="424" y="824" font-size="16" fill="#d7e0e4">Colmado ficticio, motor,</text><text x="424" y="848" font-size="16" fill="#d7e0e4">cables y objetos cotidianos</text>
+<rect x="770" y="763" width="345" height="126" rx="4" fill="#101f30" stroke="#385773" stroke-width="2"/>
+<text x="788" y="794" font-size="17" font-weight="bold" fill="#9fc59f">PALETA PROVISIONAL</text>
+<g><rect x="788" y="814" width="35" height="19" fill="#2b3947"/><rect x="827" y="814" width="35" height="19" fill="#d99050"/><rect x="866" y="814" width="35" height="19" fill="#347c7a"/><rect x="905" y="814" width="35" height="19" fill="#9a688b"/><rect x="944" y="814" width="35" height="19" fill="#c8bea6"/><rect x="983" y="814" width="35" height="19" fill="#eac16e"/><rect x="1022" y="814" width="35" height="19" fill="#d34c40"/></g>
+<text x="788" y="861" font-size="14" fill="#d7e0e4">Pendiente de calibrar a resolución nativa</text>
+<rect x="1134" y="763" width="423" height="126" rx="4" fill="#101f30" stroke="#385773" stroke-width="2"/>
+<text x="1152" y="794" font-size="17" font-weight="bold" fill="#f18b8d">ESTADO REAL</text>
+<text x="1152" y="824" font-size="16" fill="#d7e0e4">Concepto vectorial editable</text><text x="1152" y="848" font-size="16" fill="#d7e0e4">No integrado ni probado en la ROM</text>
+<text x="42" y="918" font-size="15" letter-spacing="1.1" fill="#819aaa">LATINO AMÉRICA ZECTOR CERO · PRIMERO UNA SALA LEGIBLE, DESPUÉS SE EXPANDE EL MUNDO</text>
+</g>
+</svg>
