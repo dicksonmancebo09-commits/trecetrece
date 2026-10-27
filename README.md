@@ -10,6 +10,7 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 - [Dirección artística, procedencia y licencias](docs/villa-duarte-sector-cero/research/ART_DIRECTION_AND_LICENSES.md)
 - [Bitácora de investigación y pruebas](docs/villa-duarte-sector-cero/WORKLOG.md)
 - [Auditoría de los archivos existentes](docs/villa-duarte-sector-cero/REPOSITORY_AUDIT.md)
+- [Registro de fuentes y verificación](docs/villa-duarte-sector-cero/research/RESEARCH_REGISTER.md)
 
 ## Regla de trabajo
 
