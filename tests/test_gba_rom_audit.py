@@ -64,6 +64,8 @@ class TestGbaRomAudit(unittest.TestCase):
         base = bytearray(synthetic_gba(size=512))
         target = bytearray(base)
         target[0x120:0x124] = bytes.fromhex("78563412")
+        target[0x130:0x134] = (0x08000180).to_bytes(4, "little")
+        target[0x150:0x158] = bytes([0x10, 0x03, 0x00, 0x00, 0x00, ord("A"), ord("B"), ord("C")])
         target_path_bytes = bytes(target)
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
