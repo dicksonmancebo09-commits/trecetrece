@@ -144,3 +144,12 @@ Para cada cambio futuro:
 - GitHub Actions run [40514550712](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/40514550712) completed successfully.
 - Confirmed mGBA Qt/SDL 0.10.2 installation on Ubuntu 24.04 and all diagnostic tool checks; both shell scripts pass `bash -n`.
 - This validates installation/syntax only; no ROM was executed because the ROM remains in the ignored private Codespace directory.
+
+## 2026-10-27 — v1.4 Render Fix
+
+- Built private v1.4 from v1.3.
+- Corrected the title map palette bank from 0 to 8, matching the title code's palette load address.
+- Adjusted each metatile subtile index by +192 for the actual VRAM graphics base, preserving palette/flip bits.
+- Header checksum, LZ77 map round-trip, ID range checks, and BPS reapplication passed.
+- Not run in mGBA in this container; do not claim the previous crash is resolved without runtime evidence.
+- Details: [V1_4_RENDER_FIX.md](V1_4_RENDER_FIX.md).
