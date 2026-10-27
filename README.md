@@ -95,6 +95,8 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - Read-only audit: [`tools/gba_rom_audit.py`](tools/gba_rom_audit.py).
 - Guarded local patching: [`tools/apply_guarded_patch.py`](tools/apply_guarded_patch.py).
 - Staged mGBA capture runner: [`tools/run_gba_diagnostic.py`](tools/run_gba_diagnostic.py).
+- Config-driven low-level mGBA Lua trace: [`tools/generate_mgba_lua_trace.py`](tools/generate_mgba_lua_trace.py) and [template](tools/mgba/trace_gba.lua.in).
+- Guarded patch and hardware parameter tests run in GitHub Actions: [latest workflow](https://github.com/dicksonmancebo09-commits/trecetrece/actions/workflows/gba-diagnostic-toolchain.yml).
 - Setup and usage: [mGBA Codespaces guide](docs/villa-duarte-sector-cero/MGBA_CODESPACES_SETUP.md).
 
 ROMs, save files, manifests containing ROM-derived bytes, and binary patches must remain under `private-roms/` (Git-ignored). GitHub Actions validates tools and unit tests but does not run a private ROM. Never label a build playable without inspecting real emulator screenshots and logs.
