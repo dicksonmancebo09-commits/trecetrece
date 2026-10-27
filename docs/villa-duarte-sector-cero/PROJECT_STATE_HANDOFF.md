@@ -108,3 +108,12 @@ Antes de repetir decisiones, revisar este archivo, la [guía de siete escenarios
 - Checksum de cabecera conservado y recalculado: 0x98.
 - **Pendiente:** prueba real en emulador. No se han reemplazado los tiles/maps de las salas originales ni conectado el paquete completo de diálogos a la rutina de texto. La candidata está documentada en [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
 - La ROM y el parche no se suben al repositorio público.
+
+## Corrección de alcance — v1.2 Real Title Reskin (27-10-2026)
+
+- La v1.1 QA Viewer queda obsoleta: añadía una pantalla antes del juego y no era una conversión real de la pantalla de título.
+- La v1.2 reemplaza los recursos reales del título en sus bloques ROM: objetos del menú en 0x590C9C, logo BG en 0x593274, fondo BG en 0x605D08, paleta en 0x609120 y tilemap en 0x609220. Se actualiza la cabecera GBA a `LATINO ZCERO` / `LZC0`.
+- Se conserva el arranque original; no se inyecta un visor ni un salto de arranque.
+- La v1.0 ya redirige datos del Main Deck, sala 0, a recursos urbanos añadidos al final de la ROM; la v1.2 conserva esos datos. Su apariencia en juego todavía no está comprobada en emulador.
+- Documento: [v1.2 — Sustitución real de recursos del título](REAL_TITLE_RESKIN_V1_2.md).
+- Pendiente de trabajo integral: resto de mapas/tilesets, protagonista y animaciones, enemigos, jefes, proyectiles, HUD, cinemáticas y diálogos. No declarar conversion completa.
