@@ -1,7 +1,7 @@
-# Biblia visual — Villa Duarte y sus barrios
+# Biblia visual — LATINO AMÉRICA Zector Cero: Villa Duarte y sus barrios
 
-**Dirección artística principal de _Villa Duarte — Sector Cero_**  
-**Estado:** criterio de trabajo aprobado como intención del proyecto; pendiente convertirlo en una hoja de estilo pixel-art y validarlo en pantalla.
+**Dirección artística principal de _LATINO AMÉRICA Zector Cero_**  
+**Estado:** criterio de trabajo vigente; pendiente validación en pantalla. Ver también la [identidad visual de los siete escenarios](SEVEN_SCENARIO_VISUAL_IDENTITIES.md) y el [atlas vectorial editable](../../assets/concept/latino-america-zector-cero-seven-scenarios.svg).
 
 ## Regla central
 
