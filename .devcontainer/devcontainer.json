@@ -1,11 +1,32 @@
 {
-  "name": "trecetrece — REA",
+  "name": "trecetrece — REA + ComfyUI + OmniRoute + visual skills",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "postCreateCommand": "npm install --global rea-agents@6.8.0 && rea --version",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "postCreateCommand": "bash tools/install_all_tools.sh",
+  "postAttachCommand": "bash tools/start_ai_stack.sh",
+  "forwardPorts": [
+    8188,
+    20128
+  ],
+  "portsAttributes": {
+    "8188": {
+      "label": "ComfyUI · Stable Diffusion",
+      "onAutoForward": "openBrowser"
+    },
+    "20128": {
+      "label": "OmniRoute dashboard/API",
+      "onAutoForward": "openBrowser"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "ms-python.python"
       ]
     }
   }

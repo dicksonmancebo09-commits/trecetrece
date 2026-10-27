@@ -1,2 +1,16 @@
 # ROMs and analysis material must remain local, outside the public repository.
 /private-roms/
+
+# Local AI tools, model checkpoints and generated output (never commit model weights).
+/ComfyUI/
+/AI-Tools/
+/models/
+/outputs/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
+
+# Project-scoped third-party skills are downloaded at Codespace creation; do not commit copies by default.
+/.github/skills/
