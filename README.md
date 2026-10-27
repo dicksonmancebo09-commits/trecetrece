@@ -15,6 +15,7 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 - [Flujo de R.E. para Metroid Fusion](docs/villa-duarte-sector-cero/research/METROID_REA_WORKFLOW.md)
 - [Agente Metroid RE](.github/agents/metroid-re.agent.md)
 - [Sonda de metadatos GBA](tools/metroid_gba_probe.py)
+- [Instalación de Stable Diffusion, OmniRoute, skills y Scrapling](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md)
 
 ## Uso del agente Metroid RE
 
@@ -41,3 +42,11 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - [Plan maestro de transformación visual](docs/villa-duarte-sector-cero/VISUAL_TRANSFORMATION_PLAN.md)
 - [Matriz de cobertura visual de toda la ROM](docs/villa-duarte-sector-cero/ROM_VISUAL_COVERAGE.md)
 - [Agente Metroid RE Visual Lab](.github/agents/metroid-re.agent.md)
+
+
+## Herramientas de IA para el proyecto
+
+- Instalación completa: `bash tools/install_all_tools.sh` (Linux/Codespaces) o `.\tools\install_all_tools.ps1` (Windows).
+- Arrancar ComfyUI y OmniRoute: `bash tools/start_ai_stack.sh`.
+- Modelo de Stable Diffusion de 4.27 GB: instalar opcionalmente con `bash tools/install_ai_stack.sh --with-model`.
+- [Guía de instalación](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md).
