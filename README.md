@@ -40,7 +40,15 @@ La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domin
 - [Flujo de R.E. para Metroid Fusion](docs/villa-duarte-sector-cero/research/METROID_REA_WORKFLOW.md)
 - [Agente Metroid RE](.github/agents/metroid-re.agent.md)
 - [Sonda de metadatos GBA](tools/metroid_gba_probe.py)
+- [Instalar mGBA y diagnosticar ROMs en Codespaces](docs/villa-duarte-sector-cero/MGBA_CODESPACES_SETUP.md)
 - [Instalación de Stable Diffusion, OmniRoute, skills y Scrapling](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md)
+
+## Diagnóstico GBA
+
+- mGBA se instala automáticamente al crear/reconstruir el Codespace; instalador manual: `bash tools/install_gba_emulator.sh`.
+- Para capturar el arranque y el estado después de START: `bash tools/run_gba_diagnostic.sh private-roms/ROM.gba`.
+- Los resultados se guardan en `private-roms/diagnostics/` y no incluyen la ROM.
+- La prueba de GitHub Actions valida la instalación y sintaxis de las herramientas; no ejecuta ROMs privadas que no están en el repositorio.
 
 ## Uso del agente Metroid RE
 
