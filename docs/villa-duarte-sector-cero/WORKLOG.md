@@ -71,3 +71,13 @@ Para cada cambio futuro:
 - Validación estática realizada a través del contenido versionado: los tres SVG tienen etiquetas equilibradas; los colores visibles usados pertenecen a la paleta de trabajo; el JSON es válido y registra 1.024 celdas de 8 × 8 posibles.
 - **Límite importante:** todavía no se ha probado el SVG en Inkscape u otro editor, no se han exportado/inspeccionado PNGs a escala nativa, no se ha contrastado con una captura ejecutada de la sala y no se ha modificado ni probado la ROM.
 - Próximo paso: validar exportación y transparencia y cotejar el atlas con la sala real antes de intentar una integración ROM.
+
+## 2026-10-27 — Escenario 2: Callejones del Caliche
+
+- Referencias de observación revisadas: [Hoy — El Caliche de Villa Duarte](https://hoy.com.do/el-pais/el-caliche-de-villa-duarte-la-otra-cara-del-crecimiento-economico_762790.html) y [Diario Libre — Fundación busca fondos para transformar El Caliche](https://www.diariolibre.com/actualidad/ciudad/fundacion-busca-fondos-para-transformar-el-sector-el-caliche-de-villa-duarte-MG11174899). Se usan para estudiar callejón, escala de fachadas, rejas, pintura y pavimento; no se incrustan ni copian imágenes periodísticas.
+- Se creó el atlas `assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg` (256 × 256, rejilla 8 × 8), con 15 colores visibles y regiones para paredes, ventanas, puertas, rejas, aleros, parches de pintura, bajantes, cables, suelo y props.
+- Se creó `scenario-02-layered-composition.svg` con 11 capas; `scenario-02-native-preview.svg`; `tile-atlas-metadata.json`; y el catálogo `README.md` dentro de `assets/tiles/scenario-02/`.
+- Exportaciones PNG creadas y subidas mediante Git Data API: `scenario-02-el-caliche-tiles.png` (256 × 256, modo indexado, 16 entradas de paleta incluyendo marcador alfa) y `scenario-02-native-preview.png` (240 × 160, modo indexado, 15 colores).
+- Comprobación estática: los SVG están equilibrados estructuralmente; se comprobó el tamaño exacto de ambas exportaciones y que no aparecen colores fuera de la paleta de trabajo. Los PNG se verificaron por tamaño, modo, conteo de color y alfa.
+- **Estado real:** concepto/atlas modular editable guardado en GitHub y exportaciones rasterizadas verificadas. No se ha probado el archivo en un editor gráfico, no se ha adaptado a paletas/tilemaps de la ROM y no hay prueba en motor ni emulador. No se modificó la ROM.
+- Próximo trabajo creativo: escenario 3 — Calle Residencial, con referencias específicas de La Francia Nueva. Mantener la validación de ROM como una fase técnica aparte.
