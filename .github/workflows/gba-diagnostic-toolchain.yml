@@ -10,7 +10,9 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "tools/apply_guarded_patch.py"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_apply_guarded_patch.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
@@ -61,12 +63,18 @@ jobs:
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
-      - name: Unit tests
+      - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
+
+      - name: Unit tests — guarded patching
+        run: python3 -m unittest discover -s tests -p "test_apply_guarded_patch.py" -v
+
+      - name: Check guarded patch CLI
+        run: python3 tools/apply_guarded_patch.py --help >/dev/null
 
       - name: State test boundary
         run: |
