@@ -22,6 +22,44 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def gba_lz77_decompress(data: bytes) -> tuple[bytes, int]:
+    """Decode the BIOS GBA LZ77 0x10 format; return bytes and source bytes consumed."""
+    if len(data) < 4 or data[0] != 0x10:
+        raise ValueError("not a GBA LZ77 stream (expected 0x10 header)")
+    expected_size = data[1] | (data[2] << 8) | (data[3] << 16)
+    cursor = 4
+    output = bytearray()
+    while len(output) < expected_size:
+        if cursor >= len(data):
+            raise ValueError(f"truncated LZ77 flags at input offset 0x{cursor:X}")
+        flags = data[cursor]
+        cursor += 1
+        for bit in range(7, -1, -1):
+            if len(output) >= expected_size:
+                break
+            if flags & (1 << bit):
+                if cursor + 1 >= len(data):
+                    raise ValueError(f"truncated LZ77 back-reference at input offset 0x{cursor:X}")
+                b1, b2 = data[cursor], data[cursor + 1]
+                cursor += 2
+                length = (b1 >> 4) + 3
+                displacement = (((b1 & 0x0F) << 8) | b2) + 1
+                if displacement > len(output):
+                    raise ValueError(
+                        f"invalid LZ77 displacement {displacement} with only {len(output)} output bytes"
+                    )
+                for _ in range(length):
+                    if len(output) >= expected_size:
+                        break
+                    output.append(output[-displacement])
+            else:
+                if cursor >= len(data):
+                    raise ValueError(f"truncated LZ77 literal at input offset 0x{cursor:X}")
+                output.append(data[cursor])
+                cursor += 1
+    return bytes(output), cursor
+
+
 def header_info(data: bytes, name: str) -> dict[str, Any]:
     if len(data) < 0xC0:
         raise ValueError(f"{name}: file too short for GBA header ({len(data)} bytes)")
@@ -139,6 +177,74 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             actual.hex(),
         )
         report["checks"][-1]["description"] = assertion.get("description", "")
+
+    # Resource bounds and GBA LZ77 sanity checks come from the selected build profile.
+    resources = profile.get("resource_ranges", [])
+    report["resources"] = []
+    allocated_ranges: list[tuple[int, int, str]] = []
+    for resource in resources:
+        name = str(resource.get("name", "unnamed-resource"))
+        offset = parse_int(resource["offset"])
+        used_bytes = int(resource["used_bytes"])
+        reserved_bytes = int(resource["reserved_bytes"])
+        encoding = str(resource.get("encoding", "raw")).lower()
+        expected_unpacked = resource.get("expected_uncompressed_bytes")
+        start_end_ok = offset >= 0 and used_bytes > 0 and reserved_bytes >= used_bytes and offset + reserved_bytes <= len(rom)
+        check(
+            f"resource_bounds_{name}",
+            start_end_ok,
+            {"offset": f"0x{offset:X}", "used_bytes": used_bytes, "reserved_bytes": reserved_bytes, "rom_size": len(rom)},
+            {"offset": f"0x{offset:X}", "end_exclusive": f"0x{offset + reserved_bytes:X}",
+             "used_bytes": used_bytes, "reserved_bytes": reserved_bytes}
+        )
+        resource_row: dict[str, Any] = {
+            "name": name,
+            "offset": f"0x{offset:X}",
+            "used_bytes": used_bytes,
+            "reserved_bytes": reserved_bytes,
+            "encoding": encoding,
+            "description": resource.get("description", ""),
+            "bounds_valid": start_end_ok
+        }
+        if start_end_ok:
+            allocated_ranges.append((offset, offset + reserved_bytes, name))
+            block = rom[offset:offset + used_bytes]
+            if encoding == "gba_lz77":
+                try:
+                    decoded, consumed = gba_lz77_decompress(block)
+                    resource_row["decoded_bytes"] = len(decoded)
+                    resource_row["compressed_bytes_consumed"] = consumed
+                    resource_row["trailing_bytes_in_used_region"] = used_bytes - consumed
+                    check(f"resource_lz77_{name}", True,
+                          {"encoding": "gba_lz77", "expected_uncompressed_bytes": expected_unpacked},
+                          {"encoding": "gba_lz77", "decoded_bytes": len(decoded), "consumed_bytes": consumed})
+                    if expected_unpacked is not None:
+                        check(f"resource_decoded_size_{name}", len(decoded) == int(expected_unpacked),
+                              int(expected_unpacked), len(decoded))
+                    if consumed != used_bytes:
+                        check(f"resource_stream_length_{name}", False, used_bytes, consumed, severity="warning")
+                except ValueError as exc:
+                    resource_row["decode_error"] = str(exc)
+                    check(f"resource_lz77_{name}", False, "valid complete GBA LZ77 stream", str(exc))
+            elif encoding == "raw":
+                resource_row["decoded_bytes"] = used_bytes
+                if expected_unpacked is not None:
+                    check(f"resource_raw_size_{name}", used_bytes == int(expected_unpacked),
+                          int(expected_unpacked), used_bytes)
+            else:
+                check(f"resource_encoding_{name}", False, ["gba_lz77", "raw"], encoding)
+        report["resources"].append(resource_row)
+
+    for index, current in enumerate(sorted(allocated_ranges)):
+        for following in sorted(allocated_ranges)[index + 1:]:
+            if following[0] < current[1]:
+                check(
+                    f"resource_reservations_do_not_overlap_{current[2]}_{following[2]}",
+                    False,
+                    "non-overlapping reserved resource ranges",
+                    {"first": {"name": current[2], "start": f"0x{current[0]:X}", "end": f"0x{current[1]:X}"},
+                     "second": {"name": following[2], "start": f"0x{following[0]:X}", "end": f"0x{following[1]:X}"}}
+                )
 
     baseline_path = args.baseline.resolve() if args.baseline else None
     if baseline_path:
