@@ -48,6 +48,22 @@ class TestGbaLabConfig(unittest.TestCase):
         for current, next_range in zip(sorted_ranges, sorted_ranges[1:]):
             self.assertLessEqual(current[0] + current[1], next_range[0], f"{current[2]} overlaps {next_range[2]}")
 
+    def test_known_build_resource_slots_fit_and_do_not_overlap(self):
+        resources = CONFIG["profiles"]["zector_cero_v1_7"]["resource_ranges"]
+        spans = []
+        for item in resources:
+            offset = n(item["offset"])
+            used = int(item["used_bytes"])
+            reserved = int(item["reserved_bytes"])
+            self.assertGreater(used, 0, item["name"])
+            self.assertGreaterEqual(reserved, used, item["name"])
+            self.assertGreaterEqual(offset, 0, item["name"])
+            self.assertLessEqual(offset + reserved, 8 * 1024 * 1024, item["name"])
+            spans.append((offset, offset + reserved, item["name"]))
+        spans.sort()
+        for first, second in zip(spans, spans[1:]):
+            self.assertLessEqual(first[1], second[0], f"{first[2]} overlaps {second[2]}")
+
     def test_all_configured_pointer_targets_fit_in_rom(self):
         for area in ("room0_v1_5", "custom_title_v1_5"):
             for row in CONFIG["gba_hardware"][area]["pointer_sites"]:
