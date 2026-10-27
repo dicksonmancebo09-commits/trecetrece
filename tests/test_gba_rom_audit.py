@@ -103,7 +103,7 @@ class TestGbaRomAudit(unittest.TestCase):
                 ignore_profile_sha=False
             )
             report = audit.run(args)
-            self.assertEqual(len(report["errors"]), 0)
+            self.assertEqual(report["errors"], [], msg=json.dumps(report["errors"], indent=2))
             self.assertTrue(report["summary"]["passed"])
             self.assertEqual(report["delta"]["changed_byte_count"], 9)
             self.assertEqual(report["resources"][0]["decoded_bytes"], 3)
