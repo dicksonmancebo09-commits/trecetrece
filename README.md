@@ -49,4 +49,5 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - Instalación completa: `bash tools/install_all_tools.sh` (Linux/Codespaces) o `.\tools\install_all_tools.ps1` (Windows).
 - Arrancar ComfyUI y OmniRoute: `bash tools/start_ai_stack.sh`.
 - Modelo de Stable Diffusion de 4.27 GB: instalar opcionalmente con `bash tools/install_ai_stack.sh --with-model`.
+- Instalación completa con checkpoint y navegadores de Scrapling: `bash tools/install_all_tools.sh --with-model --with-browsers`.
 - [Guía de instalación](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md).
