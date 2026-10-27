@@ -8,6 +8,8 @@ La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domin
 ## Documentación y continuidad
 
 - [Estado de continuidad del proyecto — LATINO AMÉRICA Zector Cero](docs/villa-duarte-sector-cero/PROJECT_STATE_HANDOFF.md)
+- [Identidad visual de los siete escenarios](docs/villa-duarte-sector-cero/SEVEN_SCENARIO_VISUAL_IDENTITIES.md)
+- [Atlas vectorial editable de los siete escenarios](assets/concept/latino-america-zector-cero-seven-scenarios.svg)
 - [Concepto vectorial editable de la primera calle](assets/concept/latino-america-zector-cero-villa-duarte-street.svg)
 - [Resumen y estado actual](docs/villa-duarte-sector-cero/README.md)
 - [Herramientas y repositorios de referencia](docs/villa-duarte-sector-cero/research/TOOLS_AND_REPOSITORIES.md)
