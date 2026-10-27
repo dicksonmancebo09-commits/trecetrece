@@ -54,6 +54,25 @@ class TestGbaRomAudit(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "truncated"):
             audit.gba_lz77_decompress(bytes([0x10, 0x03, 0x00, 0x00, 0x00, ord("A")]))
 
+    def test_room_rle_map_decodes_interleaved_lanes(self):
+        # 2x2 map. Lane 0 contains [1, 2, 3, 4]; lane 1 contains four zero high bytes.
+        stream = bytes([
+            2, 2,
+            1, 4, 1, 2, 3, 4, 0,
+            1, 4, 0, 0, 0, 0, 0
+        ])
+        width, height, values, consumed = audit.gba_room_rle_decompress_map(
+            stream, 0, len(stream)
+        )
+        self.assertEqual((width, height), (2, 2))
+        self.assertEqual(values, [1, 2, 3, 4])
+        self.assertEqual(consumed, len(stream))
+
+    def test_room_rle_map_rejects_truncated_run(self):
+        stream = bytes([2, 2, 1, 4, 1, 2])
+        with self.assertRaisesRegex(ValueError, "truncated"):
+            audit.gba_room_rle_decompress_map(stream, 0, len(stream))
+
     def test_no_changes(self):
         data = synthetic_gba()
         count, ranges = audit.changed_ranges(data, data)
