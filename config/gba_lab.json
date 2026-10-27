@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "latino-america-zector-cero",
+    "display_name": "LATINO AMÉRICA Zector Cero",
+    "private_rom_dir": "private-roms",
+    "diagnostics_dir": "private-roms/diagnostics",
+    "never_commit_roms_or_rom_patches": true
+  },
+  "profiles": {
+    "metroid_fusion_us_clean": {
+      "description": "ROM base de referencia AMTE suministrada por el usuario",
+      "size_bytes": 8388608,
+      "title": "METROID4USA",
+      "game_code": "AMTE",
+      "sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8",
+      "header_complement": "0x98"
+    },
+    "urban_opening_v1_0": {
+      "description": "Primer prototipo Urban Opening verificado estáticamente",
+      "size_bytes": 8388608,
+      "title": "METROID4USA",
+      "game_code": "AMTE",
+      "sha256": "8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5",
+      "header_complement": "0x98"
+    },
+    "zector_cero_v1_5": {
+      "description": "Actual Render Fix; referencia privada",
+      "size_bytes": 8388608,
+      "title": "LATINO ZCERO",
+      "game_code": "LZC0",
+      "sha256": "c33f2bb2e65d60bf4b6fdd4f3b69c72e7f089b9be9a80db1c984558c1d814df8",
+      "header_complement": "0x6D"
+    },
+    "zector_cero_v1_6": {
+      "description": "Title and Intro Flow; build anterior al arreglo de referencias compartidas",
+      "size_bytes": 8388608,
+      "title": "LATINO ZCERO",
+      "game_code": "LZC0",
+      "sha256": "43b34c080d7d78ca9e52d25edfe759686acb36706f88f527c845a45d23dc8722",
+      "header_complement": "0x6D"
+    },
+    "zector_cero_v1_7": {
+      "description": "Title/Hangar Flow Fix; candidata pendiente de prueba real",
+      "size_bytes": 8388608,
+      "title": "LATINO ZCERO",
+      "game_code": "LZC0",
+      "sha256": "66e68fb0f04f89d40ecfee21996e6be62e96a22f7f66198528ee6b2c5c2c2aaf",
+      "header_complement": "0x6D",
+      "expected_bytes": [
+        {
+          "offset": "0x86AB0",
+          "bytes_le": "00407c08",
+          "description": "El GFX del título apunta a 0x087C4000"
+        },
+        {
+          "offset": "0x86AC4",
+          "bytes_le": "00007c08",
+          "description": "El mapa del título apunta a 0x087C0000"
+        },
+        {
+          "offset": "0x86AD4",
+          "bytes_le": "00107c08",
+          "description": "La paleta del título apunta a 0x087C1000"
+        },
+        {
+          "offset": "0x87610",
+          "bytes_le": "30b50025",
+          "description": "Prólogo original de IntroHandler restaurado"
+        },
+        {
+          "offset": "0x876AE",
+          "bytes_le": "0320",
+          "description": "Saltar las escenas de arranque después de inicializar"
+        },
+        {
+          "offset": "0x86A4A",
+          "bytes_le": "c046c046",
+          "description": "Llamada del objeto de copyright desactivada"
+        },
+        {
+          "offset": "0x86A54",
+          "bytes_le": "c046c046",
+          "description": "Llamada del objeto PRESS START desactivada"
+        }
+      ],
+      "must_match_reference_ranges": [
+        {
+          "offset": "0x605D08",
+          "length": "0x4208",
+          "description": "Tramo original donde v1.4/v1.5 sobrescribían recursos; debe coincidir con la ROM base limpia"
+        }
+      ]
+    }
+  },
+  "gba_hardware": {
+    "rom_window_base": "0x08000000",
+    "vram_base": "0x06000000",
+    "palette_ram_base": "0x05000000",
+    "oam_base": "0x07000000",
+    "screen_width": 240,
+    "screen_height": 160,
+    "background_4bpp": {
+      "bytes_per_tile": 32,
+      "colors_per_palette": 16,
+      "transparent_color_index": 0,
+      "map_entry": {
+        "tile_index_bits": "0-9",
+        "horizontal_flip_bit": 10,
+        "vertical_flip_bit": 11,
+        "palette_bank_bits": "12-15"
+      }
+    },
+    "room0_v1_5": {
+      "tile_graphics_rom_offset": "0x416E8C",
+      "tile_graphics_vram_offset": "0x06005800",
+      "bg_character_base": "0x06004000",
+      "local_tile_base_index": 192,
+      "tile_count": 369,
+      "metatile_table_rom_offset": "0x7B0000",
+      "bg1_map_rom_offset": "0x7B2000",
+      "bg2_map_rom_offset": "0x7B2400",
+      "map_width_blocks": 34,
+      "map_height_blocks": 14,
+      "transparent_metatile_id": 383,
+      "transparent_tile_hardware_id": 560
+    },
+    "custom_title_v1_5": {
+      "gfx_rom_offset": "0x7C4000",
+      "palette_rom_offset": "0x7C1000",
+      "map_rom_offset": "0x7C0000",
+      "gfx_reserved_length": "0x4000",
+      "palette_reserved_length": "0x0100",
+      "map_reserved_length": "0x1000",
+      "map_palette_bank": 8
+    }
+  },
+  "emulator": {
+    "preferred_binary_candidates": [
+      "mgba-qt",
+      "/usr/games/mgba-qt",
+      "mgba",
+      "/usr/games/mgba"
+    ],
+    "log_level": 15,
+    "display": "1280x960x24",
+    "boot_wait_seconds": 7,
+    "input_hold_ms": 100,
+    "window_search_timeout_seconds": 15,
+    "action_timeout_seconds": 10,
+    "close_timeout_seconds": 3,
+    "keyboard": {
+      "start": "Return",
+      "a": "x",
+      "b": "z",
+      "select": "BackSpace",
+      "up": "Up",
+      "down": "Down",
+      "left": "Left",
+      "right": "Right",
+      "l": "a",
+      "r": "s"
+    },
+    "stages": [
+      {
+        "name": "01-boot-title",
+        "wait_seconds": 7,
+        "key": null,
+        "description": "Captura de arranque/título sin entrada manual"
+      },
+      {
+        "name": "02-after-start",
+        "key": "start",
+        "wait_seconds": 3,
+        "description": "Enviar START y observar selección de archivo"
+      },
+      {
+        "name": "03-after-confirm",
+        "key": "a",
+        "wait_seconds": 3,
+        "description": "Confirmar la selección de archivo/partida nueva"
+      },
+      {
+        "name": "04-hangar-observation",
+        "key": null,
+        "wait_seconds": 12,
+        "description": "Esperar la secuencia prevista de llegada al hangar"
+      },
+      {
+        "name": "05-right-input",
+        "key": "right",
+        "hold_ms": 700,
+        "wait_seconds": 2,
+        "description": "Comprobar si la entrada de movimiento produce respuesta visual"
+      }
+    ]
+  },
+  "quality_gates": {
+    "required_static_checks": [
+      "ROM con cabecera GBA de al menos 0xC0 bytes",
+      "Checksum de cabecera calculado y comparado",
+      "SHA-256 de entrada y salida registrado",
+      "Bytes esperados verificados antes de escribir",
+      "Recursos comprimidos dentro de sus slots o reubicados con referencias actualizadas",
+      "Ningún recurso ROM supera su rango reservado",
+      "Parche reaplicado y salida idéntica byte por byte"
+    ],
+    "required_runtime_checkpoints": [
+      "Pantalla principal visible y legible",
+      "START transita al selector de partida",
+      "Confirmación de partida no congela el juego",
+      "Secuencia de hangar aparece en una partida nueva",
+      "Primera sala carga y se mantiene estable",
+      "Entrada izquierda/derecha cambia la posición del jugador",
+      "Transición de puerta o sala no bloquea el juego"
+    ],
+    "status_labels": {
+      "generated": "Archivo creado sin prueba de ejecución",
+      "static": "Metadatos, offsets, compresión y hashes comprobados",
+      "emulator": "Se ejecutó en el emulador y las capturas/logs fueron inspeccionados",
+      "gameplay": "Se verificaron los controles y transiciones indicados"
+    }
+  }
+}
