@@ -3,8 +3,8 @@
 <desc>Vista de composición a coordenadas nativas de 240×160. La ventana SVG está ampliada 4x para lectura, pero la geometría corresponde a una pantalla GBA de 240×160. No es captura del juego ni está integrada a la ROM.</desc>
 <rect x="0" y="0" width="240" height="10" fill="#26394A"/>
 <rect x="0" y="10" width="240" height="10" fill="#31586D"/>
-<rect x="0" y="20" width="240" height="10" fill="#71506B"/>
-<rect x="0" y="30" width="240" height="10" fill="#C87565"/>
+<rect x="0" y="20" width="240" height="10" fill="#26394A"/>
+<rect x="0" y="30" width="240" height="10" fill="#C75D4B"/>
 <rect x="0" y="40" width="240" height="8" fill="#D69A45"/>
 <rect x="0" y="33" width="8" height="20" fill="#172336"/>
 <rect x="6" y="27" width="12" height="26" fill="#26394A"/>
