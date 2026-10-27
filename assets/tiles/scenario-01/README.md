@@ -7,7 +7,8 @@
 ## Archivos
 
 - [Atlas editable 256 × 256](scenario-01-villa-duarte-tiles.svg)
-- [Vista previa de montaje a resolución GBA](scenario-01-native-preview.svg)
+- [Vista previa de montaje a coordenadas nativas 240 × 160](scenario-01-native-preview.svg)
+- [Metadatos JSON de la cuadrícula y paleta](tile-atlas-metadata.json)
 - [Estado global / guía de los siete escenarios](../../../../docs/villa-duarte-sector-cero/SEVEN_SCENARIO_VISUAL_IDENTITIES.md)
 
 ## Especificación
