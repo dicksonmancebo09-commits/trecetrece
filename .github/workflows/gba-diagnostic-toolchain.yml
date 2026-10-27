@@ -13,6 +13,7 @@ on:
       - "tools/apply_guarded_patch.py"
       - "tests/test_gba_rom_audit.py"
       - "tests/test_apply_guarded_patch.py"
+      - "tests/test_gba_config.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
@@ -75,6 +76,9 @@ jobs:
 
       - name: Check guarded patch CLI
         run: python3 tools/apply_guarded_patch.py --help >/dev/null
+
+      - name: Unit tests — configuration invariants
+        run: python3 -m unittest discover -s tests -p "test_gba_config.py" -v
 
       - name: State test boundary
         run: |
