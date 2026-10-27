@@ -1,12 +1,12 @@
 {
-  "name": "trecetrece — REA + ComfyUI + OmniRoute",
+  "name": "trecetrece — REA + ComfyUI + OmniRoute + visual skills",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12"
     }
   },
-  "postCreateCommand": "bash tools/install_ai_stack.sh",
+  "postCreateCommand": "bash tools/install_all_tools.sh",
   "postAttachCommand": "bash tools/start_ai_stack.sh",
   "forwardPorts": [
     8188,
