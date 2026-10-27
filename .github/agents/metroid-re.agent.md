@@ -204,3 +204,18 @@ For any changed ROM or patch, do not label the build playable from static checks
 6. If the agent cannot access the user's private Codespace filesystem, ask for the resulting ZIP report; never claim to have run the ROM without inspecting actual emulator output.
 
 The first diagnostic records the title screen and the screen after one START/Enter press. It does not certify in-game movement, collisions, room transitions, enemies, or saving; test those separately before calling the ROM functional.
+
+## 12. Parámetros técnicos centralizados y patching con precondiciones
+
+No inventes offsets, tamaños de slots, paletas ni direcciones VRAM en cada tarea. Antes de editar, lee `config/gba_lab.json` y declara si cada parámetro es confirmado, heredado de una build concreta o aún una hipótesis.
+
+- **Auditoría de solo lectura:** ejecuta `python3 tools/gba_rom_audit.py --rom private-roms/CANDIDATE.gba --profile gba_candidate_unpinned --baseline private-roms/BASE.gba --report private-roms/diagnostics/static-audit.json`.
+- Para perfiles fijados como `zector_cero_v1_7`, respeta el SHA y los bytes esperados; si se cambió la ROM, no ignores el SHA para “hacer pasar” la prueba. Crea un perfil nuevo tras registrar la nueva build.
+- **Patch binario:** usa `tools/apply_guarded_patch.py` con un manifiesto JSON guardado dentro de `private-roms/`. El manifiesto debe fijar `base_sha256` y cada escritura requiere offset, bytes anteriores exactos, bytes nuevos del mismo largo y propósito. La herramienta verifica todas las precondiciones y solapamientos antes de escribir, recalcula el complemento de cabecera GBA y crea un archivo nuevo. No sobrescribe la base.
+- No guardes manifiestos que incluyan bytes derivados de una ROM comercial en el repositorio público; se guardan con la ROM bajo `private-roms/`. No subas ROMs, save files ni parches derivados.
+- Antes de editar una zona de ROM, valida slot reservado, tamaños descomprimidos/comprimidos y todas las referencias consumidoras. Si un recurso excede su slot, reubícalo en espacio libre y actualiza solo las referencias que correspondan; las referencias compartidas con cinemáticas deben quedarse intactas cuando no sean parte de la pantalla editada.
+- Para 4bpp GBA, cada tile ocupa 32 bytes, 16 colores por banco y el índice 0 es transparente. Para cada mapa valida los índices hardware con la dirección real de carga, el carácter-base del BG, los bits de flip y los bancos de paleta.
+- El emulador usa `config/gba_lab.json` para tiempos, entradas y checkpoints. La prueba escalonada recoge arranque, START, confirmar, espera del hangar y entrada derecha. No interpretes el código de salida del proceso como prueba de jugabilidad; inspecciona capturas y logs.
+- GitHub Actions debe validar la instalación y ejecutar las pruebas unitarias. No envíes ROMs al runner público. Los diagnósticos de ROM requieren el entorno privado que tenga los archivos locales.
+- Cuando la build falla: conserva el artefacto fallido y su hash; no lo sobrescribas. Cambia una clase de recursos a la vez, genera build nueva, compara con la base y ejecuta el mismo perfil otra vez.
+
