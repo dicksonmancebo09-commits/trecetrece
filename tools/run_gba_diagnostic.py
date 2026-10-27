@@ -249,6 +249,7 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
             result["window_id"] = window_id
             result["capture_ok"] = ok
             result["capture_mode"] = mode
+            result["capture_usable"] = bool(ok and window_id is not None and mode == "window")
             result["screenshot"] = out_png.name if ok else None
             result["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
             runtime["stage_results"].append(result)
@@ -258,15 +259,18 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
                 )
                 break
         runtime["exit_code_before_cleanup"] = proc.poll()
-        runtime["captures_succeeded"] = sum(1 for row in runtime["stage_results"] if row.get("capture_ok"))
-        runtime["emulator_session_started"] = proc.poll() is None or runtime["captures_succeeded"] > 0
+        runtime["captures_succeeded"] = sum(1 for row in runtime["stage_results"] if row.get("capture_usable"))
+        runtime["captures_desktop_fallback_only"] = any(
+            row.get("capture_ok") and not row.get("capture_usable") for row in runtime["stage_results"]
+        )
+        runtime["emulator_session_started"] = bool(runtime.get("window_found") and runtime["captures_succeeded"] > 0)
         runtime["gameplay_passed"] = False
         runtime["runtime_certification"] = "NOT CERTIFIED — review screenshots/logs and test gameplay manually"
     except Exception as exc:
         runtime["fatal_error"] = f"{type(exc).__name__}: {exc}"
         return_code = 2
     else:
-        return_code = 0 if runtime.get("captures_succeeded", 0) > 0 else 4
+        return_code = 0 if runtime.get("window_found") and runtime.get("captures_succeeded", 0) > 0 else 4
     finally:
         if proc and proc.poll() is None:
             proc.terminate()
