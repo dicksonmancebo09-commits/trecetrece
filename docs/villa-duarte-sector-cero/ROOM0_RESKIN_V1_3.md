@@ -1,3 +1,5 @@
+> **RETIRADA COMO BUILD FUNCIONAL (27-10-2026).** El usuario reportó que la ROM muestra una pantalla inicial ilegible y se bloquea/crashea al continuar. No se ha reproducido en emulador. Consulta [Auditoría posterior a v1.3](POSTMORTEM_V1_3.md). No usar esta versión como build jugable.
+
 # v1.3 — Título real y primer escenario conectado al mapa del juego
 
 **Proyecto:** LATINO AMÉRICA Zector Cero  
