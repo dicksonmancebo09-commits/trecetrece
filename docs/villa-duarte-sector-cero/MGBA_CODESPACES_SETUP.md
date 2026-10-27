@@ -66,7 +66,43 @@ python3 tools/gba_rom_audit.py \
 
 El informe registra SHA-256, título/código, checksum, bytes esperados (si el perfil los declara), cantidad de bytes cambiados y rangos del delta. Los rangos protegidos solo se comparan si pasas una ROM de referencia. La herramienta es de solo lectura: no repara ni modifica la entrada.
 
-## 5. Pruebas de ejecución comparables
+## 5. Construir una edición binaria con guardas
+
+Para cambios de código/ROM que necesiten escrituras binarias exactas, prepara un manifiesto **privado** bajo `private-roms/` con estos campos:
+
+```json
+{
+  "patch_id": "mi-cambio-01",
+  "base_sha256": "HASH_SHA256_EXACTO_DE_LA_BASE",
+  "header": { "recalculate_complement": true },
+  "writes": [
+    {
+      "offset": "0x123456",
+      "expected_before_hex": "AABB",
+      "replacement_hex": "CCDD",
+      "purpose": "Explicar la razón del cambio"
+    }
+  ],
+  "expected_output": {
+    "title": "LATINO ZCERO",
+    "game_code": "LZC0"
+  }
+}
+```
+
+Este es solo un molde: debes sustituir hash, offset y bytes por datos verificados de la ROM local. No uses offsets ilustrativos para editar una build real. Guarda el manifiesto en `private-roms/patch-manifest.json`, nunca en el repositorio público.
+
+```bash
+python3 tools/apply_guarded_patch.py \
+  --base private-roms/BASE.gba \
+  --manifest private-roms/patch-manifest.json \
+  --output private-roms/candidate-patched.gba \
+  --report private-roms/diagnostics/patch-report.json
+```
+
+La herramienta rechaza una base con hash incorrecto, bytes anteriores que no coinciden, escrituras solapadas/fuera de rango y salidas que ya existen. Recalcula la suma complementaria GBA al finalizar y crea una copia nueva.
+
+## 6. Pruebas de ejecución comparables
 
 La tarea **GBA: diagnosticar ROM (capturas + log)** usa el archivo central de parámetros. Desde la terminal:
 
@@ -92,7 +128,7 @@ Las ROMs se copian a un directorio temporal privado para que las partidas guarda
 
 El resultado se guarda en `private-roms/diagnostics/`. Si la ventana del emulador no se pudo identificar, el script lo marca como fallo de diagnóstico aunque haya logrado capturar el escritorio virtual.
 
-## 6. Compartir el resultado para diagnosticar
+## 7. Compartir el resultado para diagnosticar
 
 Adjunta el ZIP de `private-roms/diagnostics/` en la conversación. Con esos datos podemos comparar de forma reproducible la base y la candidata.
 
