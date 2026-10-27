@@ -30,7 +30,45 @@
       "title": "LATINO ZCERO",
       "game_code": "LZC0",
       "sha256": "c33f2bb2e65d60bf4b6fdd4f3b69c72e7f089b9be9a80db1c984558c1d814df8",
-      "header_complement": "0x6D"
+      "header_complement": "0x6D",
+      "resource_ranges": [
+        {
+          "name": "main-deck-room0-tileset-gfx",
+          "offset": "0x416E8C",
+          "used_bytes": 2843,
+          "reserved_bytes": 5532,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 11808,
+          "description": "Tileset 61, room 0 urban atlas + blank transparency tile"
+        },
+        {
+          "name": "custom-title-tilemap",
+          "offset": "0x7C0000",
+          "used_bytes": 1468,
+          "reserved_bytes": 4096,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 2048,
+          "description": "32x32 entries, compressed title background map"
+        },
+        {
+          "name": "custom-title-palette",
+          "offset": "0x7C1000",
+          "used_bytes": 256,
+          "reserved_bytes": 256,
+          "encoding": "raw",
+          "expected_uncompressed_bytes": 256,
+          "description": "8 BG palette banks, loaded in banks 8–15"
+        },
+        {
+          "name": "custom-title-gfx",
+          "offset": "0x7C4000",
+          "used_bytes": 12325,
+          "reserved_bytes": 16384,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 20480,
+          "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ]
     },
     "zector_cero_v1_6": {
       "description": "Title and Intro Flow; build anterior al arreglo de referencias compartidas",
@@ -38,7 +76,45 @@
       "title": "LATINO ZCERO",
       "game_code": "LZC0",
       "sha256": "43b34c080d7d78ca9e52d25edfe759686acb36706f88f527c845a45d23dc8722",
-      "header_complement": "0x6D"
+      "header_complement": "0x6D",
+      "resource_ranges": [
+        {
+          "name": "main-deck-room0-tileset-gfx",
+          "offset": "0x416E8C",
+          "used_bytes": 2843,
+          "reserved_bytes": 5532,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 11808,
+          "description": "Tileset 61, room 0 urban atlas + blank transparency tile"
+        },
+        {
+          "name": "custom-title-tilemap",
+          "offset": "0x7C0000",
+          "used_bytes": 1468,
+          "reserved_bytes": 4096,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 2048,
+          "description": "32x32 entries, compressed title background map"
+        },
+        {
+          "name": "custom-title-palette",
+          "offset": "0x7C1000",
+          "used_bytes": 256,
+          "reserved_bytes": 256,
+          "encoding": "raw",
+          "expected_uncompressed_bytes": 256,
+          "description": "8 BG palette banks, loaded in banks 8–15"
+        },
+        {
+          "name": "custom-title-gfx",
+          "offset": "0x7C4000",
+          "used_bytes": 12325,
+          "reserved_bytes": 16384,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 20480,
+          "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ]
     },
     "zector_cero_v1_7": {
       "description": "Title/Hangar Flow Fix; candidata pendiente de prueba real",
@@ -90,6 +166,44 @@
           "length": "0x4208",
           "description": "Tramo original donde v1.4/v1.5 sobrescribían recursos; debe coincidir con la ROM base limpia"
         }
+      ],
+      "resource_ranges": [
+        {
+          "name": "main-deck-room0-tileset-gfx",
+          "offset": "0x416E8C",
+          "used_bytes": 2843,
+          "reserved_bytes": 5532,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 11808,
+          "description": "Tileset 61, room 0 urban atlas + blank transparency tile"
+        },
+        {
+          "name": "custom-title-tilemap",
+          "offset": "0x7C0000",
+          "used_bytes": 1468,
+          "reserved_bytes": 4096,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 2048,
+          "description": "32x32 entries, compressed title background map"
+        },
+        {
+          "name": "custom-title-palette",
+          "offset": "0x7C1000",
+          "used_bytes": 256,
+          "reserved_bytes": 256,
+          "encoding": "raw",
+          "expected_uncompressed_bytes": 256,
+          "description": "8 BG palette banks, loaded in banks 8–15"
+        },
+        {
+          "name": "custom-title-gfx",
+          "offset": "0x7C4000",
+          "used_bytes": 12325,
+          "reserved_bytes": 16384,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 20480,
+          "description": "Original urban title background; reallocated outside the original slot"
+        }
       ]
     },
     "gba_candidate_unpinned": {
@@ -98,7 +212,45 @@
       "title": null,
       "game_code": null,
       "sha256": null,
-      "header_complement": null
+      "header_complement": null,
+      "resource_ranges": [
+        {
+          "name": "main-deck-room0-tileset-gfx",
+          "offset": "0x416E8C",
+          "used_bytes": 2843,
+          "reserved_bytes": 5532,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 11808,
+          "description": "Tileset 61, room 0 urban atlas + blank transparency tile"
+        },
+        {
+          "name": "custom-title-tilemap",
+          "offset": "0x7C0000",
+          "used_bytes": 1468,
+          "reserved_bytes": 4096,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 2048,
+          "description": "32x32 entries, compressed title background map"
+        },
+        {
+          "name": "custom-title-palette",
+          "offset": "0x7C1000",
+          "used_bytes": 256,
+          "reserved_bytes": 256,
+          "encoding": "raw",
+          "expected_uncompressed_bytes": 256,
+          "description": "8 BG palette banks, loaded in banks 8–15"
+        },
+        {
+          "name": "custom-title-gfx",
+          "offset": "0x7C4000",
+          "used_bytes": 12325,
+          "reserved_bytes": 16384,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 20480,
+          "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ]
     }
   },
   "gba_hardware": {
