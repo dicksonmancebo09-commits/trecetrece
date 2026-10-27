@@ -136,3 +136,7 @@ La v1.3 se retira como candidata funcional tras el informe del usuario. Se ha id
 Se añadieron mGBA y herramientas de captura a la configuración de Codespaces. Instalación manual: `bash tools/install_gba_emulator.sh`. Capturas de arranque y una pulsación de START: `bash tools/run_gba_diagnostic.sh private-roms/ROM.gba`. El ZIP de resultados se guarda en `private-roms/diagnostics/` y no incluye la ROM.
 
 **Todavía no se ha ejecutado una ROM con este emulador desde la conversación.** El setup en GitHub ya está registrado, pero la v1.3 continúa retirada como build funcional hasta que se ejecute y se revisen resultados reales. Procedimiento: [MGBA_CODESPACES_SETUP.md](MGBA_CODESPACES_SETUP.md).
+
+## v1.4 Render Fix (27-10-2026)
+
+La candidata privada v1.4 corrige los dos fallos de correspondencia gráfica detectados en la auditoría: banco de paleta del título 0 → 8 y base de índices hardware del tileset de la sala 0 (+192). El checksum de cabecera y los round-trips binarios pasan; la ejecución real en mGBA sigue pendiente y no se afirma que el crash esté resuelto. Véase [V1_4_RENDER_FIX.md](V1_4_RENDER_FIX.md).
