@@ -64,6 +64,28 @@ class TestGbaLabConfig(unittest.TestCase):
         for first, second in zip(spans, spans[1:]):
             self.assertLessEqual(first[1], second[0], f"{first[2]} overlaps {second[2]}")
 
+    def test_room_map_resource_ranges_are_contiguous_and_consistent(self):
+        profile = CONFIG["profiles"]["zector_cero_v1_7"]
+        checks = profile["room_map_checks"]
+        self.assertEqual(len(checks), 3)
+        spans = []
+        for item in checks:
+            start = n(item["offset"])
+            used = int(item["used_bytes"])
+            reserved = n(item["reserved_bytes"])
+            self.assertGreater(used, 0, item["name"])
+            self.assertGreaterEqual(reserved, used, item["name"])
+            self.assertLessEqual(start + reserved, 8 * 1024 * 1024, item["name"])
+            spans.append((start, start + reserved, item["name"]))
+        spans.sort()
+        for first, second in zip(spans, spans[1:]):
+            self.assertLessEqual(first[1], second[0], f"{first[2]} overlaps {second[2]}")
+        bg1, bg2 = checks[1], checks[2]
+        self.assertEqual((bg1["expected_width"], bg1["expected_height"]), (34, 14))
+        self.assertEqual((bg2["expected_width"], bg2["expected_height"]), (34, 14))
+        self.assertEqual(bg1["used_bytes"], 22)
+        self.assertEqual(bg2["used_bytes"], 414)
+
     def test_all_configured_pointer_targets_fit_in_rom(self):
         for area in ("room0_v1_5", "custom_title_v1_5"):
             for row in CONFIG["gba_hardware"][area]["pointer_sites"]:
