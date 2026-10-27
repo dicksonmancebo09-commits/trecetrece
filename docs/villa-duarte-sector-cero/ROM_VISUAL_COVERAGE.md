@@ -69,3 +69,7 @@ La ROM solo podrá describirse como visualmente transformada de extremo a extrem
 6. se informe por separado qué se probó y qué no.
 
 Una matriz sin completar no es un defecto: sirve para que el progreso sea medible y para evitar volver a afirmar que una única sala equivale al juego completo.
+
+## Candidata v1.1 QA Viewer — 2026-10-27
+
+Se generó una ROM privada con una pantalla de revisión previa al juego para inspeccionar dos conceptos originales (Entrada al Barrio y Callejones del Caliche) a 240 × 160. El parche BPS se reaplicó sobre v1.0 y la salida coincidió byte por byte; la cabecera conserva checksum 0x98. **Pendiente de prueba en emulador.** Esta herramienta no cuenta como reemplazo de tilesets/mapas del juego ni como integración de la traducción completa. Detalles y hashes en [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
