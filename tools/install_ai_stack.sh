@@ -26,7 +26,7 @@ command -v git >/dev/null || { echo "ERROR: Git is required." >&2; exit 1; }
 command -v curl >/dev/null || { echo "ERROR: curl is required." >&2; exit 1; }
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 command -v "$PYTHON_BIN" >/dev/null || { echo "ERROR: Python 3.12+ is required. In Codespaces the devcontainer feature installs it." >&2; exit 1; }
-"$PYTHON_BIN" -c 'import sys; sys.exit(0 if sys.version_info >= (3,12) else 1' || {
+"$PYTHON_BIN" -c 'import sys; sys.exit(0 if sys.version_info >= (3,12) else 1)' || {
   echo "ERROR: Python 3.12 or newer is required. Found: $("$PYTHON_BIN" --version 2>&1)" >&2
   exit 1
 }
@@ -34,7 +34,7 @@ command -v "$PYTHON_BIN" >/dev/null || { echo "ERROR: Python 3.12+ is required. 
 mkdir -p "$AI_ROOT"
 
 echo "[1/4] Installing REA and OmniRoute CLI tools..."
-npm install --global rea-agents@6.8.0 omniroute@latest
+npm install --global --allow-scripts=omniroute,keytar,onnxruntime-node,@parcel/watcher,@swc/core,protobufjs,esbuild rea-agents@6.8.0 omniroute@latest
 rea --version
 omniroute --version 2>/dev/null || true
 
