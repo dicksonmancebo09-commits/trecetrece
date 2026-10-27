@@ -44,6 +44,22 @@ Paquete editable guardado en `assets/tiles/scenario-01/`:
 **Comprobado:** los 3 SVG pasan una comprobación básica de estructura de etiquetas; la paleta de colores visibles coincide con los 15 colores documentados; el JSON se analiza y registra 1.024 celdas posibles en la cuadrícula.  
 **Pendiente:** abrir en un editor gráfico, exportar PNG a resolución nativa, validar el remapeo de color y la transparencia según BG/OBJ, comparar con la paleta y tiles reales de la sala de referencia, y probar dentro del juego. No se ha modificado la ROM.
 
+## Paquete de producción — Escenario 2: Callejones del Caliche
+
+Recursos registrados en `assets/tiles/scenario-02/`:
+
+- [Catálogo y especificaciones](../../assets/tiles/scenario-02/README.md)
+- [Atlas SVG de tiles, 256 × 256](../../assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg)
+- [Atlas PNG indexado, 256 × 256](../../assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png)
+- [Composición por 11 capas](../../assets/tiles/scenario-02/scenario-02-layered-composition.svg)
+- [Vista previa SVG](../../assets/tiles/scenario-02/scenario-02-native-preview.svg)
+- [Vista previa PNG nativa, 240 × 160](../../assets/tiles/scenario-02/scenario-02-native-preview.png)
+- [Metadatos de paleta y cuadrícula](../../assets/tiles/scenario-02/tile-atlas-metadata.json)
+
+**Validación realizada:** los SVG pasan una comprobación básica de estructura; el atlas exporta a 256 × 256 con 15 colores visibles y huecos alfa; la vista exporta a 240 × 160 con los mismos 15 colores y sin transparencia. Ambos PNG están guardados en el repositorio. No se ha probado el arte en Inkscape, en la ROM ni en un emulador, y no se declara compatibilidad GBA.
+
+**Referencias observadas:** un reportaje de Hoy sobre El Caliche muestra un callejón angosto, fachadas pintadas, muros de bloque y pavimento irregular; Diario Libre aporta referencias de frentes domésticos y ventanas con rejas. Las fotos no se incorporan como texturas ni se copian directamente.
+
 ## Punto técnico de partida documentado
 
 Consultar:
@@ -56,11 +72,11 @@ El informe de línea base documenta la ROM de referencia y prototipos anteriores
 
 ## Siguiente secuencia de trabajo
 
-1. Abrir y revisar la composición de 9 capas en un editor SVG compatible, comprobando la visibilidad y edición de cada capa.
-2. Exportar el atlas y la composición a PNG con dimensiones nativas declaradas, sin interpolación ni deformación; inspeccionar color y transparencia.
-3. Confirmar el recurso/sala de referencia y obtener una captura original reproducible.
-4. Comparar las piezas del atlas con tiles, paletas y dependencias de esa sala, y adaptar el mapeo sin sobrescribir originales.
-5. Probar una escena pequeña en herramienta/emulador antes de extender el sistema a más habitaciones.
+1. Seguir creando la identidad modular del escenario 3, La Francia Nueva, siguiendo la guía de siete escenarios y usando referencias documentales específicas.
+2. Mantener los paquetes de los escenarios 1 y 2 como borradores editables; no convertirlos en tilesets ROM sin identificar primero los recursos reales de la sala objetivo.
+3. Obtener una captura original reproducible de la sala técnica, abrir los recursos en una herramienta compatible y documentar mapa, tiles, paleta, compresión y dependencias.
+4. Comparar los paquetes de arte con los recursos reales, hacer un mapeo pequeño y reversible y registrar diferencias visuales.
+5. Solo entonces probar la escena en una herramienta/emulador, manteniendo la ROM original intacta.
 
 ## Regla de continuidad entre conversaciones
 
