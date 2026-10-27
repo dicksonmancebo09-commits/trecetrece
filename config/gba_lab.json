@@ -68,6 +68,38 @@
           "expected_uncompressed_bytes": 20480,
           "description": "Original urban title background; reallocated outside the original slot"
         }
+      ],
+      "pointer_checks": [
+        {
+          "file_offset": "0x3C0014",
+          "expected_target_bus_address": "0x087B0000",
+          "purpose": "Main Deck sala 0: tabla de metatiles"
+        },
+        {
+          "file_offset": "0x3C2C58",
+          "expected_target_bus_address": "0x087B2000",
+          "purpose": "Main Deck sala 0: mapa BG1"
+        },
+        {
+          "file_offset": "0x3C2C5C",
+          "expected_target_bus_address": "0x087B2400",
+          "purpose": "Main Deck sala 0: mapa BG2"
+        },
+        {
+          "file_offset": "0x86AB0",
+          "expected_target_bus_address": "0x087C4000",
+          "purpose": "Título: gráficos urbanos"
+        },
+        {
+          "file_offset": "0x86AC4",
+          "expected_target_bus_address": "0x087C0000",
+          "purpose": "Título: tilemap urbano"
+        },
+        {
+          "file_offset": "0x86AD4",
+          "expected_target_bus_address": "0x087C1000",
+          "purpose": "Título: paleta urbana"
+        }
       ]
     },
     "zector_cero_v1_6": {
@@ -113,6 +145,38 @@
           "encoding": "gba_lz77",
           "expected_uncompressed_bytes": 20480,
           "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ],
+      "pointer_checks": [
+        {
+          "file_offset": "0x3C0014",
+          "expected_target_bus_address": "0x087B0000",
+          "purpose": "Main Deck sala 0: tabla de metatiles"
+        },
+        {
+          "file_offset": "0x3C2C58",
+          "expected_target_bus_address": "0x087B2000",
+          "purpose": "Main Deck sala 0: mapa BG1"
+        },
+        {
+          "file_offset": "0x3C2C5C",
+          "expected_target_bus_address": "0x087B2400",
+          "purpose": "Main Deck sala 0: mapa BG2"
+        },
+        {
+          "file_offset": "0x86AB0",
+          "expected_target_bus_address": "0x087C4000",
+          "purpose": "Título: gráficos urbanos"
+        },
+        {
+          "file_offset": "0x86AC4",
+          "expected_target_bus_address": "0x087C0000",
+          "purpose": "Título: tilemap urbano"
+        },
+        {
+          "file_offset": "0x86AD4",
+          "expected_target_bus_address": "0x087C1000",
+          "purpose": "Título: paleta urbana"
         }
       ]
     },
@@ -203,6 +267,38 @@
           "encoding": "gba_lz77",
           "expected_uncompressed_bytes": 20480,
           "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ],
+      "pointer_checks": [
+        {
+          "file_offset": "0x3C0014",
+          "expected_target_bus_address": "0x087B0000",
+          "purpose": "Main Deck sala 0: tabla de metatiles"
+        },
+        {
+          "file_offset": "0x3C2C58",
+          "expected_target_bus_address": "0x087B2000",
+          "purpose": "Main Deck sala 0: mapa BG1"
+        },
+        {
+          "file_offset": "0x3C2C5C",
+          "expected_target_bus_address": "0x087B2400",
+          "purpose": "Main Deck sala 0: mapa BG2"
+        },
+        {
+          "file_offset": "0x86AB0",
+          "expected_target_bus_address": "0x087C4000",
+          "purpose": "Título: gráficos urbanos"
+        },
+        {
+          "file_offset": "0x86AC4",
+          "expected_target_bus_address": "0x087C0000",
+          "purpose": "Título: tilemap urbano"
+        },
+        {
+          "file_offset": "0x86AD4",
+          "expected_target_bus_address": "0x087C1000",
+          "purpose": "Título: paleta urbana"
         }
       ]
     },
