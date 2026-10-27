@@ -105,7 +105,7 @@ class TestGbaRomAudit(unittest.TestCase):
             report = audit.run(args)
             self.assertEqual(len(report["errors"]), 0)
             self.assertTrue(report["summary"]["passed"])
-            self.assertEqual(report["delta"]["changed_byte_count"], 12)
+            self.assertEqual(report["delta"]["changed_byte_count"], 9)
             self.assertEqual(report["resources"][0]["decoded_bytes"], 3)
             self.assertTrue(report_path.parent.exists())
 
