@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "asset_name": "Scenario 01 — Entrada al Barrio",
+  "status": "editable-draft",
+  "generated_date": "2026-10-27",
+  "source_basis": "Original conceptual asset created for this repository; inspired by visual features described for Villa Duarte, Santo Domingo Este.",
+  "files": {
+    "atlas": "assets/tiles/scenario-01/scenario-01-villa-duarte-tiles.svg",
+    "catalogue": "assets/tiles/scenario-01/README.md",
+    "preview": "assets/tiles/scenario-01/scenario-01-native-preview.svg"
+  },
+  "grid": {
+    "canvas_width_px": 256,
+    "canvas_height_px": 256,
+    "tile_width_px": 8,
+    "tile_height_px": 8,
+    "columns": 32,
+    "rows": 32,
+    "index_formula": "tile_y * 32 + tile_x",
+    "origin": "top-left"
+  },
+  "preview": {
+    "coordinate_width_px": 240,
+    "coordinate_height_px": 160,
+    "display_width_px": 960,
+    "display_height_px": 640,
+    "export_native_size": "240x160"
+  },
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "hex": "#00000000"
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "hex": "#172336"
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "hex": "#26394A"
+    },
+    {
+      "index": 3,
+      "name": "darkConcrete",
+      "hex": "#4F5C61"
+    },
+    {
+      "index": 4,
+      "name": "midConcrete",
+      "hex": "#7C817A"
+    },
+    {
+      "index": 5,
+      "name": "concrete",
+      "hex": "#B5AD9A"
+    },
+    {
+      "index": 6,
+      "name": "cream",
+      "hex": "#E2D6BA"
+    },
+    {
+      "index": 7,
+      "name": "coral",
+      "hex": "#C75D4B"
+    },
+    {
+      "index": 8,
+      "name": "coralLight",
+      "hex": "#E18365"
+    },
+    {
+      "index": 9,
+      "name": "ochre",
+      "hex": "#D69A45"
+    },
+    {
+      "index": 10,
+      "name": "teal",
+      "hex": "#448A80"
+    },
+    {
+      "index": 11,
+      "name": "mint",
+      "hex": "#76B7A1"
+    },
+    {
+      "index": 12,
+      "name": "glass",
+      "hex": "#31586D"
+    },
+    {
+      "index": 13,
+      "name": "sky",
+      "hex": "#87B8C3"
+    },
+    {
+      "index": 14,
+      "name": "foliage",
+      "hex": "#3D7750"
+    },
+    {
+      "index": 15,
+      "name": "highlight",
+      "hex": "#F4D18A"
+    }
+  ],
+  "regions": [
+    {
+      "name": "painted facade fills",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 32
+    },
+    {
+      "name": "weathered plaster and exposed block",
+      "x": 0,
+      "y": 32,
+      "width": 256,
+      "height": 32
+    },
+    {
+      "name": "windows",
+      "x": 0,
+      "y": 64,
+      "width": 256,
+      "height": 32,
+      "module_width": 16,
+      "module_height": 16
+    },
+    {
+      "name": "doors, shutters, bars",
+      "x": 0,
+      "y": 96,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "fictional shop signs",
+      "x": 0,
+      "y": 128,
+      "width": 256,
+      "height": 16,
+      "module_width": 32,
+      "module_height": 16
+    },
+    {
+      "name": "awnings and counters",
+      "x": 0,
+      "y": 144,
+      "width": 256,
+      "height": 16,
+      "module_width": 32,
+      "module_height": 16
+    },
+    {
+      "name": "plants / small greenery",
+      "x": 0,
+      "y": 160,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "overhead wire segments",
+      "x": 0,
+      "y": 184,
+      "width": 256,
+      "height": 8,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "sidewalk",
+      "x": 0,
+      "y": 192,
+      "width": 256,
+      "height": 16,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "curb",
+      "x": 0,
+      "y": 208,
+      "width": 256,
+      "height": 8,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "facade foundation",
+      "x": 0,
+      "y": 216,
+      "width": 256,
+      "height": 8,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "asphalt",
+      "x": 0,
+      "y": 224,
+      "width": 256,
+      "height": 16,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "street props",
+      "x": 0,
+      "y": 240,
+      "width": 256,
+      "height": 16,
+      "module_width": 16,
+      "module_height": 16
+    }
+  ],
+  "validation": {
+    "svg_editable": true,
+    "structural_checks": "pending",
+    "native_png_export": "pending",
+    "game_engine_test": "not_run",
+    "rom_compatible": "not_verified",
+    "rom_modified": false
+  }
+}
