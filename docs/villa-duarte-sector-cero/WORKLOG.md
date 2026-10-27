@@ -130,3 +130,11 @@ Para cada cambio futuro:
 - Se usa el área de datos redirigida por los punteros de v1.0. El clipdata/collision map y el código de arranque se preservan.
 - La reconstrucción gráfica procede de los datos escritos en la ROM; no es captura de emulador.
 - Pendiente: prueba real en mGBA/MAGE y conversión de los otros mapas, player/enemigos, HUD, cinemáticas y diálogos.
+
+## 2026-10-27 — Auditoría posterior a v1.3 tras reporte de crash
+
+- El usuario reportó pantalla de título ilegible y bloqueo/crash. Se retira v1.3 como build funcional.
+- Fallo visual demostrado: el tilemap de título usa banco de paleta 0, pero el código original carga la paleta de fondo en `PALRAM_BASE + 0x100` (bancos 8–15). La reconstrucción anterior usó incorrectamente la paleta como si empezara en el banco 0.
+- Rectificación: las referencias a `0x087B0000`, `0x087B2000` y `0x087B2400` sí existen en la ROM; no es correcto afirmar que los nuevos mapas estaban desconectados.
+- Las comprobaciones estáticas de tileset/table/RLE pasan, pero no demuestran que la ROM funcione. El crash aún no se ha reproducido en emulador y no se asigna una causa sin evidencia.
+- Acción para la siguiente versión: corregir banco de paleta y hacer pruebas de aislamiento título/sala con mGBA/MAGE antes de entregar otra ROM. Ver [POSTMORTEM_V1_3.md](POSTMORTEM_V1_3.md).
