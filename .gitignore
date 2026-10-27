@@ -1,2 +1,13 @@
 # ROMs and analysis material must remain local, outside the public repository.
 /private-roms/
+
+# Local AI tools, model checkpoints and generated output (never commit model weights).
+/ComfyUI/
+/AI-Tools/
+/models/
+/outputs/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
