@@ -81,3 +81,21 @@ Para cada cambio futuro:
 - Comprobación estática: los SVG están equilibrados estructuralmente; se comprobó el tamaño exacto de ambas exportaciones y que no aparecen colores fuera de la paleta de trabajo. Los PNG se verificaron por tamaño, modo, conteo de color y alfa.
 - **Estado real:** concepto/atlas modular editable guardado en GitHub y exportaciones rasterizadas verificadas. No se ha probado el archivo en un editor gráfico, no se ha adaptado a paletas/tilemaps de la ROM y no hay prueba en motor ni emulador. No se modificó la ROM.
 - Próximo trabajo creativo: escenario 3 — Calle Residencial, con referencias específicas de La Francia Nueva. Mantener la validación de ROM como una fase técnica aparte.
+
+## 2026-10-27 — Localización caribeña antes de probar la ROM
+
+- La inspección del árbol público de `main` no encontró archivos de diálogo ni una tabla de traducción activa vinculada a la ROM. No se puede afirmar que el texto actualmente mostrado por la ROM haya sido revisado o modificado por esta tarea.
+- Se creó `localization/es-419/VOICE_AND_SLANG_GUIDE.md`: voz dominicana como base y perfiles de habla separados para Cuba, Puerto Rico y Jamaica; México, Colombia y Argentina como cameos opcionales. El Patois/Patwa se trata como variedad criolla con contexto propio, no como español mal pronunciado.
+- Se creó `localization/es-419/dialogue.json` con 27 entradas de diálogo original distribuidas entre siete escenarios, 81 líneas con saltos manuales y 10 cadenas UI sin jerga. Se marca expresamente `draft-not-in-ROM`.
+- Se creó `localization/es-419/glossary.json` con 35 entradas regionales y referencias de consulta; y `localization/es-419/README.md` con el flujo de integración.
+- Se añadió el validador `tools/check_localization_es419.py` y `tests/test_localization_es419.py`. Ejecutados en una copia de trabajo descargada de GitHub: validador OK, 27 entradas, 81 líneas dentro del límite editorial provisional de 28 caracteres, 3 pruebas unitarias aprobadas.
+- Se actualizó el agente `.github/agents/metroid-re.agent.md` para exigir una auditoría de localización antes de cualquier prueba de ROM presentada como validación de texto.
+- **Estado:** paquete textual original y pruebas estáticas versionados. No se ha inyectado texto ni se ha probado la ROM. Pendiente identificar el texto traducido real, su encoding, tabla de caracteres, compresión, terminadores, punteros y límites de caja antes de adaptar nada.
+
+### Fuentes usadas para guía lingüística
+- Academia Dominicana de la Lengua: https://academia.org.do/2016/06/02/el-diccionario-fraseologico-del-espanol-dominicano/
+- Visit Jamaica, Patois: https://www.visitjamaica.com/discover-jamaica/people-heritage/language/
+- UC3M, guía de Puerto Rico: https://www.uc3m.es/secretaria-virtual/media/secretaria-virtual/doc/archivo/doc_mne_puerto-rico_mayaguez_guia/manual-para-estudiantes-visitantes.pdf
+- Cuban Spanish Academy: https://www.cubanspanishclasses.com/es/common-cuban-phrases/
+- Academia Mexicana de la Lengua: https://academia.org.mx/consultas/consultas-frecuentes/item/no-mames
+- Diccionario de Jergas de Habla Hispana: https://www.jergasdehablahispana.org/
