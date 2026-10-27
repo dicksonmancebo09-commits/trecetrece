@@ -98,3 +98,13 @@ El informe de línea base documenta la ROM de referencia y prototipos anteriores
 ## Regla de continuidad entre conversaciones
 
 Antes de repetir decisiones, revisar este archivo, la [guía de siete escenarios](SEVEN_SCENARIO_VISUAL_IDENTITIES.md), la [Biblia Visual](VILLA_DUARTE_VISUAL_BIBLE.md), el [Plan Maestro](VISUAL_TRANSFORMATION_PLAN.md), la [Línea Base](BASELINE_VISUAL_TAREA_01.md) y el historial de commits. Actualizar este archivo cuando cambien el título, alcance, assets o estado de validación.
+
+## Candidata privada v1.1 — QA Viewer (27-10-2026)
+
+- Build creada a partir de la salida v1.0 Urban Opening: SHA-256 de entrada `8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5`.
+- Candidata local: 16 MiB; SHA-256 `02bec9687e9e93d2a27aa595b48df74a1142e29288cfed37b8d6d468e350cbe1`.
+- Visor de arranque en 240 × 160 BGR555 con muestras originales de Entrada al Barrio y Callejones del Caliche; L/R cambia la escena y START intenta continuar a la entrada original v1.0.
+- El parche BPS (153.927 bytes) se reaplicó a la build v1.0 y produjo la ROM candidata byte por byte.
+- Checksum de cabecera conservado y recalculado: 0x98.
+- **Pendiente:** prueba real en emulador. No se han reemplazado los tiles/maps de las salas originales ni conectado el paquete completo de diálogos a la rutina de texto. La candidata está documentada en [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
+- La ROM y el parche no se suben al repositorio público.
