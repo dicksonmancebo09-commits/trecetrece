@@ -257,7 +257,9 @@
         255
       ],
       "visible_colors": 15,
-      "unexpected_colors": 0
+      "unexpected_colors": 0,
+      "git_blob_sha": "956d25467c669b33d44fa8c5c4fa0ab975064c27",
+      "bytes": 2952
     },
     "png_preview": {
       "size": "240x160",
@@ -267,8 +269,11 @@
         255
       ],
       "visible_colors": 15,
-      "unexpected_colors": 0
-    }
+      "unexpected_colors": 0,
+      "git_blob_sha": "149946eb7ed78a8be56fd3ec5fd127abc11b12b7",
+      "bytes": 2376
+    },
+    "repository_blob_check": "GitHub Git blob SHAs match the locally exported PNG files"
   },
   "notes": [
     "All visuals are original SVG geometry. The source images are observation references, not copied or embedded textures.",
