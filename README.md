@@ -11,6 +11,7 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 - [Bitácora de investigación y pruebas](docs/villa-duarte-sector-cero/WORKLOG.md)
 - [Auditoría de los archivos existentes](docs/villa-duarte-sector-cero/REPOSITORY_AUDIT.md)
 - [Registro de fuentes y verificación](docs/villa-duarte-sector-cero/research/RESEARCH_REGISTER.md)
+- [Instalar REA en Codespaces](docs/villa-duarte-sector-cero/research/REA_CODESPACES_SETUP.md)
 
 ## Regla de trabajo
 

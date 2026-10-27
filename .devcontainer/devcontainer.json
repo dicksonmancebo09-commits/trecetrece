@@ -1,0 +1,12 @@
+{
+  "name": "trecetrece — REA",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install --global rea-agents@6.8.0 && rea --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot"
+      ]
+    }
+  }
+}
