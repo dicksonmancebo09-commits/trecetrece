@@ -5,12 +5,22 @@
 
 ## Objetivo
 
-Transformar la presentación visual poco a poco, con revisiones pequeñas y reversibles. Mantendremos separadas dos salidas:
+Transformar visualmente la ROM completa poco a poco, con revisiones pequeñas y reversibles. La primera sala es una prueba de calibración, no el alcance final. Debemos llevar un inventario de cobertura hasta incluir todas las áreas y categorías visuales aplicables. Mantendremos separadas dos salidas:
 
 1. **Ruta ROM/GBA privada:** cambios compatibles con los límites reales de la consola, probados sobre una copia local que no se publica.
 2. **Ruta de simulación independiente:** escenas y mecánicas editables en Unity o Unreal Engine, usando código propio y recursos con licencia verificada.
 
 Una captura o atlas de 4096 × 4096 sirve para inspección, comparación o presentación. No convierte una ROM de GBA en un juego 4K: la pantalla original es 240 × 160 y el hardware limita tiles, paletas y memoria. Los archivos maestros sin escalar se conservan siempre.
+
+## Control obligatorio antes de cada intento: pasado, presente y futuro
+
+**Pasado:** revisar las ROMs y prototipos anteriores disponibles, comparar hashes y cambios reales, identificar errores conocidos y no reutilizar offsets/punteros sin comprobarlos.
+
+**Presente:** confirmar qué archivos y herramientas están accesibles ahora, sus versiones y su estado real. No limitar automáticamente el trabajo a Codespaces; usar el entorno local de análisis y los conectores si existen. Nunca afirmar que se abrió una aplicación o se ejecutó una prueba sin evidencia.
+
+**Futuro:** antes de escribir, prever regresiones en tiles, mapas, paletas compartidas, compresión, referencias, colisiones, animaciones, compatibilidad con emuladores, layouts móviles y la posibilidad de volver a la versión anterior.
+
+Cada tarea debe terminar con una etiqueta real: **generado**, **comprobado estáticamente**, **probado en herramienta** o **probado en juego**. No declarar que toda la ROM está completada hasta que el inventario confirme la cobertura de todas las áreas y categorías aplicables.
 
 ## Dirección artística provisional
 
@@ -262,7 +272,7 @@ El primer sprint se limita a:
 6. probar la sala en marco horizontal y layout vertical;
 7. elegir dirección de arte antes de aplicarla a más salas.
 
-El primer objetivo medible es una sala coherente, editable y comparada. No es una ROM final ni un juego completo.
+El primer objetivo medible es una sala coherente, editable y comparada. Una vez aprobada la dirección visual, el trabajo se propaga por las demás salas, tilesets, paletas, sprites, animaciones, enemigos, efectos y elementos de interfaz hasta cubrir la ROM completa. La primera sala no es el límite del proyecto.
 
 ## Fuentes técnicas oficiales
 
