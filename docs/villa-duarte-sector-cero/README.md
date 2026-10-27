@@ -42,3 +42,15 @@ El alcance visual ya no se limita a una sala: la meta es transformar la ROM comp
 - [Arte y licencias](research/ART_DIRECTION_AND_LICENSES.md)
 - [Bitácora](WORKLOG.md)
 - [Auditoría del repositorio](REPOSITORY_AUDIT.md)
+
+## Herramientas de diagnóstico en ejecución — mGBA
+
+Se ha añadido un entorno de diagnóstico para Codespaces:
+
+- Instalador: [`tools/install_gba_emulator.sh`](../../tools/install_gba_emulator.sh)
+- Capturas y log: [`tools/run_gba_diagnostic.sh`](../../tools/run_gba_diagnostic.sh)
+- Procedimiento: [`MGBA_CODESPACES_SETUP.md`](MGBA_CODESPACES_SETUP.md)
+- Task VS Code: **GBA: diagnosticar ROM (capturas + log)**.
+- Workflow de comprobación de herramientas: [`gba-diagnostic-toolchain.yml`](../../.github/workflows/gba-diagnostic-toolchain.yml).
+
+**Límite actual:** el workflow de GitHub Actions valida las herramientas y la sintaxis, no ejecuta una ROM privada. Las ROMs permanecen en `private-roms/`, excluidas de Git. El diagnóstico de una compilación requiere guardar y revisar las capturas/logs reales producidos por mGBA.
