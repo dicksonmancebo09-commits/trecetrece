@@ -342,6 +342,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     resource_row["decode_error"] = str(exc)
                     check(f"resource_lz77_{name}", False, "valid complete GBA LZ77 stream", str(exc))
             elif encoding == "raw":
+                decoded_resources[name] = block
                 resource_row["decoded_bytes"] = used_bytes
                 if expected_unpacked is not None:
                     check(f"resource_raw_size_{name}", used_bytes == int(expected_unpacked),
