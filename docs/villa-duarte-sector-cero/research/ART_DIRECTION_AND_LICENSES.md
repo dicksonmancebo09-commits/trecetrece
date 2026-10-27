@@ -2,7 +2,9 @@
 
 ## Dirección artística
 
-Objetivo visual: barrio dominicano reconocible, con capas de edificios, balcones, cables aéreos, colmados, aceras, calles y transporte local. La ambientación no debe depender de copiar el arte de un juego comercial.
+Objetivo visual principal: Villa Duarte, Santo Domingo Este, y la textura cotidiana de sus barrios. Evitar un barrio dominicano genérico. Estudiar fachadas de colores pastel o vivos, hormigón y bloques, rejas, galerías, balcones, pequeños comercios/talleres, cables aéreos, callejones, aceras, coches aparcados y vegetación tropical solo donde las referencias lo respalden. Docking Bays/Main Deck room 1 es un benchmark técnico de la ROM, no una referencia artística.
+
+La biblia visual detallada, incluyendo fuentes fotográficas de Villa Duarte, El Caliche y La Francia Nueva, está en [VILLA_DUARTE_VISUAL_BIBLE.md](../VILLA_DUARTE_VISUAL_BIBLE.md). Las fotografías sirven para observar características del lugar y no deben copiarse como assets sin revisar su licencia específica.
 
 Las referencias discutidas hasta ahora sirven para estudiar principios distintos:
 - Castlevania: Aria of Sorrow: atmósfera, contraste y composición por capas.
