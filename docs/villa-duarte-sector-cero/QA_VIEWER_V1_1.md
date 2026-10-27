@@ -1,3 +1,5 @@
+> **OBSOLETA — NO USAR COMO BUILD ACTUAL.** La v1.1 añadía un visor antes del juego y luego intentaba saltar a la entrada original; no era una conversión real de la pantalla de título y no debe tratarse como la ROM de prueba vigente. Usa la [v1.2 — sustitución real de recursos de título](REAL_TITLE_RESKIN_V1_2.md), que reemplaza recursos dentro de la ROM y conserva el arranque original.
+
 # Candidata v1.1 — QA Viewer de escenarios
 
 **Proyecto:** LATINO AMÉRICA Zector Cero  
