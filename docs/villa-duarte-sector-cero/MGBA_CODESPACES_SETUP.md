@@ -69,3 +69,10 @@ mgba-qt private-roms/LATINO_AMERICA_Zector_Cero_v1.3.gba
 \`\`\`
 
 Teclas predeterminadas en mGBA: Enter = START, X = A y Z = B.
+
+## Verificación de la instalación mGBA (27-10-2026)
+
+- GitHub Actions: [ejecución de validación](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/40514550712) completada con éxito.
+- En runner Ubuntu 24.04 se instaló mGBA Qt/SDL **0.10.2**, Xvfb, xdotool e ImageMagick.
+- Pasaron la detección de mGBA, la comprobación sintáctica `bash -n` de ambos scripts y la compilación sintáctica del probe Python.
+- **Límite deliberado:** esa ejecución no ejecutó una ROM. El archivo privado permanece en `private-roms/`; el test real requiere ejecutar el script de diagnóstico en el Codespace que contiene la ROM.
