@@ -87,3 +87,4 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - [Guía de instalación](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md).
 
 - [v1.6 — limpieza del título y salto directo al hangar](docs/villa-duarte-sector-cero/V1_6_TITLE_AND_INTRO_FLOW.md)
+- [v1.7 — corrección del flujo de título y hangar](docs/villa-duarte-sector-cero/V1_7_TITLE_HANGAR_FIX.md)
