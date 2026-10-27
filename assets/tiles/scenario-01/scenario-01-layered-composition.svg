@@ -2,6 +2,7 @@
 <title>Escenario 01 — composición por capas para LATINO AMÉRICA Zector Cero</title>
 <desc>Composición vectorial editable a coordenadas 240x160; cada grupo Inkscape es una capa separable. Todos los grupos usan solo los 15 colores visibles provisionales del atlas. El marcador de jugador es un placeholder original, no un sprite del juego base. No está integrado ni probado en ROM.</desc>
 <g id="00-background" inkscape:groupmode="layer" inkscape:label="Cielo y atmósfera">
+<rect x="0" y="0" width="240" height="160" fill="#26394A"/>
 <rect x="0" y="0" width="240" height="8" fill="#26394A"/>
 <rect x="0" y="8" width="240" height="8" fill="#31586D"/>
 <rect x="0" y="16" width="240" height="8" fill="#7C817A"/>
