@@ -115,3 +115,11 @@ Para cada cambio futuro:
 - Verificación estática: dirección de entrada 0x08800000; dos frames de 76.800 bytes en BGR555; checksum de cabecera 0x98; el parche BPS vuelve a producir la ROM candidata byte por byte.
 - Estado: **no probado en emulador**. No confundir este visor con la integración de los tilesets en los mapas reales o la inserción del paquete de diálogos en la rutina de texto.
 - Entrega privada; no se publican ROM ni parche binario en este repositorio. Ver [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
+
+## 2026-10-27 — v1.2 Real Title Reskin
+
+- Corregido el enfoque anterior: la QA Viewer v1.1 no se considera build de prueba válida.
+- Se sustituyeron los recursos reales de fondo, logo y objetos de la pantalla de título dentro de la ROM; se actualizó el identificador de cabecera.
+- Verificación estática: LZ77 round-trip, límites de recursos, checksum GBA y reaplicación de BPS. Emulador pendiente.
+- La v1.2 mantiene los datos de reskin de la sala 0 agregados por la v1.0, pero no declara su apariencia probada en juego.
+- Resto del juego sigue pendiente de reskin integral.
