@@ -11,9 +11,12 @@ on:
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
       - "tools/apply_guarded_patch.py"
+      - "tools/generate_mgba_lua_trace.py"
+      - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
+      - "tests/test_gba_lua_trace_generator.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
@@ -23,7 +26,13 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "tools/apply_guarded_patch.py"
+      - "tools/generate_mgba_lua_trace.py"
+      - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_apply_guarded_patch.py"
+      - "tests/test_gba_config.py"
+      - "tests/test_gba_lua_trace_generator.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
 
 permissions:
@@ -40,7 +49,7 @@ jobs:
       - name: Install mGBA and diagnostic dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3
+          sudo apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3 lua5.4
 
       - name: Confirm emulator installation
         run: |
@@ -55,18 +64,28 @@ jobs:
           xvfb-run --help >/dev/null
           xdotool --version
           import -version | head -n 2
+          luac5.4 -v
 
-      - name: Validate parameter profile
+      - name: Validate parameter profile and tools
         run: |
           python3 -m json.tool config/gba_lab.json >/dev/null
           python3 tools/gba_rom_audit.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
+          python3 tools/apply_guarded_patch.py --help >/dev/null
+          python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
+
+      - name: Generate Lua trace and validate Lua syntax
+        run: |
+          mkdir -p private-roms/diagnostics
+          python3 tools/generate_mgba_lua_trace.py
+          test -s private-roms/diagnostics/mgba-trace-generated.lua
+          luac5.4 -p private-roms/diagnostics/mgba-trace-generated.lua
 
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
@@ -74,13 +93,13 @@ jobs:
       - name: Unit tests — guarded patching
         run: python3 -m unittest discover -s tests -p "test_apply_guarded_patch.py" -v
 
-      - name: Check guarded patch CLI
-        run: python3 tools/apply_guarded_patch.py --help >/dev/null
-
       - name: Unit tests — configuration invariants
         run: python3 -m unittest discover -s tests -p "test_gba_config.py" -v
 
+      - name: Unit tests — mGBA Lua trace generator
+        run: python3 -m unittest discover -s tests -p "test_gba_lua_trace_generator.py" -v
+
       - name: State test boundary
         run: |
-          echo "mGBA and the profile-driven tools are installed and tested."
-          echo "No ROM was run: test ROMs remain in ignored private-roms/ and are not stored in GitHub."
+          echo "mGBA, GBA profiles, static audit, guarded patcher and Lua trace tools are installed and tested."
+          echo "No user ROM was run: test ROMs remain in ignored private-roms/ and are not stored in GitHub."
