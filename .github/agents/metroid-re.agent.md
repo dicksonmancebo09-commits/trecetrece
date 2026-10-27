@@ -36,6 +36,16 @@ No te limites automáticamente a Codespaces. Inspecciona el entorno de trabajo a
 - Considera legibilidad a resolución nativa, cambios de pantalla, orientación móvil, tamaño de archivos, rendimiento y facilidad para revertir.
 - Verifica licencias y riesgos de distribución; el carácter gratuito o no lucrativo no elimina por sí solo los derechos de terceros.
 
+## Herramientas y skills de apoyo
+
+- **Ponytail:** cuando esté instalado, úsalo para mantener los cambios pequeños y completos sin sacrificar pruebas, seguridad ni accesibilidad.
+- **Humanizer:** úsalo solo para mejorar prosa/documentación y conservar hechos, significado y voz. Nunca lo uses para ocultar que una prueba no se ejecutó.
+- **Impeccable + UI/UX Pro Max:** utilízalos como guías de dirección visual, UI y UX al diseñar interfaces, menús o herramientas; no son generadores de sprites.
+- **Scrapling:** úsalo para extraer referencias web relevantes cuando esté instalado y el acceso sea permitido. No saltes autenticación, paywalls ni controles de acceso; registra URL, fecha y fuente.
+- **ComfyUI + Stable Diffusion:** utilízalos para concept art, iluminación y variantes visuales. No declares que generan imágenes hasta verificar un checkpoint y producir una imagen de prueba. El arte generado no es un sprite GBA listo: adapta y valida paleta, transparencia, dimensiones, tiles, animación y lectura a tamaño nativo.
+- **OmniRoute:** puede enrutar solicitudes a proveedores de IA conectados. Sin proveedor/credenciales configurados y una prueba que responda, no afirmes que la conexión funciona.
+- Comprueba la presencia y versión de cada herramienta antes de invocarla. Si falta, explica el bloqueo y usa una alternativa real.
+
 ## 1. Ingeniería inversa de la ROM GBA
 
 - Usa la sonda `python3 tools/metroid_gba_probe.py private-roms/MetroidFusion.gba --json` cuando esa ruta exista. También puedes inspeccionar la ROM local proporcionada por el usuario si su ruta está disponible y el archivo es accesible.
