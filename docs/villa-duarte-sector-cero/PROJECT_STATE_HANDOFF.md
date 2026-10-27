@@ -19,12 +19,15 @@
 4. La primera calle conceptual es una propuesta de dirección artística, no un escenario ya integrado ni una modificación de ROM.
 5. No dar por completado un cambio hasta registrar su archivo/recurso y el nivel real de validación: generado, comprobado estáticamente, probado en herramienta o probado en juego.
 6. Mantener copias originales y cambios pequeños y reversibles. No publicar ROMs comerciales, ROMs derivadas, parches ni recursos propietarios copiados.
+7. **Flujo acordado:** las directrices llegan por la conversación; los artefactos y cambios del proyecto se guardan en este repositorio como fuente compartida de continuidad. Informar rutas y commits al cerrar cada lote.
 
-## Imagen conceptual inicial
+## Primer concepto visual versionado
 
-Se generó en esta conversación un tablero visual panorámico con el rótulo **LATINO AMÉRICA Zector Cero**, una calle de Villa Duarte al atardecer, un colmado, edificios de hormigón, rejas, cableado, vegetación y paneles de referencias, tiles, paleta y mapa de escenario.
-
-**Estado del recurso:** concepto generado; la imagen binaria todavía debe quedar incorporada como archivo descargable en el repositorio. No afirmar que ya está subida hasta verificar su ruta en GitHub.
+- **Archivo editable:** [latino-america-zector-cero-villa-duarte-street.svg](../../assets/concept/latino-america-zector-cero-villa-duarte-street.svg)
+- **Formato:** SVG vectorial editable, 1600 × 960.
+- **Contenido:** título del juego, calle inspirada en Villa Duarte, colmado ficticio, fachadas, balcones/rejas, cables aéreos, vegetación, motor, personaje explorador original, paleta provisional y panel de estado.
+- **Estado:** añadido a GitHub; concepto vectorial, no tileset final, no captura de emulador y no integrado en la ROM.
+- El tablero rasterizado generado anteriormente en el chat no debe confundirse con este SVG editable; el recurso de trabajo versionado aquí es el SVG enlazado arriba.
 
 ## Punto técnico de partida documentado
 
@@ -37,8 +40,8 @@ El informe de línea base documenta la ROM de referencia y prototipos anteriores
 
 ## Siguiente secuencia de trabajo
 
-1. Incorporar el tablero conceptual como asset versionado del proyecto.
-2. Desglosar la calle en capas y tiles originales: fachadas, puertas/ventanas/rejas, colmado y rótulos ficticios, cables/postes, vegetación, aceras y suelo.
+1. Revisar visualmente el SVG vectorial y preparar versiones por capas y piezas reutilizables.
+2. Desglosar la calle en tiles originales: fachadas, puertas/ventanas/rejas, colmado y rótulos ficticios, cables/postes, vegetación, aceras y suelo.
 3. Confirmar el recurso/sala técnica de la ROM y obtener una captura original reproducible.
 4. Crear una primera escena/tileset pequeño, preservando el original, y revisar legibilidad a resolución nativa.
 5. Validar el cambio en una herramienta o emulador antes de expandirlo a otras habitaciones.
