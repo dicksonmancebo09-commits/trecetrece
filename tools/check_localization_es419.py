@@ -69,7 +69,7 @@ def validate(data: dict) -> list[str]:
         (("acho,", "bendito,", "zumba,"), "lia"),
         (("no manches", "órale"), "chava"),
         (("parce,", "bacano"), "vale"),
-        (("quilombo", "che,"), "che"),
+        (("quilombo", "che, esto", "che, esto es"), "che"),
     ]
     for entry in dialogues:
         folded = "\n".join(entry.get("lines", [])).casefold()
