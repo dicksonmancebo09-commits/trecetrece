@@ -85,3 +85,5 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - Modelo de Stable Diffusion de 4.27 GB: instalar opcionalmente con `bash tools/install_ai_stack.sh --with-model`.
 - Instalación completa con checkpoint y navegadores de Scrapling: `bash tools/install_all_tools.sh --with-model --with-browsers`.
 - [Guía de instalación](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md).
+
+- [v1.6 — limpieza del título y salto directo al hangar](docs/villa-duarte-sector-cero/V1_6_TITLE_AND_INTRO_FLOW.md)
