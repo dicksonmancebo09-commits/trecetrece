@@ -68,6 +68,15 @@ Recursos registrados en `assets/tiles/scenario-02/`:
 - Las muestras priorizan español dominicano, con registros asignados a personajes cubanos, puertorriqueños y jamaiquinos; México, Colombia y Argentina se ofrecen como cameos opcionales. Los recursos son texto original de preproducción, **no se han insertado en la ROM**.
 - **Bloqueo previo a la prueba de ROM:** falta localizar la traducción real instalada, identificar la tabla/encoding y mapear las cadenas reales con IDs confirmados. Hasta completar esta auditoría y comprobar cortes, tildes, signos, apóstrofos y tamaño de cuadro, no presentar una ejecución en emulador como prueba de localización. Las pruebas actuales validan únicamente los archivos JSON y su formato editorial.
 
+## Prueba 01 de ROM — Urban Opening v1.0
+
+- [Informe de integridad](TEST_01_ROM_INTEGRITY.md)
+- [Vista de referencia de la sala](../../assets/test-builds/test-01/v1.0-urban-opening-room-reconstruction.png)
+- Se aplicó el parche IPS de la versión archivada a la ROM base local. La salida coincidió byte por byte con la build v1.0 guardada en la biblioteca.
+- SHA-256 salida esperada: `8b5e2a57bc45fbef9de3d258a50af21f7aa06a6248227b097072ece3374fe5f5`.
+- **Estado:** comprobado estáticamente. No probado en emulador; la imagen enlazada es una reconstrucción de sala, no una captura de ejecución. El parche y la ROM permanecen fuera del repositorio público.
+- La build v1.0 es un prototipo anterior: no incluye el arte de los escenarios 1/2 recientemente creado ni el paquete de localización es-419.
+
 ## Punto técnico de partida documentado
 
 Consultar:
