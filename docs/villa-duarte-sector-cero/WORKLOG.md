@@ -162,3 +162,11 @@ Para cada cambio futuro:
 - El metatile BG1 383 apunta ahora a un tile completamente vacío local 368 / hardware 560.
 - Round-trip de los recursos, referencias, checksum y reaplicación del BPS pasan validaciones estáticas; ZIP comprobado.
 - mGBA CPU test aún pendiente. Documento: [V1_5_ACTUAL_RENDER_FIX.md](V1_5_ACTUAL_RENDER_FIX.md).
+
+## 2026-10-27 — v1.6 Title & Intro Flow
+
+- Skip startup `IntroHandler` by returning TRUE, so AgbMain advances to the custom title instead of displaying the Nintendo/Metroid intro sequence.
+- NOP both calls that create original title copyright and PRESS START OAM objects. START input is unaffected.
+- On a new save when `introPlayed=false`, change the post-`NewFileIntroInit` state from 1 to 11 (`NewFileIntroLandingOnBsl`), bypassing story states 1–10.
+- Binary checks: 13 changed bytes across four ranges; expected-byte preconditions passed; header checksum 0x6D valid; BPS reapplied byte for byte.
+- Not run in mGBA yet; confirm splash, START, and a fresh-save hangar sequence at runtime. Details: [V1_6_TITLE_AND_INTRO_FLOW.md](V1_6_TITLE_AND_INTRO_FLOW.md).
