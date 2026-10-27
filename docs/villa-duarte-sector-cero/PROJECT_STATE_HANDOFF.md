@@ -126,3 +126,7 @@ Antes de repetir decisiones, revisar este archivo, la [guía de siete escenarios
 - El clipdata/colisiones y el código del juego permanecen intactos. La vista de sala se reconstruye a partir de recursos instalados, no es captura de emulador.
 - El resto del juego sigue pendiente de conversión integral; mGBA/MAGE no se ha ejecutado en este entorno.
 - Documento y alcance: [ROOM0_RESKIN_V1_3.md](ROOM0_RESKIN_V1_3.md).
+
+## Auditoría posterior a v1.3 (27-10-2026)
+
+La v1.3 se retira como candidata funcional tras el informe del usuario. Se ha identificado un fallo objetivo del título: el mapa selecciona banco de paleta 0, mientras que el código original carga la paleta nueva en el rango `PALRAM_BASE + 0x100` (bancos BG 8–15). La primera reconstrucción visual era estática e interpretaba mal ese banco. La causa exacta del crash de juego no está demostrada, porque no se logró ejecutar un emulador. Se rectifica también la sospecha previa de que los mapas no estaban conectados: las referencias de ROM a 0x087B0000/0x087B2000/0x087B2400 sí existen. Revisar [POSTMORTEM_V1_3.md](POSTMORTEM_V1_3.md); no llamar funcional a la v1.3.
