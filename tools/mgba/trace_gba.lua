@@ -22,7 +22,7 @@ local run_tag = os.date("%Y%m%d-%H%M%S")
 local log_path = OUT_DIR .. "/mgba-trace-" .. run_tag .. ".csv"
 local trace_file, open_error = io.open(log_path, "w")
 if not trace_file then
-    console:print("GBA trace error: cannot open " .. log_path .. ": " .. tostring(open_error))
+    console:log("GBA trace error: cannot open " .. log_path .. ": " .. tostring(open_error))
     return
 end
 
@@ -83,10 +83,10 @@ local function take_capture(relative_frame)
     local ok, err = pcall(function() emu:screenshot(filename) end)
     if ok then
         write_record(relative_frame, "screenshot:" .. filename)
-        console:print("GBA trace screenshot: " .. filename)
+        console:log("GBA trace screenshot: " .. filename)
     else
         write_record(relative_frame, "screenshot-error:" .. tostring(err))
-        console:print("GBA trace screenshot failed: " .. tostring(err))
+        console:log("GBA trace screenshot failed: " .. tostring(err))
     end
 end
 
@@ -106,10 +106,10 @@ end
 trace_file:write("relative_frame,event,pc,lr,sp,cpsr,main_game_mode,sub_game_mode_1,sub_game_mode_2,DISPCNT,BG1CNT,BG2CNT,BG3CNT,VCOUNT,KEYINPUT\n")
 trace_file:write("# game_title=" .. tostring(emu:getGameTitle()) .. ",game_code=" .. tostring(emu:getGameCode()) .. "\n")
 trace_file:flush()
-console:print("GBA trace started: " .. log_path)
-console:print("ROM: " .. tostring(emu:getGameTitle()) .. " / " .. tostring(emu:getGameCode()))
+console:log("GBA trace started: " .. log_path)
+console:log("ROM: " .. tostring(emu:getGameTitle()) .. " / " .. tostring(emu:getGameCode()))
 if not AUTO_INPUT then
-    console:print("AUTO_INPUT=false: no buttons will be pressed by this script.")
+    console:log("AUTO_INPUT=false: no buttons will be pressed by this script.")
 end
 
 local callback_id
@@ -138,7 +138,7 @@ callback_id = callbacks:add("frame", function()
         closed = true
         trace_file:flush()
         trace_file:close()
-        console:print("GBA trace complete. Inspect CSV and screenshots in " .. OUT_DIR)
+        console:log("GBA trace complete. Inspect CSV and screenshots in " .. OUT_DIR)
     end
 end)
 
