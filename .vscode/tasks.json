@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "gbaRomPath",
+      "type": "promptString",
+      "description": "Ruta a una ROM local dentro de private-roms/",
+      "default": "private-roms/LATINO_AMERICA_Zector_Cero_v1.3_TITLE_AND_FIRST_ROOM_RESKIN.gba"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "GBA: instalar mGBA y herramientas de diagnóstico",
+      "type": "shell",
+      "command": "bash tools/install_gba_emulator.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "GBA: diagnosticar ROM (capturas + log)",
+      "type": "shell",
+      "command": "bash tools/run_gba_diagnostic.sh \"${input:gbaRomPath}\"",
+      "problemMatcher": []
+    }
+  ]
+}
