@@ -81,6 +81,11 @@ class TestGbaRomAudit(unittest.TestCase):
                         "game_code": "TEST",
                         "header_complement": f"0x{target[0xBD]:02X}",
                         "expected_bytes": [{"offset": "0x120", "bytes_le": "78563412", "description": "test pointer"}],
+                        "pointer_checks": [{
+                            "file_offset": "0x130",
+                            "expected_target_bus_address": "0x08000180",
+                            "purpose": "synthetic pointer test"
+                        }],
                         "resource_ranges": [{
                             "name": "synthetic-lz77",
                             "offset": "0x150",
@@ -105,8 +110,10 @@ class TestGbaRomAudit(unittest.TestCase):
             report = audit.run(args)
             self.assertEqual(report["errors"], [], msg=json.dumps(report["errors"], indent=2))
             self.assertTrue(report["summary"]["passed"])
-            self.assertEqual(report["delta"]["changed_byte_count"], 9)
+            self.assertEqual(report["delta"]["changed_byte_count"], 13)
             self.assertEqual(report["resources"][0]["decoded_bytes"], 3)
+            self.assertEqual(report["pointer_checks"][0]["actual_target"], "0x08000180")
+            self.assertTrue(report["pointer_checks"][0]["target_within_rom"])
             self.assertTrue(report_path.parent.exists())
 
     def test_invalid_expected_bytes_are_detected(self):
