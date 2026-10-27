@@ -140,3 +140,7 @@ Se añadieron mGBA y herramientas de captura a la configuración de Codespaces. 
 ## v1.4 Render Fix (27-10-2026)
 
 La candidata privada v1.4 corrige los dos fallos de correspondencia gráfica detectados en la auditoría: banco de paleta del título 0 → 8 y base de índices hardware del tileset de la sala 0 (+192). El checksum de cabecera y los round-trips binarios pasan; la ejecución real en mGBA sigue pendiente y no se afirma que el crash esté resuelto. Véase [V1_4_RENDER_FIX.md](V1_4_RENDER_FIX.md).
+
+## v1.5 Actual Render Fix (27-10-2026)
+
+La build privada v1.5 corrige el desbordamiento real de los recursos de título en v1.4: GFX de 12.808 bytes en un hueco de 3.320 bytes y mapa de 1.473 bytes en un hueco de 688 bytes. Se restauró el tramo de ROM afectado desde la base y se movieron GFX/paleta/mapa a espacio libre con referencias actualizadas. Para sala 0, los colores visibles del atlas se remapean a índices 1–13 para reservar el 0 a transparencia; el metatile 383 usa un tile vacío dedicado. Las validaciones de recursos, checksum y BPS pasan; no se ha ejecutado la CPU en mGBA todavía. Ver [V1_5_ACTUAL_RENDER_FIX.md](V1_5_ACTUAL_RENDER_FIX.md).
