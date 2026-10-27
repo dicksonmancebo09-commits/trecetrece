@@ -294,6 +294,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 # Resource bounds and GBA LZ77 sanity checks come from the selected build profile.
     resources = profile.get("resource_ranges", [])
     report["resources"] = []
+    decoded_resources: dict[str, bytes] = {}
     allocated_ranges: list[tuple[int, int, str]] = []
     for resource in resources:
         name = str(resource.get("name", "unnamed-resource"))
@@ -325,6 +326,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             if encoding == "gba_lz77":
                 try:
                     decoded, consumed = gba_lz77_decompress(block)
+                    decoded_resources[name] = decoded
                     resource_row["decoded_bytes"] = len(decoded)
                     resource_row["compressed_bytes_consumed"] = consumed
                     resource_row["trailing_bytes_in_used_region"] = used_bytes - consumed
@@ -347,6 +349,222 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             else:
                 check(f"resource_encoding_{name}", False, ["gba_lz77", "raw"], encoding)
         report["resources"].append(resource_row)
+
+    # Structural checks for the room-0 map/table structures used by the build.
+    room_checks = profile.get("room_map_checks", [])
+    report["room_map_checks"] = []
+    for room_check in room_checks:
+        name = str(room_check.get("name", "unnamed-room-resource"))
+        encoding = str(room_check.get("encoding", "")).lower()
+        offset = parse_int(room_check["offset"])
+        reserved_bytes = parse_int(room_check["reserved_bytes"])
+        used_bytes = int(room_check["used_bytes"])
+        bounds_ok = (
+            offset >= 0 and used_bytes > 0 and reserved_bytes >= used_bytes
+            and offset + reserved_bytes <= len(rom)
+        )
+        check(
+            f"room_resource_bounds_{name}",
+            bounds_ok,
+            {"offset": f"0x{offset:X}", "used_bytes": used_bytes, "reserved_bytes": reserved_bytes},
+            {"inside_rom": bounds_ok, "end_exclusive": f"0x{offset + reserved_bytes:X}"}
+        )
+        row: dict[str, Any] = {
+            "name": name,
+            "encoding": encoding,
+            "offset": f"0x{offset:X}",
+            "used_bytes": used_bytes,
+            "reserved_bytes": reserved_bytes,
+            "bounds_valid": bounds_ok
+        }
+        report["room_map_checks"].append(row)
+        if not bounds_ok:
+            continue
+        allocated_ranges.append((offset, offset + reserved_bytes, name))
+
+        if encoding == "gba_4bpp_metatile_table":
+            header_bytes = int(room_check.get("header_bytes", 2))
+            expected_header_word = room_check.get("expected_header_word")
+            record_count = int(room_check["record_count"])
+            entries_per_record = int(room_check["subtile_entries_per_record"])
+            record_size = entries_per_record * 2
+            table_data = rom[offset:offset + used_bytes]
+            actual_header_word = (
+                int.from_bytes(table_data[:2], "little")
+                if header_bytes >= 2 and len(table_data) >= 2 else None
+            )
+            if expected_header_word is not None:
+                check(
+                    f"room_table_header_{name}",
+                    actual_header_word == int(expected_header_word),
+                    int(expected_header_word),
+                    actual_header_word
+                )
+            table_payload_bytes = used_bytes - header_bytes
+            expected_payload_bytes = record_count * record_size
+            check(
+                f"room_table_length_{name}",
+                table_payload_bytes == expected_payload_bytes and header_bytes <= used_bytes,
+                expected_payload_bytes,
+                table_payload_bytes
+            )
+            payload_start = offset + header_bytes
+            payload_end = offset + used_bytes
+            if table_payload_bytes == expected_payload_bytes and payload_end <= len(rom):
+                subtile_words = [
+                    int.from_bytes(rom[pos:pos + 2], "little")
+                    for pos in range(payload_start, payload_end, 2)
+                ]
+                tile_indices = [word & 0x03FF for word in subtile_words]
+                tile_min = int(room_check["tile_index_min"])
+                tile_max = int(room_check["tile_index_max"])
+                bad_indices = [
+                    {"entry": index, "word": f"0x{word:04X}", "tile_index": tile_indices[index]}
+                    for index, word in enumerate(subtile_words)
+                    if not tile_min <= tile_indices[index] <= tile_max
+                ]
+                row["record_count"] = record_count
+                row["subtile_word_count"] = len(subtile_words)
+                row["tile_index_min_actual"] = min(tile_indices) if tile_indices else None
+                row["tile_index_max_actual"] = max(tile_indices) if tile_indices else None
+                row["invalid_tile_index_count"] = len(bad_indices)
+                row["first_invalid_tile_indices"] = bad_indices[:32]
+                check(
+                    f"room_table_tile_indices_{name}",
+                    len(subtile_words) == record_count * entries_per_record and not bad_indices,
+                    {"count": record_count * entries_per_record, "min": tile_min, "max": tile_max},
+                    {"count": len(subtile_words), "min": row["tile_index_min_actual"],
+                     "max": row["tile_index_max_actual"], "invalid_count": len(bad_indices)}
+                )
+                blank_id = room_check.get("transparent_metatile_id")
+                blank_tile_index = room_check.get("transparent_tile_index")
+                if blank_id is not None and blank_tile_index is not None:
+                    blank_id = int(blank_id)
+                    first_word_index = blank_id * entries_per_record
+                    blank_words = subtile_words[first_word_index:first_word_index + entries_per_record]
+                    blank_indices = [word & 0x03FF for word in blank_words]
+                    row["transparent_metatile_id"] = blank_id
+                    row["transparent_metatile_tile_indices"] = blank_indices
+                    check(
+                        f"transparent_metatile_{name}",
+                        len(blank_words) == entries_per_record and all(x == int(blank_tile_index) for x in blank_indices),
+                        [int(blank_tile_index)] * entries_per_record,
+                        blank_indices
+                    )
+
+                    gfx_name = room_check.get("blank_tile_graphics_resource")
+                    if gfx_name:
+                        gfx = decoded_resources.get(str(gfx_name))
+                        bytes_per_tile = int(room_check.get("bytes_per_tile", 32))
+                        tile_base_index = int(room_check.get("tile_base_index", 0))
+                        blank_local_index = int(room_check["blank_tile_local_index"])
+                        blank_start = blank_local_index * bytes_per_tile
+                        blank_data = gfx[blank_start:blank_start + bytes_per_tile] if gfx else b""
+                        blank_ok = len(blank_data) == bytes_per_tile and not any(blank_data)
+                        row["blank_tile_graphics_resource"] = str(gfx_name)
+                        row["blank_tile_local_index"] = blank_local_index
+                        row["blank_tile_hardware_index"] = tile_base_index + blank_local_index
+                        row["blank_tile_graphics_bytes"] = len(blank_data)
+                        check(
+                            f"transparent_tile_graphics_{name}",
+                            blank_ok and tile_base_index + blank_local_index == int(blank_tile_index),
+                            {"local_tile": blank_local_index, "hardware_tile": int(blank_tile_index),
+                             "byte_count": bytes_per_tile, "all_zero": True},
+                            {"local_tile": blank_local_index,
+                             "hardware_tile": tile_base_index + blank_local_index,
+                             "byte_count": len(blank_data), "all_zero": len(blank_data) == bytes_per_tile and not any(blank_data),
+                             "graphics_resource_available": gfx is not None}
+                        )
+
+        elif encoding == "metroid_room_rle_u16_map":
+            try:
+                width, height, values, consumed = gba_room_rle_decompress_map(rom, offset, reserved_bytes)
+                row.update({
+                    "width": width,
+                    "height": height,
+                    "entry_count": len(values),
+                    "compressed_bytes_consumed": consumed,
+                    "unique_value_count": len(set(values)),
+                    "min_metatile_id": min(values) if values else None,
+                    "max_metatile_id": max(values) if values else None,
+                    "unique_values": sorted(set(values))[:512]
+                })
+                check(
+                    f"room_rle_size_{name}",
+                    consumed == used_bytes,
+                    used_bytes,
+                    consumed
+                )
+                expected_width = room_check.get("expected_width")
+                expected_height = room_check.get("expected_height")
+                if expected_width is not None or expected_height is not None:
+                    dimensions_ok = (
+                        (expected_width is None or width == int(expected_width))
+                        and (expected_height is None or height == int(expected_height))
+                    )
+                    check(
+                        f"room_rle_dimensions_{name}",
+                        dimensions_ok,
+                        {"width": expected_width, "height": expected_height},
+                        {"width": width, "height": height}
+                    )
+                expected_count = width * height
+                check(
+                    f"room_rle_entry_count_{name}",
+                    len(values) == expected_count,
+                    expected_count,
+                    len(values)
+                )
+                minimum = int(room_check.get("min_metatile_id", 0))
+                maximum = int(room_check.get("max_metatile_id", 0xFFFF))
+                invalid = [value for value in values if not minimum <= value <= maximum]
+                check(
+                    f"room_rle_metatile_range_{name}",
+                    not invalid,
+                    {"min": minimum, "max": maximum},
+                    {"min_actual": min(values) if values else None,
+                     "max_actual": max(values) if values else None,
+                     "invalid_count": len(invalid)}
+                )
+                if "expected_unique_values" in room_check:
+                    expected_unique = sorted(int(x) for x in room_check["expected_unique_values"])
+                    check(
+                        f"room_rle_unique_values_{name}",
+                        sorted(set(values)) == expected_unique,
+                        expected_unique,
+                        sorted(set(values))
+                    )
+                if "expected_max_metatile_id" in room_check:
+                    actual_max = max(values) if values else None
+                    check(
+                        f"room_rle_expected_max_{name}",
+                        actual_max == int(room_check["expected_max_metatile_id"]),
+                        int(room_check["expected_max_metatile_id"]),
+                        actual_max
+                    )
+                if "expected_unique_count" in room_check:
+                    actual_count = len(set(values))
+                    check(
+                        f"room_rle_unique_count_{name}",
+                        actual_count == int(room_check["expected_unique_count"]),
+                        int(room_check["expected_unique_count"]),
+                        actual_count
+                    )
+            except (ValueError, IndexError) as exc:
+                row["decode_error"] = str(exc)
+                check(
+                    f"room_rle_decode_{name}",
+                    False,
+                    "valid two-lane room RLE stream",
+                    str(exc)
+                )
+        else:
+            check(
+                f"room_resource_encoding_{name}",
+                False,
+                ["gba_4bpp_metatile_table", "metroid_room_rle_u16_map"],
+                encoding
+            )
 
     for index, current in enumerate(sorted(allocated_ranges)):
         for following in sorted(allocated_ranges)[index + 1:]:
