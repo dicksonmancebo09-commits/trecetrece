@@ -5,9 +5,10 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 **Título oficial del juego: LATINO AMÉRICA Zector Cero.**  
 La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domingo Este. «Villa Duarte — Sector Cero» aparece en documentos previos como nombre provisional o etiqueta de desarrollo; no es el título oficial vigente.
 
-## Documentación del proyecto
+## Documentación y continuidad
 
 - [Estado de continuidad del proyecto — LATINO AMÉRICA Zector Cero](docs/villa-duarte-sector-cero/PROJECT_STATE_HANDOFF.md)
+- [Concepto vectorial editable de la primera calle](assets/concept/latino-america-zector-cero-villa-duarte-street.svg)
 - [Resumen y estado actual](docs/villa-duarte-sector-cero/README.md)
 - [Herramientas y repositorios de referencia](docs/villa-duarte-sector-cero/research/TOOLS_AND_REPOSITORIES.md)
 - [Notas técnicas de la ROM de referencia](docs/villa-duarte-sector-cero/research/ROM_TECHNICAL_NOTES.md)
