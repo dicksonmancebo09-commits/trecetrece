@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "asset_name": "Scenario 02 — Callejones del Caliche",
+  "visual_reference": "El Caliche, Villa Duarte, Santo Domingo Este",
+  "status": "editable-draft",
+  "created_date": "2026-10-27",
+  "source_basis": [
+    {
+      "source": "Hoy",
+      "url": "https://hoy.com.do/el-pais/el-caliche-de-villa-duarte-la-otra-cara-del-crecimiento-economico_762790.html",
+      "used_for": "Reference observation: narrow alley, nearby façades, painted masonry and uneven pavement.",
+      "asset_reuse": "not copied"
+    },
+    {
+      "source": "Diario Libre",
+      "url": "https://www.diariolibre.com/actualidad/ciudad/fundacion-busca-fondos-para-transformar-el-sector-el-caliche-de-villa-duarte-MG11174899",
+      "used_for": "Reference observation: frontage, barred windows, chipped paint and daily street scale.",
+      "asset_reuse": "not copied"
+    }
+  ],
+  "files": {
+    "atlas": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg",
+    "layered_composition": "assets/tiles/scenario-02/scenario-02-layered-composition.svg",
+    "native_preview": "assets/tiles/scenario-02/scenario-02-native-preview.svg",
+    "catalog": "assets/tiles/scenario-02/README.md"
+  },
+  "grid": {
+    "canvas_width_px": 256,
+    "canvas_height_px": 256,
+    "tile_width_px": 8,
+    "tile_height_px": 8,
+    "columns": 32,
+    "rows": 32,
+    "index_formula": "tile_y * 32 + tile_x",
+    "origin": "top-left"
+  },
+  "preview": {
+    "coordinate_width_px": 240,
+    "coordinate_height_px": 160,
+    "display_width_px": 960,
+    "display_height_px": 640,
+    "export_native_size": "240x160",
+    "view_type": "side-scrolling background composition"
+  },
+  "palette": [
+    {
+      "index": 0,
+      "name": "source-alpha / transparent gaps",
+      "hex": "#00000000"
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "hex": "#172336"
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "hex": "#26394A"
+    },
+    {
+      "index": 3,
+      "name": "darkConcrete",
+      "hex": "#4F5C61"
+    },
+    {
+      "index": 4,
+      "name": "concrete",
+      "hex": "#7C817A"
+    },
+    {
+      "index": 5,
+      "name": "lightConcrete",
+      "hex": "#B5AD9A"
+    },
+    {
+      "index": 6,
+      "name": "plaster",
+      "hex": "#E2D6BA"
+    },
+    {
+      "index": 7,
+      "name": "brick",
+      "hex": "#9A5149"
+    },
+    {
+      "index": 8,
+      "name": "salmon",
+      "hex": "#D45C50"
+    },
+    {
+      "index": 9,
+      "name": "fadedSalmon",
+      "hex": "#E18365"
+    },
+    {
+      "index": 10,
+      "name": "dustyPink",
+      "hex": "#B18A79"
+    },
+    {
+      "index": 11,
+      "name": "blueGray",
+      "hex": "#667774"
+    },
+    {
+      "index": 12,
+      "name": "paleMint",
+      "hex": "#76B7A1"
+    },
+    {
+      "index": 13,
+      "name": "steelBlue",
+      "hex": "#31586D"
+    },
+    {
+      "index": 14,
+      "name": "paleSky",
+      "hex": "#87B8C3"
+    },
+    {
+      "index": 15,
+      "name": "warmLight",
+      "hex": "#F4D18A"
+    }
+  ],
+  "regions": [
+    {
+      "name": "weathered painted wall fills",
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 64
+    },
+    {
+      "name": "windows and shutter variants",
+      "x": 0,
+      "y": 64,
+      "width": 256,
+      "height": 32,
+      "module_width": 16,
+      "module_height": 16
+    },
+    {
+      "name": "doors and entrances",
+      "x": 0,
+      "y": 96,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "metal grilles / gates",
+      "x": 0,
+      "y": 120,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "ledges, balcony rails and step edges",
+      "x": 0,
+      "y": 144,
+      "width": 256,
+      "height": 16,
+      "module_width": 32,
+      "module_height": 16
+    },
+    {
+      "name": "worn paint / patched plaster",
+      "x": 0,
+      "y": 160,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "pipes, meter boxes, service details",
+      "x": 0,
+      "y": 184,
+      "width": 256,
+      "height": 24,
+      "module_width": 16,
+      "module_height": 24
+    },
+    {
+      "name": "overhead cable segments",
+      "x": 0,
+      "y": 208,
+      "width": 256,
+      "height": 8,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "walkway / curb",
+      "x": 0,
+      "y": 216,
+      "width": 256,
+      "height": 8,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "asphalt and broken pavement",
+      "x": 0,
+      "y": 224,
+      "width": 256,
+      "height": 16,
+      "module_width": 8,
+      "module_height": 8
+    },
+    {
+      "name": "street props",
+      "x": 0,
+      "y": 240,
+      "width": 256,
+      "height": 16,
+      "module_width": 16,
+      "module_height": 16
+    }
+  ],
+  "composition_layers": [
+    "00-background",
+    "01-distant-roofline",
+    "02-passage",
+    "03-left-facade",
+    "04-right-facade",
+    "05-openings",
+    "06-grilles",
+    "07-utilities",
+    "08-wear",
+    "09-ground",
+    "10-props"
+  ],
+  "validation": {
+    "svg_structure": "to be checked",
+    "raster_export": "not run",
+    "visible_palette_colors": 15,
+    "alpha_mapping": "source alpha only; do not assume GBA BG palette index 0 transparency",
+    "external_editor": "not checked in Inkscape or other vector editor",
+    "game_engine_test": "not run",
+    "rom_compatible": "not verified",
+    "rom_modified": false
+  },
+  "notes": [
+    "All visuals are original SVG geometry. The source images are observation references, not copied or embedded textures.",
+    "The composition has a side-scrolling floor with a narrow passage visible in the background; keep the play path visually readable.",
+    "Palette is a working art palette, not the original Metroid Fusion palette and not yet mapped to a GBA BG/OBJ palette.",
+    "Replace the composition placeholder character with a project-owned sprite when character animation work begins."
+  ]
+}
