@@ -41,6 +41,7 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 
 - [Plan maestro de transformación visual](docs/villa-duarte-sector-cero/VISUAL_TRANSFORMATION_PLAN.md)
 - [Matriz de cobertura visual de toda la ROM](docs/villa-duarte-sector-cero/ROM_VISUAL_COVERAGE.md)
+- [Tarea 1: línea base visual](docs/villa-duarte-sector-cero/BASELINE_VISUAL_TAREA_01.md)
 - [Agente Metroid RE Visual Lab](.github/agents/metroid-re.agent.md)
 
 
