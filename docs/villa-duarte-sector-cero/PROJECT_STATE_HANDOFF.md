@@ -117,3 +117,12 @@ Antes de repetir decisiones, revisar este archivo, la [guía de siete escenarios
 - La v1.0 ya redirige datos del Main Deck, sala 0, a recursos urbanos añadidos al final de la ROM; la v1.2 conserva esos datos. Su apariencia en juego todavía no está comprobada en emulador.
 - Documento: [v1.2 — Sustitución real de recursos del título](REAL_TITLE_RESKIN_V1_2.md).
 - Pendiente de trabajo integral: resto de mapas/tilesets, protagonista y animaciones, enemigos, jefes, proyectiles, HUD, cinemáticas y diálogos. No declarar conversion completa.
+
+## v1.3 — integración de título + Main Deck sala 0 (27-10-2026)
+
+- Build privada `LATINO_AMERICA_Zector_Cero_v1.3_TITLE_AND_FIRST_ROOM_RESKIN.gba`.
+- Corrige el error de enfoque de v1.1: no hay visor inicial ni salto de arranque; se conservan los bytes de inicio originales.
+- Mantiene el título real de v1.2 y rehace la tabla de metatiles y los mapas BG1/BG2 de Main Deck, sala 0, usando la composición urbana de Villa Duarte, conectada a los punteros reales (tabla 0x7B0000, BG1 0x7B2000, BG2 0x7B2400).
+- El clipdata/colisiones y el código del juego permanecen intactos. La vista de sala se reconstruye a partir de recursos instalados, no es captura de emulador.
+- El resto del juego sigue pendiente de conversión integral; mGBA/MAGE no se ha ejecutado en este entorno.
+- Documento y alcance: [ROOM0_RESKIN_V1_3.md](ROOM0_RESKIN_V1_3.md).
