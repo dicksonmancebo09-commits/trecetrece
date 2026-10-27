@@ -22,14 +22,22 @@ Una captura o atlas de 4096 × 4096 sirve para inspección, comparación o prese
 
 Cada tarea debe terminar con una etiqueta real: **generado**, **comprobado estáticamente**, **probado en herramienta** o **probado en juego**. No declarar que toda la ROM está completada hasta que el inventario confirme la cobertura de todas las áreas y categorías aplicables.
 
-## Dirección artística provisional
+## Dirección artística: Villa Duarte y sus barrios
 
-- **Lugar:** barrio dominicano reconocible: balcones y galerías, fachadas de bloques y hormigón, persianas metálicas, cables aéreos, aceras, postes, colmado, letreros, motor-concho y carros compactos.
-- **Lectura de juego:** siluetas del jugador y los enemigos claras contra el fondo. Suelo, plataformas, puertas y objetos interactivos deben distinguirse inmediatamente.
-- **Paleta:** caribeña urbana, con luz cálida, hormigón, sombras azuladas/moradas y acentos específicos para peligro e interacción. Es una hipótesis que se valida con muestras, no un cambio masivo.
-- **Lenguaje visual:** preservar la lectura del pixel art en la ruta retro. No suavizar bordes por defecto. Cualquier versión con detalle añadido será una variante separada.
-- **Referencias:** Castlevania: Aria of Sorrow para atmósfera y contraste; Spider-Man: Mysterio's Menace para ritmo urbano lateral; X-Men: Reign of Apocalypse para siluetas y claridad de combate. Se estudian principios visuales, no se copian sprites, mapas, animaciones, música ni código comercial.
-- **Identidad propia:** los personajes, emblemas, escenarios, nombres, animaciones y assets finales deben ser propios o tener licencia compatible.
+La dirección artística principal debe estar inspirada específicamente en Villa Duarte, Santo Domingo Este, y en sus barrios. No convertir el lugar en un escenario urbano genérico. Las fotografías reales del sector son la referencia visual primaria; los juegos citados más adelante sirven solo para estudiar composición, atmósfera y legibilidad, no para decidir la identidad de los escenarios.
+
+**Main Deck room 1 / Docking Bays es solo un benchmark técnico para explorar la ROM, no el referente artístico del juego.**
+
+- **Arquitectura y calle:** fachadas residenciales de varias alturas y acabados, bloques y hormigón, pintura pastel o viva, rejas, galerías, balcones, persianas, muros bajos, pequeños talleres y comercios de planta baja.
+- **Textura urbana:** aceras irregulares, asfalto parcheado, callejones, coches aparcados, bicicletas/motocicletas, cables aéreos y postes, plantas tropicales y sombras duras de sol. Usar solo lo que corresponda a la zona, sin llenar cada escena de clichés.
+- **Comercio y vida cotidiana:** colmados, repuestos y talleres con identidad gráfica ficticia; envases, sillas y objetos cotidianos cuando haya espacio para ellos. Evitar estereotipos de residentes o pobreza.
+- **Variantes por sector:** El Caliche, La Francia Nueva, Calero, Pueblo Nuevo, Los Molinos y Simonico no son intercambiables. Conseguir referencias específicas antes de asignar a cada zona una arquitectura o una distribución distintiva.
+- **Paleta:** hormigón cálido, sombras frías azuladas/moradas, fachadas coral/rosa viejo/amarillo/menta/azul claro, vegetación tropical y acentos saturados pequeños. El neón/cyberpunk no es la identidad por defecto.
+- **Pixel art:** mantener límites legibles a resolución nativa. El detalle no puede confundir plataformas, suelo, colisiones, jugador, enemigos, puertas ni pickups.
+- **Diseño de zonas:** calles residenciales, callejones, interior de colmado/taller, patios, azoteas y pasos de servicio son posibilidades, no una lista obligatoria. Usarlas según progresión y referencias.
+- **Fuentes de estilo y procedencia:** [Biblia visual Villa Duarte](VILLA_DUARTE_VISUAL_BIBLE.md), con referencias fotográficas a Villa Duarte, El Caliche y La Francia Nueva. Las fotos son referencias, no assets para copiar sin confirmar licencia.
+- **Referencia de videojuego:** Castlevania: Aria of Sorrow para atmósfera y contraste; Spider-Man: Mysterio's Menace para ritmo urbano lateral; X-Men: Reign of Apocalypse para siluetas y claridad de combate. Se estudian principios, no se copian assets ni código.
+
 
 ## Reglas no negociables
 
