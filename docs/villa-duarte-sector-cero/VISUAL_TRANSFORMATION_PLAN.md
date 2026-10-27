@@ -1,7 +1,7 @@
-# Plan maestro de transformación visual — Villa Duarte: Sector Cero
+# Plan maestro de transformación visual — LATINO AMÉRICA Zector Cero
 
 **Versión:** 1.0 · **Fecha:** 27 de octubre de 2026  
-**Estado:** planificación; ninguna fase nueva se considera completada.
+**Estado:** planificación; ninguna fase nueva se considera completada. La identidad oficial del juego es **LATINO AMÉRICA Zector Cero**. La [guía de identidad visual de los siete escenarios](SEVEN_SCENARIO_VISUAL_IDENTITIES.md) y el [atlas vectorial](../../assets/concept/latino-america-zector-cero-seven-scenarios.svg) son los puntos de partida artísticos actuales.
 
 ## Objetivo
 
