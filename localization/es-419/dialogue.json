@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "locale": "es-419",
+    "project": "LATINO AMÉRICA Zector Cero",
+    "version": "0.1-draft",
+    "status": "draft-not-in-ROM",
+    "purpose": "Original dialogue and UI copy pack for localization planning. Not extracted from or injected into any commercial ROM.",
+    "source_of_truth": "localization/es-419/dialogue.json",
+    "soft_max_chars_per_line": 28,
+    "note": "28 characters is a provisional writing limit only. Real text capacity depends on the ROM's font, text encoding, textbox geometry and pointer/terminator format."
+  },
+  "characters": [
+    {
+      "id": "yeyo",
+      "display_name": "Yeyo",
+      "voice": "Dominicano",
+      "role": "corredor y guía del barrio",
+      "tone": "rápido, callejero, observador y con humor seco"
+    },
+    {
+      "id": "majo",
+      "display_name": "Majo",
+      "voice": "Dominicana",
+      "role": "reparadora y estratega",
+      "tone": "práctica, ingeniosa y sarcástica"
+    },
+    {
+      "id": "lazaro",
+      "display_name": "Lázaro",
+      "voice": "Cubano",
+      "role": "mecánico",
+      "tone": "ingenioso, resolutivo y directo"
+    },
+    {
+      "id": "lia",
+      "display_name": "Lía",
+      "voice": "Puertorriqueña",
+      "role": "operadora de radio",
+      "tone": "aguda, segura y rápida para responder"
+    },
+    {
+      "id": "kade",
+      "display_name": "Kade",
+      "voice": "Jamaiquino; patois/patwa y español",
+      "role": "técnico de radio y sonido",
+      "tone": "calmado, competente y expresivo"
+    },
+    {
+      "id": "chava",
+      "display_name": "Chava",
+      "voice": "Mexicano; cameo opcional",
+      "role": "mensajero visitante",
+      "tone": "desenfadado; no siempre activo"
+    },
+    {
+      "id": "vale",
+      "display_name": "Vale",
+      "voice": "Colombiana; cameo opcional",
+      "role": "contacto de suministros",
+      "tone": "práctica y cercana; no siempre activa"
+    },
+    {
+      "id": "che",
+      "display_name": "Che",
+      "voice": "Argentino; cameo opcional",
+      "role": "contacto de radio",
+      "tone": "irónico; no siempre activo"
+    }
+  ],
+  "ui": {
+    "ui.menu.continue": "Continuar",
+    "ui.menu.options": "Opciones",
+    "ui.menu.inventory": "Inventario",
+    "ui.menu.save": "Guardar",
+    "ui.action.locked": "Bloqueado",
+    "ui.action.need_key": "Te falta la llave",
+    "ui.objective": "Objetivo",
+    "ui.radio.signal_lost": "Señal perdida",
+    "ui.radio.signal_restored": "Señal restablecida",
+    "ui.item.picked_up": "Objeto recogido"
+  },
+  "dialogue": [
+    {
+      "id": "S01_YEYO_001",
+      "scenario": 1,
+      "speaker": "yeyo",
+      "kind": "banter",
+      "lines": [
+        "¿Qué lo que, mi gente?",
+        "Yo vine a explorar, no a",
+        "pagar alquiler aquí, dique."
+      ]
+    },
+    {
+      "id": "S01_MAJO_001",
+      "scenario": 1,
+      "speaker": "majo",
+      "kind": "banter",
+      "lines": [
+        "Diache, ese portón está",
+        "más trancao que colmado",
+        "en día de apagón."
+      ]
+    },
+    {
+      "id": "S01_YEYO_002",
+      "scenario": 1,
+      "speaker": "yeyo",
+      "kind": "interaction",
+      "lines": [
+        "Eso no me cuadra, Majo.",
+        "El portón tiene más seguro",
+        "que una bóveda del banco."
+      ]
+    },
+    {
+      "id": "S01_MAJO_002",
+      "scenario": 1,
+      "speaker": "majo",
+      "kind": "comedy",
+      "lines": [
+        "No le des al portón otra",
+        "vez. Ya te oyó, tiguere.",
+        "Ahora está ofendido."
+      ]
+    },
+    {
+      "id": "S01_KADE_001",
+      "scenario": 1,
+      "speaker": "kade",
+      "kind": "radio",
+      "lines": [
+        "Wha' gwaan, crew?",
+        "Nuff cable over there.",
+        "Mira por dónde pisas."
+      ]
+    },
+    {
+      "id": "S02_YEYO_001",
+      "scenario": 2,
+      "speaker": "yeyo",
+      "kind": "banter",
+      "lines": [
+        "Dique que era un atajo.",
+        "Mira ahora: un callejón",
+        "con complejo de laberinto."
+      ]
+    },
+    {
+      "id": "S02_LAZARO_001",
+      "scenario": 2,
+      "speaker": "lazaro",
+      "kind": "banter",
+      "lines": [
+        "Asere, ¿qué bolá?",
+        "Esa reja está en candela…",
+        "y ni siquiera hay fuego."
+      ]
+    },
+    {
+      "id": "S02_LIA_001",
+      "scenario": 2,
+      "speaker": "lia",
+      "kind": "banter",
+      "lines": [
+        "Acho, mano, ¿quién hizo",
+        "este pasillo tan estrecho?",
+        "¿Un arquitecto al revés?"
+      ]
+    },
+    {
+      "id": "S02_MAJO_001",
+      "scenario": 2,
+      "speaker": "majo",
+      "kind": "interaction",
+      "lines": [
+        "No me vengas con esa",
+        "vaina. La pared no se va",
+        "a mover porque la mires."
+      ]
+    },
+    {
+      "id": "S02_KADE_001",
+      "scenario": 2,
+      "speaker": "kade",
+      "kind": "warning",
+      "lines": [
+        "Rhaatid! Nuff cable up",
+        "there. No los toques,",
+        "mi gente."
+      ]
+    },
+    {
+      "id": "S02_YEYO_002",
+      "scenario": 2,
+      "speaker": "yeyo",
+      "kind": "comedy",
+      "lines": [
+        "Ta' bien, ta' bien.",
+        "No toco los cables.",
+        "Yo sí quiero ver mañana."
+      ]
+    },
+    {
+      "id": "S03_LIA_001",
+      "scenario": 3,
+      "speaker": "lia",
+      "kind": "navigation",
+      "lines": [
+        "Zumba, que esa curva no",
+        "se dobla sola, mano.",
+        "¡Ojo con el carro!"
+      ]
+    },
+    {
+      "id": "S03_YEYO_001",
+      "scenario": 3,
+      "speaker": "yeyo",
+      "kind": "banter",
+      "lines": [
+        "Ese motor va más lento",
+        "que una guagua sin gasolina.",
+        "Qué vaina, mi madre."
+      ]
+    },
+    {
+      "id": "S03_KADE_001",
+      "scenario": 3,
+      "speaker": "kade",
+      "kind": "radio",
+      "lines": [
+        "Criss, sunlight!",
+        "Ahora sí veo los cables.",
+        "Sigue por la derecha."
+      ]
+    },
+    {
+      "id": "S04_LAZARO_001",
+      "scenario": 4,
+      "speaker": "lazaro",
+      "kind": "banter",
+      "lines": [
+        "Ñó, aquí hay más piezas",
+        "sueltas que excusas para",
+        "no trabajar, asere."
+      ]
+    },
+    {
+      "id": "S04_MAJO_001",
+      "scenario": 4,
+      "speaker": "majo",
+      "kind": "interaction",
+      "lines": [
+        "Resuelve, mecánico.",
+        "Y no le des un boche",
+        "al destornillador."
+      ]
+    },
+    {
+      "id": "S04_LAZARO_002",
+      "scenario": 4,
+      "speaker": "lazaro",
+      "kind": "comedy",
+      "lines": [
+        "Voy a resolver, mi ambia.",
+        "Esa tuerca tiene más",
+        "orgullo que un jefe."
+      ]
+    },
+    {
+      "id": "S05_YEYO_001",
+      "scenario": 5,
+      "speaker": "yeyo",
+      "kind": "banter",
+      "lines": [
+        "Diache, esta azotea está",
+        "alta hasta para mis malas",
+        "decisiones."
+      ]
+    },
+    {
+      "id": "S05_LIA_001",
+      "scenario": 5,
+      "speaker": "lia",
+      "kind": "warning",
+      "lines": [
+        "Bendito, mira pa'l frente.",
+        "El suelo está lejos y",
+        "no te va a extrañar."
+      ]
+    },
+    {
+      "id": "S05_KADE_001",
+      "scenario": 5,
+      "speaker": "kade",
+      "kind": "navigation",
+      "lines": [
+        "Nuff steps, mi crew.",
+        "Vamos poco a poco.",
+        "Sin show, sin caída."
+      ]
+    },
+    {
+      "id": "S06_CHAVA_001",
+      "scenario": 6,
+      "speaker": "chava",
+      "kind": "optional_cameo",
+      "enabled_by_default": false,
+      "lines": [
+        "No manches, esa puerta",
+        "es una bronca tamaño",
+        "industrial. ¡Órale, pues!"
+      ]
+    },
+    {
+      "id": "S06_LAZARO_001",
+      "scenario": 6,
+      "speaker": "lazaro",
+      "kind": "banter",
+      "lines": [
+        "En la fuácata no hay",
+        "repuesto, asere. Hay que",
+        "inventar, ¿qué remedio?"
+      ]
+    },
+    {
+      "id": "S06_YEYO_001",
+      "scenario": 6,
+      "speaker": "yeyo",
+      "kind": "comedy",
+      "lines": [
+        "Este pasillo está más",
+        "oscuro que mi futuro.",
+        "Y mira que hay talento."
+      ]
+    },
+    {
+      "id": "S07_VALE_001",
+      "scenario": 7,
+      "speaker": "vale",
+      "kind": "optional_cameo",
+      "enabled_by_default": false,
+      "lines": [
+        "Parce, ese plan está",
+        "bacano… siempre que no",
+        "nos explote en la cara."
+      ]
+    },
+    {
+      "id": "S07_CHE_001",
+      "scenario": 7,
+      "speaker": "che",
+      "kind": "optional_cameo",
+      "enabled_by_default": false,
+      "lines": [
+        "Che, esto es un quilombo,",
+        "pero se puede salir.",
+        "No armemos otro, ¿dale?"
+      ]
+    },
+    {
+      "id": "S07_KADE_001",
+      "scenario": 7,
+      "speaker": "kade",
+      "kind": "farewell",
+      "lines": [
+        "Bless up, crew.",
+        "Walk good, mi gente.",
+        "Llegamos hasta el final."
+      ]
+    },
+    {
+      "id": "S07_YEYO_001",
+      "scenario": 7,
+      "speaker": "yeyo",
+      "kind": "ending_banter",
+      "lines": [
+        "¿Qué lo que? Si salimos",
+        "vivos, yo invito el chimi.",
+        "El refresco va por ustedes."
+      ]
+    }
+  ]
+}
