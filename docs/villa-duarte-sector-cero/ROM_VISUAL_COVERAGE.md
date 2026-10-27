@@ -77,3 +77,7 @@ Se generó una ROM privada con una pantalla de revisión previa al juego para in
 ## 2026-10-27 — v1.2: título real, sin visor de arranque
 
 El nuevo build sustituye los recursos reales de la pantalla de título (fondo gráfico, paleta, tilemap, gráficos del logo y objetos de menú) dentro de sus bloques ROM; no añade código de arranque. La cabecera cambia a `LATINO ZCERO`. LZ77, límites de recursos, checksum y BPS pasan validaciones estáticas; no hay prueba en emulador. El reskin anterior de la sala 0 se conserva, aunque su apariencia aún no se certifica como prueba en juego. Los demás niveles, sprites y UI siguen pendientes. Ver [REAL_TITLE_RESKIN_V1_2.md](REAL_TITLE_RESKIN_V1_2.md).
+
+## v1.3 — Main Deck sala 0 conectada a escena urbana
+
+Se reescriben la tabla de metatiles y mapas BG1/BG2 privados a los que apuntan los datos de sala para que usen la composición urbana de Villa Duarte. Se conserva clipdata y código de arranque; título real ya sustituido en v1.2. La salida se reconstruye desde los recursos de la ROM y no constituye captura de juego. Emulador pendiente. Los demás escenarios, sprites y UI continúan sin completar. Ver [ROOM0_RESKIN_V1_3.md](ROOM0_RESKIN_V1_3.md).
