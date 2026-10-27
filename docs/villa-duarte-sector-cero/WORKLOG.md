@@ -61,3 +61,13 @@ Para cada cambio futuro:
 - Se enlazaron los nuevos artefactos desde el README y el estado de continuidad, y se sincronizaron los títulos de la Biblia Visual y del Plan Maestro.
 - **Estado real:** documentación y atlas vectorial guardados en GitHub; el SVG pasó una comprobación estructural de etiquetas. El arte no se ha dividido en tiles nativos, no se ha integrado en la ROM y no se ha probado en emulador.
 - Próximo paso: concretar la referencia técnica de cada zona y desglosar el escenario 1 en tiles originales manteniendo una copia intacta del recurso base.
+
+## 2026-10-27 — Paso 2: descomposición del escenario 1
+
+- Se creó `assets/tiles/scenario-01/scenario-01-villa-duarte-tiles.svg`: atlas editable de 256 × 256 px, con cuadrícula lógica de 8 × 8 (32 × 32 celdas) y regiones documentadas para fachadas, paredes gastadas, ventanas, puertas/persianas/rejas, letreros ficticios, toldos, vegetación, cableado, aceras, bordillo, cimiento, asfalto y objetos de calle.
+- Se creó `scenario-01-layered-composition.svg`, con nueve capas editables: fondo, silueta urbana lejana, fachadas, aberturas, comercio, cableado/postes, vegetación, suelo y objetos/jugador de referencia.
+- Se creó `scenario-01-native-preview.svg`, con coordenadas de composición de 240 × 160 y vista de lectura ampliada 4×; exportar a 240 × 160 para inspección nativa.
+- Se añadió `tile-atlas-metadata.json` con paleta de 15 colores visibles más marcador de transparencia de la fuente, coordenadas de regiones y estados de validación; el catálogo explica que el marcador alfa no es directamente un índice de transparencia GBA para fondos.
+- Validación estática realizada a través del contenido versionado: los tres SVG tienen etiquetas equilibradas; los colores visibles usados pertenecen a la paleta de trabajo; el JSON es válido y registra 1.024 celdas de 8 × 8 posibles.
+- **Límite importante:** todavía no se ha probado el SVG en Inkscape u otro editor, no se han exportado/inspeccionado PNGs a escala nativa, no se ha contrastado con una captura ejecutada de la sala y no se ha modificado ni probado la ROM.
+- Próximo paso: validar exportación y transparencia y cotejar el atlas con la sala real antes de intentar una integración ROM.
