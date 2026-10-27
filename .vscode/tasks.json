@@ -16,6 +16,12 @@
   ],
   "tasks": [
     {
+      "label": "GBA: generar traza Lua de mGBA",
+      "type": "shell",
+      "command": "python3 tools/generate_mgba_lua_trace.py",
+      "problemMatcher": []
+    },
+    {
       "label": "GBA: instalar mGBA y herramientas de diagnóstico",
       "type": "shell",
       "command": "bash tools/install_gba_emulator.sh",
