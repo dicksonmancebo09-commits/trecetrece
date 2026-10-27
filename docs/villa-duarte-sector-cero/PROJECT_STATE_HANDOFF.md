@@ -144,3 +144,7 @@ La candidata privada v1.4 corrige los dos fallos de correspondencia gráfica det
 ## v1.5 Actual Render Fix (27-10-2026)
 
 La build privada v1.5 corrige el desbordamiento real de los recursos de título en v1.4: GFX de 12.808 bytes en un hueco de 3.320 bytes y mapa de 1.473 bytes en un hueco de 688 bytes. Se restauró el tramo de ROM afectado desde la base y se movieron GFX/paleta/mapa a espacio libre con referencias actualizadas. Para sala 0, los colores visibles del atlas se remapean a índices 1–13 para reservar el 0 a transparencia; el metatile 383 usa un tile vacío dedicado. Las validaciones de recursos, checksum y BPS pasan; no se ha ejecutado la CPU en mGBA todavía. Ver [V1_5_ACTUAL_RENDER_FIX.md](V1_5_ACTUAL_RENDER_FIX.md).
+
+## v1.7 — corrección de flujo y referencias compartidas (27-10-2026)
+
+Tras el reporte de crash en v1.6, la candidata v1.7 restaura el prólogo de `IntroHandler` (la v1.6 retornaba antes de inicializar) y hace el salto al estado de finalización de la intro solo después de ejecutar la inicialización. También restaura las referencias de fondo/mapa/paleta originales utilizadas fuera de la pantalla de título; solo las tres referencias del título siguen apuntando al arte urbano. Se conserva el título sin copyright/PRESS START y el salto de partida nueva a la secuencia del hangar. Checksum y BPS pasan comprobación estática; aún no se ha probado CPU/juego en mGBA. Ver [V1_7_TITLE_HANGAR_FIX.md](V1_7_TITLE_HANGAR_FIX.md).
