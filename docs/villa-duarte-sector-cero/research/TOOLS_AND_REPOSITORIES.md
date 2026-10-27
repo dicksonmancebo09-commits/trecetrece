@@ -8,7 +8,7 @@ Documento de investigación: herramientas para inspeccionar el juego de referenc
 - Repositorio: https://github.com/ConConner/MAGE-Themes
 - Otra versión publicada: https://github.com/raygunpewpewpew/MAGE-Themes
 - MAGE (Metroid Advance Game Editor) se creó para editar Metroid Fusion y Metroid Zero Mission. MAGE Themes es una evolución/fork con cambios y funciones adicionales.
-- La documentación del proyecto indica compatibilidad con las versiones norteamericanas (U) de los juegos; confirmar requisitos y compatibilidad de la versión concreta antes de usarla.
+- La página del proyecto indica que MAGE Themes requiere .NET Runtime 10 o superior y que la versión actual es compatible con las ROM norteamericanas (U) de Fusion y Zero Mission. Confirmado en la documentación consultada el 27-10-2026; volver a comprobar los requisitos al descargar una versión nueva.
 - MAGE es una aplicación de escritorio, no un conector de ChatGPT ni una terminal remota de GitHub.
 - Uso previsto aquí: inspeccionar salas, mapas, gráficos, paletas, enemigos y colisiones antes de planificar cambios. No asumir que toda ROM o versión modificada es compatible.
 
@@ -19,8 +19,13 @@ Documento de investigación: herramientas para inspeccionar el juego de referenc
 
 ### Open Metroid Fusion Open Randomizer (OpenMFOR)
 - Repositorio: https://git.inabaudonge.reisen/OpenMFOR/OpenMFOR
-- Proyecto comunitario centrado en aleatorización y análisis de Metroid Fusion.
-- Uso previsto: referencia secundaria para comprender herramientas de análisis y parches; no es el motor del juego nuevo ni una fuente de assets.
+- Proyecto comunitario para estudiar la lógica del juego, aleatorización, reconstrucción de datos y generación/aplicación de parches. El README declara que trabaja con la versión USA y, por extensión, Australia.
+- Uso previsto: referencia secundaria de análisis; no es el motor del juego nuevo ni una fuente de arte. No ejecutar ni integrar código externo sin revisar sus requisitos y licencia.
+
+### Metroid Fusion Open Randomizer (MFOR original)
+- Repositorio: https://github.com/Kazuto88/MFOR
+- Proyecto de randomizer con licencia indicada como GPL-3.0 en GitHub; solicita una ROM sin modificar de forma local y no la incluye en el paquete.
+- Uso previsto: comparar herramientas y estudiar cómo se valida la ROM base. No incorporar código GPL al proyecto propio sin decidir expresamente cómo se gestionarán las obligaciones de licencia.
 
 ### Metroid Fusion — Data Crystal
 - Referencia: https://datacrystal.tcrf.net/wiki/Metroid_Fusion
