@@ -13,6 +13,19 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 - [Registro de fuentes y verificación](docs/villa-duarte-sector-cero/research/RESEARCH_REGISTER.md)
 - [Instalar REA en Codespaces](docs/villa-duarte-sector-cero/research/REA_CODESPACES_SETUP.md)
 - [Flujo de R.E. para Metroid Fusion](docs/villa-duarte-sector-cero/research/METROID_REA_WORKFLOW.md)
+- [Agente Metroid RE](.github/agents/metroid-re.agent.md)
+- [Sonda de metadatos GBA](tools/metroid_gba_probe.py)
+
+## Uso del agente Metroid RE
+
+Abre Codespaces, selecciona el agente **Metroid RE** en el selector de agentes de Copilot y utiliza como primer paso:
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 tools/metroid_gba_probe.py private-roms/MetroidFusion.gba --json
+```
+
+La segunda orden necesita una ROM colocada localmente y excluida de Git. La sonda solo informa metadatos; el análisis del código requiere REA y Ghidra configurados.
 
 ## Regla de trabajo
 
