@@ -100,6 +100,51 @@
           "expected_target_bus_address": "0x087C1000",
           "purpose": "Título: paleta urbana"
         }
+      ],
+      "room_map_checks": [
+        {
+          "name": "main-deck-room0-metatile-table",
+          "encoding": "gba_4bpp_metatile_table",
+          "offset": "0x7B0000",
+          "reserved_bytes": "0x2000",
+          "used_bytes": 3074,
+          "header_bytes": 2,
+          "expected_header_word": 2,
+          "record_count": 384,
+          "subtile_entries_per_record": 4,
+          "tile_index_min": 192,
+          "tile_index_max": 560,
+          "transparent_metatile_id": 383,
+          "transparent_tile_index": 560,
+          "expected_transparent_record_blank": true
+        },
+        {
+          "name": "main-deck-room0-bg1",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2000",
+          "reserved_bytes": "0x400",
+          "used_bytes": 22,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_unique_values": [
+            383
+          ]
+        },
+        {
+          "name": "main-deck-room0-bg2",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2400",
+          "reserved_bytes": "0x400",
+          "used_bytes": 414,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_max_metatile_id": 304,
+          "expected_unique_count": 305
+        }
       ]
     },
     "zector_cero_v1_6": {
@@ -177,6 +222,51 @@
           "file_offset": "0x86AD4",
           "expected_target_bus_address": "0x087C1000",
           "purpose": "Título: paleta urbana"
+        }
+      ],
+      "room_map_checks": [
+        {
+          "name": "main-deck-room0-metatile-table",
+          "encoding": "gba_4bpp_metatile_table",
+          "offset": "0x7B0000",
+          "reserved_bytes": "0x2000",
+          "used_bytes": 3074,
+          "header_bytes": 2,
+          "expected_header_word": 2,
+          "record_count": 384,
+          "subtile_entries_per_record": 4,
+          "tile_index_min": 192,
+          "tile_index_max": 560,
+          "transparent_metatile_id": 383,
+          "transparent_tile_index": 560,
+          "expected_transparent_record_blank": true
+        },
+        {
+          "name": "main-deck-room0-bg1",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2000",
+          "reserved_bytes": "0x400",
+          "used_bytes": 22,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_unique_values": [
+            383
+          ]
+        },
+        {
+          "name": "main-deck-room0-bg2",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2400",
+          "reserved_bytes": "0x400",
+          "used_bytes": 414,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_max_metatile_id": 304,
+          "expected_unique_count": 305
         }
       ]
     },
@@ -359,6 +449,51 @@
           "file_offset": "0x940C8",
           "expected_target_bus_address": "0x08609020",
           "purpose": "Escena no-title: paleta de intro original"
+        }
+      ],
+      "room_map_checks": [
+        {
+          "name": "main-deck-room0-metatile-table",
+          "encoding": "gba_4bpp_metatile_table",
+          "offset": "0x7B0000",
+          "reserved_bytes": "0x2000",
+          "used_bytes": 3074,
+          "header_bytes": 2,
+          "expected_header_word": 2,
+          "record_count": 384,
+          "subtile_entries_per_record": 4,
+          "tile_index_min": 192,
+          "tile_index_max": 560,
+          "transparent_metatile_id": 383,
+          "transparent_tile_index": 560,
+          "expected_transparent_record_blank": true
+        },
+        {
+          "name": "main-deck-room0-bg1",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2000",
+          "reserved_bytes": "0x400",
+          "used_bytes": 22,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_unique_values": [
+            383
+          ]
+        },
+        {
+          "name": "main-deck-room0-bg2",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2400",
+          "reserved_bytes": "0x400",
+          "used_bytes": 414,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_max_metatile_id": 304,
+          "expected_unique_count": 305
         }
       ]
     },
