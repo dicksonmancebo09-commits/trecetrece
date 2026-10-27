@@ -8,6 +8,7 @@
 
 - [Atlas editable 256 × 256](scenario-01-villa-duarte-tiles.svg)
 - [Vista previa de montaje a coordenadas nativas 240 × 160](scenario-01-native-preview.svg)
+- [Composición editable con 9 capas](scenario-01-layered-composition.svg)
 - [Metadatos JSON de la cuadrícula y paleta](tile-atlas-metadata.json)
 - [Estado global / guía de los siete escenarios](../../../../docs/villa-duarte-sector-cero/SEVEN_SCENARIO_VISUAL_IDENTITIES.md)
 
@@ -19,6 +20,7 @@
 - Índice de tile: `index = tile_y * 32 + tile_x`.
 - Sprites/módulos grandes están alineados a múltiplos de 8 px y pueden cruzar varios tiles.
 - El SVG conserva la transparencia fuera de las siluetas y puede editarse directamente.
+- La composición por capas contiene nueve grupos editables en Inkscape: fondo, silueta lejana, fachadas, huecos, comercio, cableado, vegetación, suelo y objetos/jugador de referencia. Exportar cada capa por separado si se necesitan planos del juego.
 - La paleta de 16 colores es un **borrador para fijar la identidad**, no una confirmación de compatibilidad con la paleta original de Metroid Fusion. Antes de importar a ROM hay que comprobar paletas compartidas, compresión, tilemaps y dependencias de la sala real.
 - Los gráficos están diseñados a una escala pixel-art nominal; todavía deben comprobarse junto a jugador, enemigos, colisiones y plataformas en una escena jugable.
 
