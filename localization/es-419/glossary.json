@@ -1,0 +1,313 @@
+{
+  "locale": "es-419",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "status": "draft-reference",
+  "entries": [
+    {
+      "term": "qué lo que",
+      "region": "República Dominicana",
+      "meaning": "saludo coloquial, equivalente a «¿qué pasa?»",
+      "speaker": "yeyo",
+      "example": "¿Qué lo que, mi gente?",
+      "register": "informal"
+    },
+    {
+      "term": "diache",
+      "region": "República Dominicana",
+      "meaning": "exclamación de sorpresa o fastidio",
+      "speaker": "yeyo/majo",
+      "example": "Diache, ese portón está más trancao que colmado en día de apagón.",
+      "register": "informal"
+    },
+    {
+      "term": "vaina",
+      "region": "República Dominicana y Caribe",
+      "meaning": "cosa, asunto o situación; el tono depende del contexto",
+      "speaker": "yeyo/majo",
+      "example": "No me vengas con esa vaina.",
+      "register": "informal"
+    },
+    {
+      "term": "dique",
+      "region": "República Dominicana",
+      "meaning": "introduce algo que se dice o se supone, a menudo con ironía",
+      "speaker": "yeyo",
+      "example": "Dique que era un atajo.",
+      "register": "informal"
+    },
+    {
+      "term": "jevi",
+      "region": "República Dominicana",
+      "meaning": "bueno, agradable o genial",
+      "speaker": "yeyo",
+      "example": "La idea está jevi, pero la puerta no ayuda.",
+      "register": "informal"
+    },
+    {
+      "term": "tiguere",
+      "region": "República Dominicana",
+      "meaning": "persona callejera o hábil para desenvolverse; puede ser elogio o reproche",
+      "speaker": "yeyo",
+      "example": "Mira por dónde pisas, tiguere.",
+      "register": "informal"
+    },
+    {
+      "term": "pariguayo",
+      "region": "República Dominicana",
+      "meaning": "persona ingenua, torpe o fuera de lugar; usar como pulla amistosa, no como insulto insistente",
+      "speaker": "yeyo",
+      "example": "Mi brújula es más pariguaya que yo.",
+      "register": "informal"
+    },
+    {
+      "term": "boche",
+      "region": "República Dominicana",
+      "meaning": "regaño o reprimenda",
+      "speaker": "majo",
+      "example": "No le des un boche al destornillador.",
+      "register": "informal"
+    },
+    {
+      "term": "guayar la yuca",
+      "region": "República Dominicana",
+      "meaning": "trabajar duro o pasar penalidades",
+      "speaker": "yeyo",
+      "example": "Aquí sí vinimos a guayar la yuca.",
+      "register": "coloquial"
+    },
+    {
+      "term": "asere",
+      "region": "Cuba",
+      "meaning": "amigo o compañero; tratamiento informal",
+      "speaker": "lazaro",
+      "example": "Asere, ¿qué bolá?",
+      "register": "informal"
+    },
+    {
+      "term": "¿qué bolá?",
+      "region": "Cuba",
+      "meaning": "saludo similar a «¿qué pasa?»",
+      "speaker": "lazaro",
+      "example": "Asere, ¿qué bolá?",
+      "register": "informal"
+    },
+    {
+      "term": "ñó",
+      "region": "Cuba",
+      "meaning": "exclamación de sorpresa, énfasis o reacción",
+      "speaker": "lazaro",
+      "example": "Ñó, aquí hay más piezas sueltas que excusas.",
+      "register": "informal"
+    },
+    {
+      "term": "resolver",
+      "region": "Cuba y Caribe",
+      "meaning": "ingeniárselas para conseguir algo o solucionar un problema",
+      "speaker": "lazaro",
+      "example": "Voy a resolver, mi ambia.",
+      "register": "informal"
+    },
+    {
+      "term": "en candela",
+      "region": "Cuba",
+      "meaning": "en una situación muy complicada, intensa o peligrosa según el contexto",
+      "speaker": "lazaro",
+      "example": "Esa reja está en candela y ni siquiera hay fuego.",
+      "register": "informal"
+    },
+    {
+      "term": "acho",
+      "region": "Puerto Rico",
+      "meaning": "interjección o vocativo coloquial; depende del contexto",
+      "speaker": "lia",
+      "example": "Acho, mano, ¿quién hizo este pasillo?",
+      "register": "informal"
+    },
+    {
+      "term": "mano",
+      "region": "Puerto Rico y Caribe",
+      "meaning": "forma abreviada y cercana de tratar a un amigo",
+      "speaker": "lia",
+      "example": "Acho, mano, cuidado con la curva.",
+      "register": "informal"
+    },
+    {
+      "term": "bendito",
+      "region": "Puerto Rico",
+      "meaning": "interjección que puede expresar pena, sorpresa, ternura o frustración",
+      "speaker": "lia",
+      "example": "Bendito, mira pa'l frente.",
+      "register": "informal"
+    },
+    {
+      "term": "zumba",
+      "region": "Puerto Rico y Caribe",
+      "meaning": "interjección para animar a actuar o seguir",
+      "speaker": "lia",
+      "example": "Zumba, que esa curva no se dobla sola.",
+      "register": "informal"
+    },
+    {
+      "term": "brutal",
+      "region": "Puerto Rico",
+      "meaning": "muy bueno o intenso; en este juego también puede usarse irónicamente para algo peligroso",
+      "speaker": "lia",
+      "example": "Está brutal… de peligrosa.",
+      "register": "informal"
+    },
+    {
+      "term": "janguear",
+      "region": "Puerto Rico",
+      "meaning": "pasar el rato o reunirse con amistades",
+      "speaker": "lia",
+      "example": "Después del turno jangueamos si seguimos vivos.",
+      "register": "informal"
+    },
+    {
+      "term": "Wha' gwaan?",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "saludo: «¿qué pasa?» o «¿qué hay?»",
+      "speaker": "kade",
+      "example": "Wha' gwaan, crew?",
+      "register": "coloquial"
+    },
+    {
+      "term": "Wha'appen?",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "saludo entre amistades, equivalente a «¿qué pasa?»",
+      "speaker": "kade",
+      "example": "Wha'appen, mi crew?",
+      "register": "coloquial"
+    },
+    {
+      "term": "Nuff",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "mucho o bastante",
+      "speaker": "kade",
+      "example": "Nuff cable over there.",
+      "register": "coloquial"
+    },
+    {
+      "term": "Rhaatid!",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "exclamación de sorpresa, similar a «¡wow!»",
+      "speaker": "kade",
+      "example": "Rhaatid! Nuff cable up there.",
+      "register": "coloquial"
+    },
+    {
+      "term": "Bless up",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "saludo o deseo de bienestar",
+      "speaker": "kade",
+      "example": "Bless up, crew.",
+      "register": "coloquial"
+    },
+    {
+      "term": "Walk good",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "despedida que desea que la persona esté bien o viaje con seguridad",
+      "speaker": "kade",
+      "example": "Walk good, mi gente.",
+      "register": "coloquial"
+    },
+    {
+      "term": "Criss",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "bien, fino o en buen estado",
+      "speaker": "kade",
+      "example": "Criss, sunlight!",
+      "register": "coloquial"
+    },
+    {
+      "term": "bashment",
+      "region": "Jamaica · Patois/Patwa",
+      "meaning": "fiesta o evento animado",
+      "speaker": "kade",
+      "example": "Eso parece un bashment de alarmas.",
+      "register": "coloquial"
+    },
+    {
+      "term": "no manches",
+      "region": "México",
+      "meaning": "interjección de incredulidad o reproche; eufemística frente a una forma más vulgar",
+      "speaker": "chava",
+      "example": "No manches, esa puerta es una bronca.",
+      "register": "informal"
+    },
+    {
+      "term": "órale",
+      "region": "México",
+      "meaning": "interjección que puede expresar sorpresa, aprobación o impulso",
+      "speaker": "chava",
+      "example": "¡Órale, pues!",
+      "register": "informal"
+    },
+    {
+      "term": "parce",
+      "region": "Colombia",
+      "meaning": "amigo, compañero o tratamiento cercano",
+      "speaker": "vale",
+      "example": "Parce, ese plan está bacano.",
+      "register": "informal"
+    },
+    {
+      "term": "bacano",
+      "region": "Colombia",
+      "meaning": "bueno, agradable o genial",
+      "speaker": "vale",
+      "example": "El plan está bacano… si funciona.",
+      "register": "informal"
+    },
+    {
+      "term": "che",
+      "region": "Argentina",
+      "meaning": "vocativo o interjección familiar",
+      "speaker": "che",
+      "example": "Che, esto es un quilombo.",
+      "register": "informal"
+    },
+    {
+      "term": "quilombo",
+      "region": "Argentina y Río de la Plata",
+      "meaning": "desorden, lío o situación complicada; puede ser vulgar según el tono",
+      "speaker": "che",
+      "example": "Esto es un quilombo, pero se puede salir.",
+      "register": "coloquial"
+    },
+    {
+      "term": "boludo",
+      "region": "Argentina y Río de la Plata",
+      "meaning": "tratamiento muy informal que puede ser afectuoso o insultante según relación y entonación",
+      "speaker": "che",
+      "example": "Usar solo cuando el contexto y la relación lo justifiquen.",
+      "register": "coloquial"
+    }
+  ],
+  "references": [
+    {
+      "title": "Academia Dominicana de la Lengua — Diccionario fraseológico",
+      "url": "https://academia.org.do/2016/06/02/el-diccionario-fraseologico-del-espanol-dominicano/"
+    },
+    {
+      "title": "Visit Jamaica — Jamaican Patois",
+      "url": "https://www.visitjamaica.com/discover-jamaica/people-heritage/language/"
+    },
+    {
+      "title": "UC3M — Manual para estudiantes visitantes, Puerto Rico",
+      "url": "https://www.uc3m.es/secretaria-virtual/media/secretaria-virtual/doc/archivo/doc_mne_puerto-rico_mayaguez_guia/manual-para-estudiantes-visitantes.pdf"
+    },
+    {
+      "title": "Cuban Spanish Academy — Frases cubanas comunes",
+      "url": "https://www.cubanspanishclasses.com/es/common-cuban-phrases/"
+    },
+    {
+      "title": "Academia Mexicana de la Lengua — No mames / no manches",
+      "url": "https://academia.org.mx/consultas/consultas-frecuentes/item/no-mames"
+    },
+    {
+      "title": "Diccionario de Jergas de Habla Hispana",
+      "url": "https://www.jergasdehablahispana.org/"
+    }
+  ]
+}
