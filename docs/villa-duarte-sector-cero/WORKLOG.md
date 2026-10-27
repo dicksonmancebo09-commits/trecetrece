@@ -107,3 +107,11 @@ Para cada cambio futuro:
 - Se guardó una versión optimizada del arte de sala como `assets/test-builds/test-01/v1.0-urban-opening-room-reconstruction.png` y se documentó el resultado en `TEST_01_ROM_INTEGRITY.md`.
 - **No se ejecutó la ROM en mGBA/MAGE.** La imagen es una reconstrucción de sala a partir del mapa, no una captura de emulador. El paquete de descarga para el usuario contiene el IPS y la vista; no contiene la ROM completa y el IPS no se publica en el repositorio público.
 - Esta build v1.0 es un prototipo previo y no contiene los nuevos escenarios 1/2 ni el paquete es-419. La prueba de ROM en ejecución sigue pendiente.
+
+## 2026-10-27 — Candidata v1.1 QA Viewer
+
+- Generada una ROM privada de 16 MiB basada en Urban Opening v1.0, con un visor de arranque para revisar dos escenas originales a resolución GBA.
+- Controles declarados: L = Escenario 1, R = Escenario 2, START = intentar continuar al punto de entrada original v1.0.
+- Verificación estática: dirección de entrada 0x08800000; dos frames de 76.800 bytes en BGR555; checksum de cabecera 0x98; el parche BPS vuelve a producir la ROM candidata byte por byte.
+- Estado: **no probado en emulador**. No confundir este visor con la integración de los tilesets en los mapas reales o la inserción del paquete de diálogos en la rutina de texto.
+- Entrega privada; no se publican ROM ni parche binario en este repositorio. Ver [QA_VIEWER_V1_1.md](QA_VIEWER_V1_1.md).
