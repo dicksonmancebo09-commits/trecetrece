@@ -11,3 +11,6 @@
 *.pt
 *.pth
 *.gguf
+
+# Project-scoped third-party skills are downloaded at Codespace creation; do not commit copies by default.
+/.github/skills/
