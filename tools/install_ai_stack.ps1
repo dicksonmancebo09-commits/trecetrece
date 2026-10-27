@@ -19,7 +19,7 @@ if ([version]$pythonVersion -lt [version]"3.12") { throw "Python 3.12+ required.
 
 New-Item -ItemType Directory -Force -Path $AiRoot | Out-Null
 Write-Host "[1/4] Installing REA and OmniRoute..."
-& npm install --global rea-agents@6.8.0 omniroute@latest
+& npm install --global --allow-scripts=omniroute,keytar,onnxruntime-node,@parcel/watcher,@swc/core,protobufjs,esbuild rea-agents@6.8.0 omniroute@latest
 if ($LASTEXITCODE -ne 0) { throw "npm global installation failed." }
 & rea --version
 & omniroute --version
