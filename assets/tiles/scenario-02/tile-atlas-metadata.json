@@ -23,7 +23,9 @@
     "atlas": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg",
     "layered_composition": "assets/tiles/scenario-02/scenario-02-layered-composition.svg",
     "native_preview": "assets/tiles/scenario-02/scenario-02-native-preview.svg",
-    "catalog": "assets/tiles/scenario-02/README.md"
+    "catalog": "assets/tiles/scenario-02/README.md",
+    "atlas_png": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png",
+    "native_preview_png": "assets/tiles/scenario-02/scenario-02-native-preview.png"
   },
   "grid": {
     "canvas_width_px": 256,
@@ -238,14 +240,35 @@
     "10-props"
   ],
   "validation": {
-    "svg_structure": "to be checked",
-    "raster_export": "not run",
+    "svg_structure": "checked: balanced tags on atlas, layered composition and native preview",
+    "raster_export": "checked with rsvg-convert at exactly 256x256 and 240x160",
     "visible_palette_colors": 15,
     "alpha_mapping": "source alpha only; do not assume GBA BG palette index 0 transparency",
     "external_editor": "not checked in Inkscape or other vector editor",
     "game_engine_test": "not run",
     "rom_compatible": "not verified",
-    "rom_modified": false
+    "rom_modified": false,
+    "png_atlas": {
+      "size": "256x256",
+      "mode": "indexed P",
+      "palette_entries": 16,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "visible_colors": 15,
+      "unexpected_colors": 0
+    },
+    "png_preview": {
+      "size": "240x160",
+      "mode": "indexed P",
+      "palette_entries": 15,
+      "alpha_values": [
+        255
+      ],
+      "visible_colors": 15,
+      "unexpected_colors": 0
+    }
   },
   "notes": [
     "All visuals are original SVG geometry. The source images are observation references, not copied or embedded textures.",
