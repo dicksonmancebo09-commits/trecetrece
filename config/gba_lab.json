@@ -241,7 +241,49 @@
         "wait_seconds": 2,
         "description": "Comprobar si la entrada de movimiento produce respuesta visual"
       }
-    ]
+    ],
+    "lua_trace": {
+      "recommended_load_method": "mGBA GUI > Tools > Scripting > Load Script",
+      "output_directory": "private-roms/diagnostics",
+      "sample_interval_frames": 30,
+      "capture_frames": [
+        1,
+        420,
+        600,
+        780,
+        1500,
+        1680
+      ],
+      "auto_input_enabled_by_default": false,
+      "auto_input_steps": [
+        {
+          "start_frame": 422,
+          "end_frame_exclusive": 428,
+          "key": "START"
+        },
+        {
+          "start_frame": 610,
+          "end_frame_exclusive": 616,
+          "key": "A"
+        },
+        {
+          "start_frame": 1560,
+          "end_frame_exclusive": 1602,
+          "key": "RIGHT"
+        }
+      ],
+      "memory_addresses": {
+        "gMainGameMode": "0x03000BDE",
+        "gSubGameMode1": "0x03000BE0",
+        "gSubGameMode2": "0x03000BE2",
+        "DISPCNT": "0x04000000",
+        "BG1CNT": "0x0400000A",
+        "BG2CNT": "0x0400000C",
+        "BG3CNT": "0x0400000E",
+        "VCOUNT": "0x04000006",
+        "KEYINPUT": "0x04000130"
+      }
+    }
   },
   "quality_gates": {
     "required_static_checks": [
