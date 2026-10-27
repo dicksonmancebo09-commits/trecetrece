@@ -7,6 +7,7 @@ Repositorio de trabajo para investigar herramientas, organizar recursos con lice
 - [Resumen y estado actual](docs/villa-duarte-sector-cero/README.md)
 - [Herramientas y repositorios de referencia](docs/villa-duarte-sector-cero/research/TOOLS_AND_REPOSITORIES.md)
 - [Notas técnicas de la ROM de referencia](docs/villa-duarte-sector-cero/research/ROM_TECHNICAL_NOTES.md)
+- [Biblia visual de Villa Duarte y sus barrios](docs/villa-duarte-sector-cero/VILLA_DUARTE_VISUAL_BIBLE.md)
 - [Dirección artística, procedencia y licencias](docs/villa-duarte-sector-cero/research/ART_DIRECTION_AND_LICENSES.md)
 - [Bitácora de investigación y pruebas](docs/villa-duarte-sector-cero/WORKLOG.md)
 - [Auditoría de los archivos existentes](docs/villa-duarte-sector-cero/REPOSITORY_AUDIT.md)
