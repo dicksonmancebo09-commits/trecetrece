@@ -123,3 +123,10 @@ Para cada cambio futuro:
 - Verificación estática: LZ77 round-trip, límites de recursos, checksum GBA y reaplicación de BPS. Emulador pendiente.
 - La v1.2 mantiene los datos de reskin de la sala 0 agregados por la v1.0, pero no declara su apariencia probada en juego.
 - Resto del juego sigue pendiente de reskin integral.
+
+## 2026-10-27 — v1.3, título real + primer escenario
+
+- Rehecha la tabla de metatiles y los mapas BG1/BG2 que cargan realmente Main Deck, sala 0; ya no se confía en el atlas urbano aislado con el mapeo de tiles original.
+- Se usa el área de datos redirigida por los punteros de v1.0. El clipdata/collision map y el código de arranque se preservan.
+- La reconstrucción gráfica procede de los datos escritos en la ROM; no es captura de emulador.
+- Pendiente: prueba real en mGBA/MAGE y conversión de los otros mapas, player/enemigos, HUD, cinemáticas y diálogos.
