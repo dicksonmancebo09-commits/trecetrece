@@ -7,7 +7,7 @@ def make_test_rom() -> bytes:
     data = bytearray([0x00] * 0x200)
     # Entry instruction: B from 0x08000000 to 0x080000C0 (offset +0xB8).
     data[0:4] = (0xEA00002E).to_bytes(4, "little")
-    data[0xA0:0xAC] = b"TEST ROM   "
+    data[0xA0:0xAC] = b"TEST ROM    "
     data[0xAC:0xB0] = b"AMTE"
     data[0xB0:0xB2] = b"01"
     data[0xB2] = 0x96
