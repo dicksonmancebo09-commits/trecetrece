@@ -31,7 +31,13 @@ También se puede ejecutar desde la terminal del proyecto:
 bash tools/install_all_tools.sh
 ```
 
-Los archivos de skills se colocan en `.github/skills/` dentro del workspace, para que el repositorio y el agente de Copilot puedan encontrarlos.
+Para descargar también el checkpoint SD 1.5 (~4.27 GB) e instalar los navegadores de Scrapling:
+
+```bash
+bash tools/install_all_tools.sh --with-model --with-browsers
+```
+
+Las skills se descargan en `.github/skills/` dentro del workspace para que Copilot pueda encontrarlas. Esa carpeta está excluida de Git por defecto: se reinstalan al crear un nuevo Codespace y no se publican accidentalmente como copias de terceros.
 
 ## Arrancar las interfaces
 
