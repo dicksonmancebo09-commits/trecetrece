@@ -170,3 +170,12 @@ Para cada cambio futuro:
 - On a new save when `introPlayed=false`, change the post-`NewFileIntroInit` state from 1 to 11 (`NewFileIntroLandingOnBsl`), bypassing story states 1–10.
 - Binary checks: 13 changed bytes across four ranges; expected-byte preconditions passed; header checksum 0x6D valid; BPS reapplied byte for byte.
 - Not run in mGBA yet; confirm splash, START, and a fresh-save hangar sequence at runtime. Details: [V1_6_TITLE_AND_INTRO_FLOW.md](V1_6_TITLE_AND_INTRO_FLOW.md).
+
+## 2026-10-27 — v1.7 Title/Hangar Flow Fix tras reporte de crash
+
+- Revisando v1.6 encontré que `IntroHandler` empezaba con un retorno inmediato antes de ejecutar la inicialización habitual; eso podía dejar el estado global sin preparar. v1.7 restaura el prólogo y salta a estado 3 después de la inicialización.
+- v1.5 había redirigido los recursos del título urbano a referencias utilizadas también por otras escenas/cinemáticas. v1.7 conserva los tres punteros del título personalizado, pero restaura los punteros compartidos de otras escenas a GFX/mapa/paleta originales.
+- Se mantienen los NOP de copyright/PRESS START y el salto de una partida nueva a estado 11 de la intro (secuencia del hangar).
+- Checksum GBA válido; BPS v1.6→v1.7 reproducido byte por byte.
+- **No probado en emulador.** La corrección tiene fundamento en el flujo del código y los punteros, pero sigue pendiente abrir la ROM y comprobar title→START→hangar→primera sala.
+- Documento: [V1_7_TITLE_HANGAR_FIX.md](V1_7_TITLE_HANGAR_FIX.md).
