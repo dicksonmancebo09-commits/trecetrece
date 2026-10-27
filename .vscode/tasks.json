@@ -5,7 +5,7 @@
       "id": "gbaRomPath",
       "type": "promptString",
       "description": "Ruta a una ROM local dentro de private-roms/",
-      "default": "private-roms/LATINO_AMERICA_Zector_Cero_v1.3_TITLE_AND_FIRST_ROOM_RESKIN.gba"
+      "default": "private-roms/candidate.gba"
     }
   ],
   "tasks": [
