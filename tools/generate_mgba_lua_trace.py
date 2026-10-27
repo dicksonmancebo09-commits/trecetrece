@@ -20,7 +20,7 @@ def lua_number(value: str | int) -> str:
     return f"0x{value:X}" if isinstance(value, int) else f"0x{int(value, 0):X}"
 
 
-def render_trace(config: dict[str, Any], template: str) -> str:
+def render_trace(config: dict[str, Any], template: str, output_directory: str | None = None) -> str:
     trace = config.get("emulator", {}).get("lua_trace")
     if not isinstance(trace, dict):
         raise ValueError("config must define emulator.lua_trace")
@@ -64,7 +64,7 @@ def render_trace(config: dict[str, Any], template: str) -> str:
     ) + "\n}"
 
     values = {
-        "__OUT_DIR_LUA__": json.dumps(str(trace.get("output_directory", "private-roms/diagnostics"))),
+        "__OUT_DIR_LUA__": json.dumps(str(output_directory or trace.get("output_directory", "private-roms/diagnostics"))),
         "__AUTO_INPUT_LUA__": "true" if trace.get("auto_input_enabled_by_default", False) else "false",
         "__SAMPLE_INTERVAL_FRAMES__": str(int(trace["sample_interval_frames"])),
         "__STOP_AFTER_FRAME__": str(int(trace["stop_after_frame"])),
@@ -95,7 +95,7 @@ def main() -> int:
         private_diag = (root / "private-roms" / "diagnostics").resolve()
         if not output.is_relative_to(private_diag):
             raise ValueError("Generated Lua must be saved under private-roms/diagnostics/ (ignored by Git).")
-        rendered = render_trace(config, template)
+        rendered = render_trace(config, template, str(output.parent))
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered, encoding="utf-8")
         print(f"Generated mGBA trace: {output}")
