@@ -43,11 +43,11 @@ Los informes previos no acreditan una prueba de ejecución confirmada en MAGE o 
 
 Las previews de room 1 y la reconstrucción v1.0 están etiquetadas como propuestas o reconstrucciones: **no son capturas verificadas de una sesión de juego**.
 
-## 4. Sala benchmark provisional
+## 4. Benchmark técnico y referencia artística (no confundir)
 
 **Selección de trabajo: `AREA_MAIN_DECK`, room index 1 — Docking Bays.**
 
-La elegimos porque ya existen un atlas BG3 extraído, una composición con tiles CC0 y una variante de paleta. Así podemos comparar y reutilizar el trabajo de investigación previo sin tomar la sala inicial ya modificada como referencia visual nueva.
+La sala se mantiene únicamente como benchmark técnico: allí existen un atlas BG3 extraído, una composición con tiles CC0 y una variante de paleta. Esto permite estudiar la estructura de recursos de la ROM, pero **no define el estilo visual de Villa Duarte — Sector Cero**. La identidad artística se basará en referencias reales de Villa Duarte y barrios concretos, según la [Biblia visual de Villa Duarte](VILLA_DUARTE_VISUAL_BIBLE.md).
 
 Antes de editar, falta abrir la ROM base en una herramienta compatible y obtener una captura reproducible de la sala original. En esta sesión, `MAGE`, `mGBA` y `Ghidra` no aparecieron como comandos en `PATH`; podrían existir en otra ubicación, pero no se han ejecutado aquí.
 
@@ -59,5 +59,5 @@ Antes de editar, falta abrir la ROM base en una herramienta compatible y obtener
 
 ## Resultado
 
-**Completado:** verificación básica de la ROM base, registro de hashes, auditoría de recursos y elección provisional de Docking Bays como benchmark.  
+**Completado:** verificación básica de la ROM base, registro de hashes y auditoría de recursos. Docking Bays queda como benchmark técnico únicamente; la dirección artística se corrige a Villa Duarte y sus barrios.  
 **Pendiente:** captura original en ejecución y confirmación en herramienta compatible. No se modificó la ROM durante la Tarea 1.
