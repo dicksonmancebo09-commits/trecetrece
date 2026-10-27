@@ -20,7 +20,7 @@ if curl -fsS http://127.0.0.1:20128/dashboard >/dev/null 2>&1; then
   echo "OmniRoute already responds on port 20128."
 else
   echo "Starting OmniRoute..."
-  (cd "$AI_ROOT" && nohup omniroute > "$LOG_DIR/omniroute.log" 2>&1 &)
+  (cd "$AI_ROOT" && nohup env BROWSER=none omniroute > "$LOG_DIR/omniroute.log" 2>&1 &)
 fi
 
 if curl -fsS http://127.0.0.1:8188/system_stats >/dev/null 2>&1; then
