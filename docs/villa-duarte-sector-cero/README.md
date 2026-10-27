@@ -14,6 +14,10 @@ El proyecto no está destinado a distribuir una ROM modificada. El objetivo es a
 4. **Procedencia de activos:** conservar la URL de origen y la licencia específica de cada recurso externo.
 5. **No distribuir ROMs:** no almacenar en este repositorio público la ROM original, una ROM modificada ni parches binarios derivados.
 
+## Alcance de la siguiente etapa
+
+El alcance visual ya no se limita a una sala: la meta es transformar la ROM completa, cubriendo todos los recursos y todas las áreas aplicables. La primera sala sirve para calibrar el estilo y el método. Se realizarán copias y validaciones incrementales para detectar regresiones; nunca se presentará como terminado lo que no se haya comprobado.
+
 ## Estado técnico conocido
 
 - ROM de referencia estudiada localmente: Metroid Fusion, región USA/Australia, código de juego **AMTE**, 8 MiB.
