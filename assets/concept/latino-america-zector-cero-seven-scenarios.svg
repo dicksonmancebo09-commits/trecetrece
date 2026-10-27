@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1460" viewBox="0 0 1920 1460">
+<title>LATINO AMÉRICA Zector Cero — Atlas visual de los siete escenarios</title>
+<desc>Atlas conceptual editable en SVG. Siete zonas diferentes inspiradas en la arquitectura y textura cotidiana de Villa Duarte, más reglas visuales comunes y paleta global. No es una captura de juego ni un tileset final.</desc>
+<defs>
+ <linearGradient id="header" x2="1" y2="1"><stop stop-color="#0d2237"/><stop offset="1" stop-color="#172d40"/></linearGradient>
+ <linearGradient id="amberSky" x2="0" y2="1"><stop stop-color="#3e4c78"/><stop offset=".55" stop-color="#d4775c"/><stop offset="1" stop-color="#f7c16d"/></linearGradient>
+ <linearGradient id="alleySky" x2="1" y2="0"><stop stop-color="#552f3f"/><stop offset=".5" stop-color="#d06e54"/><stop offset="1" stop-color="#29334a"/></linearGradient>
+ <linearGradient id="daySky" x2="0" y2="1"><stop stop-color="#63b9cb"/><stop offset="1" stop-color="#f5d28b"/></linearGradient>
+ <linearGradient id="workSky" x2="0" y2="1"><stop stop-color="#243c59"/><stop offset="1" stop-color="#9e684d"/></linearGradient>
+ <linearGradient id="roofSky" x2="0" y2="1"><stop stop-color="#343a83"/><stop offset=".7" stop-color="#b05f91"/><stop offset="1" stop-color="#f5a976"/></linearGradient>
+ <linearGradient id="serviceSky" x2="1" y2="1"><stop stop-color="#163949"/><stop offset=".6" stop-color="#23656d"/><stop offset="1" stop-color="#af8a64"/></linearGradient>
+ <linearGradient id="nightSky" x2="0" y2="1"><stop stop-color="#101a3b"/><stop offset=".7" stop-color="#443468"/><stop offset="1" stop-color="#b25482"/></linearGradient>
+ <pattern id="pixelGrid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="#fff" stroke-opacity=".055" stroke-width="1"/></pattern>
+ <pattern id="concrete" width="42" height="31" patternUnits="userSpaceOnUse"><path d="M0 0H42M0 31H42M21 0V15M7 15V31M35 15V31" stroke="#152336" stroke-opacity=".32" stroke-width="2" fill="none"/></pattern>
+ <g id="wire"><path d="M0 7Q75 24 150 3T300 9" stroke="#111a2a" stroke-width="4" fill="none"/><path d="M0 16Q75 33 150 12T300 18" stroke="#172338" stroke-width="2" fill="none"/></g>
+ <g id="window"><rect width="46" height="45" fill="#1b2a3d" stroke="#111c2c" stroke-width="4"/><rect x="5" y="5" width="36" height="35" fill="#3e6172"/><path d="M23 5V40M5 22H41" stroke="#c9c9b4" stroke-width="3"/></g>
+ <g id="barredWindow"><rect width="46" height="45" fill="#162638" stroke="#111c2c" stroke-width="4"/><rect x="5" y="5" width="36" height="35" fill="#375266"/><path d="M12 4V41M22 4V41M32 4V41M4 17H42M4 29H42" stroke="#d8cdb0" stroke-width="2.5"/></g>
+ <g id="tileWall"><rect width="80" height="48" fill="#c0b29a" stroke="#172438" stroke-width="4"/><path d="M0 16H80M0 32H80M25 0V16M56 16V32M20 32V48" stroke="#837e75" stroke-width="2"/></g>
+</defs>
+<rect width="1920" height="1460" fill="#06111e"/>
+<rect x="28" y="22" width="1864" height="120" rx="8" fill="url(#header)" stroke="#2c4f68" stroke-width="2"/>
+<text x="54" y="69" font-family="Arial,sans-serif" font-weight="900" font-size="39" letter-spacing="1.3" fill="#f4f1e8">LATINO AMÉRICA</text>
+<text x="56" y="116" font-family="Georgia,serif" font-weight="bold" font-style="italic" font-size="45" fill="#f04a55">Zector Cero</text>
+<path d="M430 40V124" stroke="#31566e" stroke-width="2"/>
+<text x="466" y="65" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#f0f3ef">ATLAS DE IDENTIDAD VISUAL · V0.1</text>
+<text x="466" y="94" font-family="Arial,sans-serif" font-size="17" fill="#a8c0cd">Siete escenarios · una identidad dominicana · inspirada en Villa Duarte</text>
+<text x="466" y="119" font-family="Arial,sans-serif" font-size="14" fill="#79d4dd">CONCEPTO EDITABLE · NO ES CAPTURA DE JUEGO NI TILESET FINAL</text>
+<rect x="1508" y="40" width="351" height="82" rx="6" fill="#0a1828" stroke="#31556c" stroke-width="2"/>
+<text x="1530" y="69" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#82d8df">MATERIAL BASE</text>
+<text x="1530" y="95" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#f3ead9">VILLA DUARTE · RD</text>
+<text x="1530" y="114" font-family="Arial,sans-serif" font-size="12" fill="#9db0bc">Santo Domingo Este</text>
+
+<!-- CARD 1 -->
+<g transform="translate(32 160)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#d89b3b" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#f2bd55">01 · ENTRADA AL BARRIO</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">ZONA INICIAL</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#amberSky)"/>
+<circle cx="392" cy="48" r="30" fill="#ffd17a" opacity=".85"/>
+<path d="M0 82L70 46 105 76 165 38 224 74 270 50 332 81 398 47 450 78 520 49 570 78V190H0Z" fill="#59435a"/>
+<rect x="16" y="70" width="164" height="95" fill="#db9a59" stroke="#172238" stroke-width="4"/>
+<rect x="16" y="70" width="164" height="12" fill="#893f36"/><use href="#barredWindow" x="28" y="89"/><use href="#barredWindow" x="82" y="89"/>
+<rect x="18" y="138" width="158" height="27" fill="#244f68" stroke="#172238" stroke-width="3"/>
+<text x="97" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#f7d78a">COLMADO</text>
+<rect x="202" y="52" width="166" height="113" fill="#e6b16b" stroke="#172238" stroke-width="4"/>
+<rect x="214" y="64" width="56" height="45" fill="#24465e" stroke="#172238" stroke-width="4"/><path d="M242 64V109M214 86H270" stroke="#d9d0b8" stroke-width="3"/>
+<rect x="286" y="64" width="69" height="45" fill="#284a5a" stroke="#172238" stroke-width="4"/><path d="M320 64V109M286 86H355" stroke="#d9d0b8" stroke-width="3"/>
+<rect x="235" y="122" width="86" height="43" fill="#6d4138" stroke="#172238" stroke-width="4"/>
+<rect x="385" y="81" width="167" height="84" fill="#4c8c84" stroke="#172238" stroke-width="4"/>
+<use href="#barredWindow" x="398" y="94"/><use href="#barredWindow" x="456" y="94"/><rect x="515" y="126" width="23" height="39" fill="#273949" stroke="#172238" stroke-width="3"/>
+<path d="M0 166H570V190H0Z" fill="#d3c2a4"/><rect y="181" width="570" height="9" fill="#606b6d"/>
+<use href="#wire" x="126" y="28"/><path d="M153 0V185M426 0V183" stroke="#152034" stroke-width="4"/>
+<g transform="translate(106 154)" stroke="#101a2c" stroke-width="3"><circle cx="0" cy="17" r="10" fill="#131d2b"/><circle cx="39" cy="17" r="10" fill="#131d2b"/><path d="M0 17L12 2 24 17H0L28 9 39 17" fill="none"/><path d="M10 2H29L37 12H20Z" fill="#d24c3e"/></g>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: calle reconocible, comercio y bienvenida.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Fachadas de colores · rejas · balcones · colmado ficticio · motor</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#f3bf62"/><rect x="48" width="44" height="15" fill="#d99058"/><rect x="96" width="44" height="15" fill="#b95745"/><rect x="144" width="44" height="15" fill="#4b8d85"/><rect x="192" width="44" height="15" fill="#d4c4a8"/><rect x="240" width="44" height="15" fill="#294961"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">ámbar / coral / teal</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#e7ba64">PUNTO DE PARTIDA · luz de tarde · contraste amable</text>
+</g>
+
+<!-- CARD 2 -->
+<g transform="translate(659 160)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#d45c50" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#ed7562">02 · CALLEJONES</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">REFERENCIA: EL CALICHE</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#alleySky)"/>
+<path d="M0 0H220L322 190H0Z" fill="#b97864" stroke="#182237" stroke-width="4"/>
+<path d="M570 0H362L255 190H570Z" fill="#8b6863" stroke="#182237" stroke-width="4"/>
+<path d="M220 0L322 190H255L362 0Z" fill="#23283a"/>
+<path d="M0 165L220 134 362 134 570 165V190H0Z" fill="#6e6570"/>
+<path d="M0 172L227 143M570 172L355 143" stroke="#c8b3a0" stroke-width="4"/>
+<g stroke="#172238" stroke-width="3"><rect x="16" y="18" width="68" height="45" fill="#46636e"/><path d="M28 18V63M42 18V63M56 18V63M70 18V63M16 33H84M16 48H84" stroke="#d2b6a0" fill="none"/><rect x="110" y="24" width="69" height="44" fill="#32505c"/><path d="M122 24V68M136 24V68M150 24V68M164 24V68" stroke="#d2b6a0" fill="none"/><rect x="397" y="17" width="62" height="46" fill="#233e53"/><path d="M408 17V63M421 17V63M434 17V63M447 17V63" stroke="#d2b6a0" fill="none"/><rect x="483" y="27" width="67" height="39" fill="#2d4a59"/><path d="M494 27V66M508 27V66M522 27V66M536 27V66" stroke="#d2b6a0" fill="none"/></g>
+<path d="M0 100L170 85 214 138 0 162Z" fill="#85585d" opacity=".6"/><path d="M570 105L405 87 355 136 570 162Z" fill="#644d59" opacity=".7"/>
+<rect x="31" y="82" width="74" height="7" fill="#dfb39b"/><rect x="420" y="80" width="94" height="7" fill="#dfb39b"/>
+<path d="M0 8Q130 28 268 10T570 20" stroke="#121c2e" stroke-width="4" fill="none"/><path d="M140 0V123M469 0V103" stroke="#121c2e" stroke-width="3"/>
+<rect x="266" y="137" width="42" height="34" fill="#141f2f"/><rect x="274" y="145" width="26" height="26" fill="#bf7559"/>
+<path d="M15 120H65M15 129H65M487 119H547M487 129H547" stroke="#d0ad97" stroke-width="3"/>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: estrechez, esquinas y tensión.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Muros próximos · rejas · pintura gastada · suelo irregular</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#d45c50"/><rect x="48" width="44" height="15" fill="#9b5149"/><rect x="96" width="44" height="15" fill="#b18a79"/><rect x="144" width="44" height="15" fill="#667774"/><rect x="192" width="44" height="15" fill="#d5b59b"/><rect x="240" width="44" height="15" fill="#26344a"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">terracota / sombra</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#e27768">BASE DOCUMENTAL: callejones y fachadas del sector</text>
+</g>
+
+<!-- CARD 3 -->
+<g transform="translate(1286 160)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#33c7a0" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#57dfb9">03 · CALLE RESIDENCIAL</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">REFERENCIA: LA FRANCIA</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#daySky)"/>
+<circle cx="469" cy="29" r="21" fill="#fff0a5"/>
+<path d="M0 117L65 72 108 96 166 59 225 91 290 64 354 97 419 70 493 91 570 62V190H0Z" fill="#77a59a"/>
+<path d="M0 190L218 108H352L570 190Z" fill="#545f6c"/>
+<path d="M0 181L227 113M570 181L344 113" stroke="#e8d9ae" stroke-width="5"/>
+<g stroke="#17263a" stroke-width="4"><rect x="10" y="75" width="122" height="89" fill="#d3b17b"/><rect x="20" y="86" width="42" height="39" fill="#31536d"/><use href="#barredWindow" x="73" y="85"/><rect x="144" y="54" width="124" height="110" fill="#e2d1ae"/><use href="#window" x="156" y="66"/><use href="#window" x="213" y="66"/><rect x="280" y="84" width="97" height="80" fill="#4d8f80"/><use href="#barredWindow" x="292" y="95"/><use href="#barredWindow" x="337" y="95"/><rect x="390" y="62" width="170" height="102" fill="#6fa7a1"/><use href="#window" x="404" y="74"/><use href="#window" x="461" y="74"/><use href="#window" x="506" y="74"/></g>
+<path d="M0 26Q170 48 299 19T570 34" stroke="#172339" stroke-width="4" fill="none"/><path d="M122 0V128M463 0V113" stroke="#172339" stroke-width="3"/>
+<rect x="350" y="145" width="68" height="25" rx="3" fill="#e7d6b2" stroke="#17263a" stroke-width="4"/><rect x="360" y="150" width="27" height="10" fill="#284861"/><circle cx="364" cy="170" r="8" fill="#152136"/><circle cx="404" cy="170" r="8" fill="#152136"/>
+<path d="M12 172H558" stroke="#d0c2a6" stroke-width="10"/><path d="M12 183H558" stroke="#727e7b" stroke-width="6"/>
+<g fill="#1d6953" stroke="#172339" stroke-width="3"><path d="M88 145L94 95 104 118 116 92 126 119 138 98 144 145Z"/></g>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: orientación, amplitud y vida cotidiana.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Vías residenciales · coches · aceras · fachadas de alturas variadas</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#55cba6"/><rect x="48" width="44" height="15" fill="#4c9b9b"/><rect x="96" width="44" height="15" fill="#88c7d5"/><rect x="144" width="44" height="15" fill="#e7cd82"/><rect x="192" width="44" height="15" fill="#e4d4b5"/><rect x="240" width="44" height="15" fill="#516474"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">menta / cielo</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#54d9b0">BASE DOCUMENTAL: calles asfaltadas y frentes residenciales</text>
+</g>
+
+<!-- CARD 4 -->
+<g transform="translate(32 558)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#6a9bd5" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#83b8f0">04 · RUTA DE TALLERES</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">ESCENARIO ORIGINAL</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#workSky)"/>
+<rect x="0" y="33" width="570" height="135" fill="#727776" stroke="#18243a" stroke-width="4"/>
+<rect x="13" y="46" width="176" height="122" fill="#283c50" stroke="#18243a" stroke-width="4"/>
+<rect x="26" y="58" width="150" height="97" fill="#1b2c40" stroke="#9da39b" stroke-width="4"/>
+<path d="M26 70H176M26 84H176M26 98H176M26 112H176M26 126H176M26 140H176" stroke="#8797a0" stroke-width="4"/>
+<rect x="208" y="45" width="155" height="123" fill="#b46c4f" stroke="#18243a" stroke-width="4"/>
+<rect x="221" y="60" width="129" height="88" fill="#34475b" stroke="#18243a" stroke-width="4"/>
+<path d="M230 69H341M230 82H341M230 95H341M230 108H341M230 121H341M230 134H341" stroke="#a6aaa2" stroke-width="3"/>
+<rect x="387" y="46" width="170" height="122" fill="#8d928b" stroke="#18243a" stroke-width="4"/>
+<path d="M400 60H542M400 79H542M400 98H542M400 117H542M400 136H542" stroke="#5a6267" stroke-width="5"/>
+<g stroke="#162339" stroke-width="4"><circle cx="74" cy="162" r="17" fill="#171e29"/><circle cx="121" cy="162" r="17" fill="#171e29"/><path d="M74 162L95 130 121 162H74L108 145 130 162" fill="none"/><path d="M88 132H119L130 151H99Z" fill="#d26a42"/></g>
+<circle cx="454" cy="153" r="24" fill="#1b2638" stroke="#161e2e" stroke-width="4"/><circle cx="454" cy="153" r="11" fill="#909a98"/>
+<path d="M0 168H570V190H0Z" fill="#394654"/><path d="M12 179H558" stroke="#b0a48e" stroke-width="4" stroke-dasharray="22 13"/>
+<path d="M40 20H540" stroke="#142238" stroke-width="4"/><path d="M65 20V45M540 20V45" stroke="#142238" stroke-width="4"/>
+<rect x="237" y="10" width="118" height="28" fill="#e0a35b" stroke="#172238" stroke-width="3"/><text x="296" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#263348">TALLER</text>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: superficies duras, metal y maquinaria.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Persianas · ruedas · estantes · bloques · estructuras mecánicas</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#476d91"/><rect x="48" width="44" height="15" fill="#8b999b"/><rect x="96" width="44" height="15" fill="#b76346"/><rect x="144" width="44" height="15" fill="#d1a15d"/><rect x="192" width="44" height="15" fill="#535e66"/><rect x="240" width="44" height="15" fill="#253447"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">acero / óxido</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#83b8f0">DISEÑO FICTICIO · no asignado a un barrio sin referencias</text>
+</g>
+
+<!-- CARD 5 -->
+<g transform="translate(659 558)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#b080e0" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#c4a0f1">05 · PATIOS Y AZOTEAS</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">ALTURA / RUTAS</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#roofSky)"/>
+<circle cx="485" cy="39" r="24" fill="#ffd0a0" opacity=".8"/>
+<path d="M0 112L82 78 141 101 206 62 279 102 338 69 412 98 483 62 570 90V190H0Z" fill="#3d3867"/>
+<rect x="0" y="109" width="150" height="81" fill="#a5678c" stroke="#17223a" stroke-width="4"/>
+<rect x="17" y="129" width="41" height="37" fill="#25364e" stroke="#17223a" stroke-width="3"/><rect x="70" y="129" width="41" height="37" fill="#ffce8a" stroke="#17223a" stroke-width="3"/>
+<rect x="168" y="89" width="153" height="101" fill="#d39b79" stroke="#17223a" stroke-width="4"/>
+<rect x="185" y="106" width="47" height="43" fill="#2a3a61" stroke="#17223a" stroke-width="3"/><rect x="246" y="106" width="55" height="43" fill="#ffcc8a" stroke="#17223a" stroke-width="3"/>
+<rect x="341" y="117" width="229" height="73" fill="#4e5683" stroke="#17223a" stroke-width="4"/>
+<path d="M352 132H560M352 147H560M352 162H560" stroke="#3a3f62" stroke-width="3"/>
+<rect x="390" y="72" width="54" height="45" fill="#293d55" stroke="#17223a" stroke-width="4"/><ellipse cx="417" cy="72" rx="27" ry="8" fill="#58697b" stroke="#17223a" stroke-width="4"/><rect x="393" y="52" width="49" height="20" fill="#435a70" stroke="#17223a" stroke-width="4"/>
+<rect x="290" y="59" width="13" height="31" fill="#222a48"/><path d="M296 59L278 48M296 59L314 46" stroke="#222a48" stroke-width="4"/>
+<path d="M0 178H570" stroke="#e7bf9c" stroke-width="8"/><path d="M0 188H570" stroke="#4b4968" stroke-width="4"/>
+<path d="M160 180V154H188V126H212" fill="none" stroke="#222c49" stroke-width="7"/><path d="M166 154H197M197 126V153" stroke="#d5b4a0" stroke-width="3"/>
+<path d="M24 90Q120 105 238 86T490 93" stroke="#172238" stroke-width="3" fill="none"/>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: verticalidad, saltos y atajos.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Pretiles · escaleras · depósitos de agua · antenas · patios</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#7d6ec7"/><rect x="48" width="44" height="15" fill="#b65f94"/><rect x="96" width="44" height="15" fill="#edaa80"/><rect x="144" width="44" height="15" fill="#4c507e"/><rect x="192" width="44" height="15" fill="#d3ae91"/><rect x="240" width="44" height="15" fill="#27344d"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">violeta / ocaso</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#c4a0f1">COMPOSICIÓN ORIGINAL · plataformas claramente separadas</text>
+</g>
+
+<!-- CARD 6 -->
+<g transform="translate(1286 558)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#3aa8bb" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#67d3dc">06 · PASAJES DE SERVICIO</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">RUTAS TÉCNICAS</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#serviceSky)"/>
+<path d="M0 0H170L255 190H0Z" fill="#496e6d" stroke="#152338" stroke-width="4"/>
+<path d="M570 0H405L314 190H570Z" fill="#344f5c" stroke="#152338" stroke-width="4"/>
+<path d="M170 0L255 190H314L405 0Z" fill="#182b3d"/>
+<path d="M0 158L243 129H327L570 158V190H0Z" fill="#4b5d61"/>
+<path d="M12 163L250 135M558 163L322 135" stroke="#a1ada1" stroke-width="4"/>
+<path d="M16 32H156V48H16M18 55H133V69H18" stroke="#b9a47e" stroke-width="7" fill="none"/>
+<path d="M414 20H555V38H414M438 45H555V60H438" stroke="#69b8b5" stroke-width="7" fill="none"/>
+<rect x="35" y="82" width="91" height="70" fill="#253f4b" stroke="#162438" stroke-width="4"/><rect x="45" y="92" width="71" height="51" fill="#647b78" stroke="#162438" stroke-width="3"/>
+<circle cx="80" cy="118" r="17" fill="#293d48" stroke="#b7c4af" stroke-width="4"/>
+<rect x="449" y="79" width="83" height="75" fill="#273c4b" stroke="#162438" stroke-width="4"/>
+<rect x="461" y="92" width="59" height="49" fill="#304e5c" stroke="#9fb7ac" stroke-width="3"/>
+<path d="M471 101H510M471 113H510M471 125H510" stroke="#9fb7ac" stroke-width="3"/>
+<path d="M137 0V164M148 0V164M427 0V165M438 0V165" stroke="#111d30" stroke-width="3"/>
+<path d="M137 12H148M137 28H148M137 44H148M137 60H148M137 76H148M137 92H148M137 108H148M137 124H148M137 140H148M427 12H438M427 28H438M427 44H438M427 60H438M427 76H438M427 92H438M427 108H438M427 124H438M427 140H438" stroke="#99b2ac" stroke-width="2"/>
+<path d="M0 15Q130 28 268 10T570 18" stroke="#0f1c2d" stroke-width="4" fill="none"/>
+<rect x="258" y="140" width="48" height="31" fill="#1e3343" stroke="#152338" stroke-width="4"/><rect x="267" y="148" width="30" height="23" fill="#d1a15e"/>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: navegación y tensión ambiental.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Conducciones · cuadros eléctricos · vallado · puertas traseras</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#287e8a"/><rect x="48" width="44" height="15" fill="#4fa8a1"/><rect x="96" width="44" height="15" fill="#7c918f"/><rect x="144" width="44" height="15" fill="#b7a07b"/><rect x="192" width="44" height="15" fill="#35495b"/><rect x="240" width="44" height="15" fill="#192d3b"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">cian / pizarra</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#67d3dc">ESCENARIO ORIGINAL · primero se lee la ruta, luego el detalle</text>
+</g>
+
+<!-- CARD 7 -->
+<g transform="translate(32 956)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#d34c9b" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#f17cba">07 · LA NOCHE DEL BARRIO</text>
+<text x="580" y="27" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#a9bec9">ZONA FINAL</text>
+<g transform="translate(16 52)">
+<rect width="570" height="190" fill="url(#nightSky)"/>
+<circle cx="471" cy="34" r="18" fill="#d2dcff" opacity=".7"/>
+<path d="M0 95L44 74 83 85 124 54 169 91 213 68 257 98 298 65 338 88 390 61 437 83 489 55 570 84V190H0Z" fill="#252747"/>
+<g stroke="#121d31" stroke-width="4"><rect x="8" y="76" width="132" height="90" fill="#5a4269"/><rect x="152" y="97" width="123" height="69" fill="#41616c"/><rect x="292" y="78" width="122" height="88" fill="#573959"/><rect x="431" y="91" width="129" height="75" fill="#375566"/></g>
+<g fill="#f4bd70"><rect x="22" y="89" width="23" height="24"/><rect x="55" y="89" width="23" height="24"/><rect x="89" y="89" width="32" height="24"/><rect x="170" y="110" width="27" height="22"/><rect x="206" y="110" width="27" height="22"/><rect x="309" y="92" width="25" height="25"/><rect x="349" y="92" width="25" height="25"/><rect x="450" y="105" width="30" height="21"/><rect x="492" y="105" width="30" height="21"/></g>
+<rect x="314" y="128" width="78" height="38" fill="#172339" stroke="#121d31" stroke-width="4"/>
+<path d="M324 137L337 151 349 137 364 153 381 137" fill="none" stroke="#d8549a" stroke-width="5"/>
+<rect x="0" y="166" width="570" height="24" fill="#18253a"/><path d="M0 177H570" stroke="#e1a85f" stroke-width="3" stroke-dasharray="20 14"/>
+<path d="M0 10Q140 27 288 9T570 18" stroke="#101a2e" stroke-width="4" fill="none"/><path d="M132 0V168M451 0V166" stroke="#101a2e" stroke-width="3"/>
+<rect x="227" y="142" width="114" height="26" fill="#a95082" stroke="#111c2f" stroke-width="4"/><text x="284" y="160" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#fff0c9">CERRADO</text>
+</g>
+<text x="18" y="270" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e6d7bc">LECTURA: amenaza, ventanas vivas y objetivo brillante.</text>
+<text x="18" y="293" font-family="Arial,sans-serif" font-size="13" fill="#b8c8cf">Mural ficticio · persianas · luces de comercio · sombra urbana</text>
+<g transform="translate(18 315)"><rect width="44" height="15" fill="#182a4a"/><rect x="48" width="44" height="15" fill="#4a3d78"/><rect x="96" width="44" height="15" fill="#d34c9b"/><rect x="144" width="44" height="15" fill="#5d9fa9"/><rect x="192" width="44" height="15" fill="#f0b766"/><rect x="240" width="44" height="15" fill="#111a2b"/><text x="300" y="13" font-family="Arial,sans-serif" font-size="12" fill="#9fb7c3">noche / acentos</text></g>
+<text x="18" y="360" font-family="Arial,sans-serif" font-size="13" fill="#ef79b8">NEÓN SOLO EN ACENTOS · no es identidad general del juego</text>
+</g>
+
+<!-- CARD 8 shared pixel art -->
+<g transform="translate(659 956)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#4ea6d2" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#80d3f2">SISTEMA VISUAL COMPARTIDO</text>
+<g transform="translate(18 58)">
+<text x="0" y="16" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#e2edf0">ORDEN DE LECTURA EN PANTALLA</text>
+<rect x="0" y="31" width="565" height="96" fill="#26374a" stroke="#526779" stroke-width="3"/>
+<rect x="0" y="91" width="565" height="36" fill="#c3b397" stroke="#182539" stroke-width="3"/>
+<rect x="48" y="54" width="75" height="37" fill="#d9a06a" stroke="#172438" stroke-width="3"/>
+<rect x="142" y="47" width="91" height="44" fill="#4b8583" stroke="#172438" stroke-width="3"/>
+<rect x="252" y="59" width="66" height="32" fill="#a36a83" stroke="#172438" stroke-width="3"/>
+<g stroke="#111c30" stroke-width="3"><circle cx="380" cy="90" r="11" fill="#17243a"/><circle cx="410" cy="90" r="11" fill="#17243a"/><path d="M380 90L394 69 410 90H380L405 80" fill="none"/><path d="M391 70H405L412 83H395Z" fill="#db5148"/></g>
+<g stroke="#101b2e" stroke-width="3" stroke-linejoin="round"><path d="M472 87L474 66 481 54 497 54 505 67 507 87 498 93 480 93Z" fill="#3977ab"/><path d="M478 63L483 45H496L502 63L495 69H484Z" fill="#3d8cbd"/><rect x="484" y="53" width="12" height="5" fill="#7be4ed"/></g>
+<path d="M0 127H565" stroke="#15243a" stroke-width="5"/>
+<text x="0" y="154" font-family="Arial,sans-serif" font-size="13" fill="#b9c8d0">Fondo con detalle → objetos grandes → jugador y enemigos → plataformas/salida.</text>
+<path d="M0 173H565" stroke="#2c4e65" stroke-width="2"/>
+<text x="0" y="197" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#e2edf0">REGLAS</text>
+<text x="0" y="219" font-family="Arial,sans-serif" font-size="13" fill="#b9c8d0">• Píxeles nítidos; nada de desenfoque en el recurso maestro.</text>
+<text x="0" y="240" font-family="Arial,sans-serif" font-size="13" fill="#b9c8d0">• Colisión y plataforma deben diferenciarse visualmente.</text>
+<text x="0" y="261" font-family="Arial,sans-serif" font-size="13" fill="#b9c8d0">• El HUD conserva la posición en todas las zonas.</text>
+<text x="0" y="282" font-family="Arial,sans-serif" font-size="13" fill="#b9c8d0">• Los fondos no pueden ocultar al jugador ni los peligros.</text>
+</g>
+</g>
+
+<!-- CARD 9 shared palette/provenance -->
+<g transform="translate(1286 956)">
+<rect width="602" height="380" rx="8" fill="#0b1a2a" stroke="#d3aa59" stroke-width="2"/>
+<rect width="602" height="42" rx="8" fill="#1a2938"/><rect y="34" width="602" height="8" fill="#1a2938"/>
+<text x="18" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#f1c66e">PALETA MAESTRA Y PROCEDENCIA</text>
+<g transform="translate(18 62)" font-family="Arial,sans-serif">
+<text x="0" y="14" font-size="14" font-weight="bold" fill="#e2edf0">FAMILIAS DE COLOR (PROVISIONALES)</text>
+<text x="0" y="42" font-size="12" fill="#b9c8d0">Hormigón / suelo</text><rect x="160" y="28" width="32" height="18" fill="#d4c2a1"/><rect x="196" y="28" width="32" height="18" fill="#9b9287"/><rect x="232" y="28" width="32" height="18" fill="#475362"/><rect x="268" y="28" width="32" height="18" fill="#252e3e"/>
+<text x="0" y="73" font-size="12" fill="#b9c8d0">Fachadas</text><rect x="160" y="59" width="32" height="18" fill="#e2a65e"/><rect x="196" y="59" width="32" height="18" fill="#ce766c"/><rect x="232" y="59" width="32" height="18" fill="#62a99b"/><rect x="268" y="59" width="32" height="18" fill="#7f8ec1"/>
+<text x="0" y="104" font-size="12" fill="#b9c8d0">Noche / señal</text><rect x="160" y="90" width="32" height="18" fill="#192847"/><rect x="196" y="90" width="32" height="18" fill="#51447c"/><rect x="232" y="90" width="32" height="18" fill="#d34c9b"/><rect x="268" y="90" width="32" height="18" fill="#efc36d"/>
+<path d="M0 126H565" stroke="#2c4e65" stroke-width="2"/>
+<text x="0" y="151" font-size="14" font-weight="bold" fill="#e2edf0">PROCEDENCIA DEL ARTE</text>
+<text x="0" y="174" font-size="13" fill="#b9c8d0">Referencias fotográficas: observar, no copiar.</text>
+<text x="0" y="196" font-size="13" fill="#b9c8d0">Rótulos, murales y personajes del juego: originales.</text>
+<text x="0" y="218" font-size="13" fill="#b9c8d0">Paletas por zona: validar con la ROM antes de importar.</text>
+<rect x="0" y="239" width="565" height="45" rx="5" fill="#2b2630" stroke="#9c7452" stroke-width="2"/>
+<text x="14" y="258" font-size="12" font-weight="bold" fill="#f1c66e">ESTADO ACTUAL</text>
+<text x="14" y="275" font-size="12" fill="#e1d7c9">Concepto visual v0.1 · todavía no son assets jugables</text>
+</g>
+</g>
+
+<text x="32" y="1382" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2" fill="#8fa7b5">LATINO AMÉRICA ZECTOR CERO · ATLAS EDITABLE PARA DISCUSIÓN · 27 OCT 2026</text>
+<text x="1887" y="1382" text-anchor="end" font-family="Arial,sans-serif" font-size="13" fill="#566f81">SIN ROM MODIFICADA · SIN CAPTURA DE EMULADOR</text>
+</svg>
