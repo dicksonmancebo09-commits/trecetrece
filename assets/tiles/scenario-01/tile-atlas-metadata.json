@@ -30,7 +30,7 @@
   "palette": [
     {
       "index": 0,
-      "name": "transparent",
+      "name": "source-alpha / transparent gap",
       "hex": "#00000000"
     },
     {
@@ -230,6 +230,13 @@
     "native_png_export": "pending",
     "game_engine_test": "not_run",
     "rom_compatible": "not_verified",
-    "rom_modified": false
-  }
+    "rom_modified": false,
+    "palette_mapping": "not mapped to ROM yet; BG and OBJ transparency semantics must be checked separately"
+  },
+  "notes": [
+    "SVG source uses alpha transparency outside object silhouettes.",
+    "The source palette listed here contains 15 visible draft colors plus a source-alpha placeholder; it is not a verified Metroid Fusion palette.",
+    "Do not assume GBA background palette index 0 is transparent. The final indexed palette and tile encoding must be derived from the actual target room and import tool.",
+    "Preview SVG uses a 240x160 coordinate system displayed at 4x; rasterize at 240x160 for native review."
+  ]
 }
