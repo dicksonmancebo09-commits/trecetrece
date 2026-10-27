@@ -81,3 +81,7 @@ El nuevo build sustituye los recursos reales de la pantalla de título (fondo gr
 ## v1.3 — Main Deck sala 0 conectada a escena urbana
 
 Se reescriben la tabla de metatiles y mapas BG1/BG2 privados a los que apuntan los datos de sala para que usen la composición urbana de Villa Duarte. Se conserva clipdata y código de arranque; título real ya sustituido en v1.2. La salida se reconstruye desde los recursos de la ROM y no constituye captura de juego. Emulador pendiente. Los demás escenarios, sprites y UI continúan sin completar. Ver [ROOM0_RESKIN_V1_3.md](ROOM0_RESKIN_V1_3.md).
+
+## Auditoría de v1.3 — build retirada
+
+Tras el reporte del usuario, v1.3 no es una build funcional. Fallo confirmado del título: bancos de paleta del tilemap inconsistentes con la dirección de carga de la paleta. Formatos/rangos estáticos de tabla y mapas se verificaron, pero la ejecución no. La causa del crash sigue desconocida. Las referencias de tabla/mapas privados sí están conectadas, así que la hipótesis de punteros ausentes queda rectificada. Ver [POSTMORTEM_V1_3.md](POSTMORTEM_V1_3.md).
