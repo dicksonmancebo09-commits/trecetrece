@@ -116,7 +116,11 @@
           "tile_index_max": 560,
           "transparent_metatile_id": 383,
           "transparent_tile_index": 560,
-          "expected_transparent_record_blank": true
+          "expected_transparent_record_blank": true,
+          "blank_tile_graphics_resource": "main-deck-room0-tileset-gfx",
+          "bytes_per_tile": 32,
+          "tile_base_index": 192,
+          "blank_tile_local_index": 368
         },
         {
           "name": "main-deck-room0-bg1",
@@ -239,7 +243,11 @@
           "tile_index_max": 560,
           "transparent_metatile_id": 383,
           "transparent_tile_index": 560,
-          "expected_transparent_record_blank": true
+          "expected_transparent_record_blank": true,
+          "blank_tile_graphics_resource": "main-deck-room0-tileset-gfx",
+          "bytes_per_tile": 32,
+          "tile_base_index": 192,
+          "blank_tile_local_index": 368
         },
         {
           "name": "main-deck-room0-bg1",
@@ -466,7 +474,11 @@
           "tile_index_max": 560,
           "transparent_metatile_id": 383,
           "transparent_tile_index": 560,
-          "expected_transparent_record_blank": true
+          "expected_transparent_record_blank": true,
+          "blank_tile_graphics_resource": "main-deck-room0-tileset-gfx",
+          "bytes_per_tile": 32,
+          "tile_base_index": 192,
+          "blank_tile_local_index": 368
         },
         {
           "name": "main-deck-room0-bg1",
