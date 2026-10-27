@@ -13,7 +13,7 @@ if (-not (Test-Path $Py) -or -not (Test-Path (Join-Path $ComfyDir "main.py"))) {
 
 $ListeningPorts = @(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty LocalPort -Unique)
 if (20128 -notin $ListeningPorts) {
-  Start-Process -FilePath "omniroute" -WorkingDirectory $AiRoot -RedirectStandardOutput (Join-Path $LogDir "omniroute.log") -RedirectStandardError (Join-Path $LogDir "omniroute.err.log")
+  Start-Process -FilePath "omniroute" -WorkingDirectory $AiRoot -Environment @{ BROWSER = "none" } -RedirectStandardOutput (Join-Path $LogDir "omniroute.log") -RedirectStandardError (Join-Path $LogDir "omniroute.err.log")
 } else { Write-Host "OmniRoute already listening on port 20128." }
 
 if (8188 -notin $ListeningPorts) {
