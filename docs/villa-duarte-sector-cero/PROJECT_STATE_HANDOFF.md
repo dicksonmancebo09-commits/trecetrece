@@ -31,6 +31,19 @@ El atlas presenta siete identidades con diferentes siluetas, colores, arquitectu
 
 **Estado:** documentos y arte vectorial guardados en GitHub; concepto visual v0.1. El SVG es editable, pero no está desglosado aún en tiles de juego ni validado a resolución nativa.
 
+## Paso 2 — preparación del escenario 1
+
+Paquete editable guardado en `assets/tiles/scenario-01/`:
+
+- [Catálogo y especificación](../../assets/tiles/scenario-01/README.md).
+- [Atlas modular 256 × 256](../../assets/tiles/scenario-01/scenario-01-villa-duarte-tiles.svg): cuadrícula lógica de 8 × 8, 32 × 32 celdas, módulos de fachada, ventanas, puertas/rejas, colmado, toldos, vegetación, cableado, acera, bordillo, asfalto y objetos.
+- [Composición por capas](../../assets/tiles/scenario-01/scenario-01-layered-composition.svg): 9 grupos editables, con coordenadas de escena 240 × 160.
+- [Vista de composición nativa](../../assets/tiles/scenario-01/scenario-01-native-preview.svg): viewBox 240 × 160, vista ampliada 4× para leer el montaje.
+- [Metadatos](../../assets/tiles/scenario-01/tile-atlas-metadata.json): paleta provisional, cuadrícula, regiones y estado de validación.
+
+**Comprobado:** los 3 SVG pasan una comprobación básica de estructura de etiquetas; la paleta de colores visibles coincide con los 15 colores documentados; el JSON se analiza y registra 1.024 celdas posibles en la cuadrícula.  
+**Pendiente:** abrir en un editor gráfico, exportar PNG a resolución nativa, validar el remapeo de color y la transparencia según BG/OBJ, comparar con la paleta y tiles reales de la sala de referencia, y probar dentro del juego. No se ha modificado la ROM.
+
 ## Punto técnico de partida documentado
 
 Consultar:
@@ -43,11 +56,11 @@ El informe de línea base documenta la ROM de referencia y prototipos anteriores
 
 ## Siguiente secuencia de trabajo
 
-1. Revisar el atlas y refinar las siete identidades a partir de referencias específicas, especialmente para los sectores cuyo detalle local todavía no está documentado.
-2. Desglosar el escenario 1 en capas y tiles originales: fachadas, puertas/ventanas/rejas, colmado y rótulos ficticios, cables/postes, vegetación, aceras y suelo.
+1. Abrir y revisar la composición de 9 capas en un editor SVG compatible, comprobando la visibilidad y edición de cada capa.
+2. Exportar el atlas y la composición a PNG con dimensiones nativas declaradas, sin interpolación ni deformación; inspeccionar color y transparencia.
 3. Confirmar el recurso/sala de referencia y obtener una captura original reproducible.
-4. Crear una pequeña escena/tileset, preservando los originales, y revisar lectura a resolución nativa.
-5. Validar el cambio en herramienta o emulador antes de extenderlo al resto de áreas.
+4. Comparar las piezas del atlas con tiles, paletas y dependencias de esa sala, y adaptar el mapeo sin sobrescribir originales.
+5. Probar una escena pequeña en herramienta/emulador antes de extender el sistema a más habitaciones.
 
 ## Regla de continuidad entre conversaciones
 
