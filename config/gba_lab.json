@@ -299,6 +299,66 @@
           "file_offset": "0x86AD4",
           "expected_target_bus_address": "0x087C1000",
           "purpose": "Título: paleta urbana"
+        },
+        {
+          "file_offset": "0x87194",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Intro/escena no-title: restaurar gráfico original"
+        },
+        {
+          "file_offset": "0x871A8",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Intro/escena no-title: restaurar mapa original"
+        },
+        {
+          "file_offset": "0x871B8",
+          "expected_target_bus_address": "0x08609120",
+          "purpose": "Intro/escena: restaurar paleta de fondo original"
+        },
+        {
+          "file_offset": "0x8894C",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x88950",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x88960",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
+        },
+        {
+          "file_offset": "0x929A0",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x929A4",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x929B4",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
+        },
+        {
+          "file_offset": "0x940B4",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x940B8",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x940C8",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
         }
       ]
     },
