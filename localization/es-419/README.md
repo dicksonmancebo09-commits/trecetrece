@@ -21,4 +21,4 @@ La auditoría del árbol público de `main` no encontró una tabla de traducció
 5. Validar encoding, tabla de caracteres, punteros, terminadores, límites de línea y caja de diálogo.
 6. Solo entonces ejecutar la prueba en emulador para comprobar la localización en contexto. Nunca subir la ROM ni un parche derivado a este repositorio público.
 
-El límite de 28 caracteres del paquete actual es una guía de redacción, no una garantía de capacidad de la ROM.
+El límite de 28 caracteres del paquete actual es una guía de redacción, no una garantía de capacidad de la ROM. El validador comprueba JSON, IDs, hablantes, marcadores regionales y longitud editorial; no prueba codificación de ROM ni visualización en pantalla.
