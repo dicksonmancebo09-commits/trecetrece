@@ -41,3 +41,13 @@ Para cada cambio futuro:
 - También están presentes localmente los prototipos v0.8, v0.9 visual y v1.0 urban opening. Sus hashes y los límites de conocimiento están en `ROM_VISUAL_COVERAGE.md`; no se publicó ningún binario en el repositorio.
 - Se actualiza el agente para estudiar antes de actuar el **pasado** (versiones anteriores y errores), el **presente** (archivos y herramientas realmente accesibles) y el **futuro** (regresiones, compatibilidad, reversión y pruebas necesarias).
 - Regla operativa: jamás decir que una aplicación se abrió o que el juego funciona sin evidencia. Distinguir archivos generados, validación estática, prueba en herramienta y prueba en juego.
+
+
+## 2026-10-27 — Tarea 1: línea base visual
+
+- Se identificó la ROM original recibida por tamaño, código `AMTE`, checksum de cabecera y SHA-256; la sonda GBA pasó 4/4 pruebas unitarias con fixtures sintéticos.
+- Se compararon los hashes y diferencias byte a byte de las versiones v0.8, v0.9 visual y v1.0 Urban Opening frente a la base.
+- Se auditaron los previews gráficos existentes y se distinguieron expresamente de capturas de juego ejecutado.
+- Benchmark visual provisional seleccionado: `AREA_MAIN_DECK`, room index 1 (Docking Bays), por la disponibilidad del atlas BG3, preview CC0 y variante de paleta.
+- No se modificó ningún archivo ROM ni recurso visual durante esta tarea. La captura original en emulador/MAGE queda pendiente porque esas herramientas no aparecieron en el PATH de esta sesión.
+- Informe: [BASELINE_VISUAL_TAREA_01.md](BASELINE_VISUAL_TAREA_01.md).
