@@ -178,7 +178,36 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         )
         report["checks"][-1]["description"] = assertion.get("description", "")
 
-    # Resource bounds and GBA LZ77 sanity checks come from the selected build profile.
+        # Pin pointer targets independently of instruction-byte assertions.
+    pointer_checks = profile.get("pointer_checks", [])
+    report["pointer_checks"] = []
+    for pointer in pointer_checks:
+        site = parse_int(pointer["file_offset"])
+        expected_target = parse_int(pointer["expected_target_bus_address"])
+        actual_bytes = rom[site:site + 4] if site >= 0 else b""
+        actual_target = int.from_bytes(actual_bytes, "little") if len(actual_bytes) == 4 else None
+        mapped_offset = actual_target - ROM_BASE if actual_target is not None else None
+        in_rom_window = mapped_offset is not None and 0 <= mapped_offset < len(rom)
+        target_ok = actual_target == expected_target
+        site_ok = site >= 0 and site + 4 <= len(rom)
+        row = {
+            "file_offset": f"0x{site:X}",
+            "expected_target": f"0x{expected_target:08X}",
+            "actual_target": f"0x{actual_target:08X}" if actual_target is not None else None,
+            "target_file_offset": f"0x{mapped_offset:X}" if mapped_offset is not None else None,
+            "target_within_rom": bool(in_rom_window),
+            "purpose": pointer.get("purpose", "")
+        }
+        report["pointer_checks"].append(row)
+        check(f"pointer_site_{site:X}_bounds", site_ok, "4 bytes inside ROM", len(actual_bytes))
+        check(f"pointer_site_{site:X}_target", target_ok, f"0x{expected_target:08X}",
+              f"0x{actual_target:08X}" if actual_target is not None else None)
+        check(f"pointer_site_{site:X}_target_in_rom", in_rom_window,
+              f"ROM window target within {len(rom)} bytes",
+              {"target": f"0x{actual_target:08X}" if actual_target is not None else None,
+               "mapped_offset": f"0x{mapped_offset:X}" if mapped_offset is not None else None})
+    
+# Resource bounds and GBA LZ77 sanity checks come from the selected build profile.
     resources = profile.get("resource_ranges", [])
     report["resources"] = []
     allocated_ranges: list[tuple[int, int, str]] = []
