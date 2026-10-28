@@ -121,7 +121,8 @@ def main() -> int:
         print(json.dumps({**report, "output_path": str(OUT_REL), "mode": "plan_only"}, indent=2))
         return 0
 
-    root = find_repo_root(input_path.parent)
+    # Resolve the repository from this script's location; the ROM may live outside the repo.
+    root = find_repo_root(Path(__file__).resolve().parent)
     ensure_ignored(root, OUT_REL)
     ensure_ignored(root, REPORT_REL)
     output = root / OUT_REL
