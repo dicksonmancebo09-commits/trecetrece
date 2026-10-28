@@ -10,10 +10,12 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "scripts/phase1_calero.py"
       - "tools/apply_guarded_patch.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_phase1_calero.py"
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
@@ -70,13 +72,14 @@ jobs:
         run: |
           python3 -m json.tool config/gba_lab.json >/dev/null
           python3 tools/gba_rom_audit.py --help >/dev/null
+          python3 scripts/phase1_calero.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
           python3 tools/apply_guarded_patch.py --help >/dev/null
           python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
+          python3 -m py_compile scripts/phase1_calero.py tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
@@ -86,6 +89,62 @@ jobs:
           python3 tools/generate_mgba_lua_trace.py
           test -s private-roms/diagnostics/mgba-trace-generated.lua
           luac5.4 -p private-roms/diagnostics/mgba-trace-generated.lua
+
+      - name: Unit tests — Phase 1 Calero palette
+        run: python3 -m unittest discover -s tests -p "test_phase1_calero.py" -v
+
+      - name: Prepare exact clean-ROM palette-only test
+        run: |
+          mkdir -p private-roms/diagnostics
+          cp "tools/mgba/Metroid Fusion (USA, Australia).gba" "private-roms/MetroidFusion_original.gba"
+          python3 - <<'PY'
+          import hashlib, pathlib
+          path = pathlib.Path("private-roms/MetroidFusion_original.gba")
+          actual = hashlib.sha256(path.read_bytes()).hexdigest()
+          expected = "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8"
+          print("Repository Metroid ROM SHA-256:", actual)
+          if actual != expected:
+              raise SystemExit("The repository ROM differs from the known clean baseline.")
+          PY
+          python3 scripts/phase1_calero.py \
+            --base "private-roms/MetroidFusion_original.gba" \
+            --expected-base-sha256 a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8 \
+            --output "private-roms/MetroidFusion_palette_test.gba" \
+            --report "private-roms/diagnostics/palette-test-build.json" \
+            --force
+
+      - name: mGBA compare — clean baseline vs palette-only candidate
+        continue-on-error: true
+        run: |
+          set +e
+          python3 tools/run_gba_diagnostic.py \
+            "private-roms/MetroidFusion_original.gba" \
+            --profile gba_candidate_unpinned \
+            --output-dir "private-roms/diagnostics/clean-base"
+          base_status=$?
+          python3 tools/run_gba_diagnostic.py \
+            "private-roms/MetroidFusion_palette_test.gba" \
+            --profile gba_candidate_unpinned \
+            --output-dir "private-roms/diagnostics/palette-test"
+          palette_status=$?
+          printf 'clean_base_exit=%s\npalette_only_exit=%s\n' "$base_status" "$palette_status" \
+            | tee "private-roms/diagnostics/mgba-comparison-status.txt"
+          exit 0
+
+      - name: Upload clean-vs-palette mGBA evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: metroid-palette-boot-comparison
+          path: |
+            private-roms/diagnostics/palette-test-build.json
+            private-roms/diagnostics/mgba-comparison-status.txt
+            private-roms/diagnostics/clean-base/
+            private-roms/diagnostics/clean-base.zip
+            private-roms/diagnostics/palette-test/
+            private-roms/diagnostics/palette-test.zip
+          if-no-files-found: warn
+          retention-days: 3
 
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
