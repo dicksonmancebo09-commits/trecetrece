@@ -13,7 +13,7 @@ El script espera `roms/fusion.gba`, correspondiente a la build visual v0.9 docum
 
     54f3291e54fdca088d440ef2dd51f41dc2c80b17c195956f633660ab790e3b00
 
-También exige el tamaño de 8 MiB, código de juego `AMTE`, título de cabecera `METROID4USA.` y checksum de cabecera correcto. Si el SHA no coincide, aborta; no debe usarse la ROM original o una versión distinta como sustituto silencioso.
+También exige el tamaño de 8 MiB, código de juego `AMTE`, título de cabecera `METROID4USA` y checksum de cabecera correcto. Si el SHA no coincide, aborta; no debe usarse la ROM original o una versión distinta como sustituto silencioso.
 
 La tabla de paleta del tileset 61 empieza en el offset de archivo `0x46B494` (dirección de cartucho `0x0846B494`) y contiene 14 filas de 16 colores. En la ROM v0.9 verificada, la fila 0 (`0x46B494`–`0x46B4B3`) está completamente a cero; no la modificamos. El mapa del tileset 61 usa el banco de paleta 1 para sus tiles visibles, por lo que la fase sustituye la fila/banco 1 en `0x46B4B4`–`0x46B4D3` (dirección de cartucho `0x0846B4B4`). La verificación visual de que esta fila es la correcta para el checkpoint escogido sigue pendiente de ejecución en mGBA.
 
