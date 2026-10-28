@@ -105,6 +105,33 @@ jobs:
       - name: Unit tests — mGBA Lua trace generator
         run: python3 -m unittest discover -s tests -p "test_gba_lua_trace_generator.py" -v
 
+      - name: Heuristic LZ77 scan — Castlevania ROM
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/gba-lz77"
+          python3 tools/lz77_tool.py scan "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" \
+            --alignment 4 --min-output 32 --max-output 262144 \
+            --report "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" >/dev/null
+          python3 - "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" <<'PY'
+          import json, sys
+          report = json.load(open(sys.argv[1], encoding="utf-8"))
+          rows = sorted(report["candidates"], key=lambda row: (-row["declared_output_bytes"], row["compression_ratio"]))
+          print("Castlevania LZ77 candidate count:", report["candidate_count"])
+          print("No ROM bytes are included in this report.")
+          print("Top candidates by decoded size:")
+          for row in rows[:30]:
+              print(f'{row["offset_hex"]:>10}  out={row["declared_output_bytes"]:>7}  compressed={row["compressed_bytes_consumed"]:>7}  ratio={row["compression_ratio"]:.3f}  sha256={row["decoded_sha256"][:16]}')
+          PY
+
+      - name: Upload LZ77 candidate metadata
+        if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: castlevania-lz77-candidates
+          path: ${{ runner.temp }}/gba-lz77/castlevania-lz77-scan.json
+          if-no-files-found: warn
+          retention-days: 3
+
       - name: State test boundary
         run: |
           echo "mGBA, GBA profiles, static audit, guarded patcher and Lua trace tools are installed and tested."
