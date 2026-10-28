@@ -120,7 +120,7 @@ jobs:
           print("No ROM bytes are included in this report.")
           print("Top candidates by decoded size:")
           for row in rows[:30]:
-              print(f'{row["offset_hex"]:>10}  out={row["declared_output_bytes"]:>7}  compressed={row["compressed_bytes_consumed"]:>7}  ratio={row["compression_ratio"]:.3f}  sha256={row["decoded_sha256"][:16]}')
+              print(f'{row["offset_hex"]:>10}  out={row["declared_output_bytes"]:>7}  in={row["compressed_bytes_consumed"]:>7}  ratio={row["compression_ratio"]:.3f}  mod32={row["decoded_size_mod_32"]:>2}  stream={row["stream_prefix_hex"]}  decoded={row["decoded_prefix_hex"]}  sha256={row["decoded_sha256"][:16]}')
           PY
 
       - name: Upload LZ77 candidate metadata
