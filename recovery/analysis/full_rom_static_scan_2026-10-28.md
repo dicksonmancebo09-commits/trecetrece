@@ -54,6 +54,15 @@ Los inicios se concentran especialmente en `0x3F0000–0x450000`, `0x480000–0x
 
 Los destinos con más referencias exactas dentro del barrido alineado incluyen `0x083BF884` (683), `0x0828998E` (641), `0x08080808` (304), `0x0828998C` (211), `0x083BF850` (195) y `0x080A6D54` (128). El destino `0x08080808` es un buen recordatorio de que el conteo de palabras por sí solo no certifica un puntero legítimo; se deben verificar alineación, contexto de código y uso en ejecución.
 
+
+## Comprobación visual de una muestra de recursos
+
+Además del conteo automático, se decodificaron visualmente 36 candidatos con salida de al menos `0x2000` bytes y referencia exacta de puntero. Se interpretaron provisionalmente como tiles GBA de 4 bpp, en mosaicos de 8×8 píxeles y escala de grises. En múltiples bloques aparecen estructuras visuales coherentes —piezas de escenarios, paneles, iconos, efectos y arte de personajes/cinemáticas—, lo que confirma que una parte de los candidatos LZ77 contiene gráficos reales y no solo coincidencias estadísticas.
+
+Offsets representativos de la muestra: `0x3EF960`, `0x42011C`, `0x5438F8`, `0x5A44CC`, `0x5B4580`, `0x5C9B4C`, `0x5DB5CC`, `0x5EDF70`, `0x60093C`, `0x605D08`, `0x6238F4`, `0x65C468`, `0x65FC24`, `0x66EC18`, `0x75ED6C` y `0x770084`.
+
+Esta visualización no identifica todavía el nombre funcional de cada recurso: falta conocer la paleta real, el orden de tiles, las tablas que los referencian y el punto del juego que los carga. No se debe editar esos offsets a ciegas.
+
 ## Qué se puede afirmar ya
 
 1. La identidad y cabecera de la ROM son coherentes.
