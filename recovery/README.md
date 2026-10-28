@@ -47,3 +47,20 @@ Los archivos C son un modelo parcial del arranque y del mapa de estados, no una 
 - [Resumen de resultados en JSON](analysis/full_rom_static_scan_2026-10-28.json)
 
 El informe recorre los 8 MiB e incluye cabecera/hash, arranque ARM/Thumb, los 15 destinos del despachador, referencias a la ventana de ROM, candidatos LZ77 decodificados, segmentos ASCII y entropía por ventanas. Es análisis estático de bytes; no debe confundirse con una descompilación semántica completa, ni con una ejecución REA/Ghidra/mGBA, que siguen pendientes.
+
+
+## Siguiente fase: catalogar recursos comprimidos
+
+- [Cola de prioridad LZ77](analysis/lz77_priority_queue_2026-10-28.md)
+- [Script reproducible de catálogo](scripts/catalog_lz77_assets.py)
+- [Pruebas unitarias del decodificador](tests/test_lz77_catalog.py)
+
+El catálogo identifica streams candidatos y referencias de punteros; no cambia la ROM ni da por hecho que cada bloque sea un gráfico. Para generarlo en el Codespace:
+
+```bash
+cd /workspaces/trecetrece
+python3 recovery/scripts/catalog_lz77_assets.py \
+  "/workspaces/gba/Metroid Fusion (USA, Australia).gba"
+```
+
+Los resultados se guardan en `private-roms/rea-analysis/assets/`, excluido del repositorio. La prioridad inmediata es clasificar los primeros candidatos con formatos 4bpp/8bpp y paletas BGR555, y después encontrar las rutinas que los consumen. No modificar offsets hasta identificar el recurso y su uso.
