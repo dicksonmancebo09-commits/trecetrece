@@ -39,3 +39,11 @@ El informe y los artefactos derivados quedan bajo `private-roms/rea-analysis/`, 
 ## Qué significa este resultado
 
 Los archivos C son un modelo parcial del arranque y del mapa de estados, no una recompilación completa ni jugable del título original. Los offsets de entrada y la tabla de despacho se han comprobado estáticamente; el comportamiento completo necesita REA/Ghidra en ARMv4T y comparación con mGBA.
+
+
+## Informe estático de toda la ROM (2026-10-28)
+
+- [Informe humano del barrido completo](analysis/full_rom_static_scan_2026-10-28.md)
+- [Resumen de resultados en JSON](analysis/full_rom_static_scan_2026-10-28.json)
+
+El informe recorre los 8 MiB e incluye cabecera/hash, arranque ARM/Thumb, los 15 destinos del despachador, referencias a la ventana de ROM, candidatos LZ77 decodificados, segmentos ASCII y entropía por ventanas. Es análisis estático de bytes; no debe confundirse con una descompilación semántica completa, ni con una ejecución REA/Ghidra/mGBA, que siguen pendientes.
