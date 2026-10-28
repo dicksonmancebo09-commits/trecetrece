@@ -205,28 +205,86 @@ def capture_window(window_id: str | None, fallback: Path, capture_log: Path) -> 
 
 
 def send_key(window_id: str | None, key: str, hold_ms: int) -> dict[str, Any]:
-    press = ["xdotool", "keydown"]
-    release = ["xdotool", "keyup"]
+    """Send real keyboard events to the focused emulator window.
+
+    xdotool --window uses XSendEvent for key events. Qt/mGBA can ignore those
+    synthetic events even when xdotool returns success, so activate/focus the
+    actual viewport first and send normal XTest keyboard events without the
+    --window flag. Keep a targeted fallback for headless window-manager setups.
+    """
+    focus_attempts: list[dict[str, Any]] = []
     if window_id:
-        press += ["--window", window_id]
-        release += ["--window", window_id]
-    press.append(key)
-    release.append(key)
+        for command in (
+            ["xdotool", "windowactivate", "--sync", window_id],
+            ["xdotool", "windowfocus", "--sync", window_id],
+        ):
+            try:
+                result = run_cmd(command, timeout=3)
+                focus_attempts.append({
+                    "command": command,
+                    "returncode": result.returncode,
+                    "stderr": result.stderr.strip()[:300],
+                })
+                if result.returncode == 0:
+                    break
+            except Exception as exc:
+                focus_attempts.append({"command": command, "error": str(exc)})
+        time.sleep(0.15)
+
     try:
-        p = run_cmd(press, timeout=3)
-        time.sleep(max(0.02, hold_ms / 1000.0))
-        r = run_cmd(release, timeout=3)
+        p = run_cmd(["xdotool", "keydown", "--clearmodifiers", key], timeout=3)
+        time.sleep(max(0.04, hold_ms / 1000.0))
+        r = run_cmd(["xdotool", "keyup", key], timeout=3)
         if p.returncode == 0 and r.returncode == 0:
-            return {"key": key, "hold_ms": hold_ms, "sent": True, "window_id": window_id}
-    except Exception:
-        pass
-    # Fallback to normal X key events only if targeted events failed.
-    try:
-        p = run_cmd(["xdotool", "key", "--clearmodifiers", key], timeout=3)
-        return {"key": key, "hold_ms": hold_ms, "sent": p.returncode == 0,
-                "fallback": True, "window_id": window_id}
+            focus = run_cmd(["xdotool", "getwindowfocus"], timeout=2)
+            focus_id = focus.stdout.strip() if focus.returncode == 0 else None
+            return {
+                "key": key,
+                "hold_ms": hold_ms,
+                "sent": True,
+                "method": "focused-xtest",
+                "window_id": window_id,
+                "focused_window_after_send": focus_id,
+                "focus_attempts": focus_attempts,
+            }
     except Exception as exc:
-        return {"key": key, "hold_ms": hold_ms, "sent": False, "error": str(exc)}
+        primary_error = str(exc)
+    else:
+        primary_error = f"keydown returncode={p.returncode}; keyup returncode={r.returncode}"
+
+    # Fallback for environments with no window manager or XTest support.
+    if window_id:
+        try:
+            p = run_cmd(["xdotool", "keydown", "--window", window_id, key], timeout=3)
+            time.sleep(max(0.04, hold_ms / 1000.0))
+            r = run_cmd(["xdotool", "keyup", "--window", window_id, key], timeout=3)
+            return {
+                "key": key,
+                "hold_ms": hold_ms,
+                "sent": p.returncode == 0 and r.returncode == 0,
+                "method": "targeted-xsend-event-fallback",
+                "window_id": window_id,
+                "focus_attempts": focus_attempts,
+                "primary_error": primary_error,
+            }
+        except Exception as exc:
+            return {
+                "key": key,
+                "hold_ms": hold_ms,
+                "sent": False,
+                "window_id": window_id,
+                "focus_attempts": focus_attempts,
+                "primary_error": primary_error,
+                "fallback_error": str(exc),
+            }
+    return {
+        "key": key,
+        "hold_ms": hold_ms,
+        "sent": False,
+        "window_id": window_id,
+        "focus_attempts": focus_attempts,
+        "primary_error": primary_error,
+    }
 
 
 def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, Any],
