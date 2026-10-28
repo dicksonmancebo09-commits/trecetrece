@@ -1,0 +1,269 @@
+{
+  "report_kind": "full_rom_byte_range_static_scan",
+  "date": "2026-10-28",
+  "status": "full-file static scan completed; semantic decompilation not completed",
+  "rom": {
+    "title": "METROID4USA",
+    "game_code": "AMTE",
+    "size_bytes": 8388608,
+    "sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8",
+    "sha1": "ca33f4348c2c05dd330d37b97e2c5a69531dfe87",
+    "header_checksum_expected": "0x98",
+    "header_checksum_actual": "0x98",
+    "header_checksum_valid": true,
+    "last_non_ff_offset": "0x79ECC7",
+    "ff_padding_start": "0x79ECC8",
+    "ff_padding_bytes": 398136
+  },
+  "boot": {
+    "first_instruction": "0xEA00002E",
+    "target_bus_address": "0x080000C0",
+    "thumb_entry_pointer": "0x08000231",
+    "thumb_entry_aligned_bus_address": "0x08000230",
+    "irq_vector_pointer_ram_address": "0x03007FFC",
+    "main_mode_ram_address": "0x03000BDE",
+    "dispatcher_table_file_offset": "0x278",
+    "modes": [
+      {
+        "id": 0,
+        "label": "TITLE",
+        "target": "0x080002B4"
+      },
+      {
+        "id": 1,
+        "label": "IN_GAME",
+        "target": "0x08000448"
+      },
+      {
+        "id": 2,
+        "label": "SOFT_RESET",
+        "target": "0x08000548"
+      },
+      {
+        "id": 3,
+        "label": "MAP_SCREEN",
+        "target": "0x080004D0"
+      },
+      {
+        "id": 4,
+        "label": "CUTSCENE",
+        "target": "0x0800054E"
+      },
+      {
+        "id": 5,
+        "label": "SA_X_CLOSE_UP",
+        "target": "0x080005D0"
+      },
+      {
+        "id": 6,
+        "label": "ERASE_SRAM_MENU",
+        "target": "0x080005E4"
+      },
+      {
+        "id": 7,
+        "label": "FILE_SELECT_OR_INTRO",
+        "target": "0x080003AC"
+      },
+      {
+        "id": 8,
+        "label": "GAME_OVER",
+        "target": "0x08000624"
+      },
+      {
+        "id": 9,
+        "label": "ENDING",
+        "target": "0x0800069C"
+      },
+      {
+        "id": 10,
+        "label": "DIED_FROM_SR388_COLLISION",
+        "target": "0x080006B0"
+      },
+      {
+        "id": 11,
+        "label": "CREDITS",
+        "target": "0x080006D0"
+      },
+      {
+        "id": 12,
+        "label": "DEMO",
+        "target": "0x080006E4"
+      },
+      {
+        "id": 13,
+        "label": "UNKNOWN",
+        "target": "0x08000730"
+      },
+      {
+        "id": 14,
+        "label": "DEBUG",
+        "target": "0x0800074C"
+      }
+    ]
+  },
+  "pointer_scan": {
+    "word_alignment_bytes": 4,
+    "pointer_words": 55984,
+    "unique_targets": 30898,
+    "note": "Heuristic; contextual verification required."
+  },
+  "lz77_scan": {
+    "offset_alignment_bytes_tested": [
+      2,
+      4
+    ],
+    "valid_complete_streams": 464,
+    "starts_with_exact_pointer_reference": 386,
+    "by_64k_region": {
+      "0x330000": 1,
+      "0x3E0000": 2,
+      "0x3F0000": 13,
+      "0x400000": 8,
+      "0x410000": 16,
+      "0x420000": 10,
+      "0x430000": 9,
+      "0x440000": 13,
+      "0x450000": 8,
+      "0x480000": 32,
+      "0x490000": 4,
+      "0x4A0000": 8,
+      "0x4B0000": 6,
+      "0x4C0000": 3,
+      "0x4D0000": 7,
+      "0x4E0000": 10,
+      "0x4F0000": 1,
+      "0x500000": 11,
+      "0x510000": 2,
+      "0x520000": 13,
+      "0x540000": 11,
+      "0x550000": 5,
+      "0x560000": 4,
+      "0x570000": 23,
+      "0x580000": 19,
+      "0x590000": 11,
+      "0x5A0000": 5,
+      "0x5B0000": 10,
+      "0x5C0000": 4,
+      "0x5D0000": 7,
+      "0x5E0000": 5,
+      "0x5F0000": 7,
+      "0x600000": 8,
+      "0x610000": 5,
+      "0x620000": 4,
+      "0x630000": 18,
+      "0x640000": 26,
+      "0x650000": 25,
+      "0x660000": 8,
+      "0x670000": 9,
+      "0x680000": 4,
+      "0x720000": 1,
+      "0x730000": 16,
+      "0x740000": 3,
+      "0x750000": 24,
+      "0x760000": 3,
+      "0x770000": 4,
+      "0x780000": 4,
+      "0x790000": 14
+    },
+    "top_targets_by_pointer_refs": [
+      {
+        "offset": "0x3BF884",
+        "refs": 683
+      },
+      {
+        "offset": "0x28998E",
+        "refs": 641
+      },
+      {
+        "offset": "0x080808",
+        "refs": 304
+      },
+      {
+        "offset": "0x28998C",
+        "refs": 211
+      },
+      {
+        "offset": "0x3BF850",
+        "refs": 195
+      },
+      {
+        "offset": "0x0A6D54",
+        "refs": 128
+      },
+      {
+        "offset": "0x5B6FD4",
+        "refs": 120
+      },
+      {
+        "offset": "0x5B7A5A",
+        "refs": 120
+      },
+      {
+        "offset": "0x014060",
+        "refs": 117
+      },
+      {
+        "offset": "0x3F2250",
+        "refs": 94
+      },
+      {
+        "offset": "0x2E4D4C",
+        "refs": 93
+      },
+      {
+        "offset": "0x3E9E02",
+        "refs": 92
+      },
+      {
+        "offset": "0x05904E",
+        "refs": 85
+      },
+      {
+        "offset": "0x0AA484",
+        "refs": 85
+      },
+      {
+        "offset": "0x025F66",
+        "refs": 83
+      },
+      {
+        "offset": "0x020E18",
+        "refs": 82
+      },
+      {
+        "offset": "0x03EE34",
+        "refs": 82
+      },
+      {
+        "offset": "0x057DD2",
+        "refs": 82
+      },
+      {
+        "offset": "0x074B3A",
+        "refs": 82
+      }
+    ]
+  },
+  "ascii_scan": {
+    "printable_segments_min_length": 6,
+    "count": 35295,
+    "warning": "Many results are data coincidences; not a count of meaningful game strings."
+  },
+  "entropy_scan": {
+    "window_bytes": 65536,
+    "windows": 128,
+    "full_coverage_bytes": 8388608,
+    "key_observations": [
+      "high entropy is concentrated in many 0x400000–0x680000 windows",
+      "regions 0x280000–0x380000 and 0x680000–0x740000 show more repeated/structured bytes",
+      "from 0x79ECC8 onwards the file is FF padding"
+    ]
+  },
+  "limitations": [
+    "Full byte-range scan, but not full semantic decompilation.",
+    "REA and Ghidra were not installed in the analysis runtime; no REA report is claimed.",
+    "No dynamic mGBA trace was run during this pass.",
+    "LZ77 and pointer detections remain candidates until cross-referenced with code and runtime.",
+    "ROM bytes are not included in the repository."
+  ]
+}
