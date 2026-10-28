@@ -3,11 +3,17 @@ import importlib.util
 import unittest
 from pathlib import Path
 
-SCRIPT = Path(__file__).parents[1] / "tools" / "lz77_tool.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "tools" / "lz77_tool.py"
 SPEC = importlib.util.spec_from_file_location("lz77_tool", SCRIPT)
+assert SPEC and SPEC.loader
 lz = importlib.util.module_from_spec(SPEC)
-assert SPEC.loader is not None
 SPEC.loader.exec_module(lz)
+
+AUDITOR_SCRIPT = Path(__file__).resolve().parents[1] / "tools" / "gba_rom_audit.py"
+AUDITOR_SPEC = importlib.util.spec_from_file_location("gba_rom_audit", AUDITOR_SCRIPT)
+assert AUDITOR_SPEC and AUDITOR_SPEC.loader
+audit = importlib.util.module_from_spec(AUDITOR_SPEC)
+AUDITOR_SPEC.loader.exec_module(audit)
 
 
 class Lz77ToolTests(unittest.TestCase):
@@ -56,11 +62,9 @@ class Lz77ToolTests(unittest.TestCase):
                 self.assertEqual(consumed, len(encoded))
 
     def test_compressed_stream_is_accepted_by_project_auditor(self):
-        from tools.gba_rom_audit import gba_lz77_decompress
-
         source = b"Villa Duarte / Sector Cero " * 30
         encoded = lz.compress_lz77(source)
-        decoded, consumed = gba_lz77_decompress(encoded)
+        decoded, consumed = audit.gba_lz77_decompress(encoded)
         self.assertEqual(decoded, source)
         self.assertEqual(consumed, len(encoded))
 
