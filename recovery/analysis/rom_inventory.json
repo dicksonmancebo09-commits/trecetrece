@@ -1,0 +1,35 @@
+{
+  "report_kind": "static_rom_inventory_summary",
+  "game_identification": {
+    "title": "METROID4USA",
+    "game_code": "AMTE",
+    "size_bytes": 8388608,
+    "sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8",
+    "sha1": "ca33f4348c2c05dd330d37b97e2c5a69531dfe87",
+    "header_checksum_complement": "0x98",
+    "header_checksum_valid": true
+  },
+  "entry": {
+    "file_offset": "0x000000",
+    "bus_address": "0x08000000",
+    "instruction_word_le": "0xEA00002E",
+    "instruction": "B",
+    "target_bus_address": "0x080000C0",
+    "thumb_entry_pointer": "0x08000231",
+    "thumb_code_bus_address": "0x08000230",
+    "main_mode_ram_address": "0x03000BDE",
+    "dispatcher_table_file_offset": "0x278",
+    "dispatcher_modes": 15
+  },
+  "heuristic_scan_summary": {
+    "lz77_candidates_at_least_0x800_bytes": 468,
+    "candidates_with_possible_pointer_references": 386,
+    "printable_ascii_segments": 9826
+  },
+  "warnings": [
+    "LZ77 candidates, possible pointer references and printable ASCII segments are heuristic findings; they can overlap and include false positives.",
+    "This summary is metadata only and contains no ROM bytes or extracted assets.",
+    "Only entry/dispatch observations are statically confirmed in the supplied analysis. REA and Ghidra must be run in the user Codespace to extend the analysis.",
+    "A full editable reconstruction and a reproducible build have not been achieved yet."
+  ]
+}
