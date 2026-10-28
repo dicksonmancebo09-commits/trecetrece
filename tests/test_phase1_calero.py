@@ -20,14 +20,16 @@ SPEC.loader.exec_module(phase)
 
 def synthetic_v09_rom() -> bytes:
     data = bytearray(phase.ROM_SIZE_BYTES)
-    data[0xA0:0xAC] = b"METROID4USA."
+    data[0xA0:0xAC] = b"METROID4USA\x00"
     data[0xAC:0xB0] = b"AMTE"
     data[0xB0:0xB2] = b"01"
     data[0xB2] = 0x96
     data[0xBC] = 0
     data[0xBD] = (-sum(data[0xA0:0xBD]) - 0x19) & 0xFF
-    # The palette region must contain valid 15-bit words.
-    data[phase.PALETTE_OFFSET:phase.PALETTE_OFFSET + phase.PALETTE_BYTES] = bytes(phase.PALETTE_BYTES)
+    # Palette bank 0 remains all-zero; bank 1 is a populated native palette row.
+    data[phase.PALETTE_TABLE_OFFSET:phase.PALETTE_TABLE_OFFSET + phase.PALETTE_BYTES] = bytes(phase.PALETTE_BYTES)
+    row1 = struct.pack("<16H", *[i * 0x101 for i in range(16)])
+    data[phase.PALETTE_OFFSET:phase.PALETTE_OFFSET + phase.PALETTE_BYTES] = row1
     return bytes(data)
 
 
@@ -108,7 +110,9 @@ class Phase1CaleroTests(unittest.TestCase):
             report = json.loads(report_path.read_text(encoding="utf-8"))
             self.assertEqual(report["mode"], "dry-run")
             self.assertTrue(report["build_delta"]["all_bytes_outside_palette_unchanged"])
-            self.assertEqual(report["palette"]["rom_offset"], "0x46B494")
+            self.assertEqual(report["palette"]["rom_offset"], "0x46B4B4")
+            self.assertEqual(report["palette"]["palette_table_offset"], "0x46B494")
+            self.assertEqual(report["palette"]["native_palette_bank_index"], 1)
 
     def test_dry_run_refuses_wrong_base_hash_before_outputs(self):
         base = synthetic_v09_rom()
