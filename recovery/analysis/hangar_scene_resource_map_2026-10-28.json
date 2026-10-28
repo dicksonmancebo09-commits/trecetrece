@@ -1,0 +1,247 @@
+{
+  "report_kind": "hangar_scene_asset_map",
+  "date": "2026-10-28",
+  "game": {
+    "title": "METROID4USA",
+    "code": "AMTE",
+    "rom_sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8"
+  },
+  "target": {
+    "handler": "NewFileIntroHandler",
+    "state": 11,
+    "routine": "NewFileIntroLandingOnBsl",
+    "routine_file_offset": "0x8F0??",
+    "note": "State and routine names are cross-referenced to source; handler's actual code offset is 0x87708."
+  },
+  "code_reference": {
+    "repo": "metroidret/mf",
+    "branch": "main",
+    "source": "https://github.com/metroidret/mf/blob/main/src/new_file_intro.c",
+    "asset_source": "https://github.com/metroidret/mf/blob/main/src/data/new_file_intro_data.c",
+    "manifest": "https://github.com/metroidret/mf/blob/main/database.json"
+  },
+  "timeline": [
+    {
+      "state": 0,
+      "step": "initialize"
+    },
+    {
+      "state": 1,
+      "step": "100-frame wait"
+    },
+    {
+      "state": 2,
+      "step": "SR388 preview"
+    },
+    {
+      "state": 3,
+      "step": "SR388 scene"
+    },
+    {
+      "state": 4,
+      "step": "Samus ship flying"
+    },
+    {
+      "state": 5,
+      "step": "Samus fainting"
+    },
+    {
+      "state": 6,
+      "step": "Samus drifting"
+    },
+    {
+      "state": 7,
+      "step": "Samus found"
+    },
+    {
+      "state": 8,
+      "step": "Samus getting cured"
+    },
+    {
+      "state": 9,
+      "step": "Samus cured"
+    },
+    {
+      "state": 10,
+      "step": "Arriving at BSL"
+    },
+    {
+      "state": 11,
+      "step": "Landing on BSL / hangar"
+    },
+    {
+      "state": 12,
+      "step": "final fade and intro-save steps"
+    }
+  ],
+  "assets": [
+    {
+      "path": "new_file_intro/approaching_bsl_obj.gfx.lz",
+      "offset": "0x5E116C",
+      "count": "0xE1E",
+      "element_size": 4,
+      "declared_span_bytes": 14456,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/approaching_bsl_obj.pal",
+      "offset": "0x5F5254",
+      "count": "0x100",
+      "element_size": 2,
+      "declared_span_bytes": 512,
+      "unit": "16-bit halfwords"
+    },
+    {
+      "path": "new_file_intro/space_map_bg",
+      "offset": "0x5E8A10",
+      "count": "0x882",
+      "element_size": 4,
+      "declared_span_bytes": 8712,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/samus_monologue_bg.gfx.lz",
+      "offset": "0x5EDF70",
+      "count": "0xCD2",
+      "element_size": 4,
+      "declared_span_bytes": 13128,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/samus_monologue_bg.tm.lz",
+      "offset": "0x5F6018",
+      "count": "0x170",
+      "element_size": 4,
+      "declared_span_bytes": 1472,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_bg.gfx.lz",
+      "offset": "0x5F7190",
+      "count": "0xE71",
+      "element_size": 4,
+      "declared_span_bytes": 14788,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_obj.gfx.lz",
+      "offset": "0x5FAB54",
+      "count": "0xCE1",
+      "element_size": 4,
+      "declared_span_bytes": 13188,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_bg.pal",
+      "offset": "0x5FF708",
+      "count": "0x100",
+      "element_size": 2,
+      "declared_span_bytes": 512,
+      "unit": "16-bit halfwords"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_obj.pal",
+      "offset": "0x5FFD08",
+      "count": "0x100",
+      "element_size": 2,
+      "declared_span_bytes": 512,
+      "unit": "16-bit halfwords"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_space.tm.lz",
+      "offset": "0x5FFF08",
+      "count": "0x101",
+      "element_size": 4,
+      "declared_span_bytes": 1028,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/landing_on_bsl_hangar.tm.lz",
+      "offset": "0x60030C",
+      "count": "0x18C",
+      "element_size": 4,
+      "declared_span_bytes": 1584,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/samus_ship_flying_text.tm.lz",
+      "offset": "0x598898",
+      "count": "0x7D",
+      "element_size": 4,
+      "declared_span_bytes": 500,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/bsl_space_bg.gfx.lz",
+      "offset": "0x60BCA4",
+      "count": "0x1145",
+      "element_size": 4,
+      "declared_span_bytes": 17684,
+      "unit": "32-bit words"
+    },
+    {
+      "path": "new_file_intro/bsl_space_bg.pal",
+      "offset": "0x612E48",
+      "count": "0x80",
+      "element_size": 2,
+      "declared_span_bytes": 256,
+      "unit": "16-bit halfwords"
+    }
+  ],
+  "load_destinations": [
+    {
+      "asset": "new_file_intro/landing_on_bsl_obj.gfx.lz",
+      "offset": "0x5FAB54",
+      "destination": "0x06010000",
+      "kind": "object VRAM"
+    },
+    {
+      "asset": "new_file_intro/landing_on_bsl_obj.pal",
+      "offset": "0x5FFD08",
+      "destination": "0x05000200",
+      "kind": "object palette RAM"
+    },
+    {
+      "asset": "new_file_intro/landing_on_bsl_bg.gfx.lz",
+      "offset": "0x5F7190",
+      "destination": "0x06000000",
+      "kind": "background VRAM"
+    },
+    {
+      "asset": "new_file_intro/landing_on_bsl_hangar.tm.lz",
+      "offset": "0x60030C",
+      "destination": "0x0600F000",
+      "kind": "hangar tilemap"
+    },
+    {
+      "asset": "new_file_intro/landing_on_bsl_space.tm.lz",
+      "offset": "0x5FFF08",
+      "destination": "0x0600F800",
+      "kind": "space tilemap"
+    },
+    {
+      "asset": "new_file_intro/samus_ship_flying_text.tm.lz",
+      "offset": "0x598898",
+      "destination": "0x0600E000",
+      "kind": "text tilemap"
+    },
+    {
+      "asset": "new_file_intro/landing_on_bsl_bg.pal",
+      "offset": "0x5FF708",
+      "destination": "0x05000000",
+      "kind": "background palette RAM"
+    }
+  ],
+  "candidate_patch": {
+    "offset": "0x8777E",
+    "old_bytes": "01 20 08 80",
+    "new_bytes": "0B 20 08 80",
+    "changed_byte_count": 1,
+    "description": "replace MOVS r0,#1 with MOVS r0,#11 after initialization; runtime validation pending"
+  },
+  "warnings": [
+    "Asset offsets/names are based on exact US address matches in the upstream manifest.",
+    "The state-11 byte patch is a test candidate only, not an approved playable build.",
+    "No mGBA runtime execution of this specific patched image has been performed yet."
+  ]
+}
