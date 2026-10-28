@@ -1,0 +1,41 @@
+name: Recovery editable-code checks
+
+on:
+  push:
+    branches:
+      - agent/rea-editable-analysis
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check-reconstructed-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Check REA analysis launcher syntax
+        run: bash -n recovery/scripts/run_rea_analysis.sh
+
+      - name: Validate ROM inventory JSON
+        run: python3 -m json.tool recovery/analysis/rom_inventory.json >/dev/null
+
+      - name: Compile editable state-dispatch model
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror \
+            -I recovery/src/reconstructed \
+            recovery/src/reconstructed/game_mode_dispatch.c \
+            recovery/tests/test_game_mode_dispatch.c \
+            -o /tmp/sector_cero_dispatch_test
+          /tmp/sector_cero_dispatch_test
+
+      - name: Ensure recovery package contains no ROM binaries or patches
+        run: |
+          if find recovery -type f \( -iname '*.gba' -o -iname '*.gb' -o -iname '*.ips' -o -iname '*.bps' \) | grep -q .; then
+            echo "ROM or binary patch found in recovery package; stop."
+            exit 1
+          fi
