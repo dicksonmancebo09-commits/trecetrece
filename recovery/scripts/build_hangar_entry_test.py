@@ -24,6 +24,11 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def expected_header_checksum(data: bytes) -> int:
+    # GBA logo/title header checksum: subtract the sum of 0xA0..0xBC and 0x19.
+    return (-sum(data[0xA0:0xBD]) - 0x19) & 0xFF
+
+
 def validate_base(data: bytes) -> None:
     if len(data) != ROM_SIZE:
         raise ValueError(f"Expected an 8 MiB ROM, got {len(data)} bytes")
@@ -33,7 +38,7 @@ def validate_base(data: bytes) -> None:
     if data[PATCH_OFFSET:PATCH_OFFSET + len(OLD_CONTEXT)] != OLD_CONTEXT:
         actual_context = data[PATCH_OFFSET:PATCH_OFFSET + len(OLD_CONTEXT)].hex(" ")
         raise ValueError(f"Unexpected code context at 0x{PATCH_OFFSET:X}: {actual_context}")
-    checksum = (-1 - sum(data[0xA0:0xBD])) & 0xFF
+    checksum = expected_header_checksum(data)
     if checksum != data[0xBD]:
         raise ValueError(f"Invalid GBA header checksum: actual 0x{data[0xBD]:02X}, expected 0x{checksum:02X}")
 
@@ -51,7 +56,7 @@ def patch_bytes(data: bytes) -> bytes:
         raise AssertionError("Internal guard failed: result must differ by exactly one byte")
     if result[PATCH_OFFSET:PATCH_OFFSET + len(NEW_CONTEXT)] != NEW_CONTEXT:
         raise AssertionError("Patched instruction bytes do not match expected state-11 encoding")
-    checksum = (-1 - sum(result[0xA0:0xBD])) & 0xFF
+    checksum = expected_header_checksum(result)
     if checksum != result[0xBD]:
         raise AssertionError("GBA header checksum unexpectedly changed")
     return result
@@ -102,7 +107,7 @@ def main() -> int:
             "purpose": "after NewFileIntroInit on a new-file path, enter NewFileIntroHandler state 11 (landing on BSL)"
         },
         "output_sha256": sha256(patched),
-        "header_checksum_valid": patched[0xBD] == ((-1 - sum(patched[0xA0:0xBD])) & 0xFF),
+        "header_checksum_valid": patched[0xBD] == expected_header_checksum(patched),
         "runtime_validation": "NOT PERFORMED; test in mGBA before using as a game build",
         "must_test": [
             "fresh save reaches landing-on-BSL/hangar scene",
