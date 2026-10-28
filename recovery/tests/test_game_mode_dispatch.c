@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdint.h>
+#include <stddef.h>
 #include "game_mode_dispatch.h"
 
 int main(void)
