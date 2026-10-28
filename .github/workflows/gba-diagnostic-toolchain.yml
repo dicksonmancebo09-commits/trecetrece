@@ -229,6 +229,21 @@ jobs:
             montage "$RUNNER_TEMP"/gba-lz77/preview_*.png -background '#202020' -tile 2x -geometry +4+4 "$RUNNER_TEMP/gba-lz77/castlevania-contact-sheet.png"
           fi
 
+      - name: Capture Castlevania boot/menu in mGBA
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        continue-on-error: true
+        run: |
+          mkdir -p private-roms
+          cp "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" "private-roms/Castlevania-Aria-of-Sorrow.gba"
+          diagnostic_status=0
+          python3 tools/run_gba_diagnostic.py "private-roms/Castlevania-Aria-of-Sorrow.gba" --profile gba_candidate_unpinned --output-dir private-roms/diagnostics/castlevania-aos || diagnostic_status=$?
+          echo "mGBA diagnostic exit code: $diagnostic_status"
+          if test -f private-roms/diagnostics/castlevania-aos/diagnostic-summary.json; then
+            cat private-roms/diagnostics/castlevania-aos/diagnostic-summary.json
+          else
+            echo "mGBA diagnostic summary was not produced."
+          fi
+
       - name: Upload LZ77 candidate metadata
         if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
         uses: actions/upload-artifact@v4
@@ -238,7 +253,18 @@ jobs:
           if-no-files-found: warn
           retention-days: 3
 
+      - name: Upload Castlevania mGBA evidence
+        if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: castlevania-mgba-evidence
+          path: |
+            private-roms/diagnostics/castlevania-aos/
+            private-roms/diagnostics/castlevania-aos.zip
+          if-no-files-found: warn
+          retention-days: 3
+
       - name: State test boundary
         run: |
           echo "mGBA, GBA profiles, static audit, guarded patcher and Lua trace tools are installed and tested."
-          echo "Tests use synthetic streams; the optional Castlevania step is a read-only resource-candidate scan."
+          echo "LZ77 and 4bpp unit tests use synthetic data; Castlevania scans and mGBA captures are observation-only."
