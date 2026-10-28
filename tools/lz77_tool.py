@@ -175,10 +175,14 @@ def scan_lz77(
         rows.append({
             "offset": offset,
             "offset_hex": f"0x{offset:X}",
+            "stream_prefix_hex": data[offset:offset + 16].hex(),
             "declared_output_bytes": declared,
             "compressed_bytes_consumed": consumed,
             "compression_ratio": round(consumed / declared, 4),
             "decoded_sha256": sha256_bytes(decoded),
+            "decoded_prefix_hex": decoded[:32].hex(),
+            "decoded_size_mod_32": declared % 32,
+            "decoded_size_mod_64": declared % 64,
         })
     return rows
 
