@@ -21,6 +21,7 @@ on:
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
+      - "tests/test_gba_diagnostic_capture.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
@@ -114,6 +115,9 @@ jobs:
 
       - name: Unit tests — mGBA Lua trace generator
         run: python3 -m unittest discover -s tests -p "test_gba_lua_trace_generator.py" -v
+
+      - name: Unit tests — mGBA screenshot capture
+        run: python3 -m unittest discover -s tests -p "test_gba_diagnostic_capture.py" -v
 
       - name: Heuristic LZ77 scan — Castlevania ROM
         if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
