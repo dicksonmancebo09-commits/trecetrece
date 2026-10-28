@@ -64,3 +64,28 @@ python3 recovery/scripts/catalog_lz77_assets.py \
 ```
 
 Los resultados se guardan en `private-roms/rea-analysis/assets/`, excluido del repositorio. La prioridad inmediata es clasificar los primeros candidatos con formatos 4bpp/8bpp y paletas BGR555, y después encontrar las rutinas que los consumen. No modificar offsets hasta identificar el recurso y su uso.
+
+
+## Prueba de entrada directa a la escena del hangar
+
+- [Mapa del flujo y los recursos de aterrizaje](analysis/hangar_scene_resource_map_2026-10-28.md)
+- [Mapa estructurado de recursos](analysis/hangar_scene_resource_map_2026-10-28.json)
+- [Generador de prueba con guardas](scripts/build_hangar_entry_test.py)
+- [Pruebas del generador](tests/test_hangar_entry_patch.py)
+
+Primero se ejecuta en modo de solo lectura: comprueba la identidad y el contexto de la ROM, y muestra el plan sin escribir ningún archivo.
+
+```bash
+cd /workspaces/trecetrece
+python3 recovery/scripts/build_hangar_entry_test.py \
+  "/workspaces/gba/Metroid Fusion (USA, Australia).gba"
+```
+
+Solo después de revisar ese resultado, el modo `--apply` genera una copia experimental en `private-roms/rea-analysis/sector_cero_hangar_entry_test.gba` (fuera del repositorio y únicamente si Git la reconoce como excluida). No modifica la ROM original.
+
+```bash
+python3 recovery/scripts/build_hangar_entry_test.py \
+  "/workspaces/gba/Metroid Fusion (USA, Australia).gba" --apply
+```
+
+**No es una build validada todavía.** El cambio estático apunta al estado 11 de la introducción, pero falta abrir la copia generada en mGBA y comprobar la escena del hangar, el fundido, el guardado y la continuación antes de considerar el resultado funcional.
