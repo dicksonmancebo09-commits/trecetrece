@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "game_mode_dispatch.h"
 
 /*
