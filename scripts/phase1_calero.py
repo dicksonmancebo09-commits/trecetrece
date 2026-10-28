@@ -221,6 +221,26 @@ def create_report(
 ) -> dict[str, Any]:
     changed_palette_bytes = sum(a != b for a, b in zip(before_palette, palette_bytes))
     header_out = header_info(output)
+    changed_positions = [
+        PALETTE_OFFSET + index
+        for index, (old_byte, new_byte) in enumerate(zip(before_palette, palette_bytes))
+        if old_byte != new_byte
+    ]
+    changed_ranges: list[dict[str, Any]] = []
+    for position in changed_positions:
+        if not changed_ranges or position > changed_ranges[-1]["end_exclusive"]:
+            changed_ranges.append({
+                "start": position,
+                "end_exclusive": position + 1,
+                "start_hex": f"0x{position:X}",
+                "end_exclusive_hex": f"0x{position + 1:X}",
+                "changed_bytes": 1,
+            })
+        else:
+            changed_ranges[-1]["end_exclusive"] = position + 1
+            changed_ranges[-1]["end_exclusive_hex"] = f"0x{position + 1:X}"
+            changed_ranges[-1]["changed_bytes"] += 1
+
     return {
         "tool": "phase1_calero.py",
         "phase": 1,
@@ -248,8 +268,9 @@ def create_report(
         },
         "build_delta": {
             "changed_byte_count": sum(a != b for a, b in zip(base, output)),
-            "changed_range_count": 1 if base != output else 0,
-            "expected_modified_range": {
+            "changed_range_count": len(changed_ranges),
+            "changed_ranges": changed_ranges,
+            "allowed_write_range": {
                 "start": PALETTE_OFFSET,
                 "end_exclusive": PALETTE_OFFSET + PALETTE_BYTES,
                 "start_hex": f"0x{PALETTE_OFFSET:X}",
@@ -291,13 +312,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         report_path = args.report.resolve()
         if base_path == output_path or base_path == report_path or output_path == report_path:
             raise ValueError("base, output ROM, and JSON report must be three distinct paths")
-        if not args.dry_run:
-            existing = [path for path in (output_path, report_path) if path.exists()]
-            if existing and not args.force:
-                raise FileExistsError(
-                    "output already exists: " + ", ".join(str(path) for path in existing)
-                    + "; use --force to replace it"
-                )
+        existing = [report_path] + ([] if args.dry_run else [output_path])
+        existing = [path for path in existing if path.exists()]
+        if existing and not args.force:
+            raise FileExistsError(
+                "output already exists: " + ", ".join(str(path) for path in existing)
+                + "; use --force to replace it"
+            )
 
         base = base_path.read_bytes()
         base_metadata = validate_base(base, args.expected_base_sha256)
@@ -316,10 +337,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             base, output, base_path, output_path, base_metadata, before_palette, palette_bytes,
             dry_run=args.dry_run,
         )
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         if not args.dry_run:
             atomic_write(output_path, output, force=args.force)
+        report_payload = (json.dumps(report, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+        atomic_write(report_path, report_payload, force=args.force)
         print(json.dumps({
             "status": "dry-run-ok" if args.dry_run else "build-created",
             "source": str(base_path),
