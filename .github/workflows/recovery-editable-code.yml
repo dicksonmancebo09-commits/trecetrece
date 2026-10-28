@@ -29,6 +29,12 @@ jobs:
           python3 -m py_compile recovery/scripts/catalog_lz77_assets.py recovery/tests/test_lz77_catalog.py
           python3 recovery/tests/test_lz77_catalog.py
 
+      - name: Check guarded hangar-entry candidate and tests
+        run: |
+          python3 -m py_compile recovery/scripts/build_hangar_entry_test.py recovery/tests/test_hangar_entry_patch.py
+          python3 recovery/tests/test_hangar_entry_patch.py
+          python3 -m json.tool recovery/analysis/hangar_scene_resource_map_2026-10-28.json >/dev/null
+
       - name: Compile editable state-dispatch model
         run: |
           cc -std=c11 -Wall -Wextra -Werror \
