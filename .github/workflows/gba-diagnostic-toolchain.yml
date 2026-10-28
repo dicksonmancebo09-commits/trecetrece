@@ -132,7 +132,7 @@ jobs:
           exit 0
 
       - name: Upload clean-vs-palette mGBA evidence
-        if: \${{ always() }}
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: metroid-palette-boot-comparison
