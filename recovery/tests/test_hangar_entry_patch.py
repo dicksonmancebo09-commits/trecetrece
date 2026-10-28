@@ -13,7 +13,7 @@ class TestHangarEntryPatch(unittest.TestCase):
         data = bytearray(MODULE.ROM_SIZE)
         data[MODULE.PATCH_OFFSET:MODULE.PATCH_OFFSET + 4] = MODULE.OLD_CONTEXT
         data[0xA0:0xBD] = bytes([1] * (0xBD - 0xA0))
-        data[0xBD] = (-1 - sum(data[0xA0:0xBD])) & 0xFF
+        data[0xBD] = (-sum(data[0xA0:0xBD]) - 0x19) & 0xFF
         return bytes(data)
 
     def test_patch_changes_only_immediate_byte(self):
@@ -24,6 +24,10 @@ class TestHangarEntryPatch(unittest.TestCase):
         self.assertEqual(differences, [MODULE.PATCH_OFFSET])
         self.assertEqual(patched[MODULE.PATCH_OFFSET:MODULE.PATCH_OFFSET + 4], MODULE.NEW_CONTEXT)
         self.assertEqual(patched[0xBD], base[0xBD])
+
+    def test_gba_header_checksum_formula(self):
+        base = self.make_rom()
+        self.assertEqual(base[0xBD], MODULE.expected_header_checksum(base))
 
     def test_wrong_context_is_refused(self):
         base = bytearray(self.make_rom())
