@@ -10,8 +10,8 @@
     "handler": "NewFileIntroHandler",
     "state": 11,
     "routine": "NewFileIntroLandingOnBsl",
-    "routine_file_offset": "0x8F0??",
-    "note": "State and routine names are cross-referenced to source; handler's actual code offset is 0x87708."
+    "routine_file_offset": null,
+    "note": "State and routine names are cross-referenced to source. NewFileIntroHandler begins at ROM offset 0x87708; exact binary function start for NewFileIntroLandingOnBsl is not independently pinned in this report."
   },
   "code_reference": {
     "repo": "metroidret/mf",
