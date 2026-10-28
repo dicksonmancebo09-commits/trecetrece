@@ -13,10 +13,10 @@ fi
 
 if [[ "$(id -u)" -eq 0 ]]; then
   apt-get update
-  DEBIAN_FRONTEND=noninteractive apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3 lua5.4 coreutils
+  DEBIAN_FRONTEND=noninteractive apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick openbox zip python3 lua5.4 coreutils
 else
   sudo apt-get update
-  sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3 lua5.4 coreutils
+  sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick openbox zip python3 lua5.4 coreutils
 fi
 
 MGBA_BIN="$(command -v mgba-qt 2>/dev/null || command -v mgba 2>/dev/null || true)"
@@ -30,7 +30,7 @@ fi
 
 echo "Emulador localizado: $MGBA_BIN"
 "$MGBA_BIN" --version 2>&1 | head -n 3 || true
-for required in xvfb-run xdotool import zip python3 luac5.4; do
+for required in xvfb-run xdotool import zip python3 luac5.4 openbox; do
   command -v "$required" >/dev/null 2>&1 || { echo "Falta el comando: $required" >&2; exit 4; }
 done
 
