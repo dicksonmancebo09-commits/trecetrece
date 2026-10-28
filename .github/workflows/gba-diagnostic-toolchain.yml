@@ -10,13 +10,18 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "tools/lz77_tool.py"
+      - "tools/gba_4bpp_preview.py"
       - "tools/apply_guarded_patch.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_lz77_tool.py"
+      - "tests/test_gba_4bpp_preview.py"
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
+      - "tests/test_gba_diagnostic_capture.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
   pull_request:
     paths:
@@ -26,10 +31,14 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "tools/lz77_tool.py"
+      - "tools/gba_4bpp_preview.py"
       - "tools/apply_guarded_patch.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_lz77_tool.py"
+      - "tests/test_gba_4bpp_preview.py"
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
@@ -70,13 +79,15 @@ jobs:
         run: |
           python3 -m json.tool config/gba_lab.json >/dev/null
           python3 tools/gba_rom_audit.py --help >/dev/null
+          python3 tools/lz77_tool.py --help >/dev/null
+          python3 tools/gba_4bpp_preview.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
           python3 tools/apply_guarded_patch.py --help >/dev/null
           python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/lz77_tool.py tools/gba_4bpp_preview.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
@@ -90,6 +101,12 @@ jobs:
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
 
+      - name: Unit tests — LZ77 tool
+        run: python3 -m unittest discover -s tests -p "test_lz77_tool.py" -v
+
+      - name: Unit tests — GBA 4bpp preview renderer
+        run: python3 -m unittest discover -s tests -p "test_gba_4bpp_preview.py" -v
+
       - name: Unit tests — guarded patching
         run: python3 -m unittest discover -s tests -p "test_apply_guarded_patch.py" -v
 
@@ -99,7 +116,196 @@ jobs:
       - name: Unit tests — mGBA Lua trace generator
         run: python3 -m unittest discover -s tests -p "test_gba_lua_trace_generator.py" -v
 
+      - name: Unit tests — mGBA screenshot capture
+        run: python3 -m unittest discover -s tests -p "test_gba_diagnostic_capture.py" -v
+
+      - name: Heuristic LZ77 scan — Castlevania ROM
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/gba-lz77"
+          python3 tools/lz77_tool.py scan "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" \
+            --alignment 4 --min-output 32 --max-output 262144 \
+            --report "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" >/dev/null
+          python3 - "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" <<'PY'
+          import json, sys
+          report = json.load(open(sys.argv[1], encoding="utf-8"))
+          rows = sorted(report["candidates"], key=lambda row: (-row["declared_output_bytes"], row["compression_ratio"]))
+          print("Castlevania LZ77 candidate count:", report["candidate_count"])
+          print("The report contains short byte signatures, offsets, sizes, and hashes; not full ROM data.")
+          print("Top candidates by decoded size:")
+          for row in rows[:30]:
+              print(f'{row["offset_hex"]:>10}  out={row["declared_output_bytes"]:>7}  in={row["compressed_bytes_consumed"]:>7}  ratio={row["compression_ratio"]:.3f}  mod32={row["decoded_size_mod_32"]:>2}  stream={row["stream_prefix_hex"]}  decoded={row["decoded_prefix_hex"]}  sha256={row["decoded_sha256"][:16]}')
+          PY
+
+      - name: Render candidate 4bpp tile previews
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        run: |
+          python3 - "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" "$RUNNER_TEMP/gba-lz77" <<'PY'
+          import hashlib, importlib.util, json, math, sys
+          from collections import Counter
+          from pathlib import Path
+
+          root = Path.cwd()
+          scan_path, rom_path, output_dir = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
+          scan = json.loads(scan_path.read_text(encoding="utf-8"))
+          rom = rom_path.read_bytes()
+
+          def load_module(name, path):
+              spec = importlib.util.spec_from_file_location(name, root / path)
+              if spec is None or spec.loader is None:
+                  raise RuntimeError(f"cannot load {path}")
+              module = importlib.util.module_from_spec(spec)
+              spec.loader.exec_module(module)
+              return module
+
+          lz = load_module("lz77_tool", "tools/lz77_tool.py")
+          preview = load_module("gba_4bpp_preview", "tools/gba_4bpp_preview.py")
+
+          groups = {}
+          for row in scan["candidates"]:
+              size = int(row["declared_output_bytes"])
+              if size < 256 or (size - 4) % 32:
+                  continue
+              try:
+                  decoded, consumed = lz.decompress_lz77(rom, int(row["offset"]), max_output_size=262144)
+              except ValueError:
+                  continue
+              payload = decoded[4:]
+              if len(payload) < 256 or len(payload) % 32:
+                  continue
+              digest = hashlib.sha256(payload).hexdigest()
+              counts = Counter(payload)
+              entropy = -sum((n / len(payload)) * math.log2(n / len(payload)) for n in counts.values())
+              candidate = {
+                  "row": row,
+                  "decoded": decoded,
+                  "payload_sha256": digest,
+                  "entropy_bits_per_byte": round(entropy, 4),
+                  "unique_byte_values": len(counts),
+                  "nonzero_ratio": round(sum(n for value, n in counts.items() if value != 0) / len(payload), 4),
+                  "consumed_bytes": consumed,
+              }
+              groups.setdefault(len(payload), {}).setdefault(digest, candidate)
+
+          chosen = []
+          for payload_size in sorted(groups, reverse=True):
+              options = sorted(
+                  groups[payload_size].values(),
+                  key=lambda item: (
+                      -item["entropy_bits_per_byte"],
+                      -item["unique_byte_values"],
+                      -item["nonzero_ratio"],
+                      item["row"]["offset"],
+                  ),
+              )
+              if options:
+                  chosen.append(options[0])
+              if len(chosen) == 4:
+                  break
+
+          metadata = []
+          output_dir.mkdir(parents=True, exist_ok=True)
+          for index, item in enumerate(chosen, 1):
+              row = item["row"]
+              path = output_dir / f'preview_{index:02d}_{len(item["decoded"]) - 4}b_{row["offset_hex"]}.png'
+              rendered = preview.render_4bpp_atlas(item["decoded"], path, skip_bytes=4, columns=16, scale=3)
+              metadata.append({
+                  "offset": row["offset"],
+                  "offset_hex": row["offset_hex"],
+                  "declared_output_bytes": row["declared_output_bytes"],
+                  "compressed_bytes_consumed": row["compressed_bytes_consumed"],
+                  "payload_after_4_bytes": len(item["decoded"]) - 4,
+                  "payload_sha256": item["payload_sha256"],
+                  "entropy_bits_per_byte": item["entropy_bits_per_byte"],
+                  "unique_byte_values": item["unique_byte_values"],
+                  "nonzero_ratio": item["nonzero_ratio"],
+                  "preview_png": path.name,
+                  "preview_dimensions": rendered["output_size"],
+                  "palette_note": rendered["palette"],
+              })
+              print(f'Preview {index}: offset={row["offset_hex"]} payload={len(item["decoded"]) - 4} entropy={item["entropy_bits_per_byte"]} unique={item["unique_byte_values"]} png={path.name}')
+
+          (output_dir / "selected-previews.json").write_text(
+              json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+          )
+          PY
+          if compgen -G "$RUNNER_TEMP/gba-lz77/preview_*.png" > /dev/null; then
+            montage "$RUNNER_TEMP"/gba-lz77/preview_*.png -background '#202020' -tile 2x -geometry +4+4 "$RUNNER_TEMP/gba-lz77/castlevania-contact-sheet.png"
+          fi
+
+      - name: Capture Castlevania boot/menu in mGBA
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        continue-on-error: true
+        run: |
+          mkdir -p private-roms
+          cp "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" "private-roms/Castlevania-Aria-of-Sorrow.gba"
+          diagnostic_status=0
+          python3 tools/run_gba_diagnostic.py "private-roms/Castlevania-Aria-of-Sorrow.gba" --profile gba_candidate_unpinned --output-dir private-roms/diagnostics/castlevania-aos || diagnostic_status=$?
+          echo "mGBA diagnostic exit code: $diagnostic_status"
+          if test -f private-roms/diagnostics/castlevania-aos/diagnostic-summary.json; then
+            cat private-roms/diagnostics/castlevania-aos/diagnostic-summary.json
+          else
+            echo "mGBA diagnostic summary was not produced."
+          fi
+
+      - name: Validate mGBA screenshot dimensions
+        if: \${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        run: |
+          python3 - <<'PY'
+          import json, struct
+          from pathlib import Path
+
+          root = Path("private-roms/diagnostics/castlevania-aos")
+          summary_path = root / "run.json"
+          if not summary_path.is_file():
+              raise SystemExit("mGBA run.json missing; cannot validate captured game viewport.")
+          report = json.loads(summary_path.read_text(encoding="utf-8"))
+          stages = report.get("stage_results", [])
+          captures = [stage for stage in stages if stage.get("screenshot")]
+          if not captures:
+              raise SystemExit("No mGBA screenshots were recorded.")
+          errors = []
+          for stage in captures:
+              path = root / stage["screenshot"]
+              if not path.is_file():
+                  errors.append(f'{path.name}: file missing')
+                  continue
+              data = path.read_bytes()[:24]
+              if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+                  errors.append(f'{path.name}: invalid PNG header')
+                  continue
+              width, height = struct.unpack(">II", data[16:24])
+              mode = stage.get("capture_mode", "unknown")
+              print(f'{path.name}: {width}x{height}, mode={mode}')
+              if width < 240 or height < 160:
+                  errors.append(f'{path.name}: {width}x{height} is a menu-bar-only/tiny capture')
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+          print(f"Validated {len(captures)} captures: every PNG is at least 240x160.")
+          PY
+
+      - name: Upload LZ77 candidate metadata
+        if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: castlevania-lz77-candidates
+          path: ${{ runner.temp }}/gba-lz77/
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Upload Castlevania mGBA evidence
+        if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: castlevania-mgba-evidence
+          path: |
+            private-roms/diagnostics/castlevania-aos/
+            private-roms/diagnostics/castlevania-aos.zip
+          if-no-files-found: warn
+          retention-days: 3
+
       - name: State test boundary
         run: |
           echo "mGBA, GBA profiles, static audit, guarded patcher and Lua trace tools are installed and tested."
-          echo "No user ROM was run: test ROMs remain in ignored private-roms/ and are not stored in GitHub."
+          echo "LZ77 and 4bpp unit tests use synthetic data; Castlevania scans and mGBA captures are observation-only."

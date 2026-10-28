@@ -89,20 +89,59 @@ def descendants_of(pid: int) -> set[int]:
     return result
 
 
+def parse_window_geometry(output: str) -> tuple[int, int] | None:
+    """Parse xdotool getwindowgeometry --shell WIDTH/HEIGHT output."""
+    values: dict[str, int] = {}
+    for line in output.splitlines():
+        if "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        if key.strip() in {"WIDTH", "HEIGHT"}:
+            try:
+                values[key.strip()] = int(value.strip())
+            except ValueError:
+                return None
+    if "WIDTH" not in values or "HEIGHT" not in values:
+        return None
+    return values["WIDTH"], values["HEIGHT"]
+
+
+def png_dimensions(data: bytes) -> tuple[int, int] | None:
+    """Return PNG IHDR width/height, or None for an invalid/short PNG header."""
+    if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+        return None
+    width = int.from_bytes(data[16:20], "big")
+    height = int.from_bytes(data[20:24], "big")
+    if width < 1 or height < 1:
+        return None
+    return width, height
+
+
+def get_window_size(window_id: str) -> tuple[int, int] | None:
+    geometry = run_cmd(["xdotool", "getwindowgeometry", "--shell", window_id], timeout=2)
+    if geometry.returncode != 0:
+        return None
+    return parse_window_geometry(geometry.stdout)
+
+
 def find_window(emulator_pid: int, rom_stem: str, previous_id: str | None = None) -> str | None:
+    # A Qt menu bar can be a separate X11 child window. Never keep it as the
+    # capture/input target if it is only ~22 pixels high.
     if previous_id:
-        probe = run_cmd(["xdotool", "getwindowname", previous_id], timeout=2)
-        if probe.returncode == 0:
+        size = get_window_size(previous_id)
+        if size and size[0] >= 240 and size[1] >= 160:
             return previous_id
     try:
         ids_result = run_cmd(["xdotool", "search", "--onlyvisible", "--name", ".*"], timeout=3)
         ids = [x.strip() for x in ids_result.stdout.splitlines() if x.strip().isdigit()]
     except Exception:
         ids = []
+
     pids = descendants_of(emulator_pid)
-    target_id = None
-    fallback_id = None
     stem = re.sub(r"[^A-Za-z0-9]+", "", rom_stem).lower()
+    owned: list[tuple[int, int, str]] = []
+    fallback: list[tuple[int, int, str]] = []
+
     for wid in ids:
         pid_result = run_cmd(["xdotool", "getwindowpid", wid], timeout=2)
         try:
@@ -112,18 +151,31 @@ def find_window(emulator_pid: int, rom_stem: str, previous_id: str | None = None
         title_result = run_cmd(["xdotool", "getwindowname", wid], timeout=2)
         title = title_result.stdout.strip().lower()
         normalized_title = re.sub(r"[^A-Za-z0-9]+", "", title)
+        size = get_window_size(wid)
+        if not size:
+            continue
+        width, height = size
+        area = width * height
+        # Ignore tiny child surfaces, notably menu-bar-only windows, when a
+        # plausible GBA viewport/main window is expected.
+        if width < 240 or height < 160:
+            continue
+        title_score = 2000 if stem and stem in normalized_title else (
+            1000 if ("mgba" in normalized_title or "visualboy" in normalized_title) else 0
+        )
+        row = (title_score + min(area // 1000, 999), area, wid)
         if wpid in pids:
-            if stem and stem in normalized_title:
-                return wid
-            if "mgba" in normalized_title or "visualboy" in normalized_title:
-                target_id = wid
-            elif target_id is None:
-                target_id = wid
-        if stem and stem in normalized_title:
-            fallback_id = wid
-        elif fallback_id is None and ("mgba" in normalized_title or "visualboy" in normalized_title):
-            fallback_id = wid
-    return target_id or fallback_id
+            owned.append(row)
+        elif title_score:
+            fallback.append(row)
+
+    # Prefer an actual game/application window matching the ROM title, then
+    # the largest suitable window owned by the emulator process.
+    if owned:
+        return max(owned)[2]
+    if fallback:
+        return max(fallback)[2]
+    return None
 
 
 def capture_window(window_id: str | None, fallback: Path, capture_log: Path) -> tuple[bool, str]:
@@ -136,11 +188,20 @@ def capture_window(window_id: str | None, fallback: Path, capture_log: Path) -> 
             with capture_log.open("a", encoding="utf-8") as log:
                 proc = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=log, timeout=10, check=False)
             if proc.returncode == 0 and fallback.is_file() and fallback.stat().st_size > 64:
-                return True, "window" if len(cmd) > 3 and cmd[2] != "root" else "desktop-fallback"
+                dimensions = png_dimensions(fallback.read_bytes()[:24])
+                if dimensions and dimensions[0] >= 240 and dimensions[1] >= 160:
+                    mode = "window" if len(cmd) > 3 and cmd[2] != "root" else "desktop-fallback"
+                    return True, mode
+                with capture_log.open("a", encoding="utf-8") as log:
+                    log.write(
+                        f"capture rejected: {dimensions!r} is below the minimum 240x160 game viewport; "
+                        f"command={cmd!r}\n"
+                    )
         except Exception as exc:
             with capture_log.open("a", encoding="utf-8") as log:
                 log.write(f"capture command failed: {exc}\n")
     return False, "failed"
+
 
 
 def send_key(window_id: str | None, key: str, hold_ms: int) -> dict[str, Any]:
