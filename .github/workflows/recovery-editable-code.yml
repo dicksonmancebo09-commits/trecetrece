@@ -24,6 +24,11 @@ jobs:
       - name: Validate ROM inventory JSON
         run: python3 -m json.tool recovery/analysis/rom_inventory.json >/dev/null
 
+      - name: Check LZ77 cataloger and unit tests
+        run: |
+          python3 -m py_compile recovery/scripts/catalog_lz77_assets.py recovery/tests/test_lz77_catalog.py
+          python3 recovery/tests/test_lz77_catalog.py
+
       - name: Compile editable state-dispatch model
         run: |
           cc -std=c11 -Wall -Wextra -Werror \
