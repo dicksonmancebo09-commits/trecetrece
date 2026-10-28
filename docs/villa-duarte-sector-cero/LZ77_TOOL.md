@@ -37,6 +37,16 @@ Por defecto se comprueban offsets alineados a 4 bytes, con tamaño descomprimido
 
 Esto solo crea un stream comprimido aparte. No lo inserta en la ROM, no actualiza punteros y no acredita que el juego pueda cargarlo.
 
+## Generar una vista previa de tiles 4bpp
+
+Después de extraer un bloque a un archivo independiente, se puede generar un atlas en escala de grises para comprobar su estructura:
+
+    python3 tools/gba_4bpp_preview.py /tmp/candidate.bin --skip-bytes 4 --columns 16 --scale 3 --output /tmp/candidate-preview.png
+
+Usa `--skip-bytes 4` solo cuando hayas verificado que el bloque tiene una cabecera de cuatro bytes. El escaneo heurístico de Castlevania detectó muchos bloques cuyo tamaño menos cuatro bytes es múltiplo de 32; eso es una pista para probar este desplazamiento, no una garantía de que todos los bloques tengan ese formato.
+
+El visor interpreta el resto como tiles GBA 4bpp secuenciales de 8×8 píxeles (32 bytes por tile). La imagen usa una paleta de grises basada en el índice 0–15; no reproduce la paleta de colores real del juego. Una imagen legible apoya la hipótesis de que el contenido son tiles, pero no demuestra que el bloque esté bien identificado por punteros o tablas.
+
 ## Validación
 
 Desde la raíz del proyecto:
