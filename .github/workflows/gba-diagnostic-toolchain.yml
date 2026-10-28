@@ -99,6 +99,9 @@ jobs:
       - name: Unit tests — LZ77 tool
         run: python3 -m unittest discover -s tests -p "test_lz77_tool.py" -v
 
+      - name: Unit tests — GBA 4bpp preview renderer
+        run: python3 -m unittest discover -s tests -p "test_gba_4bpp_preview.py" -v
+
       - name: Unit tests — guarded patching
         run: python3 -m unittest discover -s tests -p "test_apply_guarded_patch.py" -v
 
@@ -127,7 +130,7 @@ jobs:
           PY
 
       - name: Render candidate 4bpp tile previews
-        if: \${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        if: ${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
         run: |
           python3 - "$RUNNER_TEMP/gba-lz77/castlevania-lz77-scan.json" "tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba" "$RUNNER_TEMP/gba-lz77" <<'PY'
           import hashlib, importlib.util, json, math, sys
