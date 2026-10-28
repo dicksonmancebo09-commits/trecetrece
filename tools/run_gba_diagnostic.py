@@ -214,7 +214,24 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
     }
     log_stream = emulator_log.open("w", encoding="utf-8", errors="replace")
     proc: subprocess.Popen[str] | None = None
+    wm_proc: subprocess.Popen[str] | None = None
     try:
+        # A lightweight window manager prevents Qt/mGBA from remaining an unexposed X11 window.
+        openbox_bin = shutil.which("openbox")
+        if openbox_bin:
+            wm_proc = subprocess.Popen(
+                [openbox_bin, "--sm-disable"],
+                cwd=str(work_rom.parent),
+                env=env,
+                stdout=log_stream,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+            time.sleep(0.6)
+        else:
+            runtime.setdefault("warnings", []).append(
+                "Openbox is unavailable; install it with bash tools/install_gba_emulator.sh."
+            )
         proc = subprocess.Popen(
             [emulator, "-l", str(config.get("emulator", {}).get("log_level", 15)), str(work_rom)],
             cwd=str(work_rom.parent),
@@ -239,7 +256,9 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
         if proc.poll() is not None:
             runtime["process_exited_before_window"] = proc.returncode
         if window_id is None:
-            runtime["warnings"] = ["No se pudo identificar la ventana de mGBA; no se guardarán capturas del escritorio como si fueran capturas del juego."]
+            runtime.setdefault("warnings", []).append(
+                "No se pudo identificar la ventana de mGBA; no se guardarán capturas del escritorio como si fueran capturas del juego."
+            )
         keymap = config.get("emulator", {}).get("keyboard", {})
         stages = config.get("emulator", {}).get("stages", [])
         if not stages:
@@ -302,6 +321,16 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
                 proc.kill()
                 try:
                     proc.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    pass
+        if wm_proc and wm_proc.poll() is None:
+            wm_proc.terminate()
+            try:
+                wm_proc.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                wm_proc.kill()
+                try:
+                    wm_proc.wait(timeout=2)
                 except subprocess.TimeoutExpired:
                     pass
         log_stream.close()
