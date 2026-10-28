@@ -42,6 +42,7 @@ La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domin
 - [Flujo de R.E. para Metroid Fusion](docs/villa-duarte-sector-cero/research/METROID_REA_WORKFLOW.md)
 - [Agente Metroid RE](.github/agents/metroid-re.agent.md)
 - [Sonda de metadatos GBA](tools/metroid_gba_probe.py)
+- [Herramienta LZ77 GBA: escaneo, extracción y compresión](docs/villa-duarte-sector-cero/LZ77_TOOL.md)
 - [Instalar mGBA y diagnosticar ROMs en Codespaces](docs/villa-duarte-sector-cero/MGBA_CODESPACES_SETUP.md)
 - [Instalación de Stable Diffusion, OmniRoute, skills y Scrapling](docs/villa-duarte-sector-cero/AI_IMAGE_GENERATION_SETUP.md)
 
