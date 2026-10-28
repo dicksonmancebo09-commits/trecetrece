@@ -27,8 +27,11 @@ ROM_BASE = 0x08000000
 ROM_SIZE_BYTES = 8 * 1024 * 1024
 EXPECTED_BASE_SHA256 = "54f3291e54fdca088d440ef2dd51f41dc2c80b17c195956f633660ab790e3b00"
 EXPECTED_GAME_CODE = "AMTE"
-EXPECTED_TITLE = "METROID4USA."
-PALETTE_OFFSET = 0x46B494
+EXPECTED_TITLE = "METROID4USA"
+PALETTE_TABLE_OFFSET = 0x46B494
+PALETTE_ROW_INDEX = 1  # Bank 0 is all-zero/reserved in the measured v0.9 palette table.
+PALETTE_OFFSET = PALETTE_TABLE_OFFSET + PALETTE_ROW_INDEX * 32  # 0x46B4B4
+PALETTE_TABLE_ROWS = 14
 PALETTE_COLOR_COUNT = 16
 PALETTE_BYTES = PALETTE_COLOR_COUNT * 2
 
@@ -105,7 +108,7 @@ def pal_row_bytes(colors_rgb: Sequence[tuple[int, int, int]]) -> bytes:
     return bytes(out)
 
 
-def decode_palette(raw: bytes) -> list[dict[str, Any]]:
+def decode_palette(raw: bytes, labels: Sequence[str] | None = None) -> list[dict[str, Any]]:
     if len(raw) != PALETTE_BYTES:
         raise ValueError(f"palette must be {PALETTE_BYTES} bytes; got {len(raw)}")
     colors = []
@@ -113,7 +116,7 @@ def decode_palette(raw: bytes) -> list[dict[str, Any]]:
         value = struct.unpack_from("<H", raw, index * 2)[0]
         colors.append({
             "index": index,
-            "label": PALETTE_LABELS[index],
+            "label": labels[index] if labels is not None else f"original color index {index}",
             "word_hex": f"0x{value:04X}",
             "rgb888": list(from555(value)),
         })
@@ -159,10 +162,23 @@ def validate_base(data: bytes, expected_sha256: str) -> dict[str, Any]:
             "base ROM SHA-256 mismatch; refusing to guess which revision this is. "
             f"Expected {expected_sha}; got {actual_sha}."
         )
-    if PALETTE_OFFSET < 0 or PALETTE_OFFSET + PALETTE_BYTES > len(data):
-        raise ValueError("palette range lies outside ROM bounds")
+    palette_table_bytes = PALETTE_TABLE_ROWS * PALETTE_BYTES
+    if PALETTE_TABLE_OFFSET < 0 or PALETTE_TABLE_OFFSET + palette_table_bytes > len(data):
+        raise ValueError("tileset palette table lies outside ROM bounds")
+    if PALETTE_OFFSET < PALETTE_TABLE_OFFSET or PALETTE_OFFSET + PALETTE_BYTES > PALETTE_TABLE_OFFSET + palette_table_bytes:
+        raise ValueError("selected palette row lies outside the tileset palette table")
+    bank0 = data[PALETTE_TABLE_OFFSET:PALETTE_TABLE_OFFSET + PALETTE_BYTES]
+    if any(bank0):
+        raise ValueError(
+            f"expected documented all-zero/reserved bank 0 at 0x{PALETTE_TABLE_OFFSET:X}; "
+            "the base revision or resource mapping may differ"
+        )
     existing = data[PALETTE_OFFSET:PALETTE_OFFSET + PALETTE_BYTES]
     words = struct.unpack("<16H", existing)
+    if sum(word != 0 for word in words) < 8 or len(set(words)) < 8:
+        raise ValueError(
+            f"palette row {PALETTE_ROW_INDEX} at 0x{PALETTE_OFFSET:X} looks blank or implausible; refusing to patch"
+        )
     if any(word & 0x8000 for word in words):
         raise ValueError(
             f"0x{PALETTE_OFFSET:X} does not look like a raw 15-bit palette: at least one word has bit 15 set"
@@ -171,6 +187,7 @@ def validate_base(data: bytes, expected_sha256: str) -> dict[str, Any]:
         "sha256": actual_sha,
         "header": header,
         "palette_before_hex": existing.hex(),
+        "palette_table_bank0_hex": bank0.hex(),
         "palette_before": decode_palette(existing),
     }
 
@@ -255,7 +272,9 @@ def create_report(
         "output_sha256": sha256_bytes(output),
         "rom_base_bus_address": f"0x{ROM_BASE:08X}",
         "palette": {
-            "purpose": "Main Deck palette 76; documented ROM offset for the room/tileset study",
+            "purpose": "Main Deck tileset 61 palette row; row 0 is a preserved all-zero/reserved bank",
+            "palette_table_offset": f"0x{PALETTE_TABLE_OFFSET:X}",
+            "native_palette_bank_index": PALETTE_ROW_INDEX,
             "rom_offset": f"0x{PALETTE_OFFSET:X}",
             "bus_address": f"0x{ROM_BASE + PALETTE_OFFSET:08X}",
             "byte_length": PALETTE_BYTES,
@@ -264,7 +283,7 @@ def create_report(
             "before_hex": before_palette.hex(),
             "after_hex": palette_bytes.hex(),
             "before_colors": decode_palette(before_palette),
-            "after_colors": decode_palette(palette_bytes),
+            "after_colors": decode_palette(palette_bytes, PALETTE_LABELS),
         },
         "build_delta": {
             "changed_byte_count": sum(a != b for a, b in zip(base, output)),
@@ -285,8 +304,9 @@ def create_report(
         "warnings": [
             "La ROM base se lee; nunca se modifica in situ.",
             "Solo se sustituyen 32 bytes de paleta. No cambia geometría, tilemap, colisiones, código ni sprites.",
-            "En un fondo GBA, el índice de color 0 es un color, no un canal alfa. La entrada 0 se ha definido como negro base.",
-            "La paleta 76/offset 0x46B494 está documentada para el estudio de Main Deck sala 0; verificar en mGBA que es la paleta activa en el checkpoint elegido de v0.9 antes de considerar la fase visual aprobada.",
+            "En tiles 4bpp GBA, el índice de píxel 0 es transparente; la entrada 0 se conserva como negro base, pero no controla por sí sola la transparencia de toda la capa.",
+            "La tabla de paleta del tileset 61 empieza en 0x46B494; la fila 0 de 32 bytes está totalmente a cero en la ROM v0.9 y se conserva. Esta fase modifica la fila/banco 1 en 0x46B4B4.",
+            "El render visual en mGBA sigue pendiente; revisar que la paleta retocada produce el contraste esperado y no oscurece otros cuartos que compartan el tileset 61.",
             "El informe estático no garantiza que la paleta elegida mejore la lectura visual ni que la ROM se haya probado en el emulador.",
         ],
     }
@@ -348,6 +368,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "output": None if args.dry_run else str(output_path),
             "output_sha256": sha256_bytes(output),
             "report": str(report_path),
+            "palette_table_offset": f"0x{PALETTE_TABLE_OFFSET:X}",
+            "palette_bank_index": PALETTE_ROW_INDEX,
             "palette_offset": f"0x{PALETTE_OFFSET:X}",
             "palette_bus_address": f"0x{ROM_BASE + PALETTE_OFFSET:08X}",
             "changed_palette_bytes": report["palette"]["changed_bytes_inside_palette"],
