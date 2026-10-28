@@ -10,10 +10,12 @@ on:
       - "tools/run_gba_diagnostic.sh"
       - "tools/run_gba_diagnostic.py"
       - "tools/gba_rom_audit.py"
+      - "scripts/phase1_calero.py"
       - "tools/apply_guarded_patch.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
+      - "tests/test_phase1_calero.py"
       - "tests/test_apply_guarded_patch.py"
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
@@ -70,13 +72,14 @@ jobs:
         run: |
           python3 -m json.tool config/gba_lab.json >/dev/null
           python3 tools/gba_rom_audit.py --help >/dev/null
+          python3 scripts/phase1_calero.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
           python3 tools/apply_guarded_patch.py --help >/dev/null
           python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
+          python3 -m py_compile scripts/phase1_calero.py tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
@@ -86,6 +89,9 @@ jobs:
           python3 tools/generate_mgba_lua_trace.py
           test -s private-roms/diagnostics/mgba-trace-generated.lua
           luac5.4 -p private-roms/diagnostics/mgba-trace-generated.lua
+
+      - name: Unit tests — Phase 1 Calero palette
+        run: python3 -m unittest discover -s tests -p "test_phase1_calero.py" -v
 
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
