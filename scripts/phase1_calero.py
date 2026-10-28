@@ -37,9 +37,9 @@ PALETTE_BYTES = PALETTE_COLOR_COUNT * 2
 
 # 16 entries, RGB888. Entries 0-6 preserve the colors present in the supplied
 # snippet. Entries 7-15 complete the row as a first-pass Calero night palette.
-# IMPORTANT: this is a background palette: index 0 is a color value, not alpha.
+# Palette pixel index 0 is transparent in GBA 4bpp; the first color entry is retained as black.
 PAL_CALERO_ROW0: list[tuple[int, int, int]] = [
-    (0, 0, 0),          #  0: negro base; no asumir transparencia en BG
+    (0, 0, 0),          #  0: negro base; los píxeles con índice 0 son transparentes en 4bpp
     (8, 8, 24),         #  1: noche profunda
     (40, 38, 36),       #  2: bloque de hormigón oscuro
     (72, 68, 64),       #  3: bloque de hormigón medio
