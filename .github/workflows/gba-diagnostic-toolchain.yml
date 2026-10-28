@@ -248,6 +248,43 @@ jobs:
             echo "mGBA diagnostic summary was not produced."
           fi
 
+      - name: Validate mGBA screenshot dimensions
+        if: \${{ hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
+        run: |
+          python3 - <<'PY'
+          import json, struct
+          from pathlib import Path
+
+          root = Path("private-roms/diagnostics/castlevania-aos")
+          summary_path = root / "run.json"
+          if not summary_path.is_file():
+              raise SystemExit("mGBA run.json missing; cannot validate captured game viewport.")
+          report = json.loads(summary_path.read_text(encoding="utf-8"))
+          stages = report.get("stage_results", [])
+          captures = [stage for stage in stages if stage.get("screenshot")]
+          if not captures:
+              raise SystemExit("No mGBA screenshots were recorded.")
+          errors = []
+          for stage in captures:
+              path = root / stage["screenshot"]
+              if not path.is_file():
+                  errors.append(f'{path.name}: file missing')
+                  continue
+              data = path.read_bytes()[:24]
+              if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+                  errors.append(f'{path.name}: invalid PNG header')
+                  continue
+              width, height = struct.unpack(">II", data[16:24])
+              mode = stage.get("capture_mode", "unknown")
+              print(f'{path.name}: {width}x{height}, mode={mode}')
+              if width < 240 or height < 160:
+                  errors.append(f'{path.name}: {width}x{height} is a menu-bar-only/tiny capture')
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+          print(f"Validated {len(captures)} captures: every PNG is at least 240x160.")
+          PY
+
       - name: Upload LZ77 candidate metadata
         if: ${{ always() && hashFiles('tools/mgba/Castlevania - Aria of Sorrow (Europe) (En,Fr,De).gba') != '' }}
         uses: actions/upload-artifact@v4
