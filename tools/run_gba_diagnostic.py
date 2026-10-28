@@ -95,7 +95,7 @@ def find_window(emulator_pid: int, rom_stem: str, previous_id: str | None = None
         if probe.returncode == 0:
             return previous_id
     try:
-        ids_result = run_cmd(["xdotool", "search", "--onlyvisible", "--name", ".*"], timeout=3)
+        ids_result = run_cmd(["xdotool", "search", "--name", ".*"], timeout=3)
         ids = [x.strip() for x in ids_result.stdout.splitlines() if x.strip().isdigit()]
     except Exception:
         ids = []
@@ -127,21 +127,43 @@ def find_window(emulator_pid: int, rom_stem: str, previous_id: str | None = None
 
 
 def capture_window(window_id: str | None, fallback: Path, capture_log: Path) -> tuple[bool, str]:
-    candidates = []
-    if window_id:
-        candidates.append(["import", "-window", window_id, str(fallback)])
-    candidates.append(["import", "-window", "root", str(fallback)])
-    for cmd in candidates:
+    """Capture only the emulator window; never mislabel a desktop screenshot as game evidence."""
+    if not window_id:
+        with capture_log.open("a", encoding="utf-8") as log:
+            log.write("Capture refused: no mGBA window ID was identified; desktop fallback is disabled.\n")
+        return False, "no-emulator-window"
+
+    # Make the actual emulator window mapped and raised before asking ImageMagick to capture it.
+    for action in (
+        ["xdotool", "windowmap", window_id],
+        ["xdotool", "windowraise", window_id],
+        ["xdotool", "windowactivate", "--sync", window_id],
+    ):
         try:
-            with capture_log.open("a", encoding="utf-8") as log:
-                proc = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=log, timeout=10, check=False)
-            if proc.returncode == 0 and fallback.is_file() and fallback.stat().st_size > 64:
-                return True, "window" if len(cmd) > 3 and cmd[2] != "root" else "desktop-fallback"
+            proc = run_cmd(action, timeout=3)
+            if proc.returncode != 0:
+                with capture_log.open("a", encoding="utf-8") as log:
+                    log.write(f"Window activation warning ({' '.join(action)}): {proc.stderr.strip()}\n")
         except Exception as exc:
             with capture_log.open("a", encoding="utf-8") as log:
-                log.write(f"capture command failed: {exc}\n")
-    return False, "failed"
+                log.write(f"Window activation failed ({' '.join(action)}): {exc}\n")
 
+    cmd = ["import", "-window", window_id, str(fallback)]
+    try:
+        with capture_log.open("a", encoding="utf-8") as log:
+            proc = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=log, timeout=10, check=False)
+        if proc.returncode == 0 and fallback.is_file() and fallback.stat().st_size > 64:
+            return True, "window"
+    except Exception as exc:
+        with capture_log.open("a", encoding="utf-8") as log:
+            log.write(f"Emulator-window capture failed: {exc}\n")
+
+    # Do not leave a misleading desktop/taskbar screenshot under a game-scene filename.
+    try:
+        fallback.unlink(missing_ok=True)
+    except OSError:
+        pass
+    return False, "failed-window-capture"
 
 def send_key(window_id: str | None, key: str, hold_ms: int) -> dict[str, Any]:
     press = ["xdotool", "keydown"]
@@ -217,7 +239,7 @@ def worker(args: argparse.Namespace, profile: dict[str, Any], config: dict[str, 
         if proc.poll() is not None:
             runtime["process_exited_before_window"] = proc.returncode
         if window_id is None:
-            runtime["warnings"] = ["No se pudo identificar la ventana; las capturas pueden ser del escritorio virtual completo."]
+            runtime["warnings"] = ["No se pudo identificar la ventana de mGBA; no se guardarán capturas del escritorio como si fueran capturas del juego."]
         keymap = config.get("emulator", {}).get("keyboard", {})
         stages = config.get("emulator", {}).get("stages", [])
         if not stages:
