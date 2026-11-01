@@ -41,6 +41,12 @@ El informe y los artefactos derivados quedan bajo `private-roms/rea-analysis/`, 
 Los archivos C son un modelo parcial del arranque y del mapa de estados, no una recompilación completa ni jugable del título original. Los offsets de entrada y la tabla de despacho se han comprobado estáticamente; el comportamiento completo necesita REA/Ghidra en ARMv4T y comparación con mGBA.
 
 
+## Informe de investigación y descompilación (2026-11-01)
+
+- [Informe de investigación y descompilación de Metroid Fusion](analysis/METROID_FUSION_DECOMPILATION_REPORT_2026-11-01.md)
+
+El informe recoge los módulos principales, estructuras, flujo de gameplay y recursos de la referencia comunitaria, y los cruza con los datos de la ROM AMTE ya registrados. Indica expresamente que REA no fue ejecutado contra el archivo privado en esta sesión y que falta una importación ARMv4T real en Ghidra para generar evidencia de descompilación propia.
+
 ## Expediente maestro y recopilación integral con REA
 
 - [Expediente maestro de Metroid Fusion](analysis/METROID_FUSION_MASTER_DOSSIER.md)
