@@ -77,5 +77,5 @@ Aria of Sorrow puede ser una referencia de técnicas de compresión, descriptore
 - [Decompilación C de Aria of Sorrow (USA)](https://github.com/testyourmine/cvaos)
 - [DSVEdit: editor de Aria of Sorrow GBA](https://github.com/LagoLunatic/DSVEdit)
 - [BIOS GBA: LZ77UnCompWram y formato LZ10](https://docs.rs/gba/latest/src/gba/bios.rs.html)
-- [Escaneo LZ77 y previsualizaciones locales](metroid_fusion_room_tilesets_2026-11-02.csv)
+- Artefacto del escaneo que sustenta las cifras: `castlevania-lz77-scan.json`, incluido en el ZIP de previsualizaciones generado durante esta conversación; no es un archivo versionado en este repositorio.
 
