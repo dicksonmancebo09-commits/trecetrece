@@ -41,6 +41,13 @@ El informe y los artefactos derivados quedan bajo `private-roms/rea-analysis/`, 
 Los archivos C son un modelo parcial del arranque y del mapa de estados, no una recompilación completa ni jugable del título original. Los offsets de entrada y la tabla de despacho se han comprobado estáticamente; el comportamiento completo necesita REA/Ghidra en ARMv4T y comparación con mGBA.
 
 
+## Expediente maestro y recopilación integral con REA
+
+- [Expediente maestro de Metroid Fusion](analysis/METROID_FUSION_MASTER_DOSSIER.md)
+- [Encargo detallado para el agente REA](analysis/REA_FULL_GAME_INVESTIGATION_PROMPT.md)
+
+El expediente consolida la identidad de la ROM, el arranque y dispatcher observados, el mapa de sistemas, el inventario heurístico, los recursos con nombre, la arquitectura de la referencia comunitaria y la matriz de cobertura pendiente. El prompt instruye al agente REA del Codespace para realizar la investigación por subsistemas y guardar Evidence bajo `private-roms/rea-analysis/`. No afirma que el análisis exhaustivo se haya ejecutado: requiere la ROM local y un provider Ghidra realmente operativo.
+
 ## Informe estático de toda la ROM (2026-10-28)
 
 - [Informe humano del barrido completo](analysis/full_rom_static_scan_2026-10-28.md)
