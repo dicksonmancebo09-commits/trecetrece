@@ -222,3 +222,16 @@ No inventes offsets, tamaños de slots, paletas ni direcciones VRAM en cada tare
 - GitHub Actions debe validar la instalación y ejecutar las pruebas unitarias. No envíes ROMs al runner público. Los diagnósticos de ROM requieren el entorno privado que tenga los archivos locales.
 - Cuando la build falla: conserva el artefacto fallido y su hash; no lo sobrescribas. Cambia una clase de recursos a la vez, genera build nueva, compara con la base y ejecuta el mismo perfil otra vez.
 
+
+
+## Encargo especial: recopilatorio integral de Metroid Fusion con REA
+
+Cuando el usuario solicite un recopilatorio completo, auditoría total o descompilación de todo el juego, no te limites a una sola llamada `rea inspect` ni a repetir el preflight. Ejecuta el protocolo de `recovery/analysis/REA_FULL_GAME_INVESTIGATION_PROMPT.md` y usa `recovery/analysis/METROID_FUSION_MASTER_DOSSIER.md` como índice y matriz de cobertura.
+
+Debes investigar por fases: arranque/dispatcher, frame loop, input/Samus/física, rooms/puertas/colisiones/eventos, enemigos/IA/jefes/SA-X, armas/proyectiles, UI/intro/cutscenes, audio/texto/SRAM, y gráficos/paletas/mapas. Guarda las fichas completas y Evidence de REA en `private-roms/rea-analysis/` excluido de Git. En el repositorio sólo versiona resúmenes técnicos sin ROMs ni dumps.
+
+**Limitación de arquitectura obligatoria:** la importación raw-binary ARM genérica de REA selecciona `ARM:LE:32:v7` y comienza en estado A32. GBA usa ARM7TDMI/ARMv4T y código ARM/Thumb. Usa REA raw-binary como triage, no como prueba final de Thumb/ARMv4T; cuando corresponda contrasta con una importación Ghidra Raw Binary configurada `ARM:LE:32:v4t`, little-endian, base `0x08000000`. Si el entorno no puede hacer esa configuración, registra la limitación y no finjas cobertura total.
+
+No digas que la descompilación comunitaria equivale a nuestro análisis de la ROM. Es una referencia externa en progreso y advierte que no es shiftable. Cada función atribuida a la ROM objetivo necesita evidencia de hash, dirección, bytes, idioma/provider, pseudocódigo/assembly y referencias.
+
+El encargo es de investigación de solo lectura: no modifiques la ROM ni generes parches. Avanza hasta donde permitan las herramientas instaladas. Si el proveedor Ghidra no está disponible, conserva el preflight, identifica exactamente qué falta y continúa con los inventarios independientes; no hagas que el usuario repita una cadena de comandos sin necesidad.
