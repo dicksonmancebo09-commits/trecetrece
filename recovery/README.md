@@ -102,3 +102,12 @@ python3 recovery/scripts/build_hangar_entry_test.py \
 ```
 
 **No es una build validada todavía.** El cambio estático apunta al estado 11 de la introducción, pero falta abrir la copia generada en mGBA y comprobar la escena del hangar, el fundido, el guardado y la continuación antes de considerar el resultado funcional.
+
+
+## Cruce completo de salas y tilesets (2026-11-02)
+
+- [Informe de relación sala → tileset → recursos gráficos](analysis/METROID_FUSION_ROOM_TILESET_CROSSWALK_2026-11-02.md)
+- [CSV con las 382 salas y sus recursos](analysis/metroid_fusion_room_tilesets_2026-11-02.csv)
+
+Se extrajeron las 382 entradas de las siete áreas y se cruzaron con la tabla de 98 entradas `sTilesetEntries`. El informe distingue el índice de tileset de sala de los nombres de recursos gráficos, paletas, fondos y tilemaps. También corrige el alcance del tinte de la fase 1: la paleta `sTileset_61_Pal` está compartida por las entradas 69 y 70 del Main Deck (salas 71 y 46), por lo que no identifica por sí sola una sala Calero exclusiva.
+
