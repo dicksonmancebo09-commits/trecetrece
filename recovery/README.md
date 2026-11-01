@@ -124,3 +124,9 @@ Se extrajeron las 382 entradas de las siete áreas y se cruzaron con la tabla de
 - [Informe del loader, compresión LZ77 y escaneo de candidatos](analysis/ARIA_OF_SORROW_GRAPHICS_FORMAT_2026-11-02.md)
 
 El informe separa la evidencia del motor (loader BIOS LZ77) de los candidatos heurísticos detectados en la ROM europea A2CP. No afirma que los 481 candidatos sean tilesets ni aplica offsets de la decompilación USA a la ROM europea.
+
+## Estructura del logo de la pantalla de título (2026-11-02)
+
+- [Informe de los tres recursos del logo: tiles, tabla de tiles y paleta](analysis/METROID_FUSION_TITLE_LOGO_FORMAT_2026-11-02.md)
+
+La referencia decompilada confirma que el logo se carga desde tres recursos independientes: gráficos comprimidos, tabla/mapa de tiles y paleta. El informe identifica sus destinos de VRAM y deja claro que la ROM no se ha modificado todavía.
