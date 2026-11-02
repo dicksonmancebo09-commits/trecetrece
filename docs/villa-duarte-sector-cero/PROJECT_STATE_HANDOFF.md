@@ -167,3 +167,10 @@ El plan maestro supersede la nomenclatura anterior de siete arquetipos visuales 
 - El nodo L01 (Villa Duarte/Main Deck) conecta con todos los demás niveles en la topología de referencia; existen además enlaces directos L02–L03/L04, L03–L05, L04–L06, L05–L06/L07 y L06–L07. Las condiciones de evento deben conservarse/adaptarse; el grafo no implica que todas las rutas estén abiertas desde el inicio.
 - Una habitación de Main Deck no tiene puerta de origen en la tabla extraída. Debe revisarse su transición alternativa; se mantiene dentro del total de 87 salas.
 - Estado: 382 salas nombradas y asignadas; puertas de referencia enlazadas; geometría, clipdata, enemigos, eventos narrativos y runtime aún no completados. No se modificó la ROM.
+
+
+## Atlas gráfico L01 Villa Duarte v0.2 (02-11-2026)
+
+Se añade el [atlas modular SVG](../../assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg) con [metadatos de módulos](../../assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.json). Tiene 256 × 256 px, 1.024 tiles lógicos de 8 × 8, 64 módulos compuestos de 32 × 32 y 16 entradas de paleta declaradas (15 colores visibles). Incluye ocho familias de arte urbano, vivienda, comercio, calle e interiores/hangar.
+
+El archivo se verificó estructuralmente; no se ha rasterizado a PNG indexado, convertido a 4bpp ni integrado en la ROM. No equivale todavía a las 87 salas de Villa Duarte: éstas se deben montar sala por sala con el grafo de puertas y la geometría/clipdata extraídos de la ROM exacta.
