@@ -185,3 +185,18 @@ Se ejecutó y completó satisfactoriamente el workflow **Zector Cero — product
 Comprobación independiente del ZIP descargado: 7 informes, 7 ficheros 4bpp de 32.768 bytes, 7 streams LZ77 y 7 paletas de 32 bytes. SHA-256 del ZIP: `61624cfdf696f81b9c1be02c8d112d1517afb96cba0796a97f6ce443a863d192`.
 
 **Límite sin cambios:** el informe de exportación confirma `rom_modified=false`, `room_tilemap_created=false`, `room_pointer_updated=false` y `runtime_tested=false`. Por tanto, este hito entrega recursos gráficos codificados y comprobados; no integra salas en la ROM ni demuestra jugabilidad.
+
+
+## Actualización posterior — auditoría estática de ROM v1.7 (02-11-2026)
+
+Se recibieron y verificaron los dos binarios privados de referencia:
+- ROM base USA/Australia, 8 MiB, SHA-256 `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8`, coincidente con el perfil fijado.
+- ROM candidata v1.7, 8 MiB, SHA-256 `66e68fb0f04f89d40ecfee21996e6be62e96a22f7f66198528ee6b2c5c2c2aaf`, coincidente con el perfil fijado.
+
+La auditoría estática de solo lectura superó **75/75 comprobaciones**: cabecera y checksum, 7 bytes esperados de título/intro, 18 punteros, tramo protegido de recursos originales, cuatro recursos gráficos, tabla/metatiles y BG1/BG2 de Main Deck sala 0, rangos de memoria y no solapamiento de las siete reservas.
+
+Informe detallado: [ZECTOR_CERO_v1_7_STATIC_ROM_AUDIT_2026-11-02.md](ZECTOR_CERO_v1_7_STATIC_ROM_AUDIT_2026-11-02.md).
+
+**Límite:** no se ejecutó mGBA/VBA-M. El perfil de v1.7 solo acredita la estructura personalizada revisada para Main Deck sala 0 y los recursos del título; no acredita que las 382 salas estén integradas o sean jugables. Por tanto, la integración ROM completa y las pruebas runtime permanecen abiertas. El archivo de guardado recibido es un `.sav` de 32 KiB y no se utilizó para la auditoría; contiene una etiqueta `EUVerE004`, así que su compatibilidad con la ROM USA/Australia queda pendiente.
+
+Las ROM y los saves permanecen fuera de Git.
