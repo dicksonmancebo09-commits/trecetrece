@@ -1,0 +1,210 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.svg",
+  "source_svg_sha256": "b4d9dfe8a4bc66a0e7135075e2ba3b6a1ab2913a04c06e502620df387f7e7043",
+  "metadata_json": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        24,
+        49,
+        59,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "rgba": [
+        49,
+        80,
+        90,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "asphalt",
+      "rgba": [
+        88,
+        104,
+        116,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "concreteDark",
+      "rgba": [
+        110,
+        137,
+        133,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "concrete",
+      "rgba": [
+        155,
+        178,
+        165,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "cream",
+      "rgba": [
+        229,
+        220,
+        193,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "mint",
+      "rgba": [
+        130,
+        199,
+        174,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "turquoise",
+      "rgba": [
+        57,
+        175,
+        169,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "sky",
+      "rgba": [
+        112,
+        198,
+        216,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "sun",
+      "rgba": [
+        231,
+        199,
+        102,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "coral",
+      "rgba": [
+        202,
+        119,
+        95,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "foliage",
+      "rgba": [
+        86,
+        139,
+        101,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "white",
+      "rgba": [
+        242,
+        236,
+        205,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "glass",
+      "rgba": [
+        56,
+        106,
+        130,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "highlight",
+      "rgba": [
+        189,
+        230,
+        210,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 12,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1-indexed.png",
+  "output_png_sha256": "9cdf89fb28b35bcb92296c3a744f6e2fd9a2ce173fbf17a6fb7b83b6da3d1968",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

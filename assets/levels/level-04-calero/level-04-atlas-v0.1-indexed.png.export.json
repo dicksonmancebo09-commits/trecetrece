@@ -1,0 +1,209 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-04-calero/level-04-atlas-v0.1.svg",
+  "source_svg_sha256": "8acda8b8ddaea82eea9d42ecc37a1e7dbe716e7981ca4e6e1d35a41b74512658",
+  "metadata_json": "assets/levels/level-04-calero/level-04-atlas-v0.1.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        32,
+        42,
+        53,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "rgba": [
+        57,
+        70,
+        80,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "steelDark",
+      "rgba": [
+        87,
+        99,
+        106,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "steel",
+      "rgba": [
+        135,
+        150,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "concrete",
+      "rgba": [
+        176,
+        169,
+        152,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "dust",
+      "rgba": [
+        209,
+        195,
+        163,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "rust",
+      "rgba": [
+        166,
+        83,
+        54,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "rustLight",
+      "rgba": [
+        194,
+        118,
+        79,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "hazard",
+      "rgba": [
+        240,
+        195,
+        78,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "amber",
+      "rgba": [
+        215,
+        155,
+        55,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "greenPower",
+      "rgba": [
+        120,
+        154,
+        119,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "hot",
+      "rgba": [
+        238,
+        139,
+        66,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "pipe",
+      "rgba": [
+        109,
+        137,
+        145,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "cream",
+      "rgba": [
+        230,
+        222,
+        199,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "panel",
+      "rgba": [
+        61,
+        118,
+        95,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 11,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-04-calero/level-04-atlas-v0.1-indexed.png",
+  "output_png_sha256": "f30e379777dbdb6fd73ac5902844ed1c1262494811251e9852ab84afcc9d3ce6",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

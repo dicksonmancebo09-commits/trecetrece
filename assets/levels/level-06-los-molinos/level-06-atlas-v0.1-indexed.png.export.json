@@ -1,0 +1,209 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.svg",
+  "source_svg_sha256": "29f136eb05fb095a90dadd8019fa0f3c823c60018060c2cbb804da31b8051bcc",
+  "metadata_json": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        23,
+        42,
+        50,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "deepWater",
+      "rgba": [
+        29,
+        75,
+        87,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "water",
+      "rgba": [
+        39,
+        111,
+        120,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "cyan",
+      "rgba": [
+        74,
+        157,
+        160,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "steelDark",
+      "rgba": [
+        83,
+        107,
+        113,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "slate",
+      "rgba": [
+        128,
+        144,
+        149,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "concrete",
+      "rgba": [
+        168,
+        170,
+        160,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "rust",
+      "rgba": [
+        155,
+        87,
+        61,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "oxide",
+      "rgba": [
+        192,
+        120,
+        75,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "green",
+      "rgba": [
+        99,
+        122,
+        100,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "pale",
+      "rgba": [
+        203,
+        211,
+        195,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "amber",
+      "rgba": [
+        227,
+        170,
+        79,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "white",
+      "rgba": [
+        232,
+        229,
+        212,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "dark",
+      "rgba": [
+        44,
+        65,
+        71,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "ice",
+      "rgba": [
+        165,
+        216,
+        217,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 11,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1-indexed.png",
+  "output_png_sha256": "4638c54c6bc4060255626d940a8e807f1c1eefe21541b3af76392edccfcaa91f",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

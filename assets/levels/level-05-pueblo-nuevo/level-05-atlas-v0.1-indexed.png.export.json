@@ -1,0 +1,210 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1.svg",
+  "source_svg_sha256": "71d11808630842143871fe7a43dacd0ca9f7561e6e8724faecb9ebebbb28e920",
+  "metadata_json": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        35,
+        30,
+        56,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "rgba": [
+        58,
+        54,
+        88,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "darkCement",
+      "rgba": [
+        97,
+        94,
+        121,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "concrete",
+      "rgba": [
+        151,
+        139,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "warmConcrete",
+      "rgba": [
+        194,
+        165,
+        140,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "peach",
+      "rgba": [
+        229,
+        161,
+        125,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "violet",
+      "rgba": [
+        105,
+        93,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "indigo",
+      "rgba": [
+        66,
+        61,
+        121,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "turquoise",
+      "rgba": [
+        81,
+        175,
+        166,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "sky",
+      "rgba": [
+        130,
+        150,
+        202,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "warmLight",
+      "rgba": [
+        240,
+        196,
+        123,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "roof",
+      "rgba": [
+        124,
+        100,
+        122,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "brick",
+      "rgba": [
+        165,
+        110,
+        105,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "plant",
+      "rgba": [
+        91,
+        134,
+        107,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "water",
+      "rgba": [
+        77,
+        129,
+        148,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 12,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1-indexed.png",
+  "output_png_sha256": "63f5b77b72b1f1ff64ccb99d390a59714ca1b6264bccc707414f079d2eb3c534",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

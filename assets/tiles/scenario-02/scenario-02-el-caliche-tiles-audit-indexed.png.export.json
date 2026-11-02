@@ -1,0 +1,214 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg",
+  "source_svg_sha256": "f7a76fa6fd4c92d5625bffa1372a7e19892e66e73d05f44acf34a2e4a69d43e4",
+  "metadata_json": "assets/tiles/scenario-02/tile-atlas-metadata.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "source-alpha / transparent gaps",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        23,
+        35,
+        54,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "rgba": [
+        38,
+        57,
+        74,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "darkConcrete",
+      "rgba": [
+        79,
+        92,
+        97,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "concrete",
+      "rgba": [
+        124,
+        129,
+        122,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "lightConcrete",
+      "rgba": [
+        181,
+        173,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "plaster",
+      "rgba": [
+        226,
+        214,
+        186,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "brick",
+      "rgba": [
+        154,
+        81,
+        73,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "salmon",
+      "rgba": [
+        212,
+        92,
+        80,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "fadedSalmon",
+      "rgba": [
+        225,
+        131,
+        101,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "dustyPink",
+      "rgba": [
+        177,
+        138,
+        121,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "blueGray",
+      "rgba": [
+        102,
+        119,
+        116,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "paleMint",
+      "rgba": [
+        118,
+        183,
+        161,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "steelBlue",
+      "rgba": [
+        49,
+        88,
+        109,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "paleSky",
+      "rgba": [
+        135,
+        184,
+        195,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "warmLight",
+      "rgba": [
+        244,
+        209,
+        138,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 15,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles-audit-indexed.png",
+  "output_png_sha256": "cb93b7f79f82526cc03e74695e6a81dfccf7582170929079f715fe5f13ce03ba",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

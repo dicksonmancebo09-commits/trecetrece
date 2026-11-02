@@ -1,0 +1,213 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg",
+  "source_svg_sha256": "f83ba4d76d6f1a744ed5cae0dafeaae1d796390870f19fe9a5b218419cb7747e",
+  "metadata_json": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        23,
+        35,
+        54,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "shadow",
+      "rgba": [
+        38,
+        57,
+        74,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "darkConcrete",
+      "rgba": [
+        79,
+        92,
+        97,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "midConcrete",
+      "rgba": [
+        124,
+        129,
+        122,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "concrete",
+      "rgba": [
+        181,
+        173,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "cream",
+      "rgba": [
+        226,
+        214,
+        186,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "coral",
+      "rgba": [
+        199,
+        93,
+        75,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "coralLight",
+      "rgba": [
+        225,
+        131,
+        101,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "ochre",
+      "rgba": [
+        214,
+        154,
+        69,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "teal",
+      "rgba": [
+        68,
+        138,
+        128,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "mint",
+      "rgba": [
+        118,
+        183,
+        161,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "glass",
+      "rgba": [
+        49,
+        88,
+        109,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "sky",
+      "rgba": [
+        135,
+        184,
+        195,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "foliage",
+      "rgba": [
+        61,
+        119,
+        80,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "highlight",
+      "rgba": [
+        244,
+        209,
+        138,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 15,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2-indexed.png",
+  "output_png_sha256": "465b8e64063599bba0b98cfa019d4a50f03b251b13169cc679f01ec05e64fca1",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}

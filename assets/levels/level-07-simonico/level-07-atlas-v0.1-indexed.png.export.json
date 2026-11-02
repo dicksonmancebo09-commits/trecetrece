@@ -1,0 +1,210 @@
+{
+  "format": "indexed-png-4bpp-ready",
+  "source_svg": "assets/levels/level-07-simonico/level-07-atlas-v0.1.svg",
+  "source_svg_sha256": "1cb36a8a3a12ce91245da1b2fcab938e5e7107645d828c4430e4dad0fe52fb5e",
+  "metadata_json": "assets/levels/level-07-simonico/level-07-atlas-v0.1.json",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "palette": [
+    {
+      "index": 0,
+      "name": "transparent",
+      "rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "outline",
+      "rgba": [
+        17,
+        23,
+        45,
+        255
+      ]
+    },
+    {
+      "index": 2,
+      "name": "navy",
+      "rgba": [
+        27,
+        40,
+        80,
+        255
+      ]
+    },
+    {
+      "index": 3,
+      "name": "purple",
+      "rgba": [
+        58,
+        50,
+        107,
+        255
+      ]
+    },
+    {
+      "index": 4,
+      "name": "asphalt",
+      "rgba": [
+        66,
+        71,
+        97,
+        255
+      ]
+    },
+    {
+      "index": 5,
+      "name": "darkConcrete",
+      "rgba": [
+        93,
+        93,
+        119,
+        255
+      ]
+    },
+    {
+      "index": 6,
+      "name": "concrete",
+      "rgba": [
+        136,
+        134,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 7,
+      "name": "wall",
+      "rgba": [
+        178,
+        164,
+        155,
+        255
+      ]
+    },
+    {
+      "index": 8,
+      "name": "magenta",
+      "rgba": [
+        211,
+        77,
+        154,
+        255
+      ]
+    },
+    {
+      "index": 9,
+      "name": "cyan",
+      "rgba": [
+        75,
+        186,
+        200,
+        255
+      ]
+    },
+    {
+      "index": 10,
+      "name": "warm",
+      "rgba": [
+        241,
+        180,
+        94,
+        255
+      ]
+    },
+    {
+      "index": 11,
+      "name": "neon",
+      "rgba": [
+        238,
+        120,
+        196,
+        255
+      ]
+    },
+    {
+      "index": 12,
+      "name": "green",
+      "rgba": [
+        91,
+        134,
+        127,
+        255
+      ]
+    },
+    {
+      "index": 13,
+      "name": "glass",
+      "rgba": [
+        111,
+        130,
+        168,
+        255
+      ]
+    },
+    {
+      "index": 14,
+      "name": "light",
+      "rgba": [
+        229,
+        216,
+        206,
+        255
+      ]
+    },
+    {
+      "index": 15,
+      "name": "blue",
+      "rgba": [
+        97,
+        124,
+        196,
+        255
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "distinct_opaque_rgb_colours": 12,
+  "distinct_semi_transparent_colours_mapped_to_solid_palette": 0,
+  "maximum_rgb_distance_to_declared_palette": 0,
+  "output_png": "assets/levels/level-07-simonico/level-07-atlas-v0.1-indexed.png",
+  "output_png_sha256": "797ed4cc70cecf9e283919651e41b34af3c4cb1f5a19d5c619200a2dba93ff74",
+  "validation": {
+    "indexed_png_mode_p": true,
+    "dimensions_multiple_of_8": true,
+    "palette_entries_at_most_16": true,
+    "transparent_index_zero": true,
+    "gba_4bpp_exported": false,
+    "rom_integrated": false,
+    "emulator_tested": false
+  }
+}
