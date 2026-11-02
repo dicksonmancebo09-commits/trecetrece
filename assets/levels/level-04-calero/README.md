@@ -51,3 +51,10 @@ Paquete nuevo. Crear un tileset modular con elementos robustos repetibles y un s
 - Cada sala tendrá plano de fondo, arquitectura, objetos, suelo/plataformas, colisiones y elementos interactivos separados en el inventario.
 - No tocar recursos compartidos de la ROM hasta listar todos sus consumidores y sus punteros.
 - No tratar este README, el atlas de concepto o el registro de salas como integración jugable.
+
+## Atlas modular L04 v0.1
+
+- [Atlas SVG editable](level-04-atlas-v0.1.svg)
+- [Metadatos de 64 módulos y paleta](level-04-atlas-v0.1.json)
+
+**Estado comprobado:** biblioteca SVG conceptual de 256 × 256 px, 64 módulos de 32 × 32 px; todavía sin PNG indexado, exportación 4bpp, tilemaps por sala ni integración ROM.
