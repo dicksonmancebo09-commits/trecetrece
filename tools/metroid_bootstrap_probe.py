@@ -172,7 +172,12 @@ def analyze(path: Path) -> dict[str, Any]:
         "game_code_is_amte": game_code == EXPECTED_GAME_CODE,
         "gba_entry_branch_targets_080000c0":
             entry["target_address"] == "0x080000C0",
-        "arm_bootstrap_words_match_recorded_ghidra_trace": arm_checks_ok,
+        "all_recorded_arm_words_match_binary": arm_checks_ok,
+        "ghidra_confirmed_arm_subset_matches_binary": all(
+            item["matches_expected"] for item in arm_checks if int(item["file_offset"], 16) <= 0x00E0
+        ),
+        "irq_handler_adr_resolves_to_08000104": irq_handler_address == 0x08000104,
+        "ldr_e4_literal_resolves_to_08000100": ldr_literal_address == 0x08000100,
         "irq_stack_literal_is_03007fa0": irq_stack == 0x03007FA0,
         "system_stack_literal_is_03007e60": system_stack == 0x03007E60,
         "irq_vector_literal_is_03007ffc": irq_vector_address == 0x03007FFC,
@@ -201,7 +206,14 @@ def analyze(path: Path) -> dict[str, Any]:
         "entry": entry,
         "arm_bootstrap": {
             "ghidra_observed_range": ["0x080000C0", "0x080000E0"],
-            "instructions": arm_checks,
+            "word_checks": arm_checks,
+            "ghidra_confirmed_instruction_offsets": [
+                "0x00C0", "0x00C4", "0x00C8", "0x00CC", "0x00D0",
+                "0x00D4", "0x00D8", "0x00DC", "0x00E0"
+            ],
+            "later_arm_words_pending_ghidra_confirmation": [
+                "0x00E4", "0x00E8", "0x00EC", "0x00F0"
+            ],
             "mode_and_stack_setup": {
                 "irq_mode_value": "0x12",
                 "irq_stack_literal_file_offset": "0x00F8",
