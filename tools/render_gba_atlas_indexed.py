@@ -61,7 +61,7 @@ def render_indexed(svg_path: Path, metadata_path: Path, output_path: Path, max_d
 
     pixels: list[int] = []
     color_cache: dict[tuple[int, int, int, int], tuple[int, int]] = {}
-    semitransparent = 0
+    semitransparent_colour_count = 0
     max_error = 0
     exact_opaque_colors: set[tuple[int, int, int]] = set()
     used_indices: set[int] = set()
@@ -73,7 +73,7 @@ def render_indexed(svg_path: Path, metadata_path: Path, output_path: Path, max_d
                 cached = (0, 0)
             else:
                 if a < 255:
-                    semitransparent += 1
+                    semitransparent_colour_count += 1
                 best_index = 1
                 best_error_sq = None
                 for index, candidate in enumerate(palette_rgb, start=1):
@@ -120,7 +120,7 @@ def render_indexed(svg_path: Path, metadata_path: Path, output_path: Path, max_d
         "palette": [{"index": i, "name": name, "rgba": list(color)} for i, (name, color) in enumerate(palette)],
         "used_indices": sorted(used_indices),
         "distinct_opaque_rgb_colours": len(exact_opaque_colors),
-        "semi_transparent_pixels_mapped_to_solid_palette": semitransparent,
+        "distinct_semi_transparent_colours_mapped_to_solid_palette": semitransparent_colour_count,
         "maximum_rgb_distance_to_declared_palette": max_error,
         "output_png": str(output_path),
         "output_png_sha256": sha256(out_bytes),
