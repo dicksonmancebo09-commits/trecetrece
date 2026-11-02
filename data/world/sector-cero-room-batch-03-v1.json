@@ -1,0 +1,6467 @@
+{
+  "schema": "zector_cero.room_batch.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "batch": 3,
+  "status": "conceptual_room_blockouts",
+  "target_total_rooms": 382,
+  "completed_before_batch": 174,
+  "batch_room_count": 87,
+  "project_cumulative_planned": 261,
+  "neighborhood_distribution": {
+    "La Francia Nueva": 28,
+    "Calero": 39,
+    "Pueblo Nuevo": 20
+  },
+  "source_topology": "data/world/sector-cero-source-door-graph-v1.json",
+  "rooms": [
+    {
+      "id": "L03_R012",
+      "source_index": 12,
+      "name": "Patios y garajes 02",
+      "role": "yards_and_garages",
+      "map_x": 15,
+      "map_y": 6,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 11,
+      "source_doors": [
+        {
+          "door_index": 24,
+          "to_room_id": "L03_R011",
+          "to_door_index": 23,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 27,
+          "to_room_id": "L03_R014",
+          "to_door_index": 28,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R047",
+      "source_index": 47,
+      "name": "Patios y garajes 03",
+      "role": "yards_and_garages",
+      "map_x": 7,
+      "map_y": 7,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 46,
+      "source_doors": [
+        {
+          "door_index": 31,
+          "to_room_id": "L03_R029",
+          "to_door_index": 65,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 104,
+          "to_room_id": "L03_R012",
+          "to_door_index": 27,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              75,
+              78
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 105,
+          "to_room_id": "L03_R016",
+          "to_door_index": 35,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              75,
+              78
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 106,
+          "to_room_id": "L03_R043",
+          "to_door_index": 95,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              55,
+              58
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 107,
+          "to_room_id": "L03_R046",
+          "to_door_index": 103,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              67,
+              70
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 112,
+          "to_room_id": "L03_R048",
+          "to_door_index": 110,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              45,
+              48
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 113,
+          "to_room_id": "L03_R051",
+          "to_door_index": 114,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              26,
+              29
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R049",
+      "source_index": 49,
+      "name": "Patios y garajes 04",
+      "role": "yards_and_garages",
+      "map_x": 9,
+      "map_y": 7,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 48,
+      "source_doors": [
+        {
+          "door_index": 116,
+          "to_room_id": "L03_R033",
+          "to_door_index": 117,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              10,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R050",
+      "source_index": 50,
+      "name": "Patios y garajes 05",
+      "role": "yards_and_garages",
+      "map_x": 5,
+      "map_y": 8,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 49,
+      "source_doors": [
+        {
+          "door_index": 118,
+          "to_room_id": "L03_R048",
+          "to_door_index": 115,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 119,
+          "to_room_id": "L03_R033",
+          "to_door_index": 120,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R024",
+      "source_index": 24,
+      "name": "Patios y garajes 06",
+      "role": "yards_and_garages",
+      "map_x": 16,
+      "map_y": 8,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 23,
+      "source_doors": [
+        {
+          "door_index": 52,
+          "to_room_id": "L03_R033",
+          "to_door_index": 45,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 53,
+          "to_room_id": "L03_R001",
+          "to_door_index": 3,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              8,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R036",
+      "source_index": 36,
+      "name": "Patios y garajes 07",
+      "role": "yards_and_garages",
+      "map_x": 16,
+      "map_y": 8,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 35,
+      "source_doors": [
+        {
+          "door_index": 77,
+          "to_room_id": "L03_R024",
+          "to_door_index": 52,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 78,
+          "to_room_id": "L03_R022",
+          "to_door_index": 49,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 79,
+          "to_room_id": "L03_R035",
+          "to_door_index": 76,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 80,
+          "to_room_id": "L03_R020",
+          "to_door_index": 70,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              63,
+              66
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 81,
+          "to_room_id": "L03_R059",
+          "to_door_index": 82,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              65,
+              68
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 121,
+          "to_room_id": "L03_R050",
+          "to_door_index": 119,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 122,
+          "to_room_id": "L03_R049",
+          "to_door_index": 116,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              20,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "portones",
+          "motores",
+          "patios",
+          "herramientas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R057",
+      "source_index": 57,
+      "name": "Parques y plazoletas 01",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 11,
+      "map_y": 9,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 56,
+      "source_doors": [
+        {
+          "door_index": 136,
+          "to_room_id": "L03_R025",
+          "to_door_index": 135,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 137,
+          "to_room_id": "L03_R058",
+          "to_door_index": 138,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R058",
+      "source_index": 58,
+      "name": "Parques y plazoletas 02",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 11,
+      "map_y": 9,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 57,
+      "source_doors": [
+        {
+          "door_index": 54,
+          "to_room_id": "L03_R033",
+          "to_door_index": 72,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 138,
+          "to_room_id": "L03_R057",
+          "to_door_index": 137,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 139,
+          "to_room_id": "L03_R060",
+          "to_door_index": 140,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              17,
+              17
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R059",
+      "source_index": 59,
+      "name": "Parques y plazoletas 03",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 11,
+      "map_y": 9,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 58,
+      "source_doors": [
+        {
+          "door_index": 82,
+          "to_room_id": "L03_R036",
+          "to_door_index": 81,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 141,
+          "to_room_id": "L03_R060",
+          "to_door_index": 140,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              17,
+              17
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 142,
+          "to_room_id": "L03_R061",
+          "to_door_index": 143,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R056",
+      "source_index": 56,
+      "name": "Parques y plazoletas 04",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 14,
+      "map_y": 9,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 55,
+      "source_doors": [
+        {
+          "door_index": 134,
+          "to_room_id": "L03_R019",
+          "to_door_index": 133,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R060",
+      "source_index": 60,
+      "name": "Parques y plazoletas 05",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 14,
+      "map_y": 9,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 59,
+      "source_doors": [
+        {
+          "door_index": 140,
+          "to_room_id": "L03_R058",
+          "to_door_index": 139,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R043",
+      "source_index": 43,
+      "name": "Parques y plazoletas 06",
+      "role": "pocket_parks_and_tree_plazas",
+      "map_x": 0,
+      "map_y": 10,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 42,
+      "source_doors": [
+        {
+          "door_index": 56,
+          "to_room_id": "L03_R026",
+          "to_door_index": 57,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 95,
+          "to_room_id": "L03_R014",
+          "to_door_index": 94,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plazas arboladas",
+        "motifs": [
+          "árboles",
+          "bancos",
+          "muros bajos",
+          "faroles"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R019",
+      "source_index": 19,
+      "name": "Servicios de calle 01",
+      "role": "street_services",
+      "map_x": 9,
+      "map_y": 10,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 18,
+      "source_doors": [
+        {
+          "door_index": 40,
+          "to_room_id": "L03_R018",
+          "to_door_index": 39,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 133,
+          "to_room_id": "L03_R056",
+          "to_door_index": 134,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              3,
+              6
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios de calle",
+        "motifs": [
+          "contadores",
+          "cajas eléctricas",
+          "tuberías",
+          "persianas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R010",
+      "source_index": 10,
+      "name": "Servicios de calle 02",
+      "role": "street_services",
+      "map_x": 1,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 9,
+      "source_doors": [
+        {
+          "door_index": 20,
+          "to_room_id": "L03_R032",
+          "to_door_index": 18,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              16,
+              19
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 21,
+          "to_room_id": "L03_R044",
+          "to_door_index": 98,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              17,
+              17
+            ],
+            "y": [
+              55,
+              58
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios de calle",
+        "motifs": [
+          "contadores",
+          "cajas eléctricas",
+          "tuberías",
+          "persianas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R042",
+      "source_index": 42,
+      "name": "Servicios de calle 03",
+      "role": "street_services",
+      "map_x": 4,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 41,
+      "source_doors": [
+        {
+          "door_index": 97,
+          "to_room_id": "L03_R014",
+          "to_door_index": 96,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios de calle",
+        "motifs": [
+          "contadores",
+          "cajas eléctricas",
+          "tuberías",
+          "persianas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R014",
+      "source_index": 14,
+      "name": "Servicios de calle 04",
+      "role": "street_services",
+      "map_x": 7,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 13,
+      "source_doors": [
+        {
+          "door_index": 28,
+          "to_room_id": "L03_R012",
+          "to_door_index": 27,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              75,
+              78
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 29,
+          "to_room_id": "L03_R016",
+          "to_door_index": 35,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              75,
+              78
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 30,
+          "to_room_id": "L03_R015",
+          "to_door_index": 33,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              55,
+              58
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 94,
+          "to_room_id": "L03_R043",
+          "to_door_index": 95,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              55,
+              58
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 96,
+          "to_room_id": "L03_R042",
+          "to_door_index": 97,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              67,
+              70
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 111,
+          "to_room_id": "L03_R048",
+          "to_door_index": 110,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              45,
+              48
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios de calle",
+        "motifs": [
+          "contadores",
+          "cajas eléctricas",
+          "tuberías",
+          "persianas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R044",
+      "source_index": 44,
+      "name": "Servicios de calle 05",
+      "role": "street_services",
+      "map_x": 7,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 43,
+      "source_doors": [
+        {
+          "door_index": 98,
+          "to_room_id": "L03_R010",
+          "to_door_index": 21,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 99,
+          "to_room_id": "L03_R011",
+          "to_door_index": 22,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios de calle",
+        "motifs": [
+          "contadores",
+          "cajas eléctricas",
+          "tuberías",
+          "persianas"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R017",
+      "source_index": 17,
+      "name": "Rutas elevadas 01",
+      "role": "elevated_routes",
+      "map_x": 10,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 16,
+      "source_doors": [
+        {
+          "door_index": 37,
+          "to_room_id": "L03_R016",
+          "to_door_index": 36,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rutas elevadas",
+        "motifs": [
+          "pasarelas",
+          "puentes",
+          "barandillas",
+          "cables"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R040",
+      "source_index": 40,
+      "name": "Rutas elevadas 02",
+      "role": "elevated_routes",
+      "map_x": 10,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 39,
+      "source_doors": [
+        {
+          "door_index": 89,
+          "to_room_id": "L03_R041",
+          "to_door_index": 92,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 90,
+          "to_room_id": "L03_R018",
+          "to_door_index": 93,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rutas elevadas",
+        "motifs": [
+          "pasarelas",
+          "puentes",
+          "barandillas",
+          "cables"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R039",
+      "source_index": 39,
+      "name": "Rutas elevadas 03",
+      "role": "elevated_routes",
+      "map_x": 11,
+      "map_y": 11,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 38,
+      "source_doors": [
+        {
+          "door_index": 87,
+          "to_room_id": "L03_R032",
+          "to_door_index": 84,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rutas elevadas",
+        "motifs": [
+          "pasarelas",
+          "puentes",
+          "barandillas",
+          "cables"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R025",
+      "source_index": 25,
+      "name": "Rutas elevadas 04",
+      "role": "elevated_routes",
+      "map_x": 3,
+      "map_y": 12,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 24,
+      "source_doors": [
+        {
+          "door_index": 55,
+          "to_room_id": "L01_R056",
+          "to_door_index": 127,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              5
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 135,
+          "to_room_id": "L03_R057",
+          "to_door_index": 136,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rutas elevadas",
+        "motifs": [
+          "pasarelas",
+          "puentes",
+          "barandillas",
+          "cables"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R041",
+      "source_index": 41,
+      "name": "Rescate y briefing 01",
+      "role": "rescue_and_briefing_hubs",
+      "map_x": 7,
+      "map_y": 12,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 40,
+      "source_doors": [
+        {
+          "door_index": 91,
+          "to_room_id": "L03_R020",
+          "to_door_index": 88,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 92,
+          "to_room_id": "L03_R040",
+          "to_door_index": 89,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rescate y reunión",
+        "motifs": [
+          "punto de reunión",
+          "botiquín",
+          "mapa",
+          "luz"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R045",
+      "source_index": 45,
+      "name": "Rescate y briefing 02",
+      "role": "rescue_and_briefing_hubs",
+      "map_x": 7,
+      "map_y": 12,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 44,
+      "source_doors": [
+        {
+          "door_index": 100,
+          "to_room_id": "L03_R020",
+          "to_door_index": 42,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 101,
+          "to_room_id": "L03_R046",
+          "to_door_index": 102,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              6,
+              6
+            ],
+            "y": [
+              17,
+              17
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rescate y reunión",
+        "motifs": [
+          "punto de reunión",
+          "botiquín",
+          "mapa",
+          "luz"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R018",
+      "source_index": 18,
+      "name": "Rescate y briefing 03",
+      "role": "rescue_and_briefing_hubs",
+      "map_x": 13,
+      "map_y": 12,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 17,
+      "source_doors": [
+        {
+          "door_index": 38,
+          "to_room_id": "L03_R020",
+          "to_door_index": 41,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 39,
+          "to_room_id": "L03_R019",
+          "to_door_index": 40,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 93,
+          "to_room_id": "L03_R040",
+          "to_door_index": 90,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              32,
+              32
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rescate y reunión",
+        "motifs": [
+          "punto de reunión",
+          "botiquín",
+          "mapa",
+          "luz"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R055",
+      "source_index": 55,
+      "name": "Encuentros de historia 01",
+      "role": "story_and_elite_encounters",
+      "map_x": 16,
+      "map_y": 12,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 54,
+      "source_doors": [
+        {
+          "door_index": 132,
+          "to_room_id": "L03_R027",
+          "to_door_index": 131,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Encuentro narrativo",
+        "motifs": [
+          "escenario",
+          "cobertura",
+          "marcas narrativas",
+          "salida"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R011",
+      "source_index": 11,
+      "name": "Encuentros de historia 02",
+      "role": "story_and_elite_encounters",
+      "map_x": 3,
+      "map_y": 13,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 10,
+      "source_doors": [
+        {
+          "door_index": 22,
+          "to_room_id": "L03_R044",
+          "to_door_index": 99,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 23,
+          "to_room_id": "L03_R012",
+          "to_door_index": 24,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Encuentro narrativo",
+        "motifs": [
+          "escenario",
+          "cobertura",
+          "marcas narrativas",
+          "salida"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R015",
+      "source_index": 15,
+      "name": "Encuentros de historia 03",
+      "role": "story_and_elite_encounters",
+      "map_x": 7,
+      "map_y": 13,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 14,
+      "source_doors": [
+        {
+          "door_index": 33,
+          "to_room_id": "L03_R014",
+          "to_door_index": 30,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 34,
+          "to_room_id": "L03_R020",
+          "to_door_index": 42,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Encuentro narrativo",
+        "motifs": [
+          "escenario",
+          "cobertura",
+          "marcas narrativas",
+          "salida"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L03_R016",
+      "source_index": 16,
+      "name": "Habitación secreta 01",
+      "role": "secret_room",
+      "map_x": 9,
+      "map_y": 13,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 15,
+      "source_doors": [
+        {
+          "door_index": 35,
+          "to_room_id": "L03_R014",
+          "to_door_index": 29,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 36,
+          "to_room_id": "L03_R017",
+          "to_door_index": 37,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Sala secreta",
+        "motifs": [
+          "acceso oculto",
+          "muro falso",
+          "recompensa",
+          "pasaje"
+        ],
+        "neighborhood_palette": "L03",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R009",
+      "source_index": 9,
+      "name": "Talleres 01",
+      "role": "workshops",
+      "map_x": 13,
+      "map_y": 0,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 8,
+      "source_doors": [
+        {
+          "door_index": 17,
+          "to_room_id": "L04_R001",
+          "to_door_index": 4,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              16,
+              16
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 18,
+          "to_room_id": "L04_R010",
+          "to_door_index": 19,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R038",
+      "source_index": 38,
+      "name": "Talleres 02",
+      "role": "workshops",
+      "map_x": 18,
+      "map_y": 0,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 37,
+      "source_doors": [
+        {
+          "door_index": 88,
+          "to_room_id": "L04_R029",
+          "to_door_index": 87,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 89,
+          "to_room_id": "L06_R038",
+          "to_door_index": 83,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R020",
+      "source_index": 20,
+      "name": "Talleres 03",
+      "role": "workshops",
+      "map_x": 4,
+      "map_y": 1,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 19,
+      "source_doors": [
+        {
+          "door_index": 40,
+          "to_room_id": "L04_R035",
+          "to_door_index": 39,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 75,
+          "to_room_id": "L04_R035",
+          "to_door_index": 74,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 78,
+          "to_room_id": "L04_R036",
+          "to_door_index": 79,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              27,
+              30
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R008",
+      "source_index": 8,
+      "name": "Talleres 04",
+      "role": "workshops",
+      "map_x": 10,
+      "map_y": 1,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 7,
+      "source_doors": [
+        {
+          "door_index": 16,
+          "to_room_id": "L04_R007",
+          "to_door_index": 14,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 35,
+          "to_room_id": "L04_R019",
+          "to_door_index": 36,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R036",
+      "source_index": 36,
+      "name": "Talleres 05",
+      "role": "workshops",
+      "map_x": 18,
+      "map_y": 1,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 35,
+      "source_doors": [
+        {
+          "door_index": 79,
+          "to_room_id": "L04_R020",
+          "to_door_index": 78,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              107,
+              110
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 80,
+          "to_room_id": "L04_R037",
+          "to_door_index": 81,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R035",
+      "source_index": 35,
+      "name": "Talleres 06",
+      "role": "workshops",
+      "map_x": 20,
+      "map_y": 1,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 34,
+      "source_doors": [
+        {
+          "door_index": 39,
+          "to_room_id": "L04_R020",
+          "to_door_index": 40,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 71,
+          "to_room_id": "L04_R011",
+          "to_door_index": 70,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 74,
+          "to_room_id": "L04_R020",
+          "to_door_index": 75,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R028",
+      "source_index": 28,
+      "name": "Talleres 07",
+      "role": "workshops",
+      "map_x": 1,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 27,
+      "source_doors": [
+        {
+          "door_index": 54,
+          "to_room_id": "L04_R001",
+          "to_door_index": 53,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 55,
+          "to_room_id": "L04_R029",
+          "to_door_index": 56,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R002",
+      "source_index": 2,
+      "name": "Talleres 08",
+      "role": "workshops",
+      "map_x": 5,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 1,
+      "source_doors": [
+        {
+          "door_index": 5,
+          "to_room_id": "L04_R027",
+          "to_door_index": 51,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 6,
+          "to_room_id": "L04_R003",
+          "to_door_index": 7,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Talleres",
+        "motifs": [
+          "bancos",
+          "herramientas",
+          "estanterías",
+          "ventanas altas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R001",
+      "source_index": 1,
+      "name": "Obras y estructuras 01",
+      "role": "construction_sites",
+      "map_x": 6,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 0,
+      "source_doors": [
+        {
+          "door_index": 1,
+          "to_room_id": "L04_R027",
+          "to_door_index": 52,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 2,
+          "to_room_id": "L04_R004",
+          "to_door_index": 8,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 3,
+          "to_room_id": "L04_R006",
+          "to_door_index": 11,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 4,
+          "to_room_id": "L04_R009",
+          "to_door_index": 17,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              6,
+              6
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 53,
+          "to_room_id": "L04_R028",
+          "to_door_index": 54,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 90,
+          "to_room_id": "L04_R021",
+          "to_door_index": 0,
+          "door_type": "DOOR_TYPE_NONE",
+          "source_rect_blocks": {
+            "x": [
+              0,
+              0
+            ],
+            "y": [
+              0,
+              0
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R026",
+      "source_index": 26,
+      "name": "Obras y estructuras 02",
+      "role": "construction_sites",
+      "map_x": 7,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 25,
+      "source_doors": [
+        {
+          "door_index": 50,
+          "to_room_id": "L04_R018",
+          "to_door_index": 49,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R039",
+      "source_index": 39,
+      "name": "Obras y estructuras 03",
+      "role": "construction_sites",
+      "map_x": 8,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 38,
+      "source_doors": [
+        {
+          "door_index": 85,
+          "to_room_id": "L04_R010",
+          "to_door_index": 84,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 86,
+          "to_room_id": "L02_R050",
+          "to_door_index": 107,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              7,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R018",
+      "source_index": 18,
+      "name": "Obras y estructuras 04",
+      "role": "construction_sites",
+      "map_x": 16,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 17,
+      "source_doors": [
+        {
+          "door_index": 34,
+          "to_room_id": "L04_R017",
+          "to_door_index": 33,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 49,
+          "to_room_id": "L04_R026",
+          "to_door_index": 50,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R023",
+      "source_index": 23,
+      "name": "Obras y estructuras 05",
+      "role": "construction_sites",
+      "map_x": 16,
+      "map_y": 2,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 22,
+      "source_doors": [
+        {
+          "door_index": 45,
+          "to_room_id": "L04_R019",
+          "to_door_index": 36,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 64,
+          "to_room_id": "L04_R033",
+          "to_door_index": 67,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R005",
+      "source_index": 5,
+      "name": "Obras y estructuras 06",
+      "role": "construction_sites",
+      "map_x": 10,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 4,
+      "source_doors": [
+        {
+          "door_index": 10,
+          "to_room_id": "L04_R004",
+          "to_door_index": 9,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 77,
+          "to_room_id": "L04_R004",
+          "to_door_index": 76,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              3,
+              3
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R006",
+      "source_index": 6,
+      "name": "Obras y estructuras 07",
+      "role": "construction_sites",
+      "map_x": 11,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 5,
+      "source_doors": [
+        {
+          "door_index": 11,
+          "to_room_id": "L04_R001",
+          "to_door_index": 3,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 12,
+          "to_room_id": "L04_R007",
+          "to_door_index": 13,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 61,
+          "to_room_id": "L04_R031",
+          "to_door_index": 62,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Obras",
+        "motifs": [
+          "andamios",
+          "vallas",
+          "sacos",
+          "huecos"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R024",
+      "source_index": 24,
+      "name": "Plataformas mecánicas 01",
+      "role": "machinery_platforms",
+      "map_x": 11,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 23,
+      "source_doors": [
+        {
+          "door_index": 37,
+          "to_room_id": "L04_R010",
+          "to_door_index": 38,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              23,
+              26
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(7/8.f)",
+            "y_expression": "BLOCK_TO_PIXEL(1)"
+          }
+        },
+        {
+          "door_index": 46,
+          "to_room_id": "L04_R023",
+          "to_door_index": 45,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R007",
+      "source_index": 7,
+      "name": "Plataformas mecánicas 02",
+      "role": "machinery_platforms",
+      "map_x": 13,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 6,
+      "source_doors": [
+        {
+          "door_index": 13,
+          "to_room_id": "L04_R006",
+          "to_door_index": 12,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 14,
+          "to_room_id": "L04_R008",
+          "to_door_index": 16,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 15,
+          "to_room_id": "L04_R011",
+          "to_door_index": 20,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 60,
+          "to_room_id": "L04_R031",
+          "to_door_index": 59,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              4,
+              4
+            ],
+            "y": [
+              21,
+              21
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "-BLOCK_TO_PIXEL(2 + 5/8.f)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R022",
+      "source_index": 22,
+      "name": "Plataformas mecánicas 03",
+      "role": "machinery_platforms",
+      "map_x": 13,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 21,
+      "source_doors": [
+        {
+          "door_index": 44,
+          "to_room_id": "L04_R019",
+          "to_door_index": 43,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R021",
+      "source_index": 21,
+      "name": "Plataformas mecánicas 04",
+      "role": "machinery_platforms",
+      "map_x": 18,
+      "map_y": 3,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 20,
+      "source_doors": [
+        {
+          "door_index": 0,
+          "to_room_id": "L01_R030",
+          "to_door_index": 69,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              8,
+              10
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 42,
+          "to_room_id": "L04_R003",
+          "to_door_index": 41,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R027",
+      "source_index": 27,
+      "name": "Plataformas mecánicas 05",
+      "role": "machinery_platforms",
+      "map_x": 4,
+      "map_y": 4,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 26,
+      "source_doors": [
+        {
+          "door_index": 51,
+          "to_room_id": "L04_R002",
+          "to_door_index": 5,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 52,
+          "to_room_id": "L04_R001",
+          "to_door_index": 1,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R010",
+      "source_index": 10,
+      "name": "Plataformas mecánicas 06",
+      "role": "machinery_platforms",
+      "map_x": 13,
+      "map_y": 4,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 9,
+      "source_doors": [
+        {
+          "door_index": 19,
+          "to_room_id": "L04_R009",
+          "to_door_index": 18,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 38,
+          "to_room_id": "L04_R024",
+          "to_door_index": 37,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              68,
+              71
+            ],
+            "y": [
+              21,
+              21
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(7/8.f)",
+            "y_expression": "-BLOCK_TO_PIXEL(1)"
+          }
+        },
+        {
+          "door_index": 83,
+          "to_room_id": "L04_R037",
+          "to_door_index": 82,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              76,
+              76
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 84,
+          "to_room_id": "L04_R039",
+          "to_door_index": 85,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              76,
+              76
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Plataformas mecánicas",
+        "motifs": [
+          "engranajes",
+          "plataformas",
+          "cadenas",
+          "pistones"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R032",
+      "source_index": 32,
+      "name": "Generadores y energía 01",
+      "role": "generators_and_power_rooms",
+      "map_x": 15,
+      "map_y": 4,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 31,
+      "source_doors": [
+        {
+          "door_index": 65,
+          "to_room_id": "L04_R033",
+          "to_door_index": 68,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 66,
+          "to_room_id": "L04_R034",
+          "to_door_index": 69,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Generadores",
+        "motifs": [
+          "generadores",
+          "cables",
+          "paneles",
+          "luces"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R031",
+      "source_index": 31,
+      "name": "Generadores y energía 02",
+      "role": "generators_and_power_rooms",
+      "map_x": 16,
+      "map_y": 4,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 30,
+      "source_doors": [
+        {
+          "door_index": 58,
+          "to_room_id": "L04_R011",
+          "to_door_index": 57,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 59,
+          "to_room_id": "L04_R007",
+          "to_door_index": 60,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              4,
+              4
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 62,
+          "to_room_id": "L04_R006",
+          "to_door_index": 61,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Generadores",
+        "motifs": [
+          "generadores",
+          "cables",
+          "paneles",
+          "luces"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R033",
+      "source_index": 33,
+      "name": "Generadores y energía 03",
+      "role": "generators_and_power_rooms",
+      "map_x": 17,
+      "map_y": 4,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 32,
+      "source_doors": [
+        {
+          "door_index": 67,
+          "to_room_id": "L04_R023",
+          "to_door_index": 64,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 68,
+          "to_room_id": "L04_R032",
+          "to_door_index": 65,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Generadores",
+        "motifs": [
+          "generadores",
+          "cables",
+          "paneles",
+          "luces"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R037",
+      "source_index": 37,
+      "name": "Generadores y energía 04",
+      "role": "generators_and_power_rooms",
+      "map_x": 0,
+      "map_y": 5,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 36,
+      "source_doors": [
+        {
+          "door_index": 81,
+          "to_room_id": "L04_R036",
+          "to_door_index": 80,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 82,
+          "to_room_id": "L04_R010",
+          "to_door_index": 83,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Generadores",
+        "motifs": [
+          "generadores",
+          "cables",
+          "paneles",
+          "luces"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R004",
+      "source_index": 4,
+      "name": "Generadores y energía 05",
+      "role": "generators_and_power_rooms",
+      "map_x": 3,
+      "map_y": 5,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 3,
+      "source_doors": [
+        {
+          "door_index": 8,
+          "to_room_id": "L04_R001",
+          "to_door_index": 2,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 9,
+          "to_room_id": "L04_R005",
+          "to_door_index": 10,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 76,
+          "to_room_id": "L04_R005",
+          "to_door_index": 77,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              3,
+              3
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Generadores",
+        "motifs": [
+          "generadores",
+          "cables",
+          "paneles",
+          "luces"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R003",
+      "source_index": 3,
+      "name": "Corredores térmicos 01",
+      "role": "thermal_service_corridors",
+      "map_x": 4,
+      "map_y": 5,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 2,
+      "source_doors": [
+        {
+          "door_index": 7,
+          "to_room_id": "L04_R002",
+          "to_door_index": 6,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 41,
+          "to_room_id": "L04_R021",
+          "to_door_index": 42,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Corredores térmicos",
+        "motifs": [
+          "conductos",
+          "vapor",
+          "rejillas",
+          "válvulas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R030",
+      "source_index": 30,
+      "name": "Corredores térmicos 02",
+      "role": "thermal_service_corridors",
+      "map_x": 11,
+      "map_y": 5,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 29,
+      "source_doors": [
+        {
+          "door_index": 72,
+          "to_room_id": "L04_R017",
+          "to_door_index": 33,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 73,
+          "to_room_id": "L04_R026",
+          "to_door_index": 50,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Corredores térmicos",
+        "motifs": [
+          "conductos",
+          "vapor",
+          "rejillas",
+          "válvulas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R015",
+      "source_index": 15,
+      "name": "Corredores térmicos 03",
+      "role": "thermal_service_corridors",
+      "map_x": 8,
+      "map_y": 6,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 14,
+      "source_doors": [
+        {
+          "door_index": 28,
+          "to_room_id": "L04_R014",
+          "to_door_index": 27,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 29,
+          "to_room_id": "L04_R016",
+          "to_door_index": 30,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Corredores térmicos",
+        "motifs": [
+          "conductos",
+          "vapor",
+          "rejillas",
+          "válvulas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R025",
+      "source_index": 25,
+      "name": "Corredores térmicos 04",
+      "role": "thermal_service_corridors",
+      "map_x": 3,
+      "map_y": 7,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 24,
+      "source_doors": [
+        {
+          "door_index": 47,
+          "to_room_id": "L04_R006",
+          "to_door_index": 12,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 48,
+          "to_room_id": "L04_R011",
+          "to_door_index": 20,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 63,
+          "to_room_id": "L04_R031",
+          "to_door_index": 59,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              4,
+              4
+            ],
+            "y": [
+              21,
+              21
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "-BLOCK_TO_PIXEL(2 + 5/8.f)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Corredores térmicos",
+        "motifs": [
+          "conductos",
+          "vapor",
+          "rejillas",
+          "válvulas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R017",
+      "source_index": 17,
+      "name": "Interiores de taller 01",
+      "role": "workshop_interiors",
+      "map_x": 5,
+      "map_y": 7,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 16,
+      "source_doors": [
+        {
+          "door_index": 32,
+          "to_room_id": "L04_R016",
+          "to_door_index": 31,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 33,
+          "to_room_id": "L04_R018",
+          "to_door_index": 34,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores de taller",
+        "motifs": [
+          "mesa de trabajo",
+          "armarios",
+          "lámparas",
+          "piezas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R029",
+      "source_index": 29,
+      "name": "Interiores de taller 02",
+      "role": "workshop_interiors",
+      "map_x": 5,
+      "map_y": 7,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 28,
+      "source_doors": [
+        {
+          "door_index": 56,
+          "to_room_id": "L04_R028",
+          "to_door_index": 55,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 87,
+          "to_room_id": "L04_R038",
+          "to_door_index": 88,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores de taller",
+        "motifs": [
+          "mesa de trabajo",
+          "armarios",
+          "lámparas",
+          "piezas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R016",
+      "source_index": 16,
+      "name": "Interiores de taller 03",
+      "role": "workshop_interiors",
+      "map_x": 7,
+      "map_y": 8,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 15,
+      "source_doors": [
+        {
+          "door_index": 30,
+          "to_room_id": "L04_R015",
+          "to_door_index": 29,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 31,
+          "to_room_id": "L04_R017",
+          "to_door_index": 32,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores de taller",
+        "motifs": [
+          "mesa de trabajo",
+          "armarios",
+          "lámparas",
+          "piezas"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R014",
+      "source_index": 14,
+      "name": "Encuentros de élite 01",
+      "role": "elite_encounters",
+      "map_x": 10,
+      "map_y": 8,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 13,
+      "source_doors": [
+        {
+          "door_index": 26,
+          "to_room_id": "L04_R013",
+          "to_door_index": 25,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 27,
+          "to_room_id": "L04_R015",
+          "to_door_index": 28,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Combate élite",
+        "motifs": [
+          "arena",
+          "coberturas",
+          "entrada",
+          "salida"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R012",
+      "source_index": 12,
+      "name": "Encuentros de élite 02",
+      "role": "elite_encounters",
+      "map_x": 7,
+      "map_y": 9,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 11,
+      "source_doors": [
+        {
+          "door_index": 22,
+          "to_room_id": "L04_R011",
+          "to_door_index": 21,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 23,
+          "to_room_id": "L04_R013",
+          "to_door_index": 24,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Combate élite",
+        "motifs": [
+          "arena",
+          "coberturas",
+          "entrada",
+          "salida"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R013",
+      "source_index": 13,
+      "name": "Encuentros de élite 03",
+      "role": "elite_encounters",
+      "map_x": 9,
+      "map_y": 9,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 12,
+      "source_doors": [
+        {
+          "door_index": 24,
+          "to_room_id": "L04_R012",
+          "to_door_index": 23,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 25,
+          "to_room_id": "L04_R014",
+          "to_door_index": 26,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Combate élite",
+        "motifs": [
+          "arena",
+          "coberturas",
+          "entrada",
+          "salida"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R034",
+      "source_index": 34,
+      "name": "Control y seguridad 01",
+      "role": "security_and_control_rooms",
+      "map_x": 14,
+      "map_y": 9,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 33,
+      "source_doors": [
+        {
+          "door_index": 69,
+          "to_room_id": "L04_R032",
+          "to_door_index": 66,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Seguridad y control",
+        "motifs": [
+          "consola",
+          "monitores",
+          "puerta reforzada",
+          "cableado"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R019",
+      "source_index": 19,
+      "name": "Control y seguridad 02",
+      "role": "security_and_control_rooms",
+      "map_x": 16,
+      "map_y": 9,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 18,
+      "source_doors": [
+        {
+          "door_index": 36,
+          "to_room_id": "L04_R008",
+          "to_door_index": 35,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 43,
+          "to_room_id": "L04_R022",
+          "to_door_index": 44,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              17,
+              20
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Seguridad y control",
+        "motifs": [
+          "consola",
+          "monitores",
+          "puerta reforzada",
+          "cableado"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L04_R011",
+      "source_index": 11,
+      "name": "Hueco técnico secreto 01",
+      "role": "secrets",
+      "map_x": 9,
+      "map_y": 10,
+      "level_id": "L04",
+      "neighborhood": "Calero",
+      "source_area": "Sector 3",
+      "source_room_index_0based": 10,
+      "source_doors": [
+        {
+          "door_index": 20,
+          "to_room_id": "L04_R007",
+          "to_door_index": 15,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 21,
+          "to_room_id": "L04_R012",
+          "to_door_index": 22,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              65,
+              68
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 57,
+          "to_room_id": "L04_R031",
+          "to_door_index": 58,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 70,
+          "to_room_id": "L04_R035",
+          "to_door_index": 71,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              67,
+              70
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Secretos",
+        "motifs": [
+          "grieta",
+          "compuerta",
+          "cámara oculta",
+          "señal"
+        ],
+        "neighborhood_palette": "L04",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R010",
+      "source_index": 10,
+      "name": "Calles en ladera 01",
+      "role": "hillside_street_clusters",
+      "map_x": 9,
+      "map_y": 0,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 9,
+      "source_doors": [
+        {
+          "door_index": 23,
+          "to_room_id": "L05_R043",
+          "to_door_index": 26,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              3,
+              6
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 24,
+          "to_room_id": "L05_R014",
+          "to_door_index": 29,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              42,
+              43
+            ],
+            "y": [
+              11,
+              11
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "-BLOCK_TO_PIXEL(1)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R042",
+      "source_index": 42,
+      "name": "Calles en ladera 02",
+      "role": "hillside_street_clusters",
+      "map_x": 9,
+      "map_y": 0,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 41,
+      "source_doors": [
+        {
+          "door_index": 103,
+          "to_room_id": "L05_R041",
+          "to_door_index": 102,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              6,
+              9
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R009",
+      "source_index": 9,
+      "name": "Calles en ladera 03",
+      "role": "hillside_street_clusters",
+      "map_x": 12,
+      "map_y": 0,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 8,
+      "source_doors": [
+        {
+          "door_index": 20,
+          "to_room_id": "L05_R008",
+          "to_door_index": 19,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              27,
+              30
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 21,
+          "to_room_id": "L05_R011",
+          "to_door_index": 22,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              32,
+              32
+            ],
+            "y": [
+              6,
+              9
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 74,
+          "to_room_id": "L05_R033",
+          "to_door_index": 62,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R013",
+      "source_index": 13,
+      "name": "Calles en ladera 04",
+      "role": "hillside_street_clusters",
+      "map_x": 12,
+      "map_y": 1,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 12,
+      "source_doors": [
+        {
+          "door_index": 88,
+          "to_room_id": "L05_R020",
+          "to_door_index": 55,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 89,
+          "to_room_id": "L05_R036",
+          "to_door_index": 56,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 95,
+          "to_room_id": "L05_R039",
+          "to_door_index": 94,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              54,
+              55
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "BLOCK_TO_PIXEL(1)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R021",
+      "source_index": 21,
+      "name": "Calles en ladera 05",
+      "role": "hillside_street_clusters",
+      "map_x": 4,
+      "map_y": 2,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 20,
+      "source_doors": [
+        {
+          "door_index": 17,
+          "to_room_id": "L05_R008",
+          "to_door_index": 16,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 43,
+          "to_room_id": "L05_R022",
+          "to_door_index": 44,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 59,
+          "to_room_id": "L05_R029",
+          "to_door_index": 60,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              18,
+              19
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 71,
+          "to_room_id": "L05_R031",
+          "to_door_index": 68,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              27,
+              28
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "BLOCK_TO_PIXEL(1)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R022",
+      "source_index": 22,
+      "name": "Calles en ladera 06",
+      "role": "hillside_street_clusters",
+      "map_x": 5,
+      "map_y": 2,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 21,
+      "source_doors": [
+        {
+          "door_index": 44,
+          "to_room_id": "L05_R021",
+          "to_door_index": 43,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 45,
+          "to_room_id": "L05_R024",
+          "to_door_index": 48,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              55,
+              58
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 46,
+          "to_room_id": "L05_R023",
+          "to_door_index": 47,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 75,
+          "to_room_id": "L05_R034",
+          "to_door_index": 76,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R030",
+      "source_index": 30,
+      "name": "Calles en ladera 07",
+      "role": "hillside_street_clusters",
+      "map_x": 6,
+      "map_y": 2,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 29,
+      "source_doors": [
+        {
+          "door_index": 61,
+          "to_room_id": "L05_R002",
+          "to_door_index": 5,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 99,
+          "to_room_id": "L05_R001",
+          "to_door_index": 2,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R031",
+      "source_index": 31,
+      "name": "Calles en ladera 08",
+      "role": "hillside_street_clusters",
+      "map_x": 7,
+      "map_y": 2,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 30,
+      "source_doors": [
+        {
+          "door_index": 66,
+          "to_room_id": "L05_R023",
+          "to_door_index": 69,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              8,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 67,
+          "to_room_id": "L05_R032",
+          "to_door_index": 70,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 68,
+          "to_room_id": "L05_R021",
+          "to_door_index": 71,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              12,
+              13
+            ],
+            "y": [
+              31,
+              31
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "-BLOCK_TO_PIXEL(1)"
+          }
+        },
+        {
+          "door_index": 113,
+          "to_room_id": "L05_R047",
+          "to_door_index": 114,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              17
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1 + 1/8.f)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R008",
+      "source_index": 8,
+      "name": "Calles en ladera 09",
+      "role": "hillside_street_clusters",
+      "map_x": 8,
+      "map_y": 2,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 7,
+      "source_doors": [
+        {
+          "door_index": 15,
+          "to_room_id": "L05_R007",
+          "to_door_index": 14,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 16,
+          "to_room_id": "L05_R021",
+          "to_door_index": 17,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 19,
+          "to_room_id": "L05_R009",
+          "to_door_index": 20,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R046",
+      "source_index": 46,
+      "name": "Calles en ladera 10",
+      "role": "hillside_street_clusters",
+      "map_x": 5,
+      "map_y": 3,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 45,
+      "source_doors": [
+        {
+          "door_index": 110,
+          "to_room_id": "L05_R044",
+          "to_door_index": 105,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 111,
+          "to_room_id": "L05_R036",
+          "to_door_index": 112,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              5
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles en ladera",
+        "motifs": [
+          "fachadas escalonadas",
+          "escaleras",
+          "muros de contención",
+          "cableado"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R032",
+      "source_index": 32,
+      "name": "Escaleras y recodos 01",
+      "role": "stairs_and_switchbacks",
+      "map_x": 7,
+      "map_y": 3,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 31,
+      "source_doors": [
+        {
+          "door_index": 70,
+          "to_room_id": "L05_R031",
+          "to_door_index": 67,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 73,
+          "to_room_id": "L05_R011",
+          "to_door_index": 63,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              6,
+              9
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R011",
+      "source_index": 11,
+      "name": "Escaleras y recodos 02",
+      "role": "stairs_and_switchbacks",
+      "map_x": 15,
+      "map_y": 3,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 10,
+      "source_doors": [
+        {
+          "door_index": 22,
+          "to_room_id": "L05_R009",
+          "to_door_index": 21,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              26,
+              29
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 63,
+          "to_room_id": "L05_R032",
+          "to_door_index": 73,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              26,
+              29
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 64,
+          "to_room_id": "L05_R043",
+          "to_door_index": 104,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              16,
+              19
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R027",
+      "source_index": 27,
+      "name": "Escaleras y recodos 03",
+      "role": "stairs_and_switchbacks",
+      "map_x": 20,
+      "map_y": 3,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 26,
+      "source_doors": [
+        {
+          "door_index": 52,
+          "to_room_id": "L05_R026",
+          "to_door_index": 51,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 98,
+          "to_room_id": "L05_R035",
+          "to_door_index": 72,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              4,
+              4
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R007",
+      "source_index": 7,
+      "name": "Escaleras y recodos 04",
+      "role": "stairs_and_switchbacks",
+      "map_x": 9,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 6,
+      "source_doors": [
+        {
+          "door_index": 13,
+          "to_room_id": "L05_R006",
+          "to_door_index": 12,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 14,
+          "to_room_id": "L05_R008",
+          "to_door_index": 15,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 18,
+          "to_room_id": "L05_R029",
+          "to_door_index": 4,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              28,
+              29
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 65,
+          "to_room_id": "L05_R014",
+          "to_door_index": 30,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              19,
+              20
+            ],
+            "y": [
+              2,
+              2
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0.5)",
+            "y_expression": "BLOCK_TO_PIXEL(1)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R006",
+      "source_index": 6,
+      "name": "Escaleras y recodos 05",
+      "role": "stairs_and_switchbacks",
+      "map_x": 11,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 5,
+      "source_doors": [
+        {
+          "door_index": 11,
+          "to_room_id": "L05_R001",
+          "to_door_index": 3,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 12,
+          "to_room_id": "L05_R007",
+          "to_door_index": 13,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R048",
+      "source_index": 48,
+      "name": "Escaleras y recodos 06",
+      "role": "stairs_and_switchbacks",
+      "map_x": 15,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 47,
+      "source_doors": [
+        {
+          "door_index": 115,
+          "to_room_id": "L05_R020",
+          "to_door_index": 116,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R029",
+      "source_index": 29,
+      "name": "Escaleras y recodos 07",
+      "role": "stairs_and_switchbacks",
+      "map_x": 17,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 28,
+      "source_doors": [
+        {
+          "door_index": 4,
+          "to_room_id": "L05_R007",
+          "to_door_index": 18,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              8,
+              9
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 60,
+          "to_room_id": "L05_R021",
+          "to_door_index": 59,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              8,
+              9
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(1)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R001",
+      "source_index": 1,
+      "name": "Escaleras y recodos 08",
+      "role": "stairs_and_switchbacks",
+      "map_x": 18,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 0,
+      "source_doors": [
+        {
+          "door_index": 2,
+          "to_room_id": "L05_R030",
+          "to_door_index": 99,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 3,
+          "to_room_id": "L05_R006",
+          "to_door_index": 11,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 58,
+          "to_room_id": "L05_R004",
+          "to_door_index": 8,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 118,
+          "to_room_id": "L05_R028",
+          "to_door_index": 0,
+          "door_type": "DOOR_TYPE_NONE",
+          "source_rect_blocks": {
+            "x": [
+              0,
+              0
+            ],
+            "y": [
+              0,
+              0
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(0)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Escaleras y recodos",
+        "motifs": [
+          "escalones",
+          "descansillos",
+          "barandillas",
+          "cambios de nivel"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R002",
+      "source_index": 2,
+      "name": "Azoteas y terrazas 01",
+      "role": "rooftops_and_terraces",
+      "map_x": 19,
+      "map_y": 4,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 1,
+      "source_doors": [
+        {
+          "door_index": 5,
+          "to_room_id": "L05_R030",
+          "to_door_index": 61,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        },
+        {
+          "door_index": 6,
+          "to_room_id": "L05_R003",
+          "to_door_index": 7,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Azoteas y terrazas",
+        "motifs": [
+          "azoteas",
+          "tanques",
+          "antenas",
+          "tendederos"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    },
+    {
+      "id": "L05_R033",
+      "source_index": 33,
+      "name": "Azoteas y terrazas 02",
+      "role": "rooftops_and_terraces",
+      "map_x": 0,
+      "map_y": 5,
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "source_area": "Sector 4",
+      "source_room_index_0based": 32,
+      "source_doors": [
+        {
+          "door_index": 62,
+          "to_room_id": "L05_R009",
+          "to_door_index": 74,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          },
+          "exit": {
+            "x_expression": "-BLOCK_TO_PIXEL(2)",
+            "y_expression": "BLOCK_TO_PIXEL(0)"
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Azoteas y terrazas",
+        "motifs": [
+          "azoteas",
+          "tanques",
+          "antenas",
+          "tendederos"
+        ],
+        "neighborhood_palette": "L05",
+        "layout_note": "Diseño conceptual sin geometría final. Mantener el número y los destinos de puertas de la topología fuente; colocar puertas físicamente solo después de confirmar dimensiones y mapa de bloques de la ROM."
+      }
+    }
+  ],
+  "role_counts": {
+    "construction_sites": 7,
+    "elevated_routes": 4,
+    "elite_encounters": 3,
+    "generators_and_power_rooms": 5,
+    "hillside_street_clusters": 10,
+    "machinery_platforms": 6,
+    "pocket_parks_and_tree_plazas": 6,
+    "rescue_and_briefing_hubs": 3,
+    "rooftops_and_terraces": 2,
+    "secret_room": 1,
+    "secrets": 1,
+    "security_and_control_rooms": 2,
+    "stairs_and_switchbacks": 8,
+    "story_and_elite_encounters": 3,
+    "street_services": 5,
+    "thermal_service_corridors": 4,
+    "workshop_interiors": 3,
+    "workshops": 8,
+    "yards_and_garages": 6
+  },
+  "source_door_records": 208,
+  "limits": [
+    "The SVG is a conceptual art/blockout sheet, not an indexed GBA tilemap.",
+    "Door destinations and source block rectangles are transcribed from the public decomp reference graph; exact binary equivalence to the user's private ROM is unverified.",
+    "Exact room dimensions, BG maps, clipdata, collision, event logic, enemy placement and runtime integration remain pending binary mapping and ROM validation."
+  ]
+}
