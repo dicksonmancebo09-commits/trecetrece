@@ -65,6 +65,13 @@ Ambos corresponden a la entrada de tileset 96 usada por Main Deck sala fuente 0,
 
 Los binarios derivados permanecen fuera de Git. No se subieron ROM, saves ni dumps extraídos.
 
+## Herramientas reproducibles
+
+- [Builder del bundle de referencia](../../tools/build_room_reference_bundle.py).
+- [Extractor RLE de las 382 salas](../../tools/extract_sector_cero_room_maps.py).
+- [Extractor de tilesets, paletas y animaciones](../../tools/extract_sector_cero_room_visual_assets.py).
+- [Decodificador/auditor GBA](../../tools/gba_rom_audit.py).
+
 ## Automatización / CI
 
 - Bundle completo de fuentes y tablas: [run 41508555361](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41508555361) — \`success\`.
