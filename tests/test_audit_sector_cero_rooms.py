@@ -32,14 +32,14 @@ def fixture():
 class TestRoomAudit(unittest.TestCase):
     def test_clean_fixture_passes_structural_checks(self):
         registry, manifest, sheets, master = fixture()
-        result = audit.audit_data(registry, manifest, sheets, master)
+        result = audit.audit_data(registry, manifest, sheets, master, expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
         self.assertEqual(result["status"], "PASS")
         self.assertEqual(result["source_door_records"], 1)
 
     def test_duplicate_room_id_fails(self):
         registry, manifest, sheets, master = fixture()
         registry["rooms"].append(dict(registry["rooms"][0]))
-        result = audit.audit_data(registry, manifest, sheets, master)
+        result = audit.audit_data(registry, manifest, sheets, master, expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
         self.assertEqual(result["status"], "FAIL")
         self.assertTrue(any("Duplicate registry room IDs" in item for item in result["errors"]))
 
@@ -51,7 +51,7 @@ class TestRoomAudit(unittest.TestCase):
 
     def test_missing_master_room_fails(self):
         registry, manifest, sheets, master = fixture()
-        result = audit.audit_data(registry, manifest, sheets, ["L01_R001"])
+        result = audit.audit_data(registry, manifest, sheets, ["L01_R001"], expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
         self.assertTrue(any("Master/registry mismatch" in item for item in result["errors"]))
 
 
