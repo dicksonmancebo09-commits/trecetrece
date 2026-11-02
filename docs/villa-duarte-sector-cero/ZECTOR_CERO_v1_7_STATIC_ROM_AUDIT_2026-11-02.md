@@ -73,3 +73,12 @@ El archivo `.sav` aportado mide 32 KiB y contiene las cadenas `MetroidAGB-EUVerE
 4. Integrar una sala vertical completa y probarla antes de escalar a los cinco lotes y las 382 salas.
 
 El JSON de auditoría local conserva las 75 comprobaciones, hashes de recursos, diferencias binarias y límites de alcance. Las ROM y los saves no se subieron al repositorio.
+
+
+## Hallazgo posterior no cubierto por los 75 controles originales — banco de paleta (02-11-2026)
+
+Los 75 controles estáticos originales no comprobaron la relación entre los bits de banco de paleta de la tabla custom y la secuencia de carga del motor. `RoomLoadTileset` copia primero la paleta de tileset a bancos 2–15 y después escribe la paleta común en bancos 0–2. La tabla custom de L01_R001 en v1.7 usa banco 2 en sus 1.536 subtiles; por tanto, esa fila es sustituida por la paleta común al seguir el orden de carga del motor. La tabla base `tilesets/61.tm` emplea bancos 0,1,3,4 y omite 2.
+
+Se preparó una candidata v1.8 independiente que cambia solo el nibble de banco de 2 a 3 en el rango `0x7B0002–0x7B0C01`; SHA-256 `3bc764355012268d4ac6ef315bb9bb09ac0e5405d1c456bb506d1fdbe862af89`. Mantiene los índices, flips, mapas y punteros. Las 14 filas de la paleta custom son idénticas, así que el banco 3 carga la misma paleta desde la fila 1 del recurso. Véase [informe de v1.8](V1_8_ROOM0_PALETTE_BANK_FIX_2026-11-02.md).
+
+Este hallazgo no cambia los resultados binarios comprobados ni los 75 controles de identidad/estructura ya superados; amplía el alcance y muestra una limitación de la auditoría visual inicial. La v1.7 no se modifica y v1.8 todavía no se ha probado ejecutándose en mGBA/VBA-M.
