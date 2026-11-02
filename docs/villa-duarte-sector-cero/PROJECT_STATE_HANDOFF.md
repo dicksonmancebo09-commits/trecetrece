@@ -148,3 +148,13 @@ La build privada v1.5 corrige el desbordamiento real de los recursos de título 
 ## v1.7 — corrección de flujo y referencias compartidas (27-10-2026)
 
 Tras el reporte de crash en v1.6, la candidata v1.7 restaura el prólogo de `IntroHandler` (la v1.6 retornaba antes de inicializar) y hace el salto al estado de finalización de la intro solo después de ejecutar la inicialización. También restaura las referencias de fondo/mapa/paleta originales utilizadas fuera de la pantalla de título; solo las tres referencias del título siguen apuntando al arte urbano. Se conserva el título sin copyright/PRESS START y el salto de partida nueva a la secuencia del hangar. Checksum y BPS pasan comprobación estática; aún no se ha probado CPU/juego en mGBA. Ver [V1_7_TITLE_HANGAR_FIX.md](V1_7_TITLE_HANGAR_FIX.md).
+
+## Canon de siete niveles y registro de 382 salas (02-11-2026)
+
+La distribución que rige el diseño de niveles sigue el atlas visual aprobado como referencia del proyecto: Villa Duarte, El Caliche, La Francia Nueva, Calero, Pueblo Nuevo, Los Molinos y Simónico. Cada una se asocia a una de las siete áreas técnicas de la ROM de referencia, conservando las entradas de sala como localizadores, no como nombres de barrio del juego original.
+
+- [Plan maestro de siete niveles y 382 salas](LEVEL_ROOM_MASTER_PLAN_V2.md)
+- [Registro estructurado de 382 salas](../../data/world/sector-cero-room-registry-v1.json)
+- Villa Duarte: 87 salas; El Caliche: 54; La Francia Nueva: 61; Calero: 39; Pueblo Nuevo: 48; Los Molinos: 52; Simónico: 41.
+
+El plan maestro supersede la nomenclatura anterior de siete arquetipos visuales como mapa de niveles. La Biblia Visual sigue vigente como regla de estilo; los atlas de escenario 1 y 2 siguen siendo los primeros paquetes de arte. Los roles asignados a salas se basan en el orden espacial del CSV (map_y, map_x, índice) y son una distribución editorial inicial: no prueban adyacencia ni conexiones de puertas. La extracción del grafo real, la geometría, los clipdata y los eventos por sala sigue pendiente. No hay ROM modificada ni prueba de juego en este hito.
