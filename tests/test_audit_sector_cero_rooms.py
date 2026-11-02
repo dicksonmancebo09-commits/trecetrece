@@ -46,7 +46,7 @@ class TestRoomAudit(unittest.TestCase):
     def test_dangling_door_target_fails(self):
         registry, manifest, sheets, master = fixture()
         registry["rooms"][0]["source_doors"][0]["default_destination"]["room_id"] = "L01_R999"
-        result = audit.audit_data(registry, manifest, sheets, master)
+        result = audit.audit_data(registry, manifest, sheets, master, expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
         self.assertTrue(any("door default destinations" in item for item in result["errors"]))
 
     def test_missing_master_room_fails(self):
