@@ -1,0 +1,799 @@
+{
+  "schema": "zector_cero.room_batch.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "batch": 1,
+  "status": "design_roster_with_reference_mapping",
+  "target_total_rooms": 382,
+  "completed_before_batch": 0,
+  "batch_room_count": 87,
+  "project_cumulative_planned": 87,
+  "neighborhood_distribution": {
+    "Villa Duarte": 87
+  },
+  "source_registry": "data/world/sector-cero-room-registry-v1.json",
+  "rooms": [
+    {
+      "id": "L01_R082",
+      "production_id": "L01-001",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Hangar de cuarentena 01",
+      "role": "hangar_quarantine",
+      "source_room_index": 82
+    },
+    {
+      "id": "L01_R013",
+      "production_id": "L01-002",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Hangar de cuarentena 02",
+      "role": "hangar_quarantine",
+      "source_room_index": 13
+    },
+    {
+      "id": "L01_R074",
+      "production_id": "L01-003",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Hangar de cuarentena 03",
+      "role": "hangar_quarantine",
+      "source_room_index": 74
+    },
+    {
+      "id": "L01_R085",
+      "production_id": "L01-004",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Hangar de cuarentena 04",
+      "role": "hangar_quarantine",
+      "source_room_index": 85
+    },
+    {
+      "id": "L01_R039",
+      "production_id": "L01-005",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 01",
+      "role": "main_street",
+      "source_room_index": 39
+    },
+    {
+      "id": "L01_R032",
+      "production_id": "L01-006",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 02",
+      "role": "main_street",
+      "source_room_index": 32
+    },
+    {
+      "id": "L01_R035",
+      "production_id": "L01-007",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 03",
+      "role": "main_street",
+      "source_room_index": 35
+    },
+    {
+      "id": "L01_R022",
+      "production_id": "L01-008",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 04",
+      "role": "main_street",
+      "source_room_index": 22
+    },
+    {
+      "id": "L01_R069",
+      "production_id": "L01-009",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 05",
+      "role": "main_street",
+      "source_room_index": 69
+    },
+    {
+      "id": "L01_R015",
+      "production_id": "L01-010",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 06",
+      "role": "main_street",
+      "source_room_index": 15
+    },
+    {
+      "id": "L01_R044",
+      "production_id": "L01-011",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 07",
+      "role": "main_street",
+      "source_room_index": 44
+    },
+    {
+      "id": "L01_R081",
+      "production_id": "L01-012",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 08",
+      "role": "main_street",
+      "source_room_index": 81
+    },
+    {
+      "id": "L01_R060",
+      "production_id": "L01-013",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 09",
+      "role": "main_street",
+      "source_room_index": 60
+    },
+    {
+      "id": "L01_R076",
+      "production_id": "L01-014",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 10",
+      "role": "main_street",
+      "source_room_index": 76
+    },
+    {
+      "id": "L01_R011",
+      "production_id": "L01-015",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 11",
+      "role": "main_street",
+      "source_room_index": 11
+    },
+    {
+      "id": "L01_R061",
+      "production_id": "L01-016",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Calle principal 12",
+      "role": "main_street",
+      "source_room_index": 61
+    },
+    {
+      "id": "L01_R012",
+      "production_id": "L01-017",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 01",
+      "role": "residential_facades",
+      "source_room_index": 12
+    },
+    {
+      "id": "L01_R075",
+      "production_id": "L01-018",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 02",
+      "role": "residential_facades",
+      "source_room_index": 75
+    },
+    {
+      "id": "L01_R021",
+      "production_id": "L01-019",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 03",
+      "role": "residential_facades",
+      "source_room_index": 21
+    },
+    {
+      "id": "L01_R009",
+      "production_id": "L01-020",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 04",
+      "role": "residential_facades",
+      "source_room_index": 9
+    },
+    {
+      "id": "L01_R036",
+      "production_id": "L01-021",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 05",
+      "role": "residential_facades",
+      "source_room_index": 36
+    },
+    {
+      "id": "L01_R010",
+      "production_id": "L01-022",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 06",
+      "role": "residential_facades",
+      "source_room_index": 10
+    },
+    {
+      "id": "L01_R038",
+      "production_id": "L01-023",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 07",
+      "role": "residential_facades",
+      "source_room_index": 38
+    },
+    {
+      "id": "L01_R037",
+      "production_id": "L01-024",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 08",
+      "role": "residential_facades",
+      "source_room_index": 37
+    },
+    {
+      "id": "L01_R084",
+      "production_id": "L01-025",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 09",
+      "role": "residential_facades",
+      "source_room_index": 84
+    },
+    {
+      "id": "L01_R018",
+      "production_id": "L01-026",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 10",
+      "role": "residential_facades",
+      "source_room_index": 18
+    },
+    {
+      "id": "L01_R057",
+      "production_id": "L01-027",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 11",
+      "role": "residential_facades",
+      "source_room_index": 57
+    },
+    {
+      "id": "L01_R008",
+      "production_id": "L01-028",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 12",
+      "role": "residential_facades",
+      "source_room_index": 8
+    },
+    {
+      "id": "L01_R045",
+      "production_id": "L01-029",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 13",
+      "role": "residential_facades",
+      "source_room_index": 45
+    },
+    {
+      "id": "L01_R073",
+      "production_id": "L01-030",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Fachadas habitadas 14",
+      "role": "residential_facades",
+      "source_room_index": 73
+    },
+    {
+      "id": "L01_R019",
+      "production_id": "L01-031",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 01",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 19
+    },
+    {
+      "id": "L01_R040",
+      "production_id": "L01-032",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 02",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 40
+    },
+    {
+      "id": "L01_R041",
+      "production_id": "L01-033",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 03",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 41
+    },
+    {
+      "id": "L01_R042",
+      "production_id": "L01-034",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 04",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 42
+    },
+    {
+      "id": "L01_R023",
+      "production_id": "L01-035",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 05",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 23
+    },
+    {
+      "id": "L01_R020",
+      "production_id": "L01-036",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 06",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 20
+    },
+    {
+      "id": "L01_R070",
+      "production_id": "L01-037",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 07",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 70
+    },
+    {
+      "id": "L01_R033",
+      "production_id": "L01-038",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 08",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 33
+    },
+    {
+      "id": "L01_R014",
+      "production_id": "L01-039",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 09",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 14
+    },
+    {
+      "id": "L01_R071",
+      "production_id": "L01-040",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Colmado y viviendas 10",
+      "role": "colmado_and_home_interiors",
+      "source_room_index": 71
+    },
+    {
+      "id": "L01_R072",
+      "production_id": "L01-041",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 01",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 72
+    },
+    {
+      "id": "L01_R002",
+      "production_id": "L01-042",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 02",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 2
+    },
+    {
+      "id": "L01_R034",
+      "production_id": "L01-043",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 03",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 34
+    },
+    {
+      "id": "L01_R043",
+      "production_id": "L01-044",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 04",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 43
+    },
+    {
+      "id": "L01_R031",
+      "production_id": "L01-045",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 05",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 31
+    },
+    {
+      "id": "L01_R046",
+      "production_id": "L01-046",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 06",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 46
+    },
+    {
+      "id": "L01_R016",
+      "production_id": "L01-047",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 07",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 16
+    },
+    {
+      "id": "L01_R007",
+      "production_id": "L01-048",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 08",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 7
+    },
+    {
+      "id": "L01_R006",
+      "production_id": "L01-049",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 09",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 6
+    },
+    {
+      "id": "L01_R005",
+      "production_id": "L01-050",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 10",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 5
+    },
+    {
+      "id": "L01_R001",
+      "production_id": "L01-051",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 11",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 1
+    },
+    {
+      "id": "L01_R024",
+      "production_id": "L01-052",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Balcones y azoteas 12",
+      "role": "balconies_and_rooftops",
+      "source_room_index": 24
+    },
+    {
+      "id": "L01_R047",
+      "production_id": "L01-053",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 01",
+      "role": "telecom_and_power",
+      "source_room_index": 47
+    },
+    {
+      "id": "L01_R030",
+      "production_id": "L01-054",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 02",
+      "role": "telecom_and_power",
+      "source_room_index": 30
+    },
+    {
+      "id": "L01_R029",
+      "production_id": "L01-055",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 03",
+      "role": "telecom_and_power",
+      "source_room_index": 29
+    },
+    {
+      "id": "L01_R028",
+      "production_id": "L01-056",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 04",
+      "role": "telecom_and_power",
+      "source_room_index": 28
+    },
+    {
+      "id": "L01_R025",
+      "production_id": "L01-057",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 05",
+      "role": "telecom_and_power",
+      "source_room_index": 25
+    },
+    {
+      "id": "L01_R026",
+      "production_id": "L01-058",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 06",
+      "role": "telecom_and_power",
+      "source_room_index": 26
+    },
+    {
+      "id": "L01_R027",
+      "production_id": "L01-059",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 07",
+      "role": "telecom_and_power",
+      "source_room_index": 27
+    },
+    {
+      "id": "L01_R048",
+      "production_id": "L01-060",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 08",
+      "role": "telecom_and_power",
+      "source_room_index": 48
+    },
+    {
+      "id": "L01_R083",
+      "production_id": "L01-061",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Red de telecomunicaciones 09",
+      "role": "telecom_and_power",
+      "source_room_index": 83
+    },
+    {
+      "id": "L01_R003",
+      "production_id": "L01-062",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 01",
+      "role": "service_corridors",
+      "source_room_index": 3
+    },
+    {
+      "id": "L01_R004",
+      "production_id": "L01-063",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 02",
+      "role": "service_corridors",
+      "source_room_index": 4
+    },
+    {
+      "id": "L01_R063",
+      "production_id": "L01-064",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 03",
+      "role": "service_corridors",
+      "source_room_index": 63
+    },
+    {
+      "id": "L01_R087",
+      "production_id": "L01-065",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 04",
+      "role": "service_corridors",
+      "source_room_index": 87
+    },
+    {
+      "id": "L01_R049",
+      "production_id": "L01-066",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 05",
+      "role": "service_corridors",
+      "source_room_index": 49
+    },
+    {
+      "id": "L01_R059",
+      "production_id": "L01-067",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 06",
+      "role": "service_corridors",
+      "source_room_index": 59
+    },
+    {
+      "id": "L01_R055",
+      "production_id": "L01-068",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 07",
+      "role": "service_corridors",
+      "source_room_index": 55
+    },
+    {
+      "id": "L01_R068",
+      "production_id": "L01-069",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Pasos de servicio 08",
+      "role": "service_corridors",
+      "source_room_index": 68
+    },
+    {
+      "id": "L01_R050",
+      "production_id": "L01-070",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 01",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 50
+    },
+    {
+      "id": "L01_R051",
+      "production_id": "L01-071",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 02",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 51
+    },
+    {
+      "id": "L01_R052",
+      "production_id": "L01-072",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 03",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 52
+    },
+    {
+      "id": "L01_R056",
+      "production_id": "L01-073",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 04",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 56
+    },
+    {
+      "id": "L01_R054",
+      "production_id": "L01-074",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 05",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 54
+    },
+    {
+      "id": "L01_R053",
+      "production_id": "L01-075",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 06",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 53
+    },
+    {
+      "id": "L01_R086",
+      "production_id": "L01-076",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 07",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 86
+    },
+    {
+      "id": "L01_R067",
+      "production_id": "L01-077",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Puntos de control y briefing 08",
+      "role": "navigation_and_mission_hubs",
+      "source_room_index": 67
+    },
+    {
+      "id": "L01_R058",
+      "production_id": "L01-078",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Encuentros de historia 01",
+      "role": "story_ambush_events",
+      "source_room_index": 58
+    },
+    {
+      "id": "L01_R078",
+      "production_id": "L01-079",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Encuentros de historia 02",
+      "role": "story_ambush_events",
+      "source_room_index": 78
+    },
+    {
+      "id": "L01_R079",
+      "production_id": "L01-080",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Encuentros de historia 03",
+      "role": "story_ambush_events",
+      "source_room_index": 79
+    },
+    {
+      "id": "L01_R017",
+      "production_id": "L01-081",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Encuentros de historia 04",
+      "role": "story_ambush_events",
+      "source_room_index": 17
+    },
+    {
+      "id": "L01_R077",
+      "production_id": "L01-082",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Atajos vecinales 01",
+      "role": "secrets_and_shortcuts",
+      "source_room_index": 77
+    },
+    {
+      "id": "L01_R066",
+      "production_id": "L01-083",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Atajos vecinales 02",
+      "role": "secrets_and_shortcuts",
+      "source_room_index": 66
+    },
+    {
+      "id": "L01_R080",
+      "production_id": "L01-084",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Atajos vecinales 03",
+      "role": "secrets_and_shortcuts",
+      "source_room_index": 80
+    },
+    {
+      "id": "L01_R062",
+      "production_id": "L01-085",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Atajos vecinales 04",
+      "role": "secrets_and_shortcuts",
+      "source_room_index": 62
+    },
+    {
+      "id": "L01_R065",
+      "production_id": "L01-086",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Set-piece de combate 01",
+      "role": "boss_staging_and_arena",
+      "source_room_index": 65
+    },
+    {
+      "id": "L01_R064",
+      "production_id": "L01-087",
+      "level_id": "L01",
+      "neighborhood": "Villa Duarte",
+      "name": "Set-piece de combate 02",
+      "role": "boss_staging_and_arena",
+      "source_room_index": 64
+    }
+  ]
+}
