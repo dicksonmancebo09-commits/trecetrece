@@ -1,0 +1,3128 @@
+{
+  "schema": "zector_cero.production_manifest.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "created_date": "2026-11-02",
+  "status": "audited_room_assignment",
+  "target_total_rooms": 382,
+  "source_registry": "data/world/sector-cero-room-registry-v1.json",
+  "batches": [
+    {
+      "batch": 1,
+      "production_prefix": "L01",
+      "room_count": 87,
+      "cumulative_planned": 87,
+      "neighborhood_distribution": {
+        "Villa Duarte": 87
+      },
+      "rooms": [
+        {
+          "production_id": "L01-001",
+          "room_id": "L01_R082",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "hangar_quarantine",
+          "name": "Hangar de cuarentena 01"
+        },
+        {
+          "production_id": "L01-002",
+          "room_id": "L01_R013",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "hangar_quarantine",
+          "name": "Hangar de cuarentena 02"
+        },
+        {
+          "production_id": "L01-003",
+          "room_id": "L01_R074",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "hangar_quarantine",
+          "name": "Hangar de cuarentena 03"
+        },
+        {
+          "production_id": "L01-004",
+          "room_id": "L01_R085",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "hangar_quarantine",
+          "name": "Hangar de cuarentena 04"
+        },
+        {
+          "production_id": "L01-005",
+          "room_id": "L01_R039",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 01"
+        },
+        {
+          "production_id": "L01-006",
+          "room_id": "L01_R032",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 02"
+        },
+        {
+          "production_id": "L01-007",
+          "room_id": "L01_R035",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 03"
+        },
+        {
+          "production_id": "L01-008",
+          "room_id": "L01_R022",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 04"
+        },
+        {
+          "production_id": "L01-009",
+          "room_id": "L01_R069",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 05"
+        },
+        {
+          "production_id": "L01-010",
+          "room_id": "L01_R015",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 06"
+        },
+        {
+          "production_id": "L01-011",
+          "room_id": "L01_R044",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 07"
+        },
+        {
+          "production_id": "L01-012",
+          "room_id": "L01_R081",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 08"
+        },
+        {
+          "production_id": "L01-013",
+          "room_id": "L01_R060",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 09"
+        },
+        {
+          "production_id": "L01-014",
+          "room_id": "L01_R076",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 10"
+        },
+        {
+          "production_id": "L01-015",
+          "room_id": "L01_R011",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 11"
+        },
+        {
+          "production_id": "L01-016",
+          "room_id": "L01_R061",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "main_street",
+          "name": "Calle principal 12"
+        },
+        {
+          "production_id": "L01-017",
+          "room_id": "L01_R012",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 01"
+        },
+        {
+          "production_id": "L01-018",
+          "room_id": "L01_R075",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 02"
+        },
+        {
+          "production_id": "L01-019",
+          "room_id": "L01_R021",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 03"
+        },
+        {
+          "production_id": "L01-020",
+          "room_id": "L01_R009",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 04"
+        },
+        {
+          "production_id": "L01-021",
+          "room_id": "L01_R036",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 05"
+        },
+        {
+          "production_id": "L01-022",
+          "room_id": "L01_R010",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 06"
+        },
+        {
+          "production_id": "L01-023",
+          "room_id": "L01_R038",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 07"
+        },
+        {
+          "production_id": "L01-024",
+          "room_id": "L01_R037",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 08"
+        },
+        {
+          "production_id": "L01-025",
+          "room_id": "L01_R084",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 09"
+        },
+        {
+          "production_id": "L01-026",
+          "room_id": "L01_R018",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 10"
+        },
+        {
+          "production_id": "L01-027",
+          "room_id": "L01_R057",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 11"
+        },
+        {
+          "production_id": "L01-028",
+          "room_id": "L01_R008",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 12"
+        },
+        {
+          "production_id": "L01-029",
+          "room_id": "L01_R045",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 13"
+        },
+        {
+          "production_id": "L01-030",
+          "room_id": "L01_R073",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "residential_facades",
+          "name": "Fachadas habitadas 14"
+        },
+        {
+          "production_id": "L01-031",
+          "room_id": "L01_R019",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 01"
+        },
+        {
+          "production_id": "L01-032",
+          "room_id": "L01_R040",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 02"
+        },
+        {
+          "production_id": "L01-033",
+          "room_id": "L01_R041",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 03"
+        },
+        {
+          "production_id": "L01-034",
+          "room_id": "L01_R042",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 04"
+        },
+        {
+          "production_id": "L01-035",
+          "room_id": "L01_R023",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 05"
+        },
+        {
+          "production_id": "L01-036",
+          "room_id": "L01_R020",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 06"
+        },
+        {
+          "production_id": "L01-037",
+          "room_id": "L01_R070",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 07"
+        },
+        {
+          "production_id": "L01-038",
+          "room_id": "L01_R033",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 08"
+        },
+        {
+          "production_id": "L01-039",
+          "room_id": "L01_R014",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 09"
+        },
+        {
+          "production_id": "L01-040",
+          "room_id": "L01_R071",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "colmado_and_home_interiors",
+          "name": "Colmado y viviendas 10"
+        },
+        {
+          "production_id": "L01-041",
+          "room_id": "L01_R072",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 01"
+        },
+        {
+          "production_id": "L01-042",
+          "room_id": "L01_R002",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 02"
+        },
+        {
+          "production_id": "L01-043",
+          "room_id": "L01_R034",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 03"
+        },
+        {
+          "production_id": "L01-044",
+          "room_id": "L01_R043",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 04"
+        },
+        {
+          "production_id": "L01-045",
+          "room_id": "L01_R031",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 05"
+        },
+        {
+          "production_id": "L01-046",
+          "room_id": "L01_R046",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 06"
+        },
+        {
+          "production_id": "L01-047",
+          "room_id": "L01_R016",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 07"
+        },
+        {
+          "production_id": "L01-048",
+          "room_id": "L01_R007",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 08"
+        },
+        {
+          "production_id": "L01-049",
+          "room_id": "L01_R006",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 09"
+        },
+        {
+          "production_id": "L01-050",
+          "room_id": "L01_R005",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 10"
+        },
+        {
+          "production_id": "L01-051",
+          "room_id": "L01_R001",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 11"
+        },
+        {
+          "production_id": "L01-052",
+          "room_id": "L01_R024",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "balconies_and_rooftops",
+          "name": "Balcones y azoteas 12"
+        },
+        {
+          "production_id": "L01-053",
+          "room_id": "L01_R047",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 01"
+        },
+        {
+          "production_id": "L01-054",
+          "room_id": "L01_R030",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 02"
+        },
+        {
+          "production_id": "L01-055",
+          "room_id": "L01_R029",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 03"
+        },
+        {
+          "production_id": "L01-056",
+          "room_id": "L01_R028",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 04"
+        },
+        {
+          "production_id": "L01-057",
+          "room_id": "L01_R025",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 05"
+        },
+        {
+          "production_id": "L01-058",
+          "room_id": "L01_R026",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 06"
+        },
+        {
+          "production_id": "L01-059",
+          "room_id": "L01_R027",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 07"
+        },
+        {
+          "production_id": "L01-060",
+          "room_id": "L01_R048",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 08"
+        },
+        {
+          "production_id": "L01-061",
+          "room_id": "L01_R083",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "telecom_and_power",
+          "name": "Red de telecomunicaciones 09"
+        },
+        {
+          "production_id": "L01-062",
+          "room_id": "L01_R003",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 01"
+        },
+        {
+          "production_id": "L01-063",
+          "room_id": "L01_R004",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 02"
+        },
+        {
+          "production_id": "L01-064",
+          "room_id": "L01_R063",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 03"
+        },
+        {
+          "production_id": "L01-065",
+          "room_id": "L01_R087",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 04"
+        },
+        {
+          "production_id": "L01-066",
+          "room_id": "L01_R049",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 05"
+        },
+        {
+          "production_id": "L01-067",
+          "room_id": "L01_R059",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 06"
+        },
+        {
+          "production_id": "L01-068",
+          "room_id": "L01_R055",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 07"
+        },
+        {
+          "production_id": "L01-069",
+          "room_id": "L01_R068",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "service_corridors",
+          "name": "Pasos de servicio 08"
+        },
+        {
+          "production_id": "L01-070",
+          "room_id": "L01_R050",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 01"
+        },
+        {
+          "production_id": "L01-071",
+          "room_id": "L01_R051",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 02"
+        },
+        {
+          "production_id": "L01-072",
+          "room_id": "L01_R052",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 03"
+        },
+        {
+          "production_id": "L01-073",
+          "room_id": "L01_R056",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 04"
+        },
+        {
+          "production_id": "L01-074",
+          "room_id": "L01_R054",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 05"
+        },
+        {
+          "production_id": "L01-075",
+          "room_id": "L01_R053",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 06"
+        },
+        {
+          "production_id": "L01-076",
+          "room_id": "L01_R086",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 07"
+        },
+        {
+          "production_id": "L01-077",
+          "room_id": "L01_R067",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "navigation_and_mission_hubs",
+          "name": "Puntos de control y briefing 08"
+        },
+        {
+          "production_id": "L01-078",
+          "room_id": "L01_R058",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "story_ambush_events",
+          "name": "Encuentros de historia 01"
+        },
+        {
+          "production_id": "L01-079",
+          "room_id": "L01_R078",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "story_ambush_events",
+          "name": "Encuentros de historia 02"
+        },
+        {
+          "production_id": "L01-080",
+          "room_id": "L01_R079",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "story_ambush_events",
+          "name": "Encuentros de historia 03"
+        },
+        {
+          "production_id": "L01-081",
+          "room_id": "L01_R017",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "story_ambush_events",
+          "name": "Encuentros de historia 04"
+        },
+        {
+          "production_id": "L01-082",
+          "room_id": "L01_R077",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "secrets_and_shortcuts",
+          "name": "Atajos vecinales 01"
+        },
+        {
+          "production_id": "L01-083",
+          "room_id": "L01_R066",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "secrets_and_shortcuts",
+          "name": "Atajos vecinales 02"
+        },
+        {
+          "production_id": "L01-084",
+          "room_id": "L01_R080",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "secrets_and_shortcuts",
+          "name": "Atajos vecinales 03"
+        },
+        {
+          "production_id": "L01-085",
+          "room_id": "L01_R062",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "secrets_and_shortcuts",
+          "name": "Atajos vecinales 04"
+        },
+        {
+          "production_id": "L01-086",
+          "room_id": "L01_R065",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "boss_staging_and_arena",
+          "name": "Set-piece de combate 01"
+        },
+        {
+          "production_id": "L01-087",
+          "room_id": "L01_R064",
+          "level_id": "L01",
+          "neighborhood": "Villa Duarte",
+          "role": "boss_staging_and_arena",
+          "name": "Set-piece de combate 02"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "production_prefix": "L02",
+      "room_count": 87,
+      "cumulative_planned": 174,
+      "neighborhood_distribution": {
+        "El Caliche": 54,
+        "La Francia Nueva": 33
+      },
+      "rooms": [
+        {
+          "production_id": "L02-001",
+          "room_id": "L02_R041",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 01"
+        },
+        {
+          "production_id": "L02-002",
+          "room_id": "L02_R039",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 02"
+        },
+        {
+          "production_id": "L02-003",
+          "room_id": "L02_R048",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 03"
+        },
+        {
+          "production_id": "L02-004",
+          "room_id": "L02_R002",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 04"
+        },
+        {
+          "production_id": "L02-005",
+          "room_id": "L02_R001",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 05"
+        },
+        {
+          "production_id": "L02-006",
+          "room_id": "L02_R011",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 06"
+        },
+        {
+          "production_id": "L02-007",
+          "room_id": "L02_R054",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 07"
+        },
+        {
+          "production_id": "L02-008",
+          "room_id": "L02_R004",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 08"
+        },
+        {
+          "production_id": "L02-009",
+          "room_id": "L02_R032",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 09"
+        },
+        {
+          "production_id": "L02-010",
+          "room_id": "L02_R049",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 10"
+        },
+        {
+          "production_id": "L02-011",
+          "room_id": "L02_R020",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "narrow_alley_network",
+          "name": "Red de callejones 11"
+        },
+        {
+          "production_id": "L02-012",
+          "room_id": "L02_R003",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 01"
+        },
+        {
+          "production_id": "L02-013",
+          "room_id": "L02_R005",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 02"
+        },
+        {
+          "production_id": "L02-014",
+          "room_id": "L02_R006",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 03"
+        },
+        {
+          "production_id": "L02-015",
+          "room_id": "L02_R050",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 04"
+        },
+        {
+          "production_id": "L02-016",
+          "room_id": "L02_R017",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 05"
+        },
+        {
+          "production_id": "L02-017",
+          "room_id": "L02_R008",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 06"
+        },
+        {
+          "production_id": "L02-018",
+          "room_id": "L02_R007",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 07"
+        },
+        {
+          "production_id": "L02-019",
+          "room_id": "L02_R040",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 08"
+        },
+        {
+          "production_id": "L02-020",
+          "room_id": "L02_R043",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "stacked_home_interiors",
+          "name": "Viviendas encajadas 09"
+        },
+        {
+          "production_id": "L02-021",
+          "room_id": "L02_R010",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 01"
+        },
+        {
+          "production_id": "L02-022",
+          "room_id": "L02_R009",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 02"
+        },
+        {
+          "production_id": "L02-023",
+          "room_id": "L02_R033",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 03"
+        },
+        {
+          "production_id": "L02-024",
+          "room_id": "L02_R034",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 04"
+        },
+        {
+          "production_id": "L02-025",
+          "room_id": "L02_R014",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 05"
+        },
+        {
+          "production_id": "L02-026",
+          "room_id": "L02_R024",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 06"
+        },
+        {
+          "production_id": "L02-027",
+          "room_id": "L02_R023",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "drainage_and_culverts",
+          "name": "Drenajes y alcantarillas 07"
+        },
+        {
+          "production_id": "L02-028",
+          "room_id": "L02_R037",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 01"
+        },
+        {
+          "production_id": "L02-029",
+          "room_id": "L02_R038",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 02"
+        },
+        {
+          "production_id": "L02-030",
+          "room_id": "L02_R035",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 03"
+        },
+        {
+          "production_id": "L02-031",
+          "room_id": "L02_R022",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 04"
+        },
+        {
+          "production_id": "L02-032",
+          "room_id": "L02_R021",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 05"
+        },
+        {
+          "production_id": "L02-033",
+          "room_id": "L02_R042",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 06"
+        },
+        {
+          "production_id": "L02-034",
+          "room_id": "L02_R046",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 07"
+        },
+        {
+          "production_id": "L02-035",
+          "room_id": "L02_R047",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "barred_gate_and_security_routes",
+          "name": "Rejas y rutas de seguridad 08"
+        },
+        {
+          "production_id": "L02-036",
+          "room_id": "L02_R027",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 01"
+        },
+        {
+          "production_id": "L02-037",
+          "room_id": "L02_R053",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 02"
+        },
+        {
+          "production_id": "L02-038",
+          "room_id": "L02_R026",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 03"
+        },
+        {
+          "production_id": "L02-039",
+          "room_id": "L02_R025",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 04"
+        },
+        {
+          "production_id": "L02-040",
+          "room_id": "L02_R045",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 05"
+        },
+        {
+          "production_id": "L02-041",
+          "room_id": "L02_R013",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "utility_and_service_rooms",
+          "name": "Cuartos de servicio 06"
+        },
+        {
+          "production_id": "L02-042",
+          "room_id": "L02_R044",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "chase_and_ambush",
+          "name": "Persecución y emboscada 01"
+        },
+        {
+          "production_id": "L02-043",
+          "room_id": "L02_R015",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "chase_and_ambush",
+          "name": "Persecución y emboscada 02"
+        },
+        {
+          "production_id": "L02-044",
+          "room_id": "L02_R028",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "chase_and_ambush",
+          "name": "Persecución y emboscada 03"
+        },
+        {
+          "production_id": "L02-045",
+          "room_id": "L02_R018",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "chase_and_ambush",
+          "name": "Persecución y emboscada 04"
+        },
+        {
+          "production_id": "L02-046",
+          "room_id": "L02_R012",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "chase_and_ambush",
+          "name": "Persecución y emboscada 05"
+        },
+        {
+          "production_id": "L02-047",
+          "room_id": "L02_R016",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "safehouse_and_save",
+          "name": "Refugios 01"
+        },
+        {
+          "production_id": "L02-048",
+          "room_id": "L02_R030",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "safehouse_and_save",
+          "name": "Refugios 02"
+        },
+        {
+          "production_id": "L02-049",
+          "room_id": "L02_R029",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "safehouse_and_save",
+          "name": "Refugios 03"
+        },
+        {
+          "production_id": "L02-050",
+          "room_id": "L02_R019",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "secret_passages",
+          "name": "Pasajes secretos 01"
+        },
+        {
+          "production_id": "L02-051",
+          "room_id": "L02_R031",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "secret_passages",
+          "name": "Pasajes secretos 02"
+        },
+        {
+          "production_id": "L02-052",
+          "room_id": "L02_R051",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "secret_passages",
+          "name": "Pasajes secretos 03"
+        },
+        {
+          "production_id": "L02-053",
+          "room_id": "L02_R052",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "elite_and_boss_encounters",
+          "name": "Encuentros de élite 01"
+        },
+        {
+          "production_id": "L02-054",
+          "room_id": "L02_R036",
+          "level_id": "L02",
+          "neighborhood": "El Caliche",
+          "role": "elite_and_boss_encounters",
+          "name": "Encuentros de élite 02"
+        },
+        {
+          "production_id": "L02-055",
+          "room_id": "L03_R054",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 01"
+        },
+        {
+          "production_id": "L02-056",
+          "room_id": "L03_R026",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 02"
+        },
+        {
+          "production_id": "L02-057",
+          "room_id": "L03_R005",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 03"
+        },
+        {
+          "production_id": "L02-058",
+          "room_id": "L03_R029",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 04"
+        },
+        {
+          "production_id": "L02-059",
+          "room_id": "L03_R002",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 05"
+        },
+        {
+          "production_id": "L02-060",
+          "room_id": "L03_R001",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 06"
+        },
+        {
+          "production_id": "L02-061",
+          "room_id": "L03_R037",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 07"
+        },
+        {
+          "production_id": "L02-062",
+          "room_id": "L03_R061",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 08"
+        },
+        {
+          "production_id": "L02-063",
+          "room_id": "L03_R004",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 09"
+        },
+        {
+          "production_id": "L02-064",
+          "room_id": "L03_R053",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 10"
+        },
+        {
+          "production_id": "L02-065",
+          "room_id": "L03_R052",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 11"
+        },
+        {
+          "production_id": "L02-066",
+          "room_id": "L03_R033",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 12"
+        },
+        {
+          "production_id": "L02-067",
+          "room_id": "L03_R006",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 13"
+        },
+        {
+          "production_id": "L02-068",
+          "room_id": "L03_R008",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "broad_residential_streets",
+          "name": "Calles residenciales 14"
+        },
+        {
+          "production_id": "L02-069",
+          "room_id": "L03_R007",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 01"
+        },
+        {
+          "production_id": "L02-070",
+          "room_id": "L03_R031",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 02"
+        },
+        {
+          "production_id": "L02-071",
+          "room_id": "L03_R023",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 03"
+        },
+        {
+          "production_id": "L02-072",
+          "room_id": "L03_R032",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 04"
+        },
+        {
+          "production_id": "L02-073",
+          "room_id": "L03_R035",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 05"
+        },
+        {
+          "production_id": "L02-074",
+          "room_id": "L03_R021",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 06"
+        },
+        {
+          "production_id": "L02-075",
+          "room_id": "L03_R009",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 07"
+        },
+        {
+          "production_id": "L02-076",
+          "room_id": "L03_R003",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 08"
+        },
+        {
+          "production_id": "L02-077",
+          "room_id": "L03_R030",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 09"
+        },
+        {
+          "production_id": "L02-078",
+          "room_id": "L03_R027",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "crossroads_and_vehicle_lanes",
+          "name": "Cruces y carriles 10"
+        },
+        {
+          "production_id": "L02-079",
+          "room_id": "L03_R020",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 01"
+        },
+        {
+          "production_id": "L02-080",
+          "room_id": "L03_R034",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 02"
+        },
+        {
+          "production_id": "L02-081",
+          "room_id": "L03_R048",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 03"
+        },
+        {
+          "production_id": "L02-082",
+          "room_id": "L03_R022",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 04"
+        },
+        {
+          "production_id": "L02-083",
+          "room_id": "L03_R051",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 05"
+        },
+        {
+          "production_id": "L02-084",
+          "room_id": "L03_R038",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 06"
+        },
+        {
+          "production_id": "L02-085",
+          "room_id": "L03_R013",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 07"
+        },
+        {
+          "production_id": "L02-086",
+          "room_id": "L03_R046",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "multi_level_home_interiors",
+          "name": "Viviendas de varias plantas 08"
+        },
+        {
+          "production_id": "L02-087",
+          "room_id": "L03_R028",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 01"
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "production_prefix": "L03",
+      "room_count": 87,
+      "cumulative_planned": 261,
+      "neighborhood_distribution": {
+        "La Francia Nueva": 28,
+        "Calero": 39,
+        "Pueblo Nuevo": 20
+      },
+      "rooms": [
+        {
+          "production_id": "L03-001",
+          "room_id": "L03_R012",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 02"
+        },
+        {
+          "production_id": "L03-002",
+          "room_id": "L03_R047",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 03"
+        },
+        {
+          "production_id": "L03-003",
+          "room_id": "L03_R049",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 04"
+        },
+        {
+          "production_id": "L03-004",
+          "room_id": "L03_R050",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 05"
+        },
+        {
+          "production_id": "L03-005",
+          "room_id": "L03_R024",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 06"
+        },
+        {
+          "production_id": "L03-006",
+          "room_id": "L03_R036",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "yards_and_garages",
+          "name": "Patios y garajes 07"
+        },
+        {
+          "production_id": "L03-007",
+          "room_id": "L03_R057",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 01"
+        },
+        {
+          "production_id": "L03-008",
+          "room_id": "L03_R058",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 02"
+        },
+        {
+          "production_id": "L03-009",
+          "room_id": "L03_R059",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 03"
+        },
+        {
+          "production_id": "L03-010",
+          "room_id": "L03_R056",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 04"
+        },
+        {
+          "production_id": "L03-011",
+          "room_id": "L03_R060",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 05"
+        },
+        {
+          "production_id": "L03-012",
+          "room_id": "L03_R043",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "pocket_parks_and_tree_plazas",
+          "name": "Parques y plazoletas 06"
+        },
+        {
+          "production_id": "L03-013",
+          "room_id": "L03_R019",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "street_services",
+          "name": "Servicios de calle 01"
+        },
+        {
+          "production_id": "L03-014",
+          "room_id": "L03_R010",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "street_services",
+          "name": "Servicios de calle 02"
+        },
+        {
+          "production_id": "L03-015",
+          "room_id": "L03_R042",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "street_services",
+          "name": "Servicios de calle 03"
+        },
+        {
+          "production_id": "L03-016",
+          "room_id": "L03_R014",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "street_services",
+          "name": "Servicios de calle 04"
+        },
+        {
+          "production_id": "L03-017",
+          "room_id": "L03_R044",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "street_services",
+          "name": "Servicios de calle 05"
+        },
+        {
+          "production_id": "L03-018",
+          "room_id": "L03_R017",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "elevated_routes",
+          "name": "Rutas elevadas 01"
+        },
+        {
+          "production_id": "L03-019",
+          "room_id": "L03_R040",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "elevated_routes",
+          "name": "Rutas elevadas 02"
+        },
+        {
+          "production_id": "L03-020",
+          "room_id": "L03_R039",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "elevated_routes",
+          "name": "Rutas elevadas 03"
+        },
+        {
+          "production_id": "L03-021",
+          "room_id": "L03_R025",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "elevated_routes",
+          "name": "Rutas elevadas 04"
+        },
+        {
+          "production_id": "L03-022",
+          "room_id": "L03_R041",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "rescue_and_briefing_hubs",
+          "name": "Rescate y briefing 01"
+        },
+        {
+          "production_id": "L03-023",
+          "room_id": "L03_R045",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "rescue_and_briefing_hubs",
+          "name": "Rescate y briefing 02"
+        },
+        {
+          "production_id": "L03-024",
+          "room_id": "L03_R018",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "rescue_and_briefing_hubs",
+          "name": "Rescate y briefing 03"
+        },
+        {
+          "production_id": "L03-025",
+          "room_id": "L03_R055",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "story_and_elite_encounters",
+          "name": "Encuentros de historia 01"
+        },
+        {
+          "production_id": "L03-026",
+          "room_id": "L03_R011",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "story_and_elite_encounters",
+          "name": "Encuentros de historia 02"
+        },
+        {
+          "production_id": "L03-027",
+          "room_id": "L03_R015",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "story_and_elite_encounters",
+          "name": "Encuentros de historia 03"
+        },
+        {
+          "production_id": "L03-028",
+          "room_id": "L03_R016",
+          "level_id": "L03",
+          "neighborhood": "La Francia Nueva",
+          "role": "secret_room",
+          "name": "Habitación secreta 01"
+        },
+        {
+          "production_id": "L03-029",
+          "room_id": "L04_R009",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 01"
+        },
+        {
+          "production_id": "L03-030",
+          "room_id": "L04_R038",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 02"
+        },
+        {
+          "production_id": "L03-031",
+          "room_id": "L04_R020",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 03"
+        },
+        {
+          "production_id": "L03-032",
+          "room_id": "L04_R008",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 04"
+        },
+        {
+          "production_id": "L03-033",
+          "room_id": "L04_R036",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 05"
+        },
+        {
+          "production_id": "L03-034",
+          "room_id": "L04_R035",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 06"
+        },
+        {
+          "production_id": "L03-035",
+          "room_id": "L04_R028",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 07"
+        },
+        {
+          "production_id": "L03-036",
+          "room_id": "L04_R002",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshops",
+          "name": "Talleres 08"
+        },
+        {
+          "production_id": "L03-037",
+          "room_id": "L04_R001",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 01"
+        },
+        {
+          "production_id": "L03-038",
+          "room_id": "L04_R026",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 02"
+        },
+        {
+          "production_id": "L03-039",
+          "room_id": "L04_R039",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 03"
+        },
+        {
+          "production_id": "L03-040",
+          "room_id": "L04_R018",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 04"
+        },
+        {
+          "production_id": "L03-041",
+          "room_id": "L04_R023",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 05"
+        },
+        {
+          "production_id": "L03-042",
+          "room_id": "L04_R005",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 06"
+        },
+        {
+          "production_id": "L03-043",
+          "room_id": "L04_R006",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "construction_sites",
+          "name": "Obras y estructuras 07"
+        },
+        {
+          "production_id": "L03-044",
+          "room_id": "L04_R024",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 01"
+        },
+        {
+          "production_id": "L03-045",
+          "room_id": "L04_R007",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 02"
+        },
+        {
+          "production_id": "L03-046",
+          "room_id": "L04_R022",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 03"
+        },
+        {
+          "production_id": "L03-047",
+          "room_id": "L04_R021",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 04"
+        },
+        {
+          "production_id": "L03-048",
+          "room_id": "L04_R027",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 05"
+        },
+        {
+          "production_id": "L03-049",
+          "room_id": "L04_R010",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "machinery_platforms",
+          "name": "Plataformas mecánicas 06"
+        },
+        {
+          "production_id": "L03-050",
+          "room_id": "L04_R032",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "generators_and_power_rooms",
+          "name": "Generadores y energía 01"
+        },
+        {
+          "production_id": "L03-051",
+          "room_id": "L04_R031",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "generators_and_power_rooms",
+          "name": "Generadores y energía 02"
+        },
+        {
+          "production_id": "L03-052",
+          "room_id": "L04_R033",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "generators_and_power_rooms",
+          "name": "Generadores y energía 03"
+        },
+        {
+          "production_id": "L03-053",
+          "room_id": "L04_R037",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "generators_and_power_rooms",
+          "name": "Generadores y energía 04"
+        },
+        {
+          "production_id": "L03-054",
+          "room_id": "L04_R004",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "generators_and_power_rooms",
+          "name": "Generadores y energía 05"
+        },
+        {
+          "production_id": "L03-055",
+          "room_id": "L04_R003",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "thermal_service_corridors",
+          "name": "Corredores térmicos 01"
+        },
+        {
+          "production_id": "L03-056",
+          "room_id": "L04_R030",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "thermal_service_corridors",
+          "name": "Corredores térmicos 02"
+        },
+        {
+          "production_id": "L03-057",
+          "room_id": "L04_R015",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "thermal_service_corridors",
+          "name": "Corredores térmicos 03"
+        },
+        {
+          "production_id": "L03-058",
+          "room_id": "L04_R025",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "thermal_service_corridors",
+          "name": "Corredores térmicos 04"
+        },
+        {
+          "production_id": "L03-059",
+          "room_id": "L04_R017",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshop_interiors",
+          "name": "Interiores de taller 01"
+        },
+        {
+          "production_id": "L03-060",
+          "room_id": "L04_R029",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshop_interiors",
+          "name": "Interiores de taller 02"
+        },
+        {
+          "production_id": "L03-061",
+          "room_id": "L04_R016",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "workshop_interiors",
+          "name": "Interiores de taller 03"
+        },
+        {
+          "production_id": "L03-062",
+          "room_id": "L04_R014",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "elite_encounters",
+          "name": "Encuentros de élite 01"
+        },
+        {
+          "production_id": "L03-063",
+          "room_id": "L04_R012",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "elite_encounters",
+          "name": "Encuentros de élite 02"
+        },
+        {
+          "production_id": "L03-064",
+          "room_id": "L04_R013",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "elite_encounters",
+          "name": "Encuentros de élite 03"
+        },
+        {
+          "production_id": "L03-065",
+          "room_id": "L04_R034",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "security_and_control_rooms",
+          "name": "Control y seguridad 01"
+        },
+        {
+          "production_id": "L03-066",
+          "room_id": "L04_R019",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "security_and_control_rooms",
+          "name": "Control y seguridad 02"
+        },
+        {
+          "production_id": "L03-067",
+          "room_id": "L04_R011",
+          "level_id": "L04",
+          "neighborhood": "Calero",
+          "role": "secrets",
+          "name": "Hueco técnico secreto 01"
+        },
+        {
+          "production_id": "L03-068",
+          "room_id": "L05_R010",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 01"
+        },
+        {
+          "production_id": "L03-069",
+          "room_id": "L05_R042",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 02"
+        },
+        {
+          "production_id": "L03-070",
+          "room_id": "L05_R009",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 03"
+        },
+        {
+          "production_id": "L03-071",
+          "room_id": "L05_R013",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 04"
+        },
+        {
+          "production_id": "L03-072",
+          "room_id": "L05_R021",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 05"
+        },
+        {
+          "production_id": "L03-073",
+          "room_id": "L05_R022",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 06"
+        },
+        {
+          "production_id": "L03-074",
+          "room_id": "L05_R030",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 07"
+        },
+        {
+          "production_id": "L03-075",
+          "room_id": "L05_R031",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 08"
+        },
+        {
+          "production_id": "L03-076",
+          "room_id": "L05_R008",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 09"
+        },
+        {
+          "production_id": "L03-077",
+          "room_id": "L05_R046",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "hillside_street_clusters",
+          "name": "Calles en ladera 10"
+        },
+        {
+          "production_id": "L03-078",
+          "room_id": "L05_R032",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 01"
+        },
+        {
+          "production_id": "L03-079",
+          "room_id": "L05_R011",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 02"
+        },
+        {
+          "production_id": "L03-080",
+          "room_id": "L05_R027",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 03"
+        },
+        {
+          "production_id": "L03-081",
+          "room_id": "L05_R007",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 04"
+        },
+        {
+          "production_id": "L03-082",
+          "room_id": "L05_R006",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 05"
+        },
+        {
+          "production_id": "L03-083",
+          "room_id": "L05_R048",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 06"
+        },
+        {
+          "production_id": "L03-084",
+          "room_id": "L05_R029",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 07"
+        },
+        {
+          "production_id": "L03-085",
+          "room_id": "L05_R001",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "stairs_and_switchbacks",
+          "name": "Escaleras y recodos 08"
+        },
+        {
+          "production_id": "L03-086",
+          "room_id": "L05_R002",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Azoteas y terrazas 01"
+        },
+        {
+          "production_id": "L03-087",
+          "room_id": "L05_R033",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Azoteas y terrazas 02"
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "production_prefix": "L04",
+      "room_count": 87,
+      "cumulative_planned": 348,
+      "neighborhood_distribution": {
+        "Pueblo Nuevo": 28,
+        "Los Molinos": 52,
+        "Simónico": 7
+      },
+      "rooms": [
+        {
+          "production_id": "L04-001",
+          "room_id": "L05_R020",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Terraza escalonada con pretil bajo"
+        },
+        {
+          "production_id": "L04-002",
+          "room_id": "L05_R005",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Pasarela entre dos azoteas"
+        },
+        {
+          "production_id": "L04-003",
+          "room_id": "L05_R003",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Patio alto con tendedero"
+        },
+        {
+          "production_id": "L04-004",
+          "room_id": "L05_R037",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Terraza con tanque lateral"
+        },
+        {
+          "production_id": "L04-005",
+          "room_id": "L05_R035",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Azotea con escalera de retorno"
+        },
+        {
+          "production_id": "L04-006",
+          "room_id": "L05_R045",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rooftops_and_terraces",
+          "name": "Cruce de tejados con desnivel"
+        },
+        {
+          "production_id": "L04-007",
+          "room_id": "L05_R043",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "lookouts_and_panorama",
+          "name": "Mirador de la ladera oriental"
+        },
+        {
+          "production_id": "L04-008",
+          "room_id": "L05_R028",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "lookouts_and_panorama",
+          "name": "Mirador sobre calle escalonada"
+        },
+        {
+          "production_id": "L04-009",
+          "room_id": "L05_R036",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "lookouts_and_panorama",
+          "name": "Balcón panorámico vecinal"
+        },
+        {
+          "production_id": "L04-010",
+          "room_id": "L05_R004",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "lookouts_and_panorama",
+          "name": "Mirador con acceso por escalera"
+        },
+        {
+          "production_id": "L04-011",
+          "room_id": "L05_R023",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "lookouts_and_panorama",
+          "name": "Mirador de transición al valle"
+        },
+        {
+          "production_id": "L04-012",
+          "room_id": "L05_R014",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "patios_and_home_interiors",
+          "name": "Patio interior de vivienda"
+        },
+        {
+          "production_id": "L04-013",
+          "room_id": "L05_R039",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "patios_and_home_interiors",
+          "name": "Galería doméstica con escalones"
+        },
+        {
+          "production_id": "L04-014",
+          "room_id": "L05_R019",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "patios_and_home_interiors",
+          "name": "Sala de casa con salida al patio"
+        },
+        {
+          "production_id": "L04-015",
+          "room_id": "L05_R038",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "patios_and_home_interiors",
+          "name": "Pasillo entre viviendas"
+        },
+        {
+          "production_id": "L04-016",
+          "room_id": "L05_R015",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "water_tanks_and_reservoirs",
+          "name": "Depósito elevado con plataforma"
+        },
+        {
+          "production_id": "L04-017",
+          "room_id": "L05_R012",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "water_tanks_and_reservoirs",
+          "name": "Tanque de agua sobre azotea"
+        },
+        {
+          "production_id": "L04-018",
+          "room_id": "L05_R016",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "water_tanks_and_reservoirs",
+          "name": "Cuarto de bombas doméstico"
+        },
+        {
+          "production_id": "L04-019",
+          "room_id": "L05_R018",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "water_tanks_and_reservoirs",
+          "name": "Depósito con tubería vertical"
+        },
+        {
+          "production_id": "L04-020",
+          "room_id": "L05_R047",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "cistern_and_service_passages",
+          "name": "Cisterna de inspección"
+        },
+        {
+          "production_id": "L04-021",
+          "room_id": "L05_R034",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "cistern_and_service_passages",
+          "name": "Túnel de servicio bajo escalera"
+        },
+        {
+          "production_id": "L04-022",
+          "room_id": "L05_R024",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "cistern_and_service_passages",
+          "name": "Paso estrecho de mantenimiento"
+        },
+        {
+          "production_id": "L04-023",
+          "room_id": "L05_R025",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "movement_challenge_rooms",
+          "name": "Ascenso por terrazas y saltos"
+        },
+        {
+          "production_id": "L04-024",
+          "room_id": "L05_R017",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "movement_challenge_rooms",
+          "name": "Descenso con plataformas de retorno"
+        },
+        {
+          "production_id": "L04-025",
+          "room_id": "L05_R044",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rescue_and_checkpoint_hubs",
+          "name": "Refugio vecinal en altura"
+        },
+        {
+          "production_id": "L04-026",
+          "room_id": "L05_R040",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "rescue_and_checkpoint_hubs",
+          "name": "Checkpoint de escalera superior"
+        },
+        {
+          "production_id": "L04-027",
+          "room_id": "L05_R026",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "boss_arena",
+          "name": "Arena escalonada de ladera"
+        },
+        {
+          "production_id": "L04-028",
+          "room_id": "L05_R041",
+          "level_id": "L05",
+          "neighborhood": "Pueblo Nuevo",
+          "role": "secret_room",
+          "name": "Depósito oculto tras cisterna"
+        },
+        {
+          "production_id": "L04-029",
+          "room_id": "L06_R025",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Rampa de acceso a la ribera"
+        },
+        {
+          "production_id": "L04-030",
+          "room_id": "L06_R004",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Muro de contención junto al agua"
+        },
+        {
+          "production_id": "L04-031",
+          "room_id": "L06_R003",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Muelle de servicio abandonado"
+        },
+        {
+          "production_id": "L04-032",
+          "room_id": "L06_R006",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Pasarela baja sobre la orilla"
+        },
+        {
+          "production_id": "L04-033",
+          "room_id": "L06_R036",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Escalera de bajada al río"
+        },
+        {
+          "production_id": "L04-034",
+          "room_id": "L06_R002",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Canal lateral de acceso"
+        },
+        {
+          "production_id": "L04-035",
+          "room_id": "L06_R001",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Compuerta de ribera"
+        },
+        {
+          "production_id": "L04-036",
+          "room_id": "L06_R032",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "riverfront_approaches",
+          "name": "Patio de mantenimiento fluvial"
+        },
+        {
+          "production_id": "L04-037",
+          "room_id": "L06_R052",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Puente de hormigón con pilares"
+        },
+        {
+          "production_id": "L04-038",
+          "room_id": "L06_R037",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Pasarela metálica elevada"
+        },
+        {
+          "production_id": "L04-039",
+          "room_id": "L06_R031",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Cruce de puente con ruta inferior"
+        },
+        {
+          "production_id": "L04-040",
+          "room_id": "L06_R030",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Pilar de puente y andamio"
+        },
+        {
+          "production_id": "L04-041",
+          "room_id": "L06_R033",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Puente de servicio estrecho"
+        },
+        {
+          "production_id": "L04-042",
+          "room_id": "L06_R007",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Conexión entre dos plataformas"
+        },
+        {
+          "production_id": "L04-043",
+          "room_id": "L06_R015",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "bridge_network",
+          "name": "Atajo bajo el puente"
+        },
+        {
+          "production_id": "L04-044",
+          "room_id": "L06_R016",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Nave de maquinaria principal"
+        },
+        {
+          "production_id": "L04-045",
+          "room_id": "L06_R017",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Línea de prensado industrial"
+        },
+        {
+          "production_id": "L04-046",
+          "room_id": "L06_R048",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Almacén de piezas y palés"
+        },
+        {
+          "production_id": "L04-047",
+          "room_id": "L06_R018",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Sala de cintas transportadoras"
+        },
+        {
+          "production_id": "L04-048",
+          "room_id": "L06_R019",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Planta de clasificación"
+        },
+        {
+          "production_id": "L04-049",
+          "room_id": "L06_R049",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Nave con grúa suspendida"
+        },
+        {
+          "production_id": "L04-050",
+          "room_id": "L06_R034",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Sala de motores industriales"
+        },
+        {
+          "production_id": "L04-051",
+          "room_id": "L06_R026",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "factory_floors",
+          "name": "Plataforma de carga interior"
+        },
+        {
+          "production_id": "L04-052",
+          "room_id": "L06_R035",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Oficina industrial vacía"
+        },
+        {
+          "production_id": "L04-053",
+          "room_id": "L06_R005",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Patio de carga deteriorado"
+        },
+        {
+          "production_id": "L04-054",
+          "room_id": "L06_R013",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Nave abandonada con huecos"
+        },
+        {
+          "production_id": "L04-055",
+          "room_id": "L06_R044",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Pasillo de almacenes"
+        },
+        {
+          "production_id": "L04-056",
+          "room_id": "L06_R045",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Sala de control saqueada"
+        },
+        {
+          "production_id": "L04-057",
+          "room_id": "L06_R047",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Andén de carga roto"
+        },
+        {
+          "production_id": "L04-058",
+          "room_id": "L06_R020",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "abandoned_industrial_blocks",
+          "name": "Estructura de hormigón abierta"
+        },
+        {
+          "production_id": "L04-059",
+          "room_id": "L06_R009",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Canal de drenaje principal"
+        },
+        {
+          "production_id": "L04-060",
+          "room_id": "L06_R029",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Cámara de bombeo"
+        },
+        {
+          "production_id": "L04-061",
+          "room_id": "L06_R008",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Compuerta de nivel de agua"
+        },
+        {
+          "production_id": "L04-062",
+          "room_id": "L06_R028",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Depósito de regulación"
+        },
+        {
+          "production_id": "L04-063",
+          "room_id": "L06_R027",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Canal de retorno"
+        },
+        {
+          "production_id": "L04-064",
+          "room_id": "L06_R021",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "water_channels_and_pumps",
+          "name": "Sala de válvulas hidráulicas"
+        },
+        {
+          "production_id": "L04-065",
+          "room_id": "L06_R022",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "cold_storage_and_service",
+          "name": "Cámara frigorífica de acceso"
+        },
+        {
+          "production_id": "L04-066",
+          "room_id": "L06_R023",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "cold_storage_and_service",
+          "name": "Pasillo de condensadores"
+        },
+        {
+          "production_id": "L04-067",
+          "room_id": "L06_R012",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "cold_storage_and_service",
+          "name": "Cuarto de almacenamiento frío"
+        },
+        {
+          "production_id": "L04-068",
+          "room_id": "L06_R014",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "cold_storage_and_service",
+          "name": "Vestíbulo de mantenimiento"
+        },
+        {
+          "production_id": "L04-069",
+          "room_id": "L06_R046",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "cold_storage_and_service",
+          "name": "Conducto de refrigeración"
+        },
+        {
+          "production_id": "L04-070",
+          "room_id": "L06_R050",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "conveyors_and_rail_routes",
+          "name": "Transportador de carga móvil"
+        },
+        {
+          "production_id": "L04-071",
+          "room_id": "L06_R042",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "conveyors_and_rail_routes",
+          "name": "Vía de carros industriales"
+        },
+        {
+          "production_id": "L04-072",
+          "room_id": "L06_R011",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "conveyors_and_rail_routes",
+          "name": "Cruce de cintas con desnivel"
+        },
+        {
+          "production_id": "L04-073",
+          "room_id": "L06_R024",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "conveyors_and_rail_routes",
+          "name": "Plataforma móvil de transferencia"
+        },
+        {
+          "production_id": "L04-074",
+          "room_id": "L06_R051",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "turbines_and_generators",
+          "name": "Sala de turbina auxiliar"
+        },
+        {
+          "production_id": "L04-075",
+          "room_id": "L06_R041",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "turbines_and_generators",
+          "name": "Generador de respaldo"
+        },
+        {
+          "production_id": "L04-076",
+          "room_id": "L06_R010",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "turbines_and_generators",
+          "name": "Corredor de líneas eléctricas"
+        },
+        {
+          "production_id": "L04-077",
+          "room_id": "L06_R039",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "control_and_navigation",
+          "name": "Puesto de control hidráulico"
+        },
+        {
+          "production_id": "L04-078",
+          "room_id": "L06_R040",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "control_and_navigation",
+          "name": "Estación técnica de navegación"
+        },
+        {
+          "production_id": "L04-079",
+          "room_id": "L06_R038",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "boss_and_miniboss",
+          "name": "Arena de combate entre maquinaria"
+        },
+        {
+          "production_id": "L04-080",
+          "room_id": "L06_R043",
+          "level_id": "L06",
+          "neighborhood": "Los Molinos",
+          "role": "boss_and_miniboss",
+          "name": "Arena de turbina y pasarelas"
+        },
+        {
+          "production_id": "L04-081",
+          "room_id": "L07_R017",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Esquina comercial iluminada"
+        },
+        {
+          "production_id": "L04-082",
+          "room_id": "L07_R002",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Callejón con persianas y neones"
+        },
+        {
+          "production_id": "L04-083",
+          "room_id": "L07_R001",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Cruce nocturno con refugio"
+        },
+        {
+          "production_id": "L04-084",
+          "room_id": "L07_R029",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Frente de colmado ficticio"
+        },
+        {
+          "production_id": "L04-085",
+          "room_id": "L07_R041",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Calle residencial bajo apagón"
+        },
+        {
+          "production_id": "L04-086",
+          "room_id": "L07_R003",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Pasaje con luces de emergencia"
+        },
+        {
+          "production_id": "L04-087",
+          "room_id": "L07_R004",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "night_street_approaches",
+          "name": "Avenida de acceso al corredor cultural"
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "production_prefix": "L05",
+      "room_count": 34,
+      "cumulative_planned": 382,
+      "neighborhood_distribution": {
+        "Simónico": 34
+      },
+      "rooms": [
+        {
+          "production_id": "L05-001",
+          "room_id": "L07_R005",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Corredor mural de la resistencia"
+        },
+        {
+          "production_id": "L05-002",
+          "room_id": "L07_R037",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Pasaje de murales bajo luz cian"
+        },
+        {
+          "production_id": "L05-003",
+          "room_id": "L07_R036",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Muro de expresión junto a persianas"
+        },
+        {
+          "production_id": "L05-004",
+          "room_id": "L07_R034",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Callejón de arte y cableado aéreo"
+        },
+        {
+          "production_id": "L05-005",
+          "room_id": "L07_R006",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Galería exterior de murales ficticios"
+        },
+        {
+          "production_id": "L05-006",
+          "room_id": "L07_R024",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "urban_art_corridors",
+          "name": "Paso cultural hacia los refugios"
+        },
+        {
+          "production_id": "L05-007",
+          "room_id": "L07_R039",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "music_and_cultural_yards",
+          "name": "Patio comunitario con equipo de sonido"
+        },
+        {
+          "production_id": "L05-008",
+          "room_id": "L07_R014",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "music_and_cultural_yards",
+          "name": "Cancha vecinal convertida en punto de reunión"
+        },
+        {
+          "production_id": "L05-009",
+          "room_id": "L07_R007",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "music_and_cultural_yards",
+          "name": "Patio de ensayo con altavoces y bancos"
+        },
+        {
+          "production_id": "L05-010",
+          "room_id": "L07_R038",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "music_and_cultural_yards",
+          "name": "Plazoleta musical con luces cálidas"
+        },
+        {
+          "production_id": "L05-011",
+          "room_id": "L07_R016",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "music_and_cultural_yards",
+          "name": "Centro cultural improvisado"
+        },
+        {
+          "production_id": "L05-012",
+          "room_id": "L07_R018",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "resistance_hideouts",
+          "name": "Refugio en vivienda de esquina"
+        },
+        {
+          "production_id": "L05-013",
+          "room_id": "L07_R008",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "resistance_hideouts",
+          "name": "Almacén vecinal de suministros"
+        },
+        {
+          "production_id": "L05-014",
+          "room_id": "L07_R019",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "resistance_hideouts",
+          "name": "Sala de reunión tras un comercio cerrado"
+        },
+        {
+          "production_id": "L05-015",
+          "room_id": "L07_R020",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "resistance_hideouts",
+          "name": "Casa segura con acceso secundario"
+        },
+        {
+          "production_id": "L05-016",
+          "room_id": "L07_R009",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "resistance_hideouts",
+          "name": "Puesto de coordinación de la resistencia"
+        },
+        {
+          "production_id": "L05-017",
+          "room_id": "L07_R033",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "rooftops_and_backstreets",
+          "name": "Azotea nocturna con antenas"
+        },
+        {
+          "production_id": "L05-018",
+          "room_id": "L07_R032",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "rooftops_and_backstreets",
+          "name": "Pasarela entre patios traseros"
+        },
+        {
+          "production_id": "L05-019",
+          "room_id": "L07_R021",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "rooftops_and_backstreets",
+          "name": "Callejón elevado con escaleras metálicas"
+        },
+        {
+          "production_id": "L05-020",
+          "room_id": "L07_R026",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "rooftops_and_backstreets",
+          "name": "Ruta de tejados hacia el subsuelo"
+        },
+        {
+          "production_id": "L05-021",
+          "room_id": "L07_R040",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "underpasses_and_catacombs",
+          "name": "Entrada a túnel bajo la calle"
+        },
+        {
+          "production_id": "L05-022",
+          "room_id": "L07_R023",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "underpasses_and_catacombs",
+          "name": "Galería de drenaje antigua"
+        },
+        {
+          "production_id": "L05-023",
+          "room_id": "L07_R030",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "underpasses_and_catacombs",
+          "name": "Cámara de servicio bajo viviendas"
+        },
+        {
+          "production_id": "L05-024",
+          "room_id": "L07_R031",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "underpasses_and_catacombs",
+          "name": "Cruce subterráneo con compuertas"
+        },
+        {
+          "production_id": "L05-025",
+          "room_id": "L07_R022",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "underpasses_and_catacombs",
+          "name": "Catacumba de acceso al complejo oculto"
+        },
+        {
+          "production_id": "L05-026",
+          "room_id": "L07_R027",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "hidden_lab_and_core",
+          "name": "Laboratorio biomédico exterior"
+        },
+        {
+          "production_id": "L05-027",
+          "room_id": "L07_R011",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "hidden_lab_and_core",
+          "name": "Sala de experimentación y contención"
+        },
+        {
+          "production_id": "L05-028",
+          "room_id": "L07_R010",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "hidden_lab_and_core",
+          "name": "Cámara del núcleo y control central"
+        },
+        {
+          "production_id": "L05-029",
+          "room_id": "L07_R028",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "preboss_staging",
+          "name": "Vestíbulo de preparación del enfrentamiento"
+        },
+        {
+          "production_id": "L05-030",
+          "room_id": "L07_R013",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "final_boss_arena",
+          "name": "Arena del núcleo: combate final"
+        },
+        {
+          "production_id": "L05-031",
+          "room_id": "L07_R015",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "ending_and_escape",
+          "name": "Corredor de evacuación del complejo"
+        },
+        {
+          "production_id": "L05-032",
+          "room_id": "L07_R012",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "ending_and_escape",
+          "name": "Salida nocturna hacia Simónico"
+        },
+        {
+          "production_id": "L05-033",
+          "room_id": "L07_R025",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "secret_room",
+          "name": "Archivo clandestino de la resistencia"
+        },
+        {
+          "production_id": "L05-034",
+          "room_id": "L07_R035",
+          "level_id": "L07",
+          "neighborhood": "Simónico",
+          "role": "secret_room",
+          "name": "Cámara secreta de recompensa final"
+        }
+      ]
+    }
+  ],
+  "total_assigned": 382,
+  "unique_room_ids": 382
+}
