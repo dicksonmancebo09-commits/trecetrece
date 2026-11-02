@@ -4,7 +4,7 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 
 | Nivel | Barrio | Salas | Paquete |
 |---|---|---:|---|
-| L01 | Villa Duarte | 87 | [Diseño L01](level-01-villa-duarte/README.md) |
+| L01 | Villa Duarte | 87 | [Diseño L01](level-01-villa-duarte/README.md) · [Atlas gráfico v0.2](level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg) |
 | L02 | El Caliche | 54 | [Diseño L02](level-02-el-caliche/README.md) |
 | L03 | La Francia Nueva | 61 | [Diseño L03](level-03-la-francia-nueva/README.md) |
 | L04 | Calero | 39 | [Diseño L04](level-04-calero/README.md) |
