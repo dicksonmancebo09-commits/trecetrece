@@ -6,8 +6,8 @@
     "commit": "de76565c897c05838503717db9aa2adfe92aeba3",
     "method": "Per-room source declaration metadata only; no ROM or compressed map bytes copied."
   },
-  "room_count": 255,
-  "unique_room_ids": 255,
+  "room_count": 270,
+  "unique_room_ids": 270,
   "rooms": [
     {
       "room_id": "L01_R082",
@@ -11080,6 +11080,646 @@
           "variant": 1,
           "declared_array_entries": 12,
           "actual_sprite_placements": 11
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R006",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 6,
+      "source_room_index_0based": 5,
+      "source_file": "src/data/rooms/sector_4/sector_4_5.c",
+      "source_git_blob_sha": "0a2207dbc6b6f226ba6bc3e4b3a5e9ef3fd9310a",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 56,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 71,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 171,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 4,
+          "actual_sprite_placements": 3
+        },
+        {
+          "variant": 1,
+          "declared_array_entries": 5,
+          "actual_sprite_placements": 4
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R048",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 48,
+      "source_room_index_0based": 47,
+      "source_file": "src/data/rooms/sector_4/sector_4_47.c",
+      "source_git_blob_sha": "75e2aa18d1972b2effec9d942282d4f3009e7aed",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 151,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R029",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 29,
+      "source_room_index_0based": 28,
+      "source_file": "src/data/rooms/sector_4/sector_4_28.c",
+      "source_git_blob_sha": "12144600ce07254e5b1d17d129ee7150af0ed94a",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 94,
+          "width_blocks": 34,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 94,
+          "width_blocks": 34,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 246,
+          "width_blocks": 34,
+          "height_blocks": 14
+        },
+        "bg0": {
+          "declared_array_bytes": 141,
+          "width_blocks": 34,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 11,
+          "actual_sprite_placements": 10
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R001",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 1,
+      "source_room_index_0based": 0,
+      "source_file": "src/data/rooms/sector_4/sector_4_0.c",
+      "source_git_blob_sha": "5dd1c24923b5163281cd629983c6dfb20e82bbb8",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 24
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 384
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 175,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg2": {
+          "declared_array_bytes": 80,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg1": {
+          "declared_array_bytes": 490,
+          "width_blocks": 34,
+          "height_blocks": 24
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R002",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 2,
+      "source_room_index_0based": 1,
+      "source_file": "src/data/rooms/sector_4/sector_4_1.c",
+      "source_git_blob_sha": "15594eb2dc111c1cbfbce2bb32817510087ca4c3",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 76,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 158,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R033",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 33,
+      "source_room_index_0based": 32,
+      "source_file": "src/data/rooms/sector_4/sector_4_32.c",
+      "source_git_blob_sha": "c2ae3b60ca283f448716780327f24195f5f0e2e0",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 138,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R020",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 20,
+      "source_room_index_0based": 19,
+      "source_file": "src/data/rooms/sector_4/sector_4_19.c",
+      "source_git_blob_sha": "36aa25907a70921e4366b3907a2d5aadb0c8f391",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 34
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 544
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 422,
+          "width_blocks": 34,
+          "height_blocks": 34
+        },
+        "bg2": {
+          "declared_array_bytes": 639,
+          "width_blocks": 34,
+          "height_blocks": 34
+        },
+        "bg1": {
+          "declared_array_bytes": 1275,
+          "width_blocks": 34,
+          "height_blocks": 34
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 10,
+          "actual_sprite_placements": 9
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R005",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 5,
+      "source_room_index_0based": 4,
+      "source_file": "src/data/rooms/sector_4/sector_4_4.c",
+      "source_git_blob_sha": "2f03e84b64bd31426d1c5abe3c538df4d2ff01b4",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 277,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 135,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R003",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 3,
+      "source_room_index_0based": 2,
+      "source_file": "src/data/rooms/sector_4/sector_4_2.c",
+      "source_git_blob_sha": "8656e1b361c1f47f50ec04cca4d5bfd4fdab0dce",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 72,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 229,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R037",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 37,
+      "source_room_index_0based": 36,
+      "source_file": "src/data/rooms/sector_4/sector_4_36.c",
+      "source_git_blob_sha": "555962d450ac1b4e9827a8d40ca6d95029438555",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 24
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 384
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 148,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg2": {
+          "declared_array_bytes": 146,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg1": {
+          "declared_array_bytes": 549,
+          "width_blocks": 34,
+          "height_blocks": 24
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 12,
+          "actual_sprite_placements": 11
+        },
+        {
+          "variant": 1,
+          "declared_array_entries": 14,
+          "actual_sprite_placements": 13
+        },
+        {
+          "variant": 2,
+          "declared_array_entries": 9,
+          "actual_sprite_placements": 8
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R035",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 35,
+      "source_room_index_0based": 34,
+      "source_file": "src/data/rooms/sector_4/sector_4_34.c",
+      "source_git_blob_sha": "3e9585d3b6572dfdca02d5ab8b40a7f9e956828e",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 44
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 704
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 433,
+          "width_blocks": 34,
+          "height_blocks": 44
+        },
+        "bg2": {
+          "declared_array_bytes": 440,
+          "width_blocks": 34,
+          "height_blocks": 44
+        },
+        "bg1": {
+          "declared_array_bytes": 1402,
+          "width_blocks": 34,
+          "height_blocks": 44
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 18,
+          "actual_sprite_placements": 17
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R045",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 45,
+      "source_room_index_0based": 44,
+      "source_file": "src/data/rooms/sector_4/sector_4_44.c",
+      "source_git_blob_sha": "fea57eb62200e5b1796fc0ead5525a6afa1eb6bb",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 53,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 36,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 167,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R043",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 43,
+      "source_room_index_0based": 42,
+      "source_file": "src/data/rooms/sector_4/sector_4_42.c",
+      "source_git_blob_sha": "600a1d72332a52ba521d6b2af92bf94988969c51",
+      "dimensions_blocks": {
+        "width": 64,
+        "height": 34
+      },
+      "dimensions_pixels": {
+        "width": 1024,
+        "height": 544
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 170,
+          "width_blocks": 64,
+          "height_blocks": 34
+        },
+        "bg2": {
+          "declared_array_bytes": 334,
+          "width_blocks": 64,
+          "height_blocks": 34
+        },
+        "bg1": {
+          "declared_array_bytes": 368,
+          "width_blocks": 64,
+          "height_blocks": 34
+        },
+        "bg0": {
+          "declared_array_bytes": 620,
+          "width_blocks": 64,
+          "height_blocks": 34
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 4,
+          "actual_sprite_placements": 3
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R028",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 28,
+      "source_room_index_0based": 27,
+      "source_file": "src/data/rooms/sector_4/sector_4_27.c",
+      "source_git_blob_sha": "9ed5adc84df6c87b85a10527fb8348fd90af02d1",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 24
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 384
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 122,
+          "width_blocks": 19,
+          "height_blocks": 24
+        },
+        "bg2": {
+          "declared_array_bytes": 136,
+          "width_blocks": 19,
+          "height_blocks": 24
+        },
+        "bg1": {
+          "declared_array_bytes": 442,
+          "width_blocks": 19,
+          "height_blocks": 24
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L05_R036",
+      "source_game_area": "Sector 4",
+      "source_room_index_1based": 36,
+      "source_room_index_0based": 35,
+      "source_file": "src/data/rooms/sector_4/sector_4_35.c",
+      "source_git_blob_sha": "aaf3d60612afe315e163c28b371d7d8819e44602",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 74
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 1184
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 360,
+          "width_blocks": 19,
+          "height_blocks": 74
+        },
+        "bg2": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 74
+        },
+        "bg1": {
+          "declared_array_bytes": 1374,
+          "width_blocks": 19,
+          "height_blocks": 74
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 15,
+          "actual_sprite_placements": 14
         }
       ],
       "layer_dimension_conflicts": []
