@@ -1,0 +1,138 @@
+name: Zector Cero — production asset export
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "assets/levels/**/*.svg"
+      - "assets/levels/**/*.json"
+      - "assets/tiles/scenario-02/**/*.svg"
+      - "assets/tiles/scenario-02/*.json"
+      - "config/gba_atlas_export_manifest.json"
+      - "data/world/sector-cero-room-registry-v1.json"
+      - "data/world/sector-cero-room-technical-sheets-v1.json"
+      - "tools/extract_reference_room_metadata.py"
+      - "tools/render_gba_atlas_indexed.py"
+      - "tools/png_to_gba_4bpp.py"
+      - "tools/audit_sector_cero_rooms.py"
+      - "tests/test_extract_reference_room_metadata.py"
+      - "tests/test_render_gba_atlas_indexed.py"
+      - "tests/test_audit_sector_cero_rooms.py"
+      - ".github/workflows/zector-cero-production-assets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract-render-export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install SVG and image tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2
+          python -m pip install --upgrade pip
+          python -m pip install Pillow CairoSVG
+
+      - name: Compile production tools
+        run: |
+          python -m py_compile \
+            tools/extract_reference_room_metadata.py \
+            tools/render_gba_atlas_indexed.py \
+            tools/png_to_gba_4bpp.py \
+            tools/audit_sector_cero_rooms.py
+
+      - name: Unit tests — room metadata, atlas renderer and registry audit
+        run: |
+          python -m unittest discover -s tests -p "test_extract_reference_room_metadata.py" -v
+          python -m unittest discover -s tests -p "test_render_gba_atlas_indexed.py" -v
+          python -m unittest discover -s tests -p "test_audit_sector_cero_rooms.py" -v
+
+      - name: Extract reference dimensions for all 382 rooms
+        run: |
+          python tools/extract_reference_room_metadata.py \
+            --workers 12 \
+            --output data/world/sector-cero-reference-room-metadata-v1.json \
+            --technical-sheets data/world/sector-cero-room-technical-sheets-v1.json
+
+      - name: Audit room IDs and all five batches
+        run: |
+          python tools/audit_sector_cero_rooms.py \
+            --json-out private-roms/sector-cero-room-audit.json
+          python -m json.tool data/world/sector-cero-reference-room-metadata-v1.json >/dev/null
+          python -m json.tool data/world/sector-cero-room-technical-sheets-v1.json >/dev/null
+
+      - name: Render seven atlases to explicit 16-entry indexed PNG
+        run: |
+          python tools/render_gba_atlas_indexed.py \
+            --manifest config/gba_atlas_export_manifest.json
+
+      - name: Export 4bpp, BGR555 and LZ77 with round-trip checks
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          manifest = json.loads(Path("config/gba_atlas_export_manifest.json").read_text())
+          out = Path("private-roms/atlas-export")
+          for entry in manifest:
+              png = Path(entry["output"])
+              prefix = png.stem.replace("-indexed", "")
+              subprocess.run([
+                  sys.executable, "tools/png_to_gba_4bpp.py", str(png),
+                  "--output-dir", str(out), "--prefix", prefix
+              ], check=True)
+          print(f"Validated {len(manifest)} atlases through 4bpp and LZ77 round trips.")
+          PY
+
+      - name: Upload private-format export artifact (original artwork only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: zector-cero-gba-atlas-exports
+          path: private-roms/atlas-export/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Commit indexed PNGs and extracted reference metadata
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/world/sector-cero-reference-room-metadata-v1.json \
+            data/world/sector-cero-room-technical-sheets-v1.json \
+            assets/levels/level-01-villa-duarte/*-indexed.png \
+            assets/levels/level-01-villa-duarte/*-indexed.png.export.json \
+            assets/levels/level-03-la-francia-nueva/*-indexed.png \
+            assets/levels/level-03-la-francia-nueva/*-indexed.png.export.json \
+            assets/levels/level-04-calero/*-indexed.png \
+            assets/levels/level-04-calero/*-indexed.png.export.json \
+            assets/levels/level-05-pueblo-nuevo/*-indexed.png \
+            assets/levels/level-05-pueblo-nuevo/*-indexed.png.export.json \
+            assets/levels/level-06-los-molinos/*-indexed.png \
+            assets/levels/level-06-los-molinos/*-indexed.png.export.json \
+            assets/levels/level-07-simonico/*-indexed.png \
+            assets/levels/level-07-simonico/*-indexed.png.export.json \
+            assets/tiles/scenario-02/*-audit-indexed.png \
+            assets/tiles/scenario-02/*-audit-indexed.png.export.json
+          if git diff --cached --quiet; then
+            echo "No generated files changed."
+          else
+            git commit -m "Generate indexed GBA atlas exports and reference room dimensions"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
