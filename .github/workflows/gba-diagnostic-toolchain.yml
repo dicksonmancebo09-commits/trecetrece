@@ -18,6 +18,15 @@ on:
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
+      - "data/world/sector-cero-room-registry-v1.json"
+      - "data/world/sector-cero-room-batch-*.json"
+      - "data/world/sector-cero-production-manifest-v1.json"
+      - "data/world/sector-cero-room-technical-sheets-v1.json"
+      - "docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md"
+      - "docs/villa-duarte-sector-cero/PRODUCTION_BATCH_04_87_ROOMS.md"
+      - "docs/villa-duarte-sector-cero/PRODUCTION_BATCH_05_34_ROOMS.md"
+      - "tools/audit_sector_cero_rooms.py"
+      - "tests/test_audit_sector_cero_rooms.py"
   pull_request:
     paths:
       - ".devcontainer/devcontainer.json"
@@ -34,6 +43,15 @@ on:
       - "tests/test_gba_config.py"
       - "tests/test_gba_lua_trace_generator.py"
       - ".github/workflows/gba-diagnostic-toolchain.yml"
+      - "data/world/sector-cero-room-registry-v1.json"
+      - "data/world/sector-cero-room-batch-*.json"
+      - "data/world/sector-cero-production-manifest-v1.json"
+      - "data/world/sector-cero-room-technical-sheets-v1.json"
+      - "docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md"
+      - "docs/villa-duarte-sector-cero/PRODUCTION_BATCH_04_87_ROOMS.md"
+      - "docs/villa-duarte-sector-cero/PRODUCTION_BATCH_05_34_ROOMS.md"
+      - "tools/audit_sector_cero_rooms.py"
+      - "tests/test_audit_sector_cero_rooms.py"
 
 permissions:
   contents: read
@@ -86,6 +104,11 @@ jobs:
           python3 tools/generate_mgba_lua_trace.py
           test -s private-roms/diagnostics/mgba-trace-generated.lua
           luac5.4 -p private-roms/diagnostics/mgba-trace-generated.lua
+
+      - name: Audit 382 room IDs, source doors and five batches
+        run: |
+          python3 tools/audit_sector_cero_rooms.py --json-out private-roms/diagnostics/sector-cero-room-audit.json
+          python3 -m unittest discover -s tests -p "test_audit_sector_cero_rooms.py" -v
 
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
