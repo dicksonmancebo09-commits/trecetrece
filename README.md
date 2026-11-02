@@ -118,3 +118,10 @@ ROMs, save files, manifests containing ROM-derived bytes, and binary patches mus
 - [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
 
 **Estado:** los IDs, lotes y referencias de puertas están auditados estructuralmente. No se ha aplicado un parche ROM ni se ha declarado una prueba de juego superada.
+## Extracción técnica de referencia y exportación de atlas — 02-11-2026
+
+- [Extractor de dimensiones BG/clipdata y recuentos de sprites por sala](tools/extract_reference_room_metadata.py), fijado al commit de referencia `de76565c897c05838503717db9aa2adfe92aeba3`.
+- [Renderizador de SVG a PNG indexado](tools/render_gba_atlas_indexed.py) con las 16 entradas exactas declaradas por cada atlas.
+- [Manifiesto de los siete atlas](config/gba_atlas_export_manifest.json).
+- [Workflow de extracción y exportación](.github/workflows/zector-cero-production-assets.yml): genera 7 PNG indexados, pasa cada PNG por el conversor 4bpp/BGR555/LZ77 y publica esos binarios como artifact de CI.
+- Los mapas binarios de clipdata `.rle` no se copian desde la fuente pública; su extracción espacial requiere la ROM exacta disponible en `private-roms/`.
