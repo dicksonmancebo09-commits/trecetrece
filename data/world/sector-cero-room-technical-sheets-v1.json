@@ -84724,5 +84724,6 @@
     "method": "Read-only source declaration extraction; no ROM binary or room asset bytes stored."
   },
   "room_count_with_reference_dimensions": 382,
-  "room_count_with_layer_dimension_agreement": 382
+  "room_count_with_layer_dimension_agreement": 382,
+  "room_count_with_layer_dimension_conflicts": 0
 }
