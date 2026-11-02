@@ -1,0 +1,801 @@
+{
+  "schema": "zector_cero.room_batch.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "batch": 4,
+  "status": "design_roster_with_reference_mapping",
+  "target_total_rooms": 382,
+  "completed_before_batch": 261,
+  "batch_room_count": 87,
+  "project_cumulative_planned": 348,
+  "neighborhood_distribution": {
+    "Pueblo Nuevo": 28,
+    "Los Molinos": 52,
+    "Simónico": 7
+  },
+  "source_registry": "data/world/sector-cero-room-registry-v1.json",
+  "rooms": [
+    {
+      "id": "L05_R020",
+      "production_id": "L04-001",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Terraza escalonada con pretil bajo",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 20
+    },
+    {
+      "id": "L05_R005",
+      "production_id": "L04-002",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Pasarela entre dos azoteas",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 5
+    },
+    {
+      "id": "L05_R003",
+      "production_id": "L04-003",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Patio alto con tendedero",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 3
+    },
+    {
+      "id": "L05_R037",
+      "production_id": "L04-004",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Terraza con tanque lateral",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 37
+    },
+    {
+      "id": "L05_R035",
+      "production_id": "L04-005",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Azotea con escalera de retorno",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 35
+    },
+    {
+      "id": "L05_R045",
+      "production_id": "L04-006",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Cruce de tejados con desnivel",
+      "role": "rooftops_and_terraces",
+      "source_room_index": 45
+    },
+    {
+      "id": "L05_R043",
+      "production_id": "L04-007",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Mirador de la ladera oriental",
+      "role": "lookouts_and_panorama",
+      "source_room_index": 43
+    },
+    {
+      "id": "L05_R028",
+      "production_id": "L04-008",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Mirador sobre calle escalonada",
+      "role": "lookouts_and_panorama",
+      "source_room_index": 28
+    },
+    {
+      "id": "L05_R036",
+      "production_id": "L04-009",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Balcón panorámico vecinal",
+      "role": "lookouts_and_panorama",
+      "source_room_index": 36
+    },
+    {
+      "id": "L05_R004",
+      "production_id": "L04-010",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Mirador con acceso por escalera",
+      "role": "lookouts_and_panorama",
+      "source_room_index": 4
+    },
+    {
+      "id": "L05_R023",
+      "production_id": "L04-011",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Mirador de transición al valle",
+      "role": "lookouts_and_panorama",
+      "source_room_index": 23
+    },
+    {
+      "id": "L05_R014",
+      "production_id": "L04-012",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Patio interior de vivienda",
+      "role": "patios_and_home_interiors",
+      "source_room_index": 14
+    },
+    {
+      "id": "L05_R039",
+      "production_id": "L04-013",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Galería doméstica con escalones",
+      "role": "patios_and_home_interiors",
+      "source_room_index": 39
+    },
+    {
+      "id": "L05_R019",
+      "production_id": "L04-014",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Sala de casa con salida al patio",
+      "role": "patios_and_home_interiors",
+      "source_room_index": 19
+    },
+    {
+      "id": "L05_R038",
+      "production_id": "L04-015",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Pasillo entre viviendas",
+      "role": "patios_and_home_interiors",
+      "source_room_index": 38
+    },
+    {
+      "id": "L05_R015",
+      "production_id": "L04-016",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Depósito elevado con plataforma",
+      "role": "water_tanks_and_reservoirs",
+      "source_room_index": 15
+    },
+    {
+      "id": "L05_R012",
+      "production_id": "L04-017",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Tanque de agua sobre azotea",
+      "role": "water_tanks_and_reservoirs",
+      "source_room_index": 12
+    },
+    {
+      "id": "L05_R016",
+      "production_id": "L04-018",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Cuarto de bombas doméstico",
+      "role": "water_tanks_and_reservoirs",
+      "source_room_index": 16
+    },
+    {
+      "id": "L05_R018",
+      "production_id": "L04-019",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Depósito con tubería vertical",
+      "role": "water_tanks_and_reservoirs",
+      "source_room_index": 18
+    },
+    {
+      "id": "L05_R047",
+      "production_id": "L04-020",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Cisterna de inspección",
+      "role": "cistern_and_service_passages",
+      "source_room_index": 47
+    },
+    {
+      "id": "L05_R034",
+      "production_id": "L04-021",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Túnel de servicio bajo escalera",
+      "role": "cistern_and_service_passages",
+      "source_room_index": 34
+    },
+    {
+      "id": "L05_R024",
+      "production_id": "L04-022",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Paso estrecho de mantenimiento",
+      "role": "cistern_and_service_passages",
+      "source_room_index": 24
+    },
+    {
+      "id": "L05_R025",
+      "production_id": "L04-023",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Ascenso por terrazas y saltos",
+      "role": "movement_challenge_rooms",
+      "source_room_index": 25
+    },
+    {
+      "id": "L05_R017",
+      "production_id": "L04-024",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Descenso con plataformas de retorno",
+      "role": "movement_challenge_rooms",
+      "source_room_index": 17
+    },
+    {
+      "id": "L05_R044",
+      "production_id": "L04-025",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Refugio vecinal en altura",
+      "role": "rescue_and_checkpoint_hubs",
+      "source_room_index": 44
+    },
+    {
+      "id": "L05_R040",
+      "production_id": "L04-026",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Checkpoint de escalera superior",
+      "role": "rescue_and_checkpoint_hubs",
+      "source_room_index": 40
+    },
+    {
+      "id": "L05_R026",
+      "production_id": "L04-027",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Arena escalonada de ladera",
+      "role": "boss_arena",
+      "source_room_index": 26
+    },
+    {
+      "id": "L05_R041",
+      "production_id": "L04-028",
+      "level_id": "L05",
+      "neighborhood": "Pueblo Nuevo",
+      "name": "Depósito oculto tras cisterna",
+      "role": "secret_room",
+      "source_room_index": 41
+    },
+    {
+      "id": "L06_R025",
+      "production_id": "L04-029",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Rampa de acceso a la ribera",
+      "role": "riverfront_approaches",
+      "source_room_index": 25
+    },
+    {
+      "id": "L06_R004",
+      "production_id": "L04-030",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Muro de contención junto al agua",
+      "role": "riverfront_approaches",
+      "source_room_index": 4
+    },
+    {
+      "id": "L06_R003",
+      "production_id": "L04-031",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Muelle de servicio abandonado",
+      "role": "riverfront_approaches",
+      "source_room_index": 3
+    },
+    {
+      "id": "L06_R006",
+      "production_id": "L04-032",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Pasarela baja sobre la orilla",
+      "role": "riverfront_approaches",
+      "source_room_index": 6
+    },
+    {
+      "id": "L06_R036",
+      "production_id": "L04-033",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Escalera de bajada al río",
+      "role": "riverfront_approaches",
+      "source_room_index": 36
+    },
+    {
+      "id": "L06_R002",
+      "production_id": "L04-034",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Canal lateral de acceso",
+      "role": "riverfront_approaches",
+      "source_room_index": 2
+    },
+    {
+      "id": "L06_R001",
+      "production_id": "L04-035",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Compuerta de ribera",
+      "role": "riverfront_approaches",
+      "source_room_index": 1
+    },
+    {
+      "id": "L06_R032",
+      "production_id": "L04-036",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Patio de mantenimiento fluvial",
+      "role": "riverfront_approaches",
+      "source_room_index": 32
+    },
+    {
+      "id": "L06_R052",
+      "production_id": "L04-037",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Puente de hormigón con pilares",
+      "role": "bridge_network",
+      "source_room_index": 52
+    },
+    {
+      "id": "L06_R037",
+      "production_id": "L04-038",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Pasarela metálica elevada",
+      "role": "bridge_network",
+      "source_room_index": 37
+    },
+    {
+      "id": "L06_R031",
+      "production_id": "L04-039",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Cruce de puente con ruta inferior",
+      "role": "bridge_network",
+      "source_room_index": 31
+    },
+    {
+      "id": "L06_R030",
+      "production_id": "L04-040",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Pilar de puente y andamio",
+      "role": "bridge_network",
+      "source_room_index": 30
+    },
+    {
+      "id": "L06_R033",
+      "production_id": "L04-041",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Puente de servicio estrecho",
+      "role": "bridge_network",
+      "source_room_index": 33
+    },
+    {
+      "id": "L06_R007",
+      "production_id": "L04-042",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Conexión entre dos plataformas",
+      "role": "bridge_network",
+      "source_room_index": 7
+    },
+    {
+      "id": "L06_R015",
+      "production_id": "L04-043",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Atajo bajo el puente",
+      "role": "bridge_network",
+      "source_room_index": 15
+    },
+    {
+      "id": "L06_R016",
+      "production_id": "L04-044",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Nave de maquinaria principal",
+      "role": "factory_floors",
+      "source_room_index": 16
+    },
+    {
+      "id": "L06_R017",
+      "production_id": "L04-045",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Línea de prensado industrial",
+      "role": "factory_floors",
+      "source_room_index": 17
+    },
+    {
+      "id": "L06_R048",
+      "production_id": "L04-046",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Almacén de piezas y palés",
+      "role": "factory_floors",
+      "source_room_index": 48
+    },
+    {
+      "id": "L06_R018",
+      "production_id": "L04-047",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Sala de cintas transportadoras",
+      "role": "factory_floors",
+      "source_room_index": 18
+    },
+    {
+      "id": "L06_R019",
+      "production_id": "L04-048",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Planta de clasificación",
+      "role": "factory_floors",
+      "source_room_index": 19
+    },
+    {
+      "id": "L06_R049",
+      "production_id": "L04-049",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Nave con grúa suspendida",
+      "role": "factory_floors",
+      "source_room_index": 49
+    },
+    {
+      "id": "L06_R034",
+      "production_id": "L04-050",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Sala de motores industriales",
+      "role": "factory_floors",
+      "source_room_index": 34
+    },
+    {
+      "id": "L06_R026",
+      "production_id": "L04-051",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Plataforma de carga interior",
+      "role": "factory_floors",
+      "source_room_index": 26
+    },
+    {
+      "id": "L06_R035",
+      "production_id": "L04-052",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Oficina industrial vacía",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 35
+    },
+    {
+      "id": "L06_R005",
+      "production_id": "L04-053",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Patio de carga deteriorado",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 5
+    },
+    {
+      "id": "L06_R013",
+      "production_id": "L04-054",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Nave abandonada con huecos",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 13
+    },
+    {
+      "id": "L06_R044",
+      "production_id": "L04-055",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Pasillo de almacenes",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 44
+    },
+    {
+      "id": "L06_R045",
+      "production_id": "L04-056",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Sala de control saqueada",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 45
+    },
+    {
+      "id": "L06_R047",
+      "production_id": "L04-057",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Andén de carga roto",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 47
+    },
+    {
+      "id": "L06_R020",
+      "production_id": "L04-058",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Estructura de hormigón abierta",
+      "role": "abandoned_industrial_blocks",
+      "source_room_index": 20
+    },
+    {
+      "id": "L06_R009",
+      "production_id": "L04-059",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Canal de drenaje principal",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 9
+    },
+    {
+      "id": "L06_R029",
+      "production_id": "L04-060",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Cámara de bombeo",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 29
+    },
+    {
+      "id": "L06_R008",
+      "production_id": "L04-061",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Compuerta de nivel de agua",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 8
+    },
+    {
+      "id": "L06_R028",
+      "production_id": "L04-062",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Depósito de regulación",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 28
+    },
+    {
+      "id": "L06_R027",
+      "production_id": "L04-063",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Canal de retorno",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 27
+    },
+    {
+      "id": "L06_R021",
+      "production_id": "L04-064",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Sala de válvulas hidráulicas",
+      "role": "water_channels_and_pumps",
+      "source_room_index": 21
+    },
+    {
+      "id": "L06_R022",
+      "production_id": "L04-065",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Cámara frigorífica de acceso",
+      "role": "cold_storage_and_service",
+      "source_room_index": 22
+    },
+    {
+      "id": "L06_R023",
+      "production_id": "L04-066",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Pasillo de condensadores",
+      "role": "cold_storage_and_service",
+      "source_room_index": 23
+    },
+    {
+      "id": "L06_R012",
+      "production_id": "L04-067",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Cuarto de almacenamiento frío",
+      "role": "cold_storage_and_service",
+      "source_room_index": 12
+    },
+    {
+      "id": "L06_R014",
+      "production_id": "L04-068",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Vestíbulo de mantenimiento",
+      "role": "cold_storage_and_service",
+      "source_room_index": 14
+    },
+    {
+      "id": "L06_R046",
+      "production_id": "L04-069",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Conducto de refrigeración",
+      "role": "cold_storage_and_service",
+      "source_room_index": 46
+    },
+    {
+      "id": "L06_R050",
+      "production_id": "L04-070",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Transportador de carga móvil",
+      "role": "conveyors_and_rail_routes",
+      "source_room_index": 50
+    },
+    {
+      "id": "L06_R042",
+      "production_id": "L04-071",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Vía de carros industriales",
+      "role": "conveyors_and_rail_routes",
+      "source_room_index": 42
+    },
+    {
+      "id": "L06_R011",
+      "production_id": "L04-072",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Cruce de cintas con desnivel",
+      "role": "conveyors_and_rail_routes",
+      "source_room_index": 11
+    },
+    {
+      "id": "L06_R024",
+      "production_id": "L04-073",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Plataforma móvil de transferencia",
+      "role": "conveyors_and_rail_routes",
+      "source_room_index": 24
+    },
+    {
+      "id": "L06_R051",
+      "production_id": "L04-074",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Sala de turbina auxiliar",
+      "role": "turbines_and_generators",
+      "source_room_index": 51
+    },
+    {
+      "id": "L06_R041",
+      "production_id": "L04-075",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Generador de respaldo",
+      "role": "turbines_and_generators",
+      "source_room_index": 41
+    },
+    {
+      "id": "L06_R010",
+      "production_id": "L04-076",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Corredor de líneas eléctricas",
+      "role": "turbines_and_generators",
+      "source_room_index": 10
+    },
+    {
+      "id": "L06_R039",
+      "production_id": "L04-077",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Puesto de control hidráulico",
+      "role": "control_and_navigation",
+      "source_room_index": 39
+    },
+    {
+      "id": "L06_R040",
+      "production_id": "L04-078",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Estación técnica de navegación",
+      "role": "control_and_navigation",
+      "source_room_index": 40
+    },
+    {
+      "id": "L06_R038",
+      "production_id": "L04-079",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Arena de combate entre maquinaria",
+      "role": "boss_and_miniboss",
+      "source_room_index": 38
+    },
+    {
+      "id": "L06_R043",
+      "production_id": "L04-080",
+      "level_id": "L06",
+      "neighborhood": "Los Molinos",
+      "name": "Arena de turbina y pasarelas",
+      "role": "boss_and_miniboss",
+      "source_room_index": 43
+    },
+    {
+      "id": "L07_R017",
+      "production_id": "L04-081",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Esquina comercial iluminada",
+      "role": "night_street_approaches",
+      "source_room_index": 17
+    },
+    {
+      "id": "L07_R002",
+      "production_id": "L04-082",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Callejón con persianas y neones",
+      "role": "night_street_approaches",
+      "source_room_index": 2
+    },
+    {
+      "id": "L07_R001",
+      "production_id": "L04-083",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cruce nocturno con refugio",
+      "role": "night_street_approaches",
+      "source_room_index": 1
+    },
+    {
+      "id": "L07_R029",
+      "production_id": "L04-084",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Frente de colmado ficticio",
+      "role": "night_street_approaches",
+      "source_room_index": 29
+    },
+    {
+      "id": "L07_R041",
+      "production_id": "L04-085",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Calle residencial bajo apagón",
+      "role": "night_street_approaches",
+      "source_room_index": 41
+    },
+    {
+      "id": "L07_R003",
+      "production_id": "L04-086",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Pasaje con luces de emergencia",
+      "role": "night_street_approaches",
+      "source_room_index": 3
+    },
+    {
+      "id": "L07_R004",
+      "production_id": "L04-087",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Avenida de acceso al corredor cultural",
+      "role": "night_street_approaches",
+      "source_room_index": 4
+    }
+  ]
+}
