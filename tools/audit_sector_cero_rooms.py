@@ -32,7 +32,7 @@ def extract_master_ids(markdown: str) -> list[str]:
         raise ValueError("Master plan has no 'Estado de todas las salas' section.")
     section = markdown.split(marker, 1)[1]
     # The room roster stores the design ID in the first column of each row.
-    return re.findall(r"^\\|\\s*`(L\\d{2}_R\\d{3})`\\s*\\|", section, re.MULTILINE)
+    return re.findall(r"^\|\s*`(L\d{2}_R\d{3})`\s*\|", section, re.MULTILINE)
 
 
 def _duplicates(values: list[str]) -> list[str]:
@@ -240,7 +240,7 @@ def main() -> int:
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if args.json_out:
         args.json_out.parent.mkdir(parents=True, exist_ok=True)
-        args.json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        args.json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if report["errors"]:
         return 1
     if args.fail_on_pending and (report["pending_geometry_sheets"] or report["pending_collision_sheets"] or report["runtime_not_tested_sheets"]):
