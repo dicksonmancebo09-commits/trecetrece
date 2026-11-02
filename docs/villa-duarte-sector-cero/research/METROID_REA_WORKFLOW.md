@@ -49,7 +49,7 @@ No guardes la ROM comercial en un directorio que puedas añadir al repo público
 
 ```bash
 mkdir -p private-roms
-printf '\\n/private-roms/\\n' >> .git/info/exclude
+printf '\n/private-roms/\n' >> .git/info/exclude
 ```
 
 Sube o copia la copia de estudio que tengas derecho a utilizar a `private-roms/MetroidFusion.gba`. Confirma que Git la ignora:
@@ -78,11 +78,11 @@ Cuando `rea doctor --json` confirme que el proveedor Ghidra está disponible, ej
 
 ```bash
 ROM="$PWD/private-roms/MetroidFusion.gba"
-rea inspect "$ROM" \\
-  --target-format raw-binary \\
-  --architecture arm \\
-  --entry-point 0x08000000 \\
-  --provider ghidra \\
+rea inspect "$ROM" \
+  --target-format raw-binary \
+  --architecture arm \
+  --entry-point 0x08000000 \
+  --provider ghidra \
   --json > private-roms/rea-overview.json
 ```
 
@@ -166,7 +166,7 @@ El handoff ARM/Thumb y los destinos Thumb se han calculado a partir de bytes, pe
 Para repetir el pase específico en el Codespace:
 
 ```bash
-bash recovery/scripts/run_ghidra_bootstrap_audit.sh \\
+bash recovery/scripts/run_ghidra_bootstrap_audit.sh \
   "/workspaces/gba/Metroid Fusion (USA, Australia).gba"
 ```
 
