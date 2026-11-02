@@ -1,0 +1,49 @@
+name: Metroid bootstrap tooling checks
+
+on:
+  push:
+    branches:
+      - main
+      - agent/rea-editable-analysis
+    paths:
+      - "tools/metroid_bootstrap_probe.py"
+      - "tools/test_metroid_bootstrap_probe.py"
+      - "recovery/scripts/run_ghidra_bootstrap_audit.sh"
+      - "recovery/ghidra_scripts/MetroidFusionBootstrapAudit.java"
+      - ".github/workflows/metroid-bootstrap-tooling.yml"
+  pull_request:
+    paths:
+      - "tools/metroid_bootstrap_probe.py"
+      - "tools/test_metroid_bootstrap_probe.py"
+      - "recovery/scripts/run_ghidra_bootstrap_audit.sh"
+      - "recovery/ghidra_scripts/MetroidFusionBootstrapAudit.java"
+      - ".github/workflows/metroid-bootstrap-tooling.yml"
+
+jobs:
+  decoder-tests:
+    name: ARM/Thumb decoder and script syntax
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test ARM and Thumb branch calculations
+        run: python3 tools/test_metroid_bootstrap_probe.py
+
+      - name: Compile Python sources
+        run: python3 -m py_compile tools/metroid_bootstrap_probe.py tools/test_metroid_bootstrap_probe.py
+
+      - name: Check shell syntax
+        run: bash -n recovery/scripts/run_ghidra_bootstrap_audit.sh
+
+      - name: Confirm ROM is not part of this workflow
+        run: |
+          if find . -type f \( -iname "*.gba" -o -iname "*.gb" -o -iname "*.gbc" \) -print -quit | grep -q .; then
+            echo "Unexpected ROM file found in the repository checkout." >&2
+            exit 1
+          fi
