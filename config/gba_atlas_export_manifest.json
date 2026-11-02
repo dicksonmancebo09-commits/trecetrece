@@ -1,0 +1,37 @@
+[
+  {
+    "svg": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg",
+    "metadata": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.json",
+    "output": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2-indexed.png"
+  },
+  {
+    "svg": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.svg",
+    "metadata": "assets/tiles/scenario-02/tile-atlas-metadata.json",
+    "output": "assets/tiles/scenario-02/scenario-02-el-caliche-tiles-audit-indexed.png"
+  },
+  {
+    "svg": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.svg",
+    "metadata": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.json",
+    "output": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1-indexed.png"
+  },
+  {
+    "svg": "assets/levels/level-04-calero/level-04-atlas-v0.1.svg",
+    "metadata": "assets/levels/level-04-calero/level-04-atlas-v0.1.json",
+    "output": "assets/levels/level-04-calero/level-04-atlas-v0.1-indexed.png"
+  },
+  {
+    "svg": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1.svg",
+    "metadata": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1.json",
+    "output": "assets/levels/level-05-pueblo-nuevo/level-05-atlas-v0.1-indexed.png"
+  },
+  {
+    "svg": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.svg",
+    "metadata": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.json",
+    "output": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1-indexed.png"
+  },
+  {
+    "svg": "assets/levels/level-07-simonico/level-07-atlas-v0.1.svg",
+    "metadata": "assets/levels/level-07-simonico/level-07-atlas-v0.1.json",
+    "output": "assets/levels/level-07-simonico/level-07-atlas-v0.1-indexed.png"
+  }
+]
