@@ -107,3 +107,14 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 
 ROMs, save files, manifests containing ROM-derived bytes, and binary patches must remain under `private-roms/` (Git-ignored). GitHub Actions validates tools and unit tests but does not run a private ROM. Never label a build playable without inspecting real emulator screenshots and logs.
 
+
+
+## Auditoría de producción — 02-11-2026
+
+- [Informe de auditoría de las 382 salas](docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
+- [Manifiesto consolidado de los cinco lotes](data/world/sector-cero-production-manifest-v1.json).
+- [382 fichas técnicas base](data/world/sector-cero-room-technical-sheets-v1.json); dimensiones, clipdata y datos de integración de ROM permanecen pendientes de extracción.
+- [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
+- [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
+
+**Estado:** los IDs, lotes y referencias de puertas están auditados estructuralmente. No se ha aplicado un parche ROM ni se ha declarado una prueba de juego superada.
