@@ -1,7 +1,7 @@
 {
   "format": "indexed-png-4bpp-ready",
   "source_svg": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.svg",
-  "source_svg_sha256": "b4d9dfe8a4bc66a0e7135075e2ba3b6a1ab2913a04c06e502620df387f7e7043",
+  "source_svg_sha256": "45d0bdc14e53999af4079fd0d03a30804736099de3c4198ebd5ee6c86666e032",
   "metadata_json": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.json",
   "dimensions_px": [
     256,
