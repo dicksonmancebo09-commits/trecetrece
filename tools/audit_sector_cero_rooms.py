@@ -175,8 +175,8 @@ def audit_data(
         errors.append(f"Duplicate technical sheets: {sheet_duplicates[:12]}.")
     if set(sheet_ids) != id_set or len(sheet_ids) != expected_total_rooms:
         errors.append("Technical sheets do not cover exactly the 382 registry rooms.")
-    pending_geometry = sum(1 for room in sheet_rooms if (room.get("status") or {}).get("geometry") == "pending_rom_extract")
-    pending_collision = sum(1 for room in sheet_rooms if (room.get("status") or {}).get("collision") == "pending_rom_extract")
+    pending_geometry = sum(1 for room in sheet_rooms if "pending" in str((room.get("status") or {}).get("geometry", "")))
+    pending_collision = sum(1 for room in sheet_rooms if "pending" in str((room.get("status") or {}).get("collision", "")))
     pending_runtime = sum(1 for room in sheet_rooms if (room.get("status") or {}).get("runtime_test") == "not_tested")
     if pending_geometry or pending_collision or pending_runtime:
         warnings.append(
