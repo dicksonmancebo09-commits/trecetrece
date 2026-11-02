@@ -18063,9 +18063,70 @@
     }
   ],
   "limits": [
-    "Metadata comes from the pinned public decompilation source, not a byte-for-byte verification against the user's private ROM.",
-    "Layer dimensions and declared array lengths are extracted; compressed map/collision contents are not copied.",
-    "Sprite placement counts are extracted per declared spriteset; individual sprite coordinates and proprietary graphics are not stored.",
-    "Event script behavior and runtime collision semantics still require exact-ROM inspection and emulator testing."
-  ]
+    "Dimensions and declared BG/clipdata array lengths are factual declarations parsed from the pinned public source commit, not byte-for-byte validation against the user's private ROM.",
+    "Clipdata and BG RLE payloads are not contained in the public source tree inspected. This document does not contain their bytes or the spatial collision map.",
+    "Sprite counts represent coordinate rows declared in source spritesets. The underlying proprietary art/animation binaries and runtime event logic are not copied.",
+    "Room dimensions in blocks use the source's 16-pixel block unit; BG map, collision data, doors, sprite placements and event behavior must still be reconciled with the exact private ROM and tested in mGBA."
+  ],
+  "status": "extracted_from_pinned_decomp_source_all_382_rooms",
+  "totals": {
+    "rooms": 382,
+    "unique_room_ids": 382,
+    "rooms_with_clipdata_dimensions": 382,
+    "rooms_with_layer_dimension_conflicts": 0,
+    "source_room_files_retrieved": 382
+  },
+  "level_distribution": {
+    "Main Deck": 87,
+    "Sector 1": 54,
+    "Sector 2": 61,
+    "Sector 3": 39,
+    "Sector 4": 48,
+    "Sector 5": 52,
+    "Sector 6": 41
+  },
+  "dimension_distribution_blocks": {
+    "34x14": 43,
+    "34x24": 44,
+    "19x14": 121,
+    "19x44": 17,
+    "49x34": 10,
+    "49x14": 16,
+    "19x34": 15,
+    "19x24": 37,
+    "34x34": 10,
+    "49x24": 16,
+    "19x74": 5,
+    "64x34": 6,
+    "94x14": 1,
+    "34x64": 3,
+    "64x14": 4,
+    "34x54": 1,
+    "79x14": 1,
+    "19x64": 4,
+    "34x44": 8,
+    "19x84": 2,
+    "64x24": 7,
+    "79x24": 1,
+    "49x44": 3,
+    "19x114": 1,
+    "19x54": 4,
+    "49x54": 2
+  },
+  "layer_declarations_present": {
+    "clipdata": 382,
+    "bg2": 381,
+    "bg1": 382,
+    "bg0": 69
+  },
+  "spriteset_variants_present": {
+    "0": 382,
+    "1": 70,
+    "2": 17
+  },
+  "sprite_placement_totals_by_variant": {
+    "0": 1593,
+    "1": 443,
+    "2": 114
+  }
 }
