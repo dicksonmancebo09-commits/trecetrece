@@ -24,6 +24,11 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def gba_4bpp_palette_banks(subtile_words: list[int]) -> list[int]:
+    """Return the unique GBA 4bpp BG palette-bank bits (12–15)."""
+    return sorted({(word >> 12) & 0x0F for word in subtile_words})
+
+
 def gba_lz77_decompress(data: bytes) -> tuple[bytes, int]:
     """Decode the BIOS GBA LZ77 0x10 format; return bytes and source bytes consumed."""
     if len(data) < 4 or data[0] != 0x10:
@@ -417,6 +422,16 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     for pos in range(payload_start, payload_end, 2)
                 ]
                 tile_indices = [word & 0x03FF for word in subtile_words]
+                palette_banks = gba_4bpp_palette_banks(subtile_words)
+                row["palette_banks_actual"] = palette_banks
+                if "expected_palette_banks" in room_check:
+                    expected_palette_banks = sorted(int(x) for x in room_check["expected_palette_banks"])
+                    check(
+                        f"room_table_palette_banks_{name}",
+                        palette_banks == expected_palette_banks,
+                        expected_palette_banks,
+                        palette_banks
+                    )
                 tile_min = int(room_check["tile_index_min"])
                 tile_max = int(room_check["tile_index_max"])
                 bad_indices = [
