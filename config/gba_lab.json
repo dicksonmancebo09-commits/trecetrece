@@ -554,6 +554,245 @@
           "description": "Original urban title background; reallocated outside the original slot"
         }
       ]
+    },
+    "zector_cero_v1_8_palette_fix": {
+      "description": "v1.8 candidate: fix active L01_R001 tileset palette-bank conflict; runtime pending",
+      "size_bytes": 8388608,
+      "title": "LATINO ZCERO",
+      "game_code": "LZC0",
+      "sha256": "3bc764355012268d4ac6ef315bb9bb09ac0e5405d1c456bb506d1fdbe862af89",
+      "header_complement": "0x6D",
+      "expected_bytes": [
+        {
+          "offset": "0x86AB0",
+          "bytes_le": "00407c08",
+          "description": "El GFX del título apunta a 0x087C4000"
+        },
+        {
+          "offset": "0x86AC4",
+          "bytes_le": "00007c08",
+          "description": "El mapa del título apunta a 0x087C0000"
+        },
+        {
+          "offset": "0x86AD4",
+          "bytes_le": "00107c08",
+          "description": "La paleta del título apunta a 0x087C1000"
+        },
+        {
+          "offset": "0x87610",
+          "bytes_le": "30b50025",
+          "description": "Prólogo original de IntroHandler restaurado"
+        },
+        {
+          "offset": "0x876AE",
+          "bytes_le": "0320",
+          "description": "Saltar las escenas de arranque después de inicializar"
+        },
+        {
+          "offset": "0x86A4A",
+          "bytes_le": "c046c046",
+          "description": "Llamada del objeto de copyright desactivada"
+        },
+        {
+          "offset": "0x86A54",
+          "bytes_le": "c046c046",
+          "description": "Llamada del objeto PRESS START desactivada"
+        },
+        {
+          "offset": "0x7B0002",
+          "bytes_le": "f430f430",
+          "description": "Primeros dos subtiles del metatile custom usan banco BG 3, no banco común 2"
+        }
+      ],
+      "must_match_reference_ranges": [
+        {
+          "offset": "0x605D08",
+          "length": "0x4208",
+          "description": "Tramo original donde v1.4/v1.5 sobrescribían recursos; debe coincidir con la ROM base limpia"
+        }
+      ],
+      "resource_ranges": [
+        {
+          "name": "main-deck-room0-tileset-gfx",
+          "offset": "0x416E8C",
+          "used_bytes": 2843,
+          "reserved_bytes": 5532,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 11808,
+          "description": "Tileset 61, room 0 urban atlas + blank transparency tile"
+        },
+        {
+          "name": "custom-title-tilemap",
+          "offset": "0x7C0000",
+          "used_bytes": 1468,
+          "reserved_bytes": 4096,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 2048,
+          "description": "32x32 entries, compressed title background map"
+        },
+        {
+          "name": "custom-title-palette",
+          "offset": "0x7C1000",
+          "used_bytes": 256,
+          "reserved_bytes": 256,
+          "encoding": "raw",
+          "expected_uncompressed_bytes": 256,
+          "description": "8 BG palette banks, loaded in banks 8–15"
+        },
+        {
+          "name": "custom-title-gfx",
+          "offset": "0x7C4000",
+          "used_bytes": 12325,
+          "reserved_bytes": 16384,
+          "encoding": "gba_lz77",
+          "expected_uncompressed_bytes": 20480,
+          "description": "Original urban title background; reallocated outside the original slot"
+        }
+      ],
+      "pointer_checks": [
+        {
+          "file_offset": "0x3C0014",
+          "expected_target_bus_address": "0x087B0000",
+          "purpose": "Main Deck sala 0: tabla de metatiles"
+        },
+        {
+          "file_offset": "0x3C2C58",
+          "expected_target_bus_address": "0x087B2000",
+          "purpose": "Main Deck sala 0: mapa BG1"
+        },
+        {
+          "file_offset": "0x3C2C5C",
+          "expected_target_bus_address": "0x087B2400",
+          "purpose": "Main Deck sala 0: mapa BG2"
+        },
+        {
+          "file_offset": "0x86AB0",
+          "expected_target_bus_address": "0x087C4000",
+          "purpose": "Título: gráficos urbanos"
+        },
+        {
+          "file_offset": "0x86AC4",
+          "expected_target_bus_address": "0x087C0000",
+          "purpose": "Título: tilemap urbano"
+        },
+        {
+          "file_offset": "0x86AD4",
+          "expected_target_bus_address": "0x087C1000",
+          "purpose": "Título: paleta urbana"
+        },
+        {
+          "file_offset": "0x87194",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Intro/escena no-title: restaurar gráfico original"
+        },
+        {
+          "file_offset": "0x871A8",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Intro/escena no-title: restaurar mapa original"
+        },
+        {
+          "file_offset": "0x871B8",
+          "expected_target_bus_address": "0x08609120",
+          "purpose": "Intro/escena: restaurar paleta de fondo original"
+        },
+        {
+          "file_offset": "0x8894C",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x88950",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x88960",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
+        },
+        {
+          "file_offset": "0x929A0",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x929A4",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x929B4",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
+        },
+        {
+          "file_offset": "0x940B4",
+          "expected_target_bus_address": "0x08605D08",
+          "purpose": "Escena no-title: gráfico original"
+        },
+        {
+          "file_offset": "0x940B8",
+          "expected_target_bus_address": "0x08609220",
+          "purpose": "Escena no-title: mapa original"
+        },
+        {
+          "file_offset": "0x940C8",
+          "expected_target_bus_address": "0x08609020",
+          "purpose": "Escena no-title: paleta de intro original"
+        }
+      ],
+      "room_map_checks": [
+        {
+          "name": "main-deck-room0-metatile-table",
+          "encoding": "gba_4bpp_metatile_table",
+          "offset": "0x7B0000",
+          "reserved_bytes": "0x2000",
+          "used_bytes": 3074,
+          "header_bytes": 2,
+          "expected_header_word": 2,
+          "record_count": 384,
+          "subtile_entries_per_record": 4,
+          "tile_index_min": 192,
+          "tile_index_max": 560,
+          "transparent_metatile_id": 383,
+          "transparent_tile_index": 560,
+          "expected_transparent_record_blank": true,
+          "blank_tile_graphics_resource": "main-deck-room0-tileset-gfx",
+          "bytes_per_tile": 32,
+          "tile_base_index": 192,
+          "blank_tile_local_index": 368,
+          "expected_palette_banks": [
+            3
+          ]
+        },
+        {
+          "name": "main-deck-room0-bg1",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2000",
+          "reserved_bytes": "0x400",
+          "used_bytes": 22,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_unique_values": [
+            383
+          ]
+        },
+        {
+          "name": "main-deck-room0-bg2",
+          "encoding": "metroid_room_rle_u16_map",
+          "offset": "0x7B2400",
+          "reserved_bytes": "0x400",
+          "used_bytes": 414,
+          "expected_width": 34,
+          "expected_height": 14,
+          "min_metatile_id": 0,
+          "max_metatile_id": 383,
+          "expected_max_metatile_id": 304,
+          "expected_unique_count": 305
+        }
+      ]
     }
   },
   "gba_hardware": {
