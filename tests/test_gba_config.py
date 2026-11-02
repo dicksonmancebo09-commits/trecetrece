@@ -15,12 +15,21 @@ def n(value: str | int) -> int:
 class TestGbaLabConfig(unittest.TestCase):
     def test_known_profiles_are_pinned(self):
         profiles = CONFIG["profiles"]
-        for name in ("metroid_fusion_us_clean", "urban_opening_v1_0", "zector_cero_v1_5", "zector_cero_v1_6", "zector_cero_v1_7"):
+        for name in ("metroid_fusion_us_clean", "urban_opening_v1_0", "zector_cero_v1_5", "zector_cero_v1_6", "zector_cero_v1_7", "zector_cero_v1_8_palette_fix"):
             profile = profiles[name]
             self.assertEqual(profile["size_bytes"], 8 * 1024 * 1024, name)
             self.assertRegex(profile["sha256"], r"^[0-9a-f]{64}$", name)
             self.assertEqual(len(profile["title"]) <= 12, True, name)
         self.assertIsNone(profiles["gba_candidate_unpinned"]["sha256"])
+
+    def test_v18_room0_palette_bank_matches_engine_load_order(self):
+        v17 = CONFIG["profiles"]["zector_cero_v1_7"]
+        v18 = CONFIG["profiles"]["zector_cero_v1_8_palette_fix"]
+        room0 = v18["room_map_checks"][0]
+        self.assertNotIn("expected_palette_banks", v17["room_map_checks"][0])
+        self.assertEqual(room0["expected_palette_banks"], [3])
+        self.assertEqual(v18["expected_bytes"][-1]["offset"], "0x7B0002")
+        self.assertEqual(v18["expected_bytes"][-1]["bytes_le"], "f430f430")
 
     def test_gba_tile_address_calculation_matches_config(self):
         room = CONFIG["gba_hardware"]["room0_v1_5"]
