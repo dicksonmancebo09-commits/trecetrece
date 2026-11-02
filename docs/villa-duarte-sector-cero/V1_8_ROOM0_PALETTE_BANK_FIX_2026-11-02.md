@@ -47,7 +47,7 @@ El workflow [GBA diagnostic toolchain](https://github.com/dicksonmancebo09-commi
 
 ## Estado
 
-<badge> Candidata estática — runtime pendiente </badge>
+**Estado: candidata estática; runtime pendiente.**
 
 No se ejecutó una sesión del juego con la ROM privada. Que GitHub Actions instale mGBA no significa que haya probado esta ROM: los binarios privados no se envían al runner. Antes de aprobar v1.8 hay que ejecutar la ROM en mGBA/VBA-M y comprobar título, START, llegada al hangar, carga de L01_R001, colores, transparencia, sprites, colisiones y puerta de salida.
 
