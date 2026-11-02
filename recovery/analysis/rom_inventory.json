@@ -21,6 +21,169 @@
     "dispatcher_table_file_offset": "0x278",
     "dispatcher_modes": 15
   },
+  "bootstrap_static_observations": {
+    "provenance": "User-supplied Codespaces output from Ghidra 12.1.4 plus raw xxd bytes, 2026-11-02",
+    "ghidra_language": "ARM:LE:32:v4t:default",
+    "analysis_style": "Manual, targeted ARM disassembly with full-ROM auto-analysis disabled",
+    "rom_identity_reconfirmed": {
+      "game_code": "AMTE",
+      "size_bytes": 8388608,
+      "sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8"
+    },
+    "ghidra_disassembly_confirmed": [
+      {
+        "file_offset": "0x000000",
+        "bus_address": "0x08000000",
+        "bytes": "2E 00 00 EA",
+        "instruction": "B 0x080000C0"
+      },
+      {
+        "file_offset": "0x0000C0",
+        "bus_address": "0x080000C0",
+        "bytes": "12 00 A0 E3",
+        "instruction": "MOV r0,#0x12"
+      },
+      {
+        "file_offset": "0x0000C4",
+        "bus_address": "0x080000C4",
+        "bytes": "00 F0 29 E1",
+        "instruction": "MSR CPSR_cf,r0"
+      },
+      {
+        "file_offset": "0x0000C8",
+        "bus_address": "0x080000C8",
+        "bytes": "28 D0 9F E5",
+        "instruction": "LDR sp,[0x080000F8]"
+      },
+      {
+        "file_offset": "0x0000CC",
+        "bus_address": "0x080000CC",
+        "bytes": "1F 00 A0 E3",
+        "instruction": "MOV r0,#0x1F"
+      },
+      {
+        "file_offset": "0x0000D0",
+        "bus_address": "0x080000D0",
+        "bytes": "00 F0 29 E1",
+        "instruction": "MSR CPSR_cf,r0"
+      },
+      {
+        "file_offset": "0x0000D4",
+        "bus_address": "0x080000D4",
+        "bytes": "18 D0 9F E5",
+        "instruction": "LDR sp,[0x080000F4]"
+      },
+      {
+        "file_offset": "0x0000D8",
+        "bus_address": "0x080000D8",
+        "bytes": "1C 10 9F E5",
+        "instruction": "LDR r1,[0x080000FC]"
+      },
+      {
+        "file_offset": "0x0000DC",
+        "bus_address": "0x080000DC",
+        "bytes": "20 00 8F E2",
+        "instruction": "ADR r0,0x08000104"
+      },
+      {
+        "file_offset": "0x0000E0",
+        "bus_address": "0x080000E0",
+        "bytes": "00 00 81 E5",
+        "instruction": "STR r0,[r1,#0x0]"
+      }
+    ],
+    "literal_values": {
+      "system_stack": {
+        "file_offset": "0x0000F4",
+        "little_endian_value": "0x03007E60",
+        "mode_selected_at": "0x080000D0",
+        "mode": "System (0x1F)"
+      },
+      "irq_stack": {
+        "file_offset": "0x0000F8",
+        "little_endian_value": "0x03007FA0",
+        "mode_selected_at": "0x080000C4",
+        "mode": "IRQ (0x12)"
+      },
+      "irq_vector_pointer": {
+        "file_offset": "0x0000FC",
+        "little_endian_value": "0x03007FFC"
+      },
+      "thumb_entry_pointer": {
+        "file_offset": "0x000100",
+        "little_endian_value": "0x08000231",
+        "thumb_code_address": "0x08000230"
+      }
+    },
+    "arm_interworking_bytes_pending_automated_ghidra_confirmation": [
+      {
+        "file_offset": "0x0000E4",
+        "bytes": "14 10 9F E5",
+        "encoding_interpretation": "LDR r1,[pc,#0x14]",
+        "literal_address": "0x08000100"
+      },
+      {
+        "file_offset": "0x0000E8",
+        "bytes": "0F E0 A0 E1",
+        "encoding_interpretation": "MOV lr,pc",
+        "computed_return_address": "0x080000F0"
+      },
+      {
+        "file_offset": "0x0000EC",
+        "bytes": "11 FF 2F E1",
+        "encoding_interpretation": "BX r1"
+      },
+      {
+        "file_offset": "0x0000F0",
+        "bytes": "F2 FF FF EA",
+        "encoding_interpretation": "B 0x080000C0"
+      }
+    ],
+    "thumb_control_flow_calculated_from_armv4t_encodings_pending_ghidra_confirmation": {
+      "entry_pointer": "0x08000231",
+      "entry_code_address": "0x08000230",
+      "entry_bytes": "70 B5 00 F0 B1 FA 96 E2",
+      "first_halfword_at_entry": "0xB570",
+      "first_bl": {
+        "file_offset": "0x000232",
+        "halfwords": ["0xF000", "0xFAB1"],
+        "computed_target": "0x08000798"
+      },
+      "unconditional_branch_after_bl": {
+        "file_offset": "0x000236",
+        "halfword": "0xE296",
+        "computed_target": "0x08000766"
+      },
+      "caution": "Bytes at 0x238 onward are not treated as sequentially reachable from the 0x236 branch. Validate independent entry points before interpreting them as code."
+    },
+    "next_ghidra_windows": [
+      {
+        "mode": "ARM",
+        "start": "0x08000104",
+        "end": "0x08000127",
+        "purpose": "Interrupt-handler prologue"
+      },
+      {
+        "mode": "Thumb",
+        "start": "0x08000230",
+        "end": "0x08000237",
+        "purpose": "Thumb entry and initial control flow"
+      },
+      {
+        "mode": "Thumb",
+        "start": "0x08000766",
+        "end": "0x08000785",
+        "purpose": "Unconditional branch destination"
+      },
+      {
+        "mode": "Thumb",
+        "start": "0x08000798",
+        "end": "0x080007B7",
+        "purpose": "First BL destination"
+      }
+    ],
+    "completion_status": "Partial. ARM entry and 0x080000C0-0x080000E0 are Ghidra-confirmed. ARM interworking and Thumb destinations are byte/encoding-derived and await the committed targeted Ghidra audit."
+  },
   "heuristic_scan_summary": {
     "lz77_candidates_at_least_0x800_bytes": 468,
     "candidates_with_possible_pointer_references": 386,
@@ -29,7 +192,8 @@
   "warnings": [
     "LZ77 candidates, possible pointer references and printable ASCII segments are heuristic findings; they can overlap and include false positives.",
     "This summary is metadata only and contains no ROM bytes or extracted assets.",
-    "Only entry/dispatch observations are statically confirmed in the supplied analysis. REA and Ghidra must be run in the user Codespace to extend the analysis.",
+    "The bootstrap observations are tied to the exact AMTE SHA-256 above. The Thumb BL/B targets are computed from ARMv4T encodings but still require the targeted Ghidra Thumb pass.",
+    "The generic REA raw-binary architecture 'arm' selects ARM:LE:32:v7; use direct Ghidra import with ARM:LE:32:v4t for the GBA code path.",
     "A full editable reconstruction and a reproducible build have not been achieved yet."
   ]
 }
