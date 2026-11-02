@@ -198,3 +198,13 @@ Para cada cambio futuro:
 - Se crea `data/world/sector-cero-source-door-graph-v1.json` con los enlaces y `source_doors` en los registros de sala de `data/world/sector-cero-room-registry-v1.json`.
 - Una sala de Main Deck no aparece como origen en la tabla de puertas; se conserva como caso pendiente de entender (no se elimina ni se inventa una puerta).
 - **Límite de evidencia:** el grafo procede de la descompilación de referencia; aún no se ha cotejado byte por byte contra la ROM AMTE exacta del usuario. Geometría, clipdata, posiciones de enemigos, spawn, eventos y ejecución en emulador siguen pendientes.
+
+
+## 2026-11-02 — Atlas gráfico modular L01 Villa Duarte v0.2
+
+- Se crea `assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg`: atlas editable 256 × 256 px, retícula 32 × 32 de tiles de 8 × 8, 64 módulos compuestos 32 × 32 y 16 entradas de paleta (15 colores visibles).
+- Familias dibujadas: muros, fachadas, ventanas/rejas, puertas/comercio, balcones/azoteas, objetos/servicios, suelo/calle e interiores/hangar.
+- Se crea el JSON de metadatos con nombre, coordenadas, tamaño e índice inicial de tile de cada módulo.
+- Se actualiza el README de L01; el atlas anterior v0.1 permanece intacto.
+- Comprobación estructural sobre el SVG recuperado desde GitHub: dimensiones 256 × 256; crispEdges presente; 64 módulos únicos; 15 colores visibles; JSON analizado correctamente.
+- **No hecho:** exportación PNG indexada, conversión 4bpp, montaje de los 87 mapas, colisiones ni integración ROM. No se declara probado en MAGE/mGBA.
