@@ -47,3 +47,12 @@ Paquete nuevo. Crear atlas 256x256 indexado de módulos de 8x8 con piezas compue
 - Cada sala tendrá plano de fondo, arquitectura, objetos, suelo/plataformas, colisiones y elementos interactivos separados en el inventario.
 - No tocar recursos compartidos de la ROM hasta listar todos sus consumidores y sus punteros.
 - No tratar este README, el atlas de concepto o el registro de salas como integración jugable.
+
+
+## Lote 03 — hoja conceptual de 87 salas
+
+- [Hoja visual SVG — lote 03](./level-03-05-room-sheet-lote-03-v0.1.svg)
+- [Registro JSON — lote 03](../../../data/world/sector-cero-room-batch-03-v1.json)
+- [Documento de producción — lote 03](../../../docs/villa-duarte-sector-cero/ROOM_BATCH_03_LA_FRANCIA_CALERO_PUEBLO_NUEVO.md)
+
+El lote cubre 28 salas de La Francia Nueva, 39 de Calero y 20 de Pueblo Nuevo. Es una composición visual conceptual; no representa todavía mapas de ROM jugables.
