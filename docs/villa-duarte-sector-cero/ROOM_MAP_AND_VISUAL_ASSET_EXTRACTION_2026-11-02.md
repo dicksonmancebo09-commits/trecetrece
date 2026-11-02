@@ -45,7 +45,11 @@ Se identificaron **94 entradas de tileset usadas** por las 382 salas y se extraj
 
 ## Comparación base → v1.7
 
-Las **1.214 capas RLE** se compararon byte a byte a los mismos offsets: **0 capas cambiadas; 0 bytes distintos**. v1.7 conserva los mapas BG/clipdata originales de las 382 salas.
+Los **1.214 bloques RLE de referencia** se compararon byte a byte en sus offsets originales: **0 bloques cambiados; 0 bytes distintos**. Esto prueba que el almacenamiento original de los mapas no fue sobrescrito. No significa que todos sigan siendo los mapas activos: v1.7 redirige expresamente BG1 y BG2 de Main Deck, sala fuente 0 (`L01_R001`), a mapas personalizados nuevos.
+
+Para la sala inicial, los punteros verificados de v1.7 son `0x3C0014 → 0x087B0000` (tabla de metatiles), `0x3C2C58 → 0x087B2000` (BG1) y `0x3C2C5C → 0x087B2400` (BG2). Los mapas activos tienen 34 × 14 bloques: BG1 contiene únicamente el metatile transparente 383; BG2 usa 305 metatiles distintos, IDs 0–304. La tabla custom contiene 384 registros; sus subtiles usan los índices gráficos 192–560 en la paleta hardware 2. El metatile transparente 383 apunta al tile 560, cuyos 32 bytes son cero.
+
+Se generó una reconstrucción estática de `L01_R001` a partir de esos mapas activos y de los gráficos/paleta de v1.7: GFX en `0x416E8C` (2.843 bytes comprimidos; 11.808 descomprimidos; 369 tiles) y paleta en `0x46B494` (448 bytes). La imagen tiene 544 × 224 píxeles nativos. No es una captura de mGBA y no dibuja sprites, estado de cámara, animaciones ni efectos. El render y sus metadatos se entregan en el paquete local `ZECTOR_CERO_L01_R001_V17_ROOM_RENDER_2026-11-02.zip`.
 
 Entre los 296 recursos visuales referenciados, dos sí cambian:
 
@@ -64,6 +68,16 @@ Ambos corresponden a la entrada de tileset 96 usada por Main Deck sala fuente 0,
 - \`ZECTOR_CERO_382_ROOM_SOURCE_PACKAGE_2026-11-02.zip\`: paquete consolidado con los dos entregables y bundle de referencia. SHA-256: \`d514a95a2a5c03984f98a4fa13261c6462d22416593e7528275b8beda100231c\`.
 
 Los binarios derivados permanecen fuera de Git. No se subieron ROM, saves ni dumps extraídos.
+
+## Render estático de la sala inicial
+
+- PNG de BG2 (544 × 224 px nativos; ampliado 3× para inspección): `L01_R001_v1.7_BG2_render.png`.
+- PNG nativo: `L01_R001_v1.7_BG2_native.png`.
+- Diagnóstico de clipdata de la sala base: `L01_R001_clipdata_diagnostic.png`.
+- Atlas de los 369 tiles del GFX v1.7: `tileset_61_v1.7_atlas.png`.
+- Informe de referencias y offsets: `render-report.json`.
+
+Este render es una reconstrucción estática con los recursos realmente apuntados por v1.7; no es una captura del emulador ni prueba de ejecución.
 
 ## Herramientas reproducibles
 
