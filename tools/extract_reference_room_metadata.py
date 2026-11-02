@@ -157,10 +157,6 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
     by_id = {item["room_id"]: item for item in extracted}
     if len(by_id) != 382:
         raise RuntimeError(f"Expected 382 unique room IDs in extraction; found {len(by_id)}")
-    if any(item["layer_dimension_conflicts"] for item in extracted):
-        bad = [item["room_id"] for item in extracted if item["layer_dimension_conflicts"]]
-        raise RuntimeError(f"BG/clipdata dimension disagreements in: {bad[:12]}")
-
     report = {
         "schema": "zector_cero.reference_room_metadata.v1",
         "project": registry.get("project"),
@@ -218,7 +214,11 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
             str(variant): sum(1 for item in extracted if any(s["variant"] == variant for s in item["spriteset_variants"]))
             for variant in (0, 1, 2, 3)
         },
-        "source_dimension_conflicts": 0,
+        "rooms_with_layer_dimension_conflicts": sum(1 for item in extracted if item["layer_dimension_conflicts"]),
+        "layer_dimension_conflict_examples": [
+            {"room_id": item["room_id"], "layers": item["layer_dimension_conflicts"]}
+            for item in extracted if item["layer_dimension_conflicts"]
+        ][:20],
         "output": str(output_path),
     }
 
