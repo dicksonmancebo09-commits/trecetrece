@@ -8,7 +8,7 @@ import argparse, csv, hashlib, json, shutil, struct, zipfile
 from collections import Counter
 from pathlib import Path
 
-from gba_rom_audit import gba_header_complement, gba_room_rle_decompress_map, sha256_bytes
+from gba_rom_audit import gba_room_rle_decompress_map, sha256_bytes
 
 BASE_SHA256 = "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8"
 V17_SHA256 = "66e68fb0f04f89d40ecfee21996e6be62e96a22f7f66198528ee6b2c5c2c2aaf"
@@ -29,7 +29,8 @@ def main() -> int:
     base_sha = sha256_bytes(rom)
     if len(rom) != ROM_SIZE or base_sha != BASE_SHA256:
         raise SystemExit(f"Clean base mismatch: size={len(rom)} sha256={base_sha}")
-    if rom[0xBD] != gba_header_complement(rom) or rom[0xAC:0xB0] != b"AMTE":
+    expected_header = (-sum(rom[0xA0:0xBD]) - 0x19) & 0xFF
+    if rom[0xBD] != expected_header or rom[0xAC:0xB0] != b"AMTE":
         raise SystemExit("Clean base GBA header validation failed")
 
     bundle = json.loads(args.bundle.read_text(encoding="utf-8"))
