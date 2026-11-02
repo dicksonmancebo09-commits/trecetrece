@@ -224,3 +224,20 @@ Entre los 296 recursos visuales referenciados, v1.7 modifica dos: `tilesets/61.g
 Informe detallado: [ROOM_MAP_AND_VISUAL_ASSET_EXTRACTION_2026-11-02.md](ROOM_MAP_AND_VISUAL_ASSET_EXTRACTION_2026-11-02.md).
 
 **Límite:** la extracción recupera la geometría BG/clipdata comprimida, los recursos referenciados y sus tablas. No crea todavía 382 tilemaps personalizados con arte de los siete barrios ni acredita jugabilidad de 382 salas. No se ha ejecutado mGBA/VBA-M en este hito. La prueba vertical de una sala completa sigue siendo el siguiente gate de integración. Las ROM, los saves y los binarios derivados permanecen fuera de Git.
+
+
+## Actualización posterior — render estático de L01_R001 desde v1.7 (02-11-2026)
+
+Se generó una reconstrucción estática de la sala inicial usando los mapas BG1/BG2 que realmente apuntan los punteros de v1.7, la tabla de 384 metatiles, los gráficos 4bpp comprimidos y la paleta modificada. El resultado mide **544 × 224 píxeles nativos** y tiene **0 referencias de tile inválidas**.
+
+- BG1 activo: 34 × 14 bloques; todos los valores son el metatile transparente 383.
+- BG2 activo: 34 × 14 bloques; 305 metatiles únicos, IDs 0–304.
+- Tabla activa: 384 registros de cuatro subtiles; tile IDs 192–560; paleta hardware 2.
+- Tile transparente: metatile 383 → tile 560; los 32 bytes gráficos del tile son cero.
+- GFX v1.7: 2.843 bytes comprimidos → 11.808 bytes / 369 tiles. Paleta: 448 bytes.
+
+El render es una reconstrucción estática de los recursos activos, no una captura mGBA; no incluye sprites, estado de cámara, animaciones ni efectos. [Informe técnico de extracción y render](ROOM_MAP_AND_VISUAL_ASSET_EXTRACTION_2026-11-02.md).
+
+El workflow [GBA diagnostic toolchain run 41511006577](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41511006577) terminó en `success`, con instalación de mGBA y validación CLI/sintaxis de los extractores y del renderizador.
+
+**Pendiente:** la ejecución real de v1.7 en mGBA/VBA-M con la ROM privada. El entorno local no consiguió instalar mGBA; GitHub Actions no puede leer los binarios privados del usuario. No se debe declarar runtime probado hasta disponer de una ejecución con esa ROM.
