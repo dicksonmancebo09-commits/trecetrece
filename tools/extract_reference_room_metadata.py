@@ -31,19 +31,19 @@ SOURCE_AREAS = {
     "Sector 6": "sector_6",
 }
 LAYER_RE = re.compile(
-    r"const\\s+u8\\s+(?P<symbol>\\w+_(?P<layer>Clipdata|Bg0|Bg1|Bg2|Bg3))"
-    r"\\s*\\[\\s*(?P<declared_bytes>\\d+)\\s*\\]\\s*=\\s*\\{"
-    r"\\s*(?P<width>\\d+)\\s*,\\s*//\\s*Room width"
-    r"\\s*(?P<height>\\d+)\\s*,\\s*//\\s*Room height",
+    r"const\s+u8\s+(?P<symbol>\w+_(?P<layer>Clipdata|Bg0|Bg1|Bg2|Bg3))"
+    r"\s*\[\s*(?P<declared_bytes>\d+)\s*\]\s*=\s*\{"
+    r"\s*(?P<width>\d+)\s*,\s*//\s*Room width"
+    r"\s*(?P<height>\d+)\s*,\s*//\s*Room height",
     re.IGNORECASE | re.DOTALL,
 )
 SPRITE_RE = re.compile(
-    r"const\\s+u8\\s+(?P<symbol>\\w+_Spriteset(?P<variant>\\d+))"
-    r"\\s*\\[\\s*ENEMY_ROOM_DATA_ARRAY_SIZE\\(\\s*(?P<declared_entries>\\d+)\\s*\\)\\s*\\]"
-    r"\\s*=\\s*\\{(?P<body>.*?)\\};",
+    r"const\s+u8\s+(?P<symbol>\w+_Spriteset(?P<variant>\d+))"
+    r"\s*\[\s*ENEMY_ROOM_DATA_ARRAY_SIZE\(\s*(?P<declared_entries>\d+)\s*\)\s*\]"
+    r"\s*=\s*\{(?P<body>.*?)\};",
     re.IGNORECASE | re.DOTALL,
 )
-SPRITE_ROW_RE = re.compile(r"^\\s*\\d+\\s*,\\s*\\d+\\s*,", re.MULTILINE)
+SPRITE_ROW_RE = re.compile(r"^\s*\d+\s*,\s*\d+\s*,", re.MULTILINE)
 
 
 def source_path(area: str, room_index_0based: int) -> str:
@@ -180,7 +180,7 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
         ],
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    output_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     if sheets_path and sheets_path.is_file():
         sheets = json.loads(sheets_path.read_text(encoding="utf-8"))
@@ -205,7 +205,7 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
         sheets["status"] = "reference_dimensions_populated_exact_rom_geometry_and_collision_pending"
         sheets["reference_metadata_source"] = report["source"]
         sheets["room_count_with_reference_dimensions"] = len(sheet_rooms)
-        sheets_path.write_text(json.dumps(sheets, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        sheets_path.write_text(json.dumps(sheets, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {
         "room_count": len(extracted),
         "unique_room_ids": len(by_id),
