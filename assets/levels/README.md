@@ -35,3 +35,6 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 - L03–L07: atlas SVG v0.1 + JSON, 64 módulos de 32 × 32 px por barrio; exportación PNG indexada/4bpp y composición por sala pendientes.
 
 Los atlas SVG son bibliotecas editables; no son tilemaps ni mapas de las 382 salas. Informe de estado: [auditoría de producción 02-11-2026](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
+## Conversión GBA automatizada
+
+El workflow [Zector Cero — production asset export](../../.github/workflows/zector-cero-production-assets.yml) rasteriza los siete atlas declarados en [gba_atlas_export_manifest.json](../../config/gba_atlas_export_manifest.json) a PNG indexado y verifica cada uno con el conversor 4bpp/BGR555/LZ77. La salida binaria se publica como artifact de GitHub Actions; no altera la ROM.
