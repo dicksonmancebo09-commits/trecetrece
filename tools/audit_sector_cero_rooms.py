@@ -45,9 +45,13 @@ def audit_data(
     technical_sheets: dict[str, Any],
     master_ids: list[str],
     batch_documents: dict[int, dict[str, Any]] | None = None,
+    expected_level_counts: dict[str, int] | None = None,
+    expected_batch_counts: dict[int, int] | None = None,
 ) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
+    expected_level_counts = expected_level_counts or EXPECTED_LEVEL_COUNTS
+    expected_batch_counts = expected_batch_counts or EXPECTED_BATCH_COUNTS
     rooms = registry.get("rooms", [])
     ids = [str(room.get("room_id", "")) for room in rooms]
     id_set = set(ids)
@@ -75,13 +79,13 @@ def audit_data(
     levels = registry.get("levels", [])
     level_actual = Counter(str(room.get("level_id", "")) for room in rooms)
     level_counts = {}
-    for level_id, expected in EXPECTED_LEVEL_COUNTS.items():
+    for level_id, expected in expected_level_counts.items():
         actual = level_actual.get(level_id, 0)
         level_counts[level_id] = {"expected": expected, "actual": actual}
         if actual != expected:
             errors.append(f"{level_id}: expected {expected} rooms, found {actual}.")
     declared_levels = {str(level.get("level_id")): int(level.get("room_count", -1)) for level in levels}
-    for level_id, expected in EXPECTED_LEVEL_COUNTS.items():
+    for level_id, expected in expected_level_counts.items():
         if declared_levels.get(level_id) != expected:
             errors.append(f"{level_id}: registry level declaration is not {expected}.")
 
@@ -136,7 +140,7 @@ def audit_data(
         batch_ids = [str(entry.get("room_id", "")) for entry in entries]
         batch_counts[number] = len(batch_ids)
         assigned_ids.extend(batch_ids)
-        expected = EXPECTED_BATCH_COUNTS.get(number)
+        expected = expected_batch_counts.get(number)
         if expected is None or len(batch_ids) != expected or int(batch.get("room_count", len(batch_ids))) != expected:
             batch_mismatches.append(number)
         if len(set(batch_ids)) != len(batch_ids):
@@ -144,7 +148,7 @@ def audit_data(
         unknown = sorted(set(batch_ids) - id_set)
         if unknown:
             errors.append(f"Batch {number} contains unknown room IDs: {unknown[:8]}.")
-    if set(batch_counts) != set(EXPECTED_BATCH_COUNTS):
+    if set(batch_counts) != set(expected_batch_counts):
         errors.append(f"Expected batches 1–5; found {sorted(batch_counts)}.")
     if batch_mismatches:
         errors.append(f"Batch count mismatch in: {sorted(batch_mismatches)}.")
