@@ -49,7 +49,7 @@ No guardes la ROM comercial en un directorio que puedas añadir al repo público
 
 ```bash
 mkdir -p private-roms
-printf '\n/private-roms/\n' >> .git/info/exclude
+printf '\\n/private-roms/\\n' >> .git/info/exclude
 ```
 
 Sube o copia la copia de estudio que tengas derecho a utilizar a `private-roms/MetroidFusion.gba`. Confirma que Git la ignora:
@@ -78,11 +78,11 @@ Cuando `rea doctor --json` confirme que el proveedor Ghidra está disponible, ej
 
 ```bash
 ROM="$PWD/private-roms/MetroidFusion.gba"
-rea inspect "$ROM" \
-  --target-format raw-binary \
-  --architecture arm \
-  --entry-point 0x08000000 \
-  --provider ghidra \
+rea inspect "$ROM" \\
+  --target-format raw-binary \\
+  --architecture arm \\
+  --entry-point 0x08000000 \\
+  --provider ghidra \\
   --json > private-roms/rea-overview.json
 ```
 
@@ -156,3 +156,18 @@ Termina proponiendo una única próxima pregunta de investigación.
 ## Criterio de salida
 
 La primera meta no es obtener una ROM modificada. Es tener un informe reproducible del arranque y de una rutina pequeña, con direcciones comprobadas y evidencia suficiente para seguir con movimiento, salas o patrullas.
+
+## Estado del análisis de arranque — 2026-11-02
+
+Se ha confirmado en el Codespace, con Ghidra 12.1.4 y lenguaje `ARM:LE:32:v4t:default`, el salto inicial a `0x080000C0` y el bloque ARM de inicialización hasta `0x080000E0`. Los valores literales en `0xF4`, `0xF8`, `0xFC` y `0x100` se han comprobado mediante bytes little-endian.
+
+El handoff ARM/Thumb y los destinos Thumb se han calculado a partir de bytes, pero están pendientes de confirmación en el nuevo pase Ghidra Thumb. La evidencia y los límites se documentan en [METROID_FUSION_BOOTSTRAP_AUDIT.md](METROID_FUSION_BOOTSTRAP_AUDIT.md).
+
+Para repetir el pase específico en el Codespace:
+
+```bash
+bash recovery/scripts/run_ghidra_bootstrap_audit.sh \\
+  "/workspaces/gba/Metroid Fusion (USA, Australia).gba"
+```
+
+El lanzador mantiene los informes y el proyecto Ghidra en `~/AI-Tools/ghidra-projects`, fuera del repositorio.
