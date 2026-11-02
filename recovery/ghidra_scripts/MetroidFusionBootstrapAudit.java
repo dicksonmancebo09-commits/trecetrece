@@ -42,35 +42,29 @@ public class MetroidFusionBootstrapAudit extends GhidraScript {
         Address first = toAddr(start);
         Address last = toAddr(end);
         AddressSet restricted = new AddressSet(first, last);
-        Address cursor = first;
-        int alignment = thumbMode ? 2 : 4;
 
         println("");
         println("===== " + label + " =====");
         println("MODE=" + (thumbMode ? "THUMB" : "ARM"));
         println("RANGE=" + hex(start) + " .. " + hex(end));
 
-        while (cursor.compareTo(last) <= 0) {
-            Instruction instruction =
-                currentProgram.getListing().getInstructionAt(cursor);
+        ArmDisassembleCommand command =
+            new ArmDisassembleCommand(first, restricted, thumbMode);
+        command.enableCodeAnalysis(false);
+        boolean success = command.applyTo(currentProgram, monitor);
 
-            if (instruction == null) {
-                ArmDisassembleCommand command =
-                    new ArmDisassembleCommand(cursor, restricted, thumbMode);
-                command.enableCodeAnalysis(false);
-                boolean success = command.applyTo(currentProgram, monitor);
+        println("DISASSEMBLE_START=" + first + " | success=" + success);
+        println("REACHABLE_INSTRUCTIONS_WITHIN_WINDOW=");
 
-                println("DISASSEMBLE_START=" + cursor
-                    + " | success=" + success);
+        // Print only instruction units Ghidra actually decoded by following
+        // control flow from this seed. Do not force-disassemble every halfword
+        // after an unconditional branch: those bytes may be data or another
+        // independently entered code region.
+        ghidra.program.model.listing.InstructionIterator iterator =
+            currentProgram.getListing().getInstructions(restricted, true);
 
-                instruction =
-                    currentProgram.getListing().getInstructionAt(cursor);
-            }
-
-            if (instruction == null) {
-                cursor = cursor.add(alignment);
-                continue;
-            }
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
 
             byte[] bytes = new byte[instruction.getLength()];
             currentProgram.getMemory().getBytes(
@@ -95,13 +89,6 @@ public class MetroidFusionBootstrapAudit extends GhidraScript {
                     println("    FLOW -> " + flow);
                 }
             }
-
-            Address next = instruction.getMaxAddress().next();
-            if (next.compareTo(cursor) <= 0) {
-                throw new IllegalStateException(
-                    "Instruction iteration did not advance at " + cursor);
-            }
-            cursor = next;
         }
     }
 
