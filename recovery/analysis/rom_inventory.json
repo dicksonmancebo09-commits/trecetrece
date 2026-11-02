@@ -146,7 +146,10 @@
       "first_halfword_at_entry": "0xB570",
       "first_bl": {
         "file_offset": "0x000232",
-        "halfwords": ["0xF000", "0xFAB1"],
+        "halfwords": [
+          "0xF000",
+          "0xFAB1"
+        ],
         "computed_target": "0x08000798"
       },
       "unconditional_branch_after_bl": {
@@ -182,7 +185,212 @@
         "purpose": "First BL destination"
       }
     ],
-    "completion_status": "Partial. ARM entry and 0x080000C0-0x080000E0 are Ghidra-confirmed. ARM interworking and Thumb destinations are byte/encoding-derived and await the committed targeted Ghidra audit."
+    "completion_status": "The entry, ARM bootstrap through 0x080000E0, Thumb entry, both Thumb branch destinations, conditional flow at 0x08000766, and initial display-control setup at 0x08000798 are Ghidra-confirmed. Later initialization and runtime behavior remain pending.",
+    "thumb_control_flow_from_encodings": {
+      "entry_file_offset": "0x0230",
+      "entry_bytes": "70 B5 00 F0 B1 FA 96 E2",
+      "ghidra_confirmed_instructions": [
+        {
+          "bus_address": "0x08000230",
+          "file_offset": "0x0230",
+          "bytes": "70 B5",
+          "instruction": "PUSH {r4,r5,r6,lr}"
+        },
+        {
+          "bus_address": "0x08000232",
+          "file_offset": "0x0232",
+          "bytes": "00 F0 B1 FA",
+          "instruction": "BL 0x08000798"
+        },
+        {
+          "bus_address": "0x08000236",
+          "file_offset": "0x0236",
+          "bytes": "96 E2",
+          "instruction": "B 0x08000766"
+        }
+      ],
+      "branch_destination_0766_confirmed": [
+        {
+          "address": "0x08000766",
+          "bytes": "0A 49",
+          "instruction": "LDR r1,[0x08000790]"
+        },
+        {
+          "address": "0x08000768",
+          "bytes": "00 20",
+          "instruction": "MOV r0,#0x0"
+        },
+        {
+          "address": "0x0800076A",
+          "bytes": "08 70",
+          "instruction": "STRB r0,[r1,#0x0]"
+        },
+        {
+          "address": "0x0800076C",
+          "bytes": "04 F0 1C F8",
+          "instruction": "BL 0x080047A8"
+        },
+        {
+          "address": "0x08000770",
+          "bytes": "08 48",
+          "instruction": "LDR r0,[0x08000794]"
+        },
+        {
+          "address": "0x08000772",
+          "bytes": "00 78",
+          "instruction": "LDRB r0,[r0,#0x0]"
+        },
+        {
+          "address": "0x08000774",
+          "bytes": "00 28",
+          "instruction": "CMP r0,#0x0"
+        },
+        {
+          "address": "0x08000776",
+          "bytes": "00 D1",
+          "instruction": "BNE 0x0800077A"
+        },
+        {
+          "address": "0x08000778",
+          "bytes": "5E E5",
+          "instruction": "B 0x08000238"
+        },
+        {
+          "address": "0x0800077A",
+          "bytes": "70 BC",
+          "instruction": "POP {r4,r5,r6}"
+        },
+        {
+          "address": "0x0800077C",
+          "bytes": "01 BC",
+          "instruction": "POP {r0}"
+        },
+        {
+          "address": "0x0800077E",
+          "bytes": "00 47",
+          "instruction": "BX r0"
+        }
+      ],
+      "bl_target_0798_confirmed": [
+        {
+          "address": "0x08000798",
+          "bytes": "F0 B5",
+          "instruction": "PUSH {r4,r5,r6,r7,lr}"
+        },
+        {
+          "address": "0x0800079A",
+          "bytes": "47 46",
+          "instruction": "MOV r7,r8"
+        },
+        {
+          "address": "0x0800079C",
+          "bytes": "80 B4",
+          "instruction": "PUSH {r7}"
+        },
+        {
+          "address": "0x0800079E",
+          "bytes": "81 B0",
+          "instruction": "SUB sp,#0x4"
+        },
+        {
+          "address": "0x080007A0",
+          "bytes": "80 21",
+          "instruction": "MOV r1,#0x80"
+        },
+        {
+          "address": "0x080007A2",
+          "bytes": "C9 04",
+          "instruction": "LSL r1,r1,#0x13"
+        },
+        {
+          "address": "0x080007A4",
+          "bytes": "80 20",
+          "instruction": "MOV r0,#0x80"
+        },
+        {
+          "address": "0x080007A6",
+          "bytes": "08 80",
+          "instruction": "STRH r0,[r1,#0x0]"
+        },
+        {
+          "address": "0x080007A8",
+          "bytes": "22 48",
+          "instruction": "LDR r0,[0x08000834]"
+        },
+        {
+          "address": "0x080007AA",
+          "bytes": "80 46",
+          "instruction": "MOV r8,r0"
+        },
+        {
+          "address": "0x080007AC",
+          "bytes": "00 26",
+          "instruction": "MOV r6,#0x0"
+        },
+        {
+          "address": "0x080007AE",
+          "bytes": "06 80",
+          "instruction": "STRH r6,[r0,#0x0]"
+        },
+        {
+          "address": "0x080007B0",
+          "bytes": "21 4C",
+          "instruction": "LDR r4,[0x08000838]"
+        },
+        {
+          "address": "0x080007B2",
+          "bytes": "26 80",
+          "instruction": "STRH r6,[r4,#0x0]"
+        },
+        {
+          "address": "0x080007B4",
+          "bytes": "00 27",
+          "instruction": "MOV r7,#0x0"
+        },
+        {
+          "address": "0x080007B6",
+          "bytes": "00 97",
+          "instruction": "STR r7,[sp,#0x0]"
+        }
+      ],
+      "display_initialization_observation": {
+        "instruction_address": "0x080007A2",
+        "calculation": "0x80 << 19 = 0x04000000",
+        "register": "GBA DISPCNT",
+        "write_instruction": "0x080007A6 STRH r0,[r1,#0x0]",
+        "written_halfword": "0x0080",
+        "interpretation": "sets DISPCNT Forced Blank bit; graphics initialization begins",
+        "confidence": "high, based on Ghidra-decoded instructions and direct arithmetic"
+      },
+      "next_targets": [
+        {
+          "mode": "Thumb",
+          "start": "0x08000238",
+          "purpose": "Conditional continuation if the byte loaded from pointer 0x08000794 is zero"
+        },
+        {
+          "mode": "Thumb",
+          "start": "0x080047A8",
+          "purpose": "Subroutine called from 0x0800076C"
+        },
+        {
+          "mode": "DATA",
+          "start": "0x08000834",
+          "purpose": "Literal pointer loaded at 0x080007A8"
+        },
+        {
+          "mode": "DATA",
+          "start": "0x08000838",
+          "purpose": "Literal pointer loaded at 0x080007B0"
+        },
+        {
+          "mode": "Thumb",
+          "start": "0x080007B8",
+          "purpose": "Continuation of graphics initialization routine"
+        }
+      ],
+      "completion_status": "The entry, ARM bootstrap through 0x080000E0, Thumb entry, both Thumb branch destinations, conditional flow at 0x08000766, and initial display-control setup at 0x08000798 are Ghidra-confirmed. Later initialization and runtime behavior remain pending."
+    }
   },
   "heuristic_scan_summary": {
     "lz77_candidates_at_least_0x800_bytes": 468,
@@ -192,8 +400,8 @@
   "warnings": [
     "LZ77 candidates, possible pointer references and printable ASCII segments are heuristic findings; they can overlap and include false positives.",
     "This summary is metadata only and contains no ROM bytes or extracted assets.",
-    "The bootstrap observations are tied to the exact AMTE SHA-256 above. The Thumb BL/B targets are computed from ARMv4T encodings but still require the targeted Ghidra Thumb pass.",
     "The generic REA raw-binary architecture 'arm' selects ARM:LE:32:v7; use direct Ghidra import with ARM:LE:32:v4t for the GBA code path.",
+    "Thumb flow and display-control initialization through 0x080007B7 are now Ghidra-confirmed for the exact AMTE SHA-256 above. No emulator run or complete game reconstruction has been performed.",
     "A full editable reconstruction and a reproducible build have not been achieved yet."
   ]
 }
