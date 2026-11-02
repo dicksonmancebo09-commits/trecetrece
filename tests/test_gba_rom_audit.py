@@ -68,6 +68,20 @@ class TestGbaRomAudit(unittest.TestCase):
         self.assertEqual(values, [1, 2, 3, 4])
         self.assertEqual(consumed, len(stream))
 
+    def test_room_rle_map_decodes_16bit_run_control_marker(self):
+        # Both lanes use the long-control format: marker, u16 count, run value, u16 terminator.
+        stream = bytes([
+            2, 2,
+            2, 0x80, 0x04, 0x03, 0x00, 0x00,
+            0, 0x00, 0x00,
+        ])
+        width, height, values, consumed = audit.gba_room_rle_decompress_map(
+            stream, 0, len(stream)
+        )
+        self.assertEqual((width, height), (2, 2))
+        self.assertEqual(values, [0x0003, 0x0003, 0x0003, 0x0003])
+        self.assertEqual(consumed, len(stream))
+
     def test_room_rle_map_rejects_truncated_run(self):
         stream = bytes([2, 2, 1, 4, 1, 2])
         with self.assertRaisesRegex(ValueError, "truncated"):
