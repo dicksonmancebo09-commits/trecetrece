@@ -28,6 +28,20 @@ Esta versión adopta la distribución exacta del atlas visual acordado: Villa Du
 5. El clipdata/colisiones originales se conservan como referencia hasta que exista un rediseño específico por sala. No convertir un fondo en plataforma sin modificar y auditar la colisión.
 6. Los recursos compartidos no se reemplazan globalmente. Antes de modificar un tileset o una paleta, listar todos sus consumidores.
 
+## Paquetes visuales por barrio
+
+Cada nivel cuenta con un briefing de producción separado bajo assets/levels/:
+
+- [L01 · Villa Duarte](../../assets/levels/level-01-villa-duarte/README.md)
+- [L02 · El Caliche](../../assets/levels/level-02-el-caliche/README.md)
+- [L03 · La Francia Nueva](../../assets/levels/level-03-la-francia-nueva/README.md)
+- [L04 · Calero](../../assets/levels/level-04-calero/README.md)
+- [L05 · Pueblo Nuevo](../../assets/levels/level-05-pueblo-nuevo/README.md)
+- [L06 · Los Molinos](../../assets/levels/level-06-los-molinos/README.md)
+- [L07 · Simónico](../../assets/levels/level-07-simonico/README.md)
+
+Los paquetes 1 y 2 enlazan los atlas que ya existen. Los paquetes 3–7 describen módulos y composición que todavía hay que dibujar y exportar. Índice común: [assets/levels/README.md](../../assets/levels/README.md).
+
 ## Plano macro de conexiones propuesto
 
 ```mermaid
