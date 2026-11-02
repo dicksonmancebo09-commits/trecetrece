@@ -15,7 +15,7 @@ PROJECT_PROGRAM="Metroid Fusion (USA, Australia).gba"
 
 PROBE="$ROOT/tools/metroid_bootstrap_probe.py"
 GHIDRA_SCRIPT="$ROOT/recovery/ghidra_scripts/MetroidFusionBootstrapAudit.java"
-REPORT_DIR="$HOME/AI-Tools/ghidra-projects/reports"
+REPORT_DIR="$PROJECTS/reports"
 REPORT="$REPORT_DIR/metroid-fusion-amte-bootstrap.json"
 LOG="$REPORT_DIR/metroid-fusion-amte-ghidra-audit.log"
 
@@ -27,10 +27,9 @@ fail() {
 command -v python3 >/dev/null 2>&1 || fail "python3 is required."
 command -v sha256sum >/dev/null 2>&1 || fail "sha256sum is required."
 
+[[ -f "$ROM_INPUT" ]] || fail "ROM not found: $ROM_INPUT"
 ROM="$(realpath "$ROM_INPUT")"
 ROOT="$(realpath "$ROOT")"
-
-[[ -f "$ROM" ]] || fail "ROM not found: $ROM"
 case "$ROM" in
   "$ROOT"/*)
     fail "Keep the commercial ROM outside the Git repository. Current path: $ROM"
@@ -48,9 +47,7 @@ mkdir -p "$REPORT_DIR"
 echo "===== 1. READ-ONLY ROM IDENTITY AND BYTE CHECKS ====="
 python3 "$PROBE" "$ROM" --json --output "$REPORT"
 
-echo "===== 2. GHI DRA VERSION ====="
-"$GHIDRA/support/analyzeHeadless" -version 2>&1 || true
-
+echo "===== 2. GHI DRA PROJECT PRECHECK ====="
 echo "===== 3. TARGETED ARMv4T + THUMB AUDIT ====="
 echo "ROM: $ROM"
 echo "Project: $PROJECTS/$PROJECT"
