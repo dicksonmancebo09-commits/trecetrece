@@ -241,3 +241,14 @@ El render es una reconstrucción estática de los recursos activos, no una captu
 El workflow [GBA diagnostic toolchain run 41511006577](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41511006577) terminó en `success`, con instalación de mGBA y validación CLI/sintaxis de los extractores y del renderizador.
 
 **Pendiente:** la ejecución real de v1.7 en mGBA/VBA-M con la ROM privada. El entorno local no consiguió instalar mGBA; GitHub Actions no puede leer los binarios privados del usuario. No se debe declarar runtime probado hasta disponer de una ejecución con esa ROM.
+
+
+## Corrección de paleta detectada después de la auditoría v1.7 (02-11-2026)
+
+La inspección de `RoomLoadTileset` en la fuente upstream mostró que las tres primeras filas de la paleta común se escriben después de la paleta del tileset, sustituyendo BG palette banks 0–2. La tabla custom de L01_R001 en v1.7 usa bank 2 para los 1.536 subtiles. El archivo de paleta de tileset 76 tiene 14 filas idénticas; bank 3 accede a la fila custom 1 y no queda sobrescrito.
+
+Se creó una candidata separada v1.8 con SHA-256 `3bc764355012268d4ac6ef315bb9bb09ac0e5405d1c456bb506d1fdbe862af89`. Solo cambia el nibble de banco 2→3 en `0x7B0002–0x7B0C01`, 1.536 bytes; índices de tile y flags se conservan. La v1.7 base no fue modificada. El render estático acorde al orden de carga muestra el bank 2 común para v1.7 y la paleta custom de bank 3 para v1.8.
+
+Herramientas: `tools/fix_v17_room0_palette_bank.py`, `tools/render_v18_room0.py`; perfil `zector_cero_v1_8_palette_fix`. CI [run 41513304274](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41513304274): instalación mGBA y todos los controles/suites completados con éxito.
+
+**Runtime pendiente:** CI no cargó la ROM privada del usuario. v1.8 sigue siendo candidata estática, no una build aprobada. La corrección solo afecta L01_R001; las otras 381 salas siguen sin reskin/integración personalizada.
