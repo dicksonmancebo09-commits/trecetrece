@@ -135,6 +135,10 @@ public class MetroidFusionBootstrapAudit extends GhidraScript {
         printWord("IRQ_STACK_LITERAL", ROM_BASE + 0xF8);
         printWord("IRQ_VECTOR_LITERAL", ROM_BASE + 0xFC);
         printWord("THUMB_ENTRY_POINTER_LITERAL", ROM_BASE + 0x100);
+        printWord("FLAG_POINTER_LITERAL_0790", ROM_BASE + 0x790);
+        printWord("FLAG_POINTER_LITERAL_0794", ROM_BASE + 0x794);
+        printWord("DISPLAY_INIT_POINTER_0834", ROM_BASE + 0x834);
+        printWord("DISPLAY_INIT_POINTER_0838", ROM_BASE + 0x838);
 
         decodeWindow(
             "GBA ENTRY BRANCH",
@@ -165,6 +169,13 @@ public class MetroidFusionBootstrapAudit extends GhidraScript {
         );
 
         decodeWindow(
+            "THUMB ENTRY CONTINUATION",
+            ROM_BASE + 0x238,
+            ROM_BASE + 0x257,
+            true
+        );
+
+        decodeWindow(
             "THUMB UNCONDITIONAL BRANCH DESTINATION",
             ROM_BASE + 0x766,
             ROM_BASE + 0x785,
@@ -175,6 +186,20 @@ public class MetroidFusionBootstrapAudit extends GhidraScript {
             "THUMB BL DESTINATION",
             ROM_BASE + 0x798,
             ROM_BASE + 0x7B7,
+            true
+        );
+
+        decodeWindow(
+            "THUMB DISPLAY INITIALIZATION CONTINUATION",
+            ROM_BASE + 0x7B8,
+            ROM_BASE + 0x7D7,
+            true
+        );
+
+        decodeWindow(
+            "THUMB CALL TARGET 0x080047A8",
+            ROM_BASE + 0x47A8,
+            ROM_BASE + 0x47C7,
             true
         );
 
