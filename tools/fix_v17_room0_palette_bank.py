@@ -26,6 +26,26 @@ NEW_PALETTE_BANK = 3
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
+def change_metatile_palette_bank(table: bytes, old_bank: int = OLD_PALETTE_BANK,
+                                  new_bank: int = NEW_PALETTE_BANK) -> tuple[bytes, dict]:
+    """Change only palette bits 12–15 in a complete u16 metatile table."""
+    if len(table) < 2 or (len(table) - 2) % 2:
+        raise ValueError("Metatile table must have a 2-byte header and u16 payload")
+    header = int.from_bytes(table[:2], "little")
+    if header != HEADER_WORD:
+        raise ValueError(f"Unexpected metatile table header: {header}")
+    count = (len(table) - 2) // 2
+    words = list(struct.unpack("<" + "H" * count, table[2:]))
+    banks = sorted({(word >> 12) & 0x0F for word in words})
+    if banks != [old_bank]:
+        raise ValueError(f"Expected only palette bank {old_bank}; found {banks}")
+    changed = [(word & 0x0FFF) | (new_bank << 12) for word in words]
+    if any((old & 0x0FFF) != (new & 0x0FFF) for old, new in zip(words, changed)):
+        raise AssertionError("Tile index or flip bits changed unexpectedly")
+    result = table[:2] + struct.pack("<" + "H" * count, *changed)
+    return result, {"words": count, "banks_before": banks, "banks_after": [new_bank]}
+
+
 def change_room0_palette_bank(data: bytes) -> tuple[bytes, dict]:
     """Pure guarded transform; returns candidate bytes and an auditable report."""
     if len(data) != 0x800000:
@@ -43,26 +63,10 @@ def change_room0_palette_bank(data: bytes) -> tuple[bytes, dict]:
     original = data[TABLE_OFFSET:TABLE_OFFSET + TABLE_USED_BYTES]
     if len(original) != TABLE_USED_BYTES:
         raise ValueError("Room-0 metatile table is truncated")
-    actual_header = int.from_bytes(original[:2], "little")
-    if actual_header != HEADER_WORD:
-        raise ValueError(f"Unexpected room-0 metatile header: {actual_header}")
     word_count = TABLE_RECORDS * SUBTILES_PER_RECORD
     if len(original[2:]) != word_count * 2:
         raise ValueError("Room-0 metatile table has an unexpected record length")
-    words = list(struct.unpack("<" + "H" * word_count, original[2:]))
-    actual_banks = sorted({(word >> 12) & 0xF for word in words})
-    if actual_banks != [OLD_PALETTE_BANK]:
-        raise ValueError(
-            f"Expected all 1,536 subtile words to use bank 2; found {actual_banks}"
-        )
-
-    patched_words = [
-        (word & 0x0FFF) | (NEW_PALETTE_BANK << 12)
-        for word in words
-    ]
-    if any((old & 0x0FFF) != (new & 0x0FFF) for old, new in zip(words, patched_words)):
-        raise AssertionError("Tile index or flip bits changed unexpectedly")
-    patched_table = original[:2] + struct.pack("<" + "H" * word_count, *patched_words)
+    patched_table, table_report = change_metatile_palette_bank(original)
 
     output = bytearray(data)
     output[TABLE_OFFSET:TABLE_OFFSET + TABLE_USED_BYTES] = patched_table
@@ -93,8 +97,8 @@ def change_room0_palette_bank(data: bytes) -> tuple[bytes, dict]:
         "table_reserved_bytes": f"0x{TABLE_RESERVED_BYTES:X}",
         "records": TABLE_RECORDS,
         "subtile_words": word_count,
-        "palette_bank_before": actual_banks,
-        "palette_bank_after": [NEW_PALETTE_BANK],
+        "palette_bank_before": table_report["banks_before"],
+        "palette_bank_after": table_report["banks_after"],
         "tile_index_and_flip_bits_preserved": True,
         "changed_bytes": changed,
         "header_complement_preserved": True,
