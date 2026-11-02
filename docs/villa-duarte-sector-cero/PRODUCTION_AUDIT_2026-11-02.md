@@ -200,3 +200,25 @@ Informe detallado: [ZECTOR_CERO_v1_7_STATIC_ROM_AUDIT_2026-11-02.md](ZECTOR_CERO
 **Límite:** no se ejecutó mGBA/VBA-M. El perfil de v1.7 solo acredita la estructura personalizada revisada para Main Deck sala 0 y los recursos del título; no acredita que las 382 salas estén integradas o sean jugables. Por tanto, la integración ROM completa y las pruebas runtime permanecen abiertas. El archivo de guardado recibido es un `.sav` de 32 KiB y no se utilizó para la auditoría; contiene una etiqueta `EUVerE004`, así que su compatibilidad con la ROM USA/Australia queda pendiente.
 
 Las ROM y los saves permanecen fuera de Git.
+
+
+## Actualización posterior — extracción completa de mapas y recursos visuales (02-11-2026)
+
+La extracción se completó utilizando la ROM limpia USA/Australia aportada por el usuario y el índice de offsets del repositorio de referencia `metroidret/mf`, commit fijado `de76565c897c05838503717db9aa2adfe92aeba3`.
+
+- **382/382 salas** extraídas con su producción ID, lote, barrio, rol y nombre editorial.
+- **1.214 capas RLE** decodificadas: 382 clipdata, 382 BG1, 381 BG2 y 69 BG0.
+- 0 errores RLE; 0 solapamientos de rangos; 340.909 bytes comprimidos.
+- 7 tablas de entradas de sala, 898 puertas fuente y las 98 entradas de la tabla de tilesets incluidas en el paquete de referencia.
+- 94 entradas de tileset realmente usadas por las 382 salas; 296 recursos binarios gráficos/paleta/tilemap/fondo/animación extraídos, 1.039.036 bytes raw y 1.332.160 bytes descomprimidos de LZ77.
+- Los cinco lotes suman 382 salas: 87 + 87 + 87 + 87 + 34.
+
+### Comparación con v1.7
+
+Las 1.214 capas RLE comparadas con la ROM limpia son **idénticas byte a byte** en v1.7. Por tanto, la candidata conserva todos los mapas BG/clipdata base de las 382 salas.
+
+Entre los 296 recursos visuales referenciados, v1.7 modifica dos: `tilesets/61.gfx.lz` (5.431 bytes distintos) y `tilesets/76.pal` (423 bytes distintos). Ambos son utilizados por la entrada de tileset 96 de Main Deck sala fuente 0, vinculada a L01_R001, consistente con el reskin gráfico de la sala inicial.
+
+Informe detallado: [ROOM_MAP_AND_VISUAL_ASSET_EXTRACTION_2026-11-02.md](ROOM_MAP_AND_VISUAL_ASSET_EXTRACTION_2026-11-02.md).
+
+**Límite:** la extracción recupera la geometría BG/clipdata comprimida, los recursos referenciados y sus tablas. No crea todavía 382 tilemaps personalizados con arte de los siete barrios ni acredita jugabilidad de 382 salas. No se ha ejecutado mGBA/VBA-M en este hito. La prueba vertical de una sala completa sigue siendo el siguiente gate de integración. Las ROM, los saves y los binarios derivados permanecen fuera de Git.
