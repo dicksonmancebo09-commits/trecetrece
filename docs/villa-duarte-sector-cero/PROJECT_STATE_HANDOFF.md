@@ -158,3 +158,12 @@ La distribución que rige el diseño de niveles sigue el atlas visual aprobado c
 - Villa Duarte: 87 salas; El Caliche: 54; La Francia Nueva: 61; Calero: 39; Pueblo Nuevo: 48; Los Molinos: 52; Simónico: 41.
 
 El plan maestro supersede la nomenclatura anterior de siete arquetipos visuales como mapa de niveles. La Biblia Visual sigue vigente como regla de estilo; los atlas de escenario 1 y 2 siguen siendo los primeros paquetes de arte. Los roles asignados a salas se basan en el orden espacial del CSV (map_y, map_x, índice) y son una distribución editorial inicial: no prueban adyacencia ni conexiones de puertas. La extracción del grafo real, la geometría, los clipdata y los eventos por sala sigue pendiente. No hay ROM modificada ni prueba de juego en este hito.
+
+## Actualización de topología y paquetes visuales (02-11-2026)
+
+- Índice de los siete briefings visuales: [assets/levels/README.md](../../assets/levels/README.md). Cada nivel tiene su README con módulos, capas, paleta, ambiente y presupuesto de salas.
+- [Grafo fuente de puertas](../../data/world/sector-cero-source-door-graph-v1.json): 898 puertas, 34 enlaces inter-área, 60 variantes por evento y 958 aristas totales (default + overrides), sin referencias sin resolver.
+- El registro JSON de cada sala ahora incluye sus puertas fuente y destinos originales. La extracción se hizo desde `metroidret/mf` y **no está todavía verificada byte por byte con la ROM exacta del usuario**.
+- El nodo L01 (Villa Duarte/Main Deck) conecta con todos los demás niveles en la topología de referencia; existen además enlaces directos L02–L03/L04, L03–L05, L04–L06, L05–L06/L07 y L06–L07. Las condiciones de evento deben conservarse/adaptarse; el grafo no implica que todas las rutas estén abiertas desde el inicio.
+- Una habitación de Main Deck no tiene puerta de origen en la tabla extraída. Debe revisarse su transición alternativa; se mantiene dentro del total de 87 salas.
+- Estado: 382 salas nombradas y asignadas; puertas de referencia enlazadas; geometría, clipdata, enemigos, eventos narrativos y runtime aún no completados. No se modificó la ROM.
