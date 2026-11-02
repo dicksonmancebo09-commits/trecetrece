@@ -143,3 +143,16 @@ Los cinco atlas nuevos se describen como SVG de 256 × 256 px, 64 módulos compu
 ## 7. Regla para próximas sesiones
 
 No volver a diseñar ni renombrar salas por defecto. Primero leer esta memoria, el README, el manifiesto, las fichas y la auditoría. Mantener el objetivo en 382. Informar cada tarea con tres estados separados: **hecho y comprobado**, **creado pero no probado**, **pendiente por bloqueo externo**. No afirmar que una sala está integrada hasta que exista el binario actualizado y una prueba reproducible en emulador.
+
+
+## 8. Avance ejecutado después de crear esta memoria — 02-11-2026
+
+Se activó el workflow real de exportación de producción en GitHub Actions mediante un comentario XML sin efecto visual en el SVG de L03. Resultado confirmado: [run 41498789079](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41498789079), conclusión `success`.
+
+El proceso completó extracción de metadatos de referencia, auditoría de los 382 IDs y los cinco lotes, renderizado de siete atlas indexados y exportación de 4bpp/BGR555/LZ77 con round-trip aprobado. Se descargó y verificó el artefacto `zector-cero-gba-atlas-exports.zip`: 7 informes, 7 binarios 4bpp, 7 streams LZ77 y 7 paletas. SHA-256: `61624cfdf696f81b9c1be02c8d112d1517afb96cba0796a97f6ce443a863d192`.
+
+- Commit disparador: `d3f618b38be5f9263e6cff62cb4196451cfbbab6`.
+- Commit generado por CI: `8e6752ce0d7a8395b5216f4e8f697e20353d4bba`.
+- Artifact ID: `13166559227` (retención 14 días).
+
+**No confundir con integración de salas:** los informes generados confirman que no se modificó ninguna ROM, no se generaron tilemaps de sala, no se actualizaron punteros y no hubo prueba runtime. El trabajo de escritura binaria sigue bloqueado por la ausencia de la ROM limpia y de la candidata v1.7 en el entorno privado; también falta extraer BG/clipdata y colisiones de esas ROMs. El siguiente paso no es rediseñar los atlas, sino cargar los binarios exportados en el entorno privado, analizar la ROM exacta y preparar una prueba vertical con una sala real.
