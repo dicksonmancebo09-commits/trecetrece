@@ -163,3 +163,79 @@ The scripts only read the ROM. Ghidra saves disassembly annotations in the local
 The public [Metroid Fusion decompilation](https://github.com/metroidret/mf) is a useful research reference, but its README explicitly says it is not shiftable and must not be used as a base for another project. It is therefore not treated as a drop-in source tree or as proof of the local ROM's instruction flow.
 
 The generic REA raw-binary path also has a limitation: its `arm` option maps to `ARM:LE:32:v7`, not GBA ARMv4T. The local exact lane remains direct Ghidra import with `ARM:LE:32:v4t`.
+
+
+## 8. Thumb execution path — Ghidra-confirmed on 2026-11-02
+
+A follow-up Codespaces run used `ArmDisassembleCommand` with Thumb mode enabled. Ghidra 12.1.4 confirmed both branch destinations calculated above and decoded the following instructions:
+
+### Thumb entry at `0x08000230`
+
+| Bus address | File offset | Bytes | Ghidra result |
+|---|---:|---|---|
+| `08000230` | `0230` | `70 B5` | `PUSH {r4,r5,r6,lr}` |
+| `08000232` | `0232` | `00 F0 B1 FA` | `BL 0x08000798` |
+| `08000236` | `0236` | `96 E2` | `B 0x08000766` |
+
+The `BL` and `B` destinations match the ARMv4T encoding calculations in section 4. Their control-flow edges were also printed by Ghidra.
+
+### Conditional path at `0x08000766`
+
+| Bus address | Bytes | Ghidra result |
+|---|---|---|
+| `08000766` | `0A 49` | `LDR r1,[0x08000790]` |
+| `08000768` | `00 20` | `MOV r0,#0x0` |
+| `0800076A` | `08 70` | `STRB r0,[r1,#0x0]` |
+| `0800076C` | `04 F0 1C F8` | `BL 0x080047A8` |
+| `08000770` | `08 48` | `LDR r0,[0x08000794]` |
+| `08000772` | `00 78` | `LDRB r0,[r0,#0x0]` |
+| `08000774` | `00 28` | `CMP r0,#0x0` |
+| `08000776` | `00 D1` | `BNE 0x0800077A` |
+| `08000778` | `5E E5` | `B 0x08000238` |
+| `0800077A` | `70 BC` | `POP {r4,r5,r6}` |
+| `0800077C` | `01 BC` | `POP {r0}` |
+| `0800077E` | `00 47` | `BX r0` |
+
+This establishes a conditional control-flow split: a zero byte loaded through the pointer at `0x08000794` takes the branch to `0x08000238`; a nonzero byte follows the register restoration and indirect return path. The byte at the pointer loaded from `0x08000790` is cleared immediately before the call to `0x080047A8`. The semantic names of these global values and the called function remain unknown.
+
+### First Thumb BL target at `0x08000798`
+
+Ghidra confirmed this initial block:
+
+| Bus address | Bytes | Ghidra result |
+|---|---|---|
+| `08000798` | `F0 B5` | `PUSH {r4,r5,r6,r7,lr}` |
+| `0800079A` | `47 46` | `MOV r7,r8` |
+| `0800079C` | `80 B4` | `PUSH {r7}` |
+| `0800079E` | `81 B0` | `SUB sp,#0x4` |
+| `080007A0` | `80 21` | `MOV r1,#0x80` |
+| `080007A2` | `C9 04` | `LSL r1,r1,#0x13` |
+| `080007A4` | `80 20` | `MOV r0,#0x80` |
+| `080007A6` | `08 80` | `STRH r0,[r1,#0x0]` |
+| `080007A8` | `22 48` | `LDR r0,[0x08000834]` |
+| `080007AA` | `80 46` | `MOV r8,r0` |
+| `080007AC` | `00 26` | `MOV r6,#0x0` |
+| `080007AE` | `06 80` | `STRH r6,[r0,#0x0]` |
+| `080007B0` | `21 4C` | `LDR r4,[0x08000838]` |
+| `080007B2` | `26 80` | `STRH r6,[r4,#0x0]` |
+| `080007B4` | `00 27` | `MOV r7,#0x0` |
+| `080007B6` | `00 97` | `STR r7,[sp,#0x0]` |
+
+The shift at `0x080007A2` computes `0x04000000` from `r1 = 0x80`. This is the GBA display-control register address (`DISPCNT`). The halfword write at `0x080007A6` stores `0x0080`, setting the Forced Blank bit. This is direct evidence that the routine begins a graphics/display initialization sequence. It does not yet prove which subsequent VRAM/OAM/palette initialization operations are performed.
+
+### Evidence status update
+
+**Now Ghidra-confirmed**
+- The initial Thumb entry at `0x08000230`.
+- `BL 0x08000798` and `B 0x08000766`.
+- The conditional path and return at `0x08000766`–`0x0800077E`.
+- The first 32 bytes of the routine at `0x08000798` through `0x080007B7`.
+- The arithmetic and register write that place `0x0080` at `DISPCNT = 0x04000000`.
+
+**Next narrow targets**
+- `0x08000238`: continuation when the checked byte is zero.
+- `0x080047A8`: called routine from the conditional-path setup.
+- `0x08000834` and `0x08000838`: literal words used as pointers at `0x080007A8` and `0x080007B0`.
+- Extend the display initialization routine from `0x080007B8` after confirming the next control-flow edges.
+
+The result is still static analysis. No emulation, in-game behavior, player movement, room transition, or enemy logic has been verified.
