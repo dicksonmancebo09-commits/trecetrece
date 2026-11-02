@@ -6,11 +6,11 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 |---|---|---:|---|
 | L01 | Villa Duarte | 87 | [Diseño L01](level-01-villa-duarte/README.md) · [Atlas gráfico v0.2](level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg) |
 | L02 | El Caliche | 54 | [Diseño L02](level-02-el-caliche/README.md) |
-| L03 | La Francia Nueva | 61 | [Diseño L03](level-03-la-francia-nueva/README.md) |
-| L04 | Calero | 39 | [Diseño L04](level-04-calero/README.md) |
-| L05 | Pueblo Nuevo | 48 | [Diseño L05](level-05-pueblo-nuevo/README.md) |
-| L06 | Los Molinos | 52 | [Diseño L06](level-06-los-molinos/README.md) |
-| L07 | Simónico | 41 | [Diseño L07](level-07-simonico/README.md) |
+| L03 | La Francia Nueva | 61 | [Diseño L03](level-03-la-francia-nueva/README.md) · [Atlas SVG v0.1](level-03-la-francia-nueva/level-03-atlas-v0.1.svg) |
+| L04 | Calero | 39 | [Diseño L04](level-04-calero/README.md) · [Atlas SVG v0.1](level-04-calero/level-04-atlas-v0.1.svg) |
+| L05 | Pueblo Nuevo | 48 | [Diseño L05](level-05-pueblo-nuevo/README.md) · [Atlas SVG v0.1](level-05-pueblo-nuevo/level-05-atlas-v0.1.svg) |
+| L06 | Los Molinos | 52 | [Diseño L06](level-06-los-molinos/README.md) · [Atlas SVG v0.1](level-06-los-molinos/level-06-atlas-v0.1.svg) |
+| L07 | Simónico | 41 | [Diseño L07](level-07-simonico/README.md) · [Atlas SVG v0.1](level-07-simonico/level-07-atlas-v0.1.svg) |
 
 ## Registro maestro
 
@@ -26,3 +26,12 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 - Los atlas existentes de Villa Duarte y El Caliche son borradores de producción; no se declaran integrados a la ROM.
 - Los niveles 3–7 tienen dirección artística y familias modulares especificadas, pero sus atlas gráficos aún deben producirse.
 - La geometría, las colisiones, los enemigos, los eventos y las animaciones deben asignarse sala por sala; no se deducen solo del concepto visual.
+
+
+## Estado de atlas — auditoría 02-11-2026
+
+- L01: atlas SVG v0.2 + JSON de módulos; exportación PNG indexada/4bpp pendiente.
+- L02: atlas SVG y exportaciones PNG descritas en [su paquete](../tiles/scenario-02/README.md); prueba en ROM pendiente.
+- L03–L07: atlas SVG v0.1 + JSON, 64 módulos de 32 × 32 px por barrio; exportación PNG indexada/4bpp y composición por sala pendientes.
+
+Los atlas SVG son bibliotecas editables; no son tilemaps ni mapas de las 382 salas.
