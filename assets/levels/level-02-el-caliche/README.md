@@ -49,3 +49,12 @@ El atlas existente assets/tiles/scenario-02 es la base inicial. Completar interi
 - Cada sala tendrá plano de fondo, arquitectura, objetos, suelo/plataformas, colisiones y elementos interactivos separados en el inventario.
 - No tocar recursos compartidos de la ROM hasta listar todos sus consumidores y sus punteros.
 - No tratar este README, el atlas de concepto o el registro de salas como integración jugable.
+
+
+## Lote 02 — hoja conceptual de 87 salas
+
+- [Hoja visual SVG — lote 02](./level-02-el-caliche-room-sheet-lote-02-v0.1.svg)
+- [Registro JSON — lote 02](../../../data/world/sector-cero-room-batch-02-v1.json)
+- [Documento de producción — lote 02](../../../docs/villa-duarte-sector-cero/ROOM_BATCH_02_EL_CALICHE_LA_FRANCIA.md)
+
+El lote incluye 54 salas de El Caliche y 33 de La Francia Nueva. La hoja es un bloque visual conceptual; las dimensiones exactas, colisiones, clipdata, eventos y mapas de BG deben validarse contra la ROM privada antes de llamarlo jugable.
