@@ -215,7 +215,9 @@ La extracción se completó utilizando la ROM limpia USA/Australia aportada por 
 
 ### Comparación con v1.7
 
-Las 1.214 capas RLE comparadas con la ROM limpia son **idénticas byte a byte** en v1.7. Por tanto, la candidata conserva todos los mapas BG/clipdata base de las 382 salas.
+Los 1.214 bloques RLE de referencia comparados con la ROM limpia son **idénticos byte a byte en sus offsets originales**. Esta comprobación acredita que los datos originales permanecen almacenados, pero no implica que todos sean los mapas activos tras los cambios de punteros. En particular, v1.7 redirige Main Deck sala fuente 0 (`L01_R001`) a una tabla de metatiles custom en `0x7B0000`, BG1 en `0x7B2000` y BG2 en `0x7B2400`. Esos mapas activos miden 34 × 14; BG1 usa solo el metatile transparente 383 y BG2 utiliza 305 IDs, del 0 al 304.
+
+Se ha reconstruido estáticamente `L01_R001` con los mapas activos, la tabla custom, el GFX de 369 tiles y la paleta de v1.7. El render nativo mide 544 × 224 píxeles y está incluido en el paquete local de render. No es una captura de mGBA ni una prueba de ejecución.
 
 Entre los 296 recursos visuales referenciados, v1.7 modifica dos: `tilesets/61.gfx.lz` (5.431 bytes distintos) y `tilesets/76.pal` (423 bytes distintos). Ambos son utilizados por la entrada de tileset 96 de Main Deck sala fuente 0, vinculada a L01_R001, consistente con el reskin gráfico de la sala inicial.
 
