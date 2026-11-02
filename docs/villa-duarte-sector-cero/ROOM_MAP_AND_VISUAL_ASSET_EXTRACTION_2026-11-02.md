@@ -84,6 +84,7 @@ Este render es una reconstrucción estática con los recursos realmente apuntado
 - [Builder del bundle de referencia](../../tools/build_room_reference_bundle.py).
 - [Extractor RLE de las 382 salas](../../tools/extract_sector_cero_room_maps.py).
 - [Extractor de tilesets, paletas y animaciones](../../tools/extract_sector_cero_room_visual_assets.py).
+- [Renderizador estático de L01_R001 desde v1.7](../../tools/render_v17_room0.py).
 - [Decodificador/auditor GBA](../../tools/gba_rom_audit.py).
 
 ## Automatización / CI
