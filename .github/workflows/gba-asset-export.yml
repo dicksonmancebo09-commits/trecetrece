@@ -1,0 +1,66 @@
+name: GBA asset export checks
+
+on:
+  push:
+    branches:
+      - main
+      - agent/rea-editable-analysis
+    paths:
+      - "tools/png_to_gba_4bpp.py"
+      - "tools/test_png_to_gba_4bpp.py"
+      - "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png"
+      - ".github/workflows/gba-asset-export.yml"
+  pull_request:
+    paths:
+      - "tools/png_to_gba_4bpp.py"
+      - "tools/test_png_to_gba_4bpp.py"
+      - "assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png"
+      - ".github/workflows/gba-asset-export.yml"
+
+jobs:
+  export-scenario-02:
+    name: Convert Scenario 02 atlas to GBA-native graphics
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PNG indexed-image dependency
+        run: python3 -m pip install Pillow
+
+      - name: Run exporter unit tests
+        run: python3 -m unittest discover -s tools -p 'test_png_to_gba_4bpp.py' -v
+
+      - name: Export the real Callejones del Caliche atlas
+        run: |
+          python3 tools/png_to_gba_4bpp.py \
+            assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png \
+            --output-dir private-roms/ci-export/scenario-02 \
+            --prefix scenario-02-el-caliche
+
+      - name: Verify exported GBA resource sizes and atlas coverage
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("private-roms/ci-export/scenario-02")
+          report = json.loads((root / "scenario-02-el-caliche.export.json").read_text())
+          assert report["dimensions_px"] == [256, 256], report["dimensions_px"]
+          assert report["tile_grid"] == [32, 32], report["tile_grid"]
+          assert report["tile_count"] == 1024, report["tile_count"]
+          assert report["tile_bytes"] == 32768, report["tile_bytes"]
+          assert (root / "scenario-02-el-caliche.4bpp").stat().st_size == 32768
+          assert (root / "scenario-02-el-caliche.bgr555.pal").stat().st_size == 32
+          assert report["validation"]["4bpp_round_trip"] is True
+          assert report["validation"]["lz77_round_trip"] is True
+          assert report["validation"]["rom_modified"] is False
+          assert report["validation"]["room_tilemap_created"] is False
+          print("Scenario 02 export verified: 1024 tiles, 32 KiB 4bpp, 32-byte BGR555 palette.")
+          print("Room map/pointers/game integration remain deliberately unclaimed.")
+          PY
