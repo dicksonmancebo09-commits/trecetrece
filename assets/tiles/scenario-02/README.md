@@ -69,3 +69,27 @@ Estas fuentes apoyan rasgos visuales generales, pero no dan permiso automático 
 ## Próximo paso
 
 Validar los archivos en el editor/exportador y revisar la composición a 240 × 160. Después se cotejará con una sala original antes de adaptar sus módulos a una prueba jugable.
+
+## Exportación preliminar a formato GBA
+
+El repositorio incluye ahora `tools/png_to_gba_4bpp.py`, que convierte el PNG indexado del atlas a recursos gráficos GBA:
+
+- `*.4bpp`: tiles de 8 × 8, orden de atlas de izquierda a derecha y de arriba abajo, 32 bytes por tile.
+- `*.4bpp.lz`: el mismo tileset comprimido en formato BIOS LZ77 `0x10`.
+- `*.bgr555.pal`: 16 entradas de paleta BGR555 little-endian (32 bytes).
+- `*.export.json`: dimensiones, número de tiles, hashes y límites del export.
+
+Ejecutar desde la raíz del Codespace:
+
+```bash
+python3 -m pip install Pillow
+
+python3 tools/png_to_gba_4bpp.py \
+  assets/tiles/scenario-02/scenario-02-el-caliche-tiles.png \
+  --output-dir private-roms/assets/scenario-02 \
+  --prefix scenario-02-el-caliche
+```
+
+Los binarios se escriben en `private-roms/`, ignorado por Git. El conversor comprueba un round-trip 4bpp y un round-trip LZ77 antes de guardar los archivos.
+
+**Alcance exacto:** esto produce gráficos y paleta en formatos GBA; no crea el tilemap de una sala, no selecciona automáticamente un `sTilesetEntries[]`, no cambia punteros ni modifica una ROM. La transparencia de origen se representa como índice 0; antes de integrarlo hay que decidir y validar su comportamiento en el layer BG/OBJ concreto. La integración exige un mapa de sala, asignación de VRAM/paleta y comprobación en emulador.
