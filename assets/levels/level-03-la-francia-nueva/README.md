@@ -56,3 +56,10 @@ Paquete nuevo. Crear atlas 256x256 indexado de módulos de 8x8 con piezas compue
 - [Documento de producción — lote 03](../../../docs/villa-duarte-sector-cero/ROOM_BATCH_03_LA_FRANCIA_CALERO_PUEBLO_NUEVO.md)
 
 El lote cubre 28 salas de La Francia Nueva, 39 de Calero y 20 de Pueblo Nuevo. Es una composición visual conceptual; no representa todavía mapas de ROM jugables.
+
+## Atlas modular L03 v0.1
+
+- [Atlas SVG editable](level-03-atlas-v0.1.svg)
+- [Metadatos de 64 módulos y paleta](level-03-atlas-v0.1.json)
+
+**Estado comprobado:** biblioteca SVG conceptual de 256 × 256 px, 64 módulos de 32 × 32 px; todavía sin PNG indexado, exportación 4bpp, tilemaps por sala ni integración ROM.
