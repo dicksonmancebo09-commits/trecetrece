@@ -109,8 +109,8 @@ Using the ARMv4T Thumb two-halfword `BL` encoding and Thumb PC-relative branch r
 
 | File offset | Halfword(s) | Calculated target | Status |
 |---|---|---|---|
-| `0x232` | `F000 FAB1` | `0x08000798` | Encoding-derived; Ghidra verification pending |
-| `0x236` | `E296` | `0x08000766` | Encoding-derived; Ghidra verification pending |
+| `0x232` | `F000 FAB1` | `0x08000798` | Ghidra-confirmed; see section 8 |
+| `0x236` | `E296` | `0x08000766` | Ghidra-confirmed; see section 8 |
 
 The unconditional branch at `0x08000236` means bytes at `0x238` and beyond are not assumed to be sequentially reachable from this path. They may be another code region or data; an independent reference is needed before classifying them.
 
@@ -122,10 +122,17 @@ The unconditional branch at `0x08000236` means bytes at `0x238` and beyond are n
 - The ARM startup window from `0x080000C0` through `0x080000E0` decodes as listed above.
 - The exact ROM hash, size, and game code match the recorded inventory.
 
-**Derived from the supplied raw bytes, not yet confirmed by the new Ghidra Thumb pass**
-- The ARM handoff at `0x080000E4`–`0x080000EC`.
-- The pointer at `0x08000100` leading to Thumb address `0x08000230`.
-- Thumb `BL` and `B` targets `0x08000798` and `0x08000766`.
+**Confirmed by Ghidra after the original partial report**
+- The Thumb entry at `0x08000230`.
+- The `BL` target `0x08000798` and unconditional branch target `0x08000766`.
+- The conditional return/continuation path at `0x08000766`–`0x0800077E`.
+- Initial display-control setup at `0x08000798`–`0x080007A6`, including the write of `0x0080` to `DISPCNT` at `0x04000000` (see section 8).
+
+**Still pending confirmation or semantic interpretation**
+- Full behavior of the ARM IRQ handler at `0x08000104`.
+- The continuation reached at `0x08000238`.
+- The behavior of the called routine at `0x080047A8`.
+- The pointer values at `0x08000834` and `0x08000838`, and the remainder of display initialization after `0x080007B8`.
 
 **Not yet established**
 - The complete IRQ handler behavior.
