@@ -65,3 +65,6 @@ El script valida round-trip 4bpp y LZ77. Eso prueba la conversión de gráficos,
 - [ ] Capturas y logs de mGBA revisados; arranque, movimiento, puertas y guardado aprobados.
 
 **No avanzar a una integración masiva de 382 salas antes de pasar esta puerta.**
+## Datos de referencia ya automatizados
+
+El extractor [extract_reference_room_metadata.py](../../tools/extract_reference_room_metadata.py) puede completar dimensiones por capa y recuentos de spritesets desde el código fuente fijado, sin copiar ROM ni mapas RLE al repositorio. Esta información ayuda a seleccionar una sala de prueba, pero no sustituye la extracción de los mapas BG/clipdata desde la ROM privada. La puerta de integración A–D sigue siendo obligatoria.
