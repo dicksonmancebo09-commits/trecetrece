@@ -681,3 +681,13 @@ El siguiente listado contiene las 382 salas asignadas. El número de sala y sus 
 - `sector-cero-room-registry-v1.json` — registro estructurado completo de salas, asignaciones, fuentes, roles y puertas de referencia.
 - `sector-cero-source-door-graph-v1.json` — puertas y transiciones extraídas de la referencia de código.
 - `assets/levels/README.md` — índice de los siete paquetes de dirección artística por barrio.
+
+## Producción de atlas L01 — Villa Duarte (02-11-2026)
+
+Se creó el atlas gráfico modular v0.2 en [level-01-villa-duarte-atlas-v0.2.svg](../../assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg), con [metadatos de módulos y paleta](../../assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.json).
+
+- Lienzo: 256 × 256 px; 32 × 32 tiles lógicos de 8 × 8 px.
+- Biblioteca: 64 módulos compuestos de 32 × 32 px (4 × 4 tiles) distribuidos en 8 familias: muros, fachadas, ventanas/rejas, puertas/comercio, balcones/azoteas, props y servicios, suelo y pavimento, interiores/hangar.
+- Paleta: 16 entradas declaradas, 15 colores visibles. Geometría entera y crispEdges. El atlas v0.1 anterior queda conservado.
+- Estado comprobado del archivo: SVG 256 × 256, 64 IDs de módulo únicos y metadatos de 64 módulos. No se ha exportado aún PNG indexado/4bpp ni integrado en la ROM.
+- El atlas es biblioteca modular: no equivale a 87 mapas de sala. Cada una de las 87 habitaciones debe componerse usando su ID, puertas, geometría, mapa y clipdata extraídos.
