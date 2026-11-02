@@ -24,7 +24,7 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 - Mantener por separado los planos de fondo, arquitectura, props, suelo/plataformas y elementos interactivos.
 - Los fondos, paletas y tilesets compartidos deben auditarse por todos sus consumidores antes de editarlos.
 - Los atlas existentes de Villa Duarte y El Caliche son borradores de producción; no se declaran integrados a la ROM.
-- Los niveles 3–7 tienen dirección artística y familias modulares especificadas, pero sus atlas gráficos aún deben producirse.
+- Los niveles 3–7 tienen atlas SVG v0.1 editables; faltan PNG indexado/4bpp, composición por sala, colisiones e integración ROM.
 - La geometría, las colisiones, los enemigos, los eventos y las animaciones deben asignarse sala por sala; no se deducen solo del concepto visual.
 
 
