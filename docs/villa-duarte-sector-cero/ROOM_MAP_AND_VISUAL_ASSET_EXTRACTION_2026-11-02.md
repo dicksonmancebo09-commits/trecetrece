@@ -47,9 +47,13 @@ Se identificaron **94 entradas de tileset usadas** por las 382 salas y se extraj
 
 Los **1.214 bloques RLE de referencia** se compararon byte a byte en sus offsets originales: **0 bloques cambiados; 0 bytes distintos**. Esto prueba que el almacenamiento original de los mapas no fue sobrescrito. No significa que todos sigan siendo los mapas activos: v1.7 redirige expresamente BG1 y BG2 de Main Deck, sala fuente 0 (`L01_R001`), a mapas personalizados nuevos.
 
-Para la sala inicial, los punteros verificados de v1.7 son `0x3C0014 → 0x087B0000` (tabla de metatiles), `0x3C2C58 → 0x087B2000` (BG1) y `0x3C2C5C → 0x087B2400` (BG2). Los mapas activos tienen 34 × 14 bloques: BG1 contiene únicamente el metatile transparente 383; BG2 usa 305 metatiles distintos, IDs 0–304. La tabla custom contiene 384 registros; sus subtiles usan los índices gráficos 192–560 en la paleta hardware 2. El metatile transparente 383 apunta al tile 560, cuyos 32 bytes son cero.
+Para la sala inicial, los punteros verificados de v1.7 son `0x3C0014 → 0x087B0000` (tabla de metatiles), `0x3C2C58 → 0x087B2000` (BG1) y `0x3C2C5C → 0x087B2400` (BG2). Los mapas activos tienen 34 × 14 bloques: BG1 contiene únicamente el metatile transparente 383; BG2 usa 305 metatiles distintos, IDs 0–304. La tabla custom contiene 384 registros y los subtiles usan los índices gráficos 192–560. El metatile transparente 383 apunta al tile 560, cuyos 32 bytes son cero.
 
-Se generó una reconstrucción estática de `L01_R001` a partir de esos mapas activos y de los gráficos/paleta de v1.7: GFX en `0x416E8C` (2.843 bytes comprimidos; 11.808 descomprimidos; 369 tiles) y paleta en `0x46B494` (448 bytes). La imagen tiene 544 × 224 píxeles nativos. No es una captura de mGBA y no dibuja sprites, estado de cámara, animaciones ni efectos. El render y sus metadatos se entregan en el paquete local `ZECTOR_CERO_L01_R001_V17_ROOM_RENDER_2026-11-02.zip`.
+**Hallazgo posterior sobre la paleta:** aunque v1.7 carga la paleta de tileset en los bancos BG 2–15, el motor copia después las tres filas de paleta común a los bancos 0–2. El banco 2 queda sobrescrito. La tabla custom de v1.7 asigna banco 2 a los 1.536 subtiles; por tanto, su paleta personalizada no es la que queda visible según el orden de carga del código. La tabla original `tilesets/61.tm` utiliza bancos 0, 1, 3 y 4, nunca el 2. Esto no se detectó en la auditoría de 75 controles porque entonces no se comprobó la compatibilidad entre el banco de la tabla y el orden de carga de paletas.
+
+Se creó una candidata v1.8 separada que cambia exclusivamente el campo de banco de paleta de esos 1.536 subtiles, de 2 a 3. El tileset palette file tiene 14 filas idénticas; el banco 3 accede a la fila 1 de la paleta custom, que sobrevive a la escritura final de las filas comunes 0–2. El SHA-256 de la candidata es `3bc764355012268d4ac6ef315bb9bb09ac0e5405d1c456bb506d1fdbe862af89`. La v1.7 original permanece intacta.
+
+La reconstrucción estática corregida mantiene 544 × 224 píxeles nativos y 0 referencias de tiles inválidas. No es una captura de mGBA ni dibuja sprites, estado de cámara, animaciones o efectos. La corrección de banco sigue pendiente de prueba real en emulador.
 
 Entre los 296 recursos visuales referenciados, dos sí cambian:
 
@@ -69,15 +73,16 @@ Ambos corresponden a la entrada de tileset 96 usada por Main Deck sala fuente 0,
 
 Los binarios derivados permanecen fuera de Git. No se subieron ROM, saves ni dumps extraídos.
 
-## Render estático de la sala inicial
+## Render de comparación del banco de paleta
 
-- PNG de BG2 (544 × 224 px nativos; ampliado 3× para inspección): `L01_R001_v1.7_BG2_render.png`.
-- PNG nativo: `L01_R001_v1.7_BG2_native.png`.
-- Diagnóstico de clipdata de la sala base: `L01_R001_clipdata_diagnostic.png`.
-- Atlas de los 369 tiles del GFX v1.7: `tileset_61_v1.7_atlas.png`.
-- Informe de referencias y offsets: `render-report.json`.
+- Comparación lado a lado: `L01_R001_palette_bank_comparison.png`.
+- v1.7 con el banco 2 realmente visible tras el orden de carga: `L01_R001_v1.7_engine_palette.png`.
+- v1.8 candidata con banco 3 y paleta custom: `L01_R001_v1.8_engine_palette.png`.
+- Metadatos: `palette-bank-render-comparison.json`.
 
-Este render es una reconstrucción estática con los recursos realmente apuntados por v1.7; no es una captura del emulador ni prueba de ejecución.
+Estos son renders estáticos de BG2 de 544 × 224 px nativos. La comparación incorpora el orden de carga de paletas de `src/room.c`; no es una captura del emulador ni prueba de ejecución. La ROM candidata v1.8 y la comparación están en el paquete local `ZECTOR_CERO_v1_8_PALETTE_BANK_FIX_PACKAGE_2026-11-02.zip`.
+
+Informe de la corrección: [v1.8 — conflicto del banco de paleta](V1_8_ROOM0_PALETTE_BANK_FIX_2026-11-02.md).
 
 ## Herramientas reproducibles
 
@@ -85,6 +90,8 @@ Este render es una reconstrucción estática con los recursos realmente apuntado
 - [Extractor RLE de las 382 salas](../../tools/extract_sector_cero_room_maps.py).
 - [Extractor de tilesets, paletas y animaciones](../../tools/extract_sector_cero_room_visual_assets.py).
 - [Renderizador estático de L01_R001 desde v1.7](../../tools/render_v17_room0.py).
+- [Corrector guarded v1.7 → v1.8 del banco de paleta](../../tools/fix_v17_room0_palette_bank.py).
+- [Renderizador estático de L01_R001 v1.8](../../tools/render_v18_room0.py).
 - [Decodificador/auditor GBA](../../tools/gba_rom_audit.py).
 
 ## Automatización / CI
