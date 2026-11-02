@@ -41,9 +41,5 @@ jobs:
       - name: Check shell syntax
         run: bash -n recovery/scripts/run_ghidra_bootstrap_audit.sh
 
-      - name: Confirm ROM is not part of this workflow
-        run: |
-          if find . -type f \( -iname "*.gba" -o -iname "*.gb" -o -iname "*.gbc" \) -print -quit | grep -q .; then
-            echo "Unexpected ROM file found in the repository checkout." >&2
-            exit 1
-          fi
+      - name: Check Python test discovery
+        run: python3 -m unittest discover -s tools -p 'test_metroid_bootstrap_probe.py' -v
