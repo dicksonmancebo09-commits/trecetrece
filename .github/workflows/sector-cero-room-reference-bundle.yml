@@ -1,0 +1,59 @@
+name: Zector Cero — room source reference bundle
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "tools/build_room_reference_bundle.py"
+      - ".github/workflows/sector-cero-room-reference-bundle.yml"
+      - "data/world/sector-cero-reference-room-metadata-v1.json"
+      - "data/world/sector-cero-room-registry-v1.json"
+
+permissions:
+  contents: read
+
+jobs:
+  build-room-source-bundle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          ref: \${{ github.ref_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build pinned source bundle (no ROM)
+        run: |
+          python -m py_compile tools/build_room_reference_bundle.py
+          python tools/build_room_reference_bundle.py \
+            --repo-root . \
+            --out private-roms/room-reference-bundle \
+            --workers 16
+
+      - name: Verify bundle coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("private-roms/room-reference-bundle/room-source-bundle.json")
+          j = json.loads(p.read_text())
+          assert j["summary"]["rooms"] == 382, j["summary"]
+          assert j["summary"]["rle_layers"] == 1214, j["summary"]
+          assert j["summary"]["rle_database_paths_covered"] == 1214, j["summary"]
+          assert j["summary"]["door_records"] > 0, j["summary"]
+          print("PASS: all 382 rooms and 1,214 BG/clipdata RLE source ranges indexed.")
+          print(j["summary"])
+          PY
+
+      - name: Upload reference bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: zector-cero-382-room-source-reference
+          path: private-roms/room-reference-bundle/
+          if-no-files-found: error
+          retention-days: 30
