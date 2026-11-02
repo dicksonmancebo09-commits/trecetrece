@@ -157,22 +157,54 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
     by_id = {item["room_id"]: item for item in extracted}
     if len(by_id) != 382:
         raise RuntimeError(f"Expected 382 unique room IDs in extraction; found {len(by_id)}")
+    area_counts: dict[str, int] = {}
+    dimension_counts: dict[str, int] = {}
+    layer_counts: dict[str, int] = {}
+    spriteset_room_counts: dict[str, int] = {}
+    sprite_placement_totals: dict[str, int] = {}
+    for item in extracted:
+        area = item["source_game_area"]
+        area_counts[area] = area_counts.get(area, 0) + 1
+        dimensions = item["dimensions_blocks"]
+        dimension_key = f"{dimensions['width']}x{dimensions['height']}"
+        dimension_counts[dimension_key] = dimension_counts.get(dimension_key, 0) + 1
+        for layer in item["layers"]:
+            layer_counts[layer] = layer_counts.get(layer, 0) + 1
+        for spriteset in item["spriteset_variants"]:
+            key = str(spriteset["variant"])
+            spriteset_room_counts[key] = spriteset_room_counts.get(key, 0) + 1
+            sprite_placement_totals[key] = sprite_placement_totals.get(key, 0) + spriteset["actual_sprite_placements"]
+
+    dimension_conflict_count = sum(1 for item in extracted if item["layer_dimension_conflicts"])
     report = {
         "schema": "zector_cero.reference_room_metadata.v1",
         "project": registry.get("project"),
+        "status": "extracted_from_pinned_decomp_source_all_382_rooms",
         "source": {
             "repository": f"https://github.com/{SOURCE_REPOSITORY}",
             "commit": SOURCE_COMMIT,
             "method": "Read-only source declaration extraction; no ROM binary or room asset bytes stored.",
         },
+        "totals": {
+            "rooms": len(extracted),
+            "unique_room_ids": len(by_id),
+            "rooms_with_clipdata_dimensions": sum(1 for item in extracted if "clipdata" in item["layers"]),
+            "rooms_with_layer_dimension_conflicts": dimension_conflict_count,
+            "source_room_files_retrieved": len(extracted),
+        },
+        "level_distribution": area_counts,
+        "dimension_distribution_blocks": dimension_counts,
+        "layer_declarations_present": layer_counts,
+        "spriteset_variants_present": spriteset_room_counts,
+        "sprite_placement_totals_by_variant": sprite_placement_totals,
         "room_count": len(extracted),
         "unique_room_ids": len(by_id),
         "rooms": extracted,
         "limits": [
-            "Metadata comes from the pinned public decompilation source, not a byte-for-byte verification against the user's private ROM.",
-            "Layer dimensions and declared array lengths are extracted; compressed map/collision contents are not copied.",
-            "Sprite placement counts are extracted per declared spriteset; individual sprite coordinates and proprietary graphics are not stored.",
-            "Event script behavior and runtime collision semantics still require exact-ROM inspection and emulator testing.",
+            "Dimensions and declared BG/clipdata array lengths come from the pinned public source, not byte-for-byte validation against the user's private ROM.",
+            "The compressed BG and clipdata RLE payloads are not present in the public source tree inspected; this report does not contain their bytes or spatial collision maps.",
+            "Sprite counts represent coordinate rows declared in source spritesets; the underlying art/animation binaries and runtime event logic are not copied.",
+            "Room dimensions use the source's 16-pixel block unit. BG map payloads, collision placement, sprite placement, event behavior and door coordinates still require exact-private-ROM reconciliation and mGBA testing.",
         ],
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -199,6 +231,8 @@ def extract_registry(registry_path: Path, output_path: Path, sheets_path: Path |
             sheet["status"]["geometry"] = "reference_dimensions_extracted_full_room_geometry_pending"
             sheet["status"]["collision"] = "reference_clipdata_dimensions_extracted_collision_content_pending"
         sheets["status"] = "reference_dimensions_populated_exact_rom_geometry_and_collision_pending"
+        sheets["room_count_with_layer_dimension_agreement"] = sum(1 for item in extracted if not item["layer_dimension_conflicts"])
+        sheets["room_count_with_layer_dimension_conflicts"] = sum(1 for item in extracted if item["layer_dimension_conflicts"])
         sheets["reference_metadata_source"] = report["source"]
         sheets["room_count_with_reference_dimensions"] = len(sheet_rooms)
         sheets_path.write_text(json.dumps(sheets, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
