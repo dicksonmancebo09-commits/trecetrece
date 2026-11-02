@@ -31,6 +31,14 @@ class BranchDecoderTests(unittest.TestCase):
         target = decode_thumb_b(0xE7FE, 0x08001000)
         self.assertEqual(target, 0x08001000)
 
+    def test_invalid_thumb_bl_prefix_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            decode_thumb_bl(0xE800, 0xF000, 0x08000232)
+
+    def test_invalid_thumb_branch_opcode_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            decode_thumb_b(0xF000, 0x08000236)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
