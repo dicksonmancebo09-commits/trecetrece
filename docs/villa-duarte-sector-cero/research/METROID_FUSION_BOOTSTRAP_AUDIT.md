@@ -26,7 +26,7 @@ Recorded ROM identity:
 | Import | Raw Binary |
 | Automatic full-ROM analysis | Disabled during the targeted import |
 
-The hash and identity match the repository's existing [ROM inventory](../../../../recovery/analysis/rom_inventory.json).
+The hash and identity match the repository's existing [ROM inventory](../../../recovery/analysis/rom_inventory.json).
 
 ## 1. GBA entry
 
