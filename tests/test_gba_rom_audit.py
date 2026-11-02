@@ -73,7 +73,7 @@ class TestGbaRomAudit(unittest.TestCase):
         stream = bytes([
             2, 2,
             2, 0x80, 0x04, 0x03, 0x00, 0x00,
-            0, 0x00, 0x00,
+            1, 0x84, 0x00, 0x00,
         ])
         width, height, values, consumed = audit.gba_room_rle_decompress_map(
             stream, 0, len(stream)
