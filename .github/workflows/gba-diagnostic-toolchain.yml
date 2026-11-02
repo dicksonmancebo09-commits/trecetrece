@@ -12,6 +12,7 @@ on:
       - "tools/gba_rom_audit.py"
       - "tools/extract_sector_cero_room_maps.py"
       - "tools/extract_sector_cero_room_visual_assets.py"
+      - "tools/render_v17_room0.py"
       - "tools/apply_guarded_patch.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
@@ -69,7 +70,7 @@ jobs:
       - name: Install mGBA and diagnostic dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3 lua5.4
+          sudo apt-get install -y mgba-qt mgba-sdl xvfb xauth xdotool imagemagick zip python3 python3-pil lua5.4
 
       - name: Confirm emulator installation
         run: |
@@ -92,13 +93,14 @@ jobs:
           python3 tools/gba_rom_audit.py --help >/dev/null
           python3 tools/extract_sector_cero_room_maps.py --help >/dev/null
           python3 tools/extract_sector_cero_room_visual_assets.py --help >/dev/null
+          python3 tools/render_v17_room0.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
           python3 tools/apply_guarded_patch.py --help >/dev/null
           python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/extract_sector_cero_room_maps.py tools/extract_sector_cero_room_visual_assets.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/extract_sector_cero_room_maps.py tools/extract_sector_cero_room_visual_assets.py tools/render_v17_room0.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
