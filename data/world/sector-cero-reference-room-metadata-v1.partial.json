@@ -6,8 +6,8 @@
     "commit": "de76565c897c05838503717db9aa2adfe92aeba3",
     "method": "Per-room source declaration metadata only; no ROM or compressed map bytes copied."
   },
-  "room_count": 15,
-  "unique_room_ids": 15,
+  "room_count": 30,
+  "unique_room_ids": 30,
   "rooms": [
     {
       "room_id": "L01_R082",
@@ -675,6 +675,666 @@
           "variant": 0,
           "declared_array_entries": 6,
           "actual_sprite_placements": 5
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R061",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 61,
+      "source_room_index_0based": 60,
+      "source_file": "src/data/rooms/main_deck/main_deck_60.c",
+      "source_git_blob_sha": "2844d0161f117dd5799a3791c16219d5d9eb31c7",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 24
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 384
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 116,
+          "width_blocks": 19,
+          "height_blocks": 24
+        },
+        "bg2": {
+          "declared_array_bytes": 249,
+          "width_blocks": 19,
+          "height_blocks": 24
+        },
+        "bg1": {
+          "declared_array_bytes": 326,
+          "width_blocks": 19,
+          "height_blocks": 24
+        },
+        "bg0": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 24
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        },
+        {
+          "variant": 2,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R012",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 12,
+      "source_room_index_0based": 11,
+      "source_file": "src/data/rooms/main_deck/main_deck_11.c",
+      "source_git_blob_sha": "41965013399d4ee37c8fec240b9ad5ef7da503b6",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 151,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R075",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 75,
+      "source_room_index_0based": 74,
+      "source_file": "src/data/rooms/main_deck/main_deck_74.c",
+      "source_git_blob_sha": "9db6ba404929381c6ae49c789e24f9b06530f6dc",
+      "dimensions_blocks": {
+        "width": 49,
+        "height": 34
+      },
+      "dimensions_pixels": {
+        "width": 784,
+        "height": 544
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 183,
+          "width_blocks": 49,
+          "height_blocks": 34
+        },
+        "bg2": {
+          "declared_array_bytes": 1047,
+          "width_blocks": 49,
+          "height_blocks": 34
+        },
+        "bg1": {
+          "declared_array_bytes": 731,
+          "width_blocks": 49,
+          "height_blocks": 34
+        },
+        "bg0": {
+          "declared_array_bytes": 53,
+          "width_blocks": 49,
+          "height_blocks": 34
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R021",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 21,
+      "source_room_index_0based": 20,
+      "source_file": "src/data/rooms/main_deck/main_deck_20.c",
+      "source_git_blob_sha": "1385a44c6db2bcfe82f4b6c75536470cdf0a12c5",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 34
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 544
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 214,
+          "width_blocks": 34,
+          "height_blocks": 34
+        },
+        "bg2": {
+          "declared_array_bytes": 157,
+          "width_blocks": 34,
+          "height_blocks": 34
+        },
+        "bg1": {
+          "declared_array_bytes": 643,
+          "width_blocks": 34,
+          "height_blocks": 34
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R009",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 9,
+      "source_room_index_0based": 8,
+      "source_file": "src/data/rooms/main_deck/main_deck_8.c",
+      "source_git_blob_sha": "434ac79a4a21710c5fb0a085bc9e6fe022c9a9e2",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 137,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R036",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 36,
+      "source_room_index_0based": 35,
+      "source_file": "src/data/rooms/main_deck/main_deck_35.c",
+      "source_git_blob_sha": "d4b630509ff299007f931bc1e1476f30cede3f50",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 74
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 1184
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 459,
+          "width_blocks": 19,
+          "height_blocks": 74
+        },
+        "bg2": {
+          "declared_array_bytes": 1264,
+          "width_blocks": 19,
+          "height_blocks": 74
+        },
+        "bg1": {
+          "declared_array_bytes": 1170,
+          "width_blocks": 19,
+          "height_blocks": 74
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 6,
+          "actual_sprite_placements": 5
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R010",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 10,
+      "source_room_index_0based": 9,
+      "source_file": "src/data/rooms/main_deck/main_deck_9.c",
+      "source_git_blob_sha": "a10d4b0c374ebec81f44dcc2b9fbcfd36266f357",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 72,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 229,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R038",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 38,
+      "source_room_index_0based": 37,
+      "source_file": "src/data/rooms/main_deck/main_deck_37.c",
+      "source_git_blob_sha": "5aa3696e81425e1398aa0d68985cf3a2fafadf2c",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 151,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg0": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R037",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 37,
+      "source_room_index_0based": 36,
+      "source_file": "src/data/rooms/main_deck/main_deck_36.c",
+      "source_git_blob_sha": "b07cff6e6b567e6da3747e6e05d871080278e971",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 97,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 210,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 256,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R084",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 84,
+      "source_room_index_0based": 83,
+      "source_file": "src/data/rooms/main_deck/main_deck_83.c",
+      "source_git_blob_sha": "0bcb1bb89151e96ee8a76e6bedb71473a188a41d",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 44
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 704
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 405,
+          "width_blocks": 19,
+          "height_blocks": 44
+        },
+        "bg2": {
+          "declared_array_bytes": 917,
+          "width_blocks": 19,
+          "height_blocks": 44
+        },
+        "bg1": {
+          "declared_array_bytes": 776,
+          "width_blocks": 19,
+          "height_blocks": 44
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R018",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 18,
+      "source_room_index_0based": 17,
+      "source_file": "src/data/rooms/main_deck/main_deck_17.c",
+      "source_git_blob_sha": "8a20199d32f0a6b5562475d4ca8be197c8d6175c",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 44
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 704
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 454,
+          "width_blocks": 19,
+          "height_blocks": 44
+        },
+        "bg2": {
+          "declared_array_bytes": 66,
+          "width_blocks": 19,
+          "height_blocks": 44
+        },
+        "bg1": {
+          "declared_array_bytes": 408,
+          "width_blocks": 19,
+          "height_blocks": 44
+        },
+        "bg0": {
+          "declared_array_bytes": 168,
+          "width_blocks": 19,
+          "height_blocks": 44
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 1,
+          "actual_sprite_placements": 0
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R057",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 57,
+      "source_room_index_0based": 56,
+      "source_file": "src/data/rooms/main_deck/main_deck_56.c",
+      "source_git_blob_sha": "99e929aa4627102b39c984d0dfdf470e3ac46499",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 72,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 164,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 229,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg0": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R008",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 8,
+      "source_room_index_0based": 7,
+      "source_file": "src/data/rooms/main_deck/main_deck_7.c",
+      "source_git_blob_sha": "455775232cad884f8c99376cacccc5215fc1314e",
+      "dimensions_blocks": {
+        "width": 34,
+        "height": 24
+      },
+      "dimensions_pixels": {
+        "width": 544,
+        "height": 384
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 151,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg2": {
+          "declared_array_bytes": 297,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg1": {
+          "declared_array_bytes": 557,
+          "width_blocks": 34,
+          "height_blocks": 24
+        },
+        "bg0": {
+          "declared_array_bytes": 64,
+          "width_blocks": 34,
+          "height_blocks": 24
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        },
+        {
+          "variant": 1,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R045",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 45,
+      "source_room_index_0based": 44,
+      "source_file": "src/data/rooms/main_deck/main_deck_44.c",
+      "source_git_blob_sha": "b0234f24f0c0ff4a0bfdb86cc35c634245e2b366",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 60,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 172,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 139,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg0": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
+        }
+      ],
+      "layer_dimension_conflicts": []
+    },
+    {
+      "room_id": "L01_R073",
+      "source_game_area": "Main Deck",
+      "source_room_index_1based": 73,
+      "source_room_index_0based": 72,
+      "source_file": "src/data/rooms/main_deck/main_deck_72.c",
+      "source_git_blob_sha": "f9d118ab5d42c25dac3ba5005ffab9508bc14134",
+      "dimensions_blocks": {
+        "width": 19,
+        "height": 14
+      },
+      "dimensions_pixels": {
+        "width": 304,
+        "height": 224
+      },
+      "layers": {
+        "clipdata": {
+          "declared_array_bytes": 53,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg2": {
+          "declared_array_bytes": 14,
+          "width_blocks": 19,
+          "height_blocks": 14
+        },
+        "bg1": {
+          "declared_array_bytes": 188,
+          "width_blocks": 19,
+          "height_blocks": 14
+        }
+      },
+      "spriteset_variants": [
+        {
+          "variant": 0,
+          "declared_array_entries": 2,
+          "actual_sprite_placements": 1
         }
       ],
       "layer_dimension_conflicts": []
