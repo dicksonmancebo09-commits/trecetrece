@@ -34,4 +34,4 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 - L02: atlas SVG y exportaciones PNG descritas en [su paquete](../tiles/scenario-02/README.md); prueba en ROM pendiente.
 - L03–L07: atlas SVG v0.1 + JSON, 64 módulos de 32 × 32 px por barrio; exportación PNG indexada/4bpp y composición por sala pendientes.
 
-Los atlas SVG son bibliotecas editables; no son tilemaps ni mapas de las 382 salas.
+Los atlas SVG son bibliotecas editables; no son tilemaps ni mapas de las 382 salas. Informe de estado: [auditoría de producción 02-11-2026](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
