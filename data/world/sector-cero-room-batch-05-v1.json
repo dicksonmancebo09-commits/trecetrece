@@ -1,0 +1,322 @@
+{
+  "schema": "zector_cero.room_batch.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "batch": 5,
+  "status": "design_roster_with_reference_mapping",
+  "target_total_rooms": 382,
+  "completed_before_batch": 348,
+  "batch_room_count": 34,
+  "project_cumulative_planned": 382,
+  "neighborhood_distribution": {
+    "Simónico": 34
+  },
+  "source_registry": "data/world/sector-cero-room-registry-v1.json",
+  "rooms": [
+    {
+      "id": "L07_R005",
+      "production_id": "L05-001",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Corredor mural de la resistencia",
+      "role": "urban_art_corridors",
+      "source_room_index": 5
+    },
+    {
+      "id": "L07_R037",
+      "production_id": "L05-002",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Pasaje de murales bajo luz cian",
+      "role": "urban_art_corridors",
+      "source_room_index": 37
+    },
+    {
+      "id": "L07_R036",
+      "production_id": "L05-003",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Muro de expresión junto a persianas",
+      "role": "urban_art_corridors",
+      "source_room_index": 36
+    },
+    {
+      "id": "L07_R034",
+      "production_id": "L05-004",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Callejón de arte y cableado aéreo",
+      "role": "urban_art_corridors",
+      "source_room_index": 34
+    },
+    {
+      "id": "L07_R006",
+      "production_id": "L05-005",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Galería exterior de murales ficticios",
+      "role": "urban_art_corridors",
+      "source_room_index": 6
+    },
+    {
+      "id": "L07_R024",
+      "production_id": "L05-006",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Paso cultural hacia los refugios",
+      "role": "urban_art_corridors",
+      "source_room_index": 24
+    },
+    {
+      "id": "L07_R039",
+      "production_id": "L05-007",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Patio comunitario con equipo de sonido",
+      "role": "music_and_cultural_yards",
+      "source_room_index": 39
+    },
+    {
+      "id": "L07_R014",
+      "production_id": "L05-008",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cancha vecinal convertida en punto de reunión",
+      "role": "music_and_cultural_yards",
+      "source_room_index": 14
+    },
+    {
+      "id": "L07_R007",
+      "production_id": "L05-009",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Patio de ensayo con altavoces y bancos",
+      "role": "music_and_cultural_yards",
+      "source_room_index": 7
+    },
+    {
+      "id": "L07_R038",
+      "production_id": "L05-010",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Plazoleta musical con luces cálidas",
+      "role": "music_and_cultural_yards",
+      "source_room_index": 38
+    },
+    {
+      "id": "L07_R016",
+      "production_id": "L05-011",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Centro cultural improvisado",
+      "role": "music_and_cultural_yards",
+      "source_room_index": 16
+    },
+    {
+      "id": "L07_R018",
+      "production_id": "L05-012",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Refugio en vivienda de esquina",
+      "role": "resistance_hideouts",
+      "source_room_index": 18
+    },
+    {
+      "id": "L07_R008",
+      "production_id": "L05-013",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Almacén vecinal de suministros",
+      "role": "resistance_hideouts",
+      "source_room_index": 8
+    },
+    {
+      "id": "L07_R019",
+      "production_id": "L05-014",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Sala de reunión tras un comercio cerrado",
+      "role": "resistance_hideouts",
+      "source_room_index": 19
+    },
+    {
+      "id": "L07_R020",
+      "production_id": "L05-015",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Casa segura con acceso secundario",
+      "role": "resistance_hideouts",
+      "source_room_index": 20
+    },
+    {
+      "id": "L07_R009",
+      "production_id": "L05-016",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Puesto de coordinación de la resistencia",
+      "role": "resistance_hideouts",
+      "source_room_index": 9
+    },
+    {
+      "id": "L07_R033",
+      "production_id": "L05-017",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Azotea nocturna con antenas",
+      "role": "rooftops_and_backstreets",
+      "source_room_index": 33
+    },
+    {
+      "id": "L07_R032",
+      "production_id": "L05-018",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Pasarela entre patios traseros",
+      "role": "rooftops_and_backstreets",
+      "source_room_index": 32
+    },
+    {
+      "id": "L07_R021",
+      "production_id": "L05-019",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Callejón elevado con escaleras metálicas",
+      "role": "rooftops_and_backstreets",
+      "source_room_index": 21
+    },
+    {
+      "id": "L07_R026",
+      "production_id": "L05-020",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Ruta de tejados hacia el subsuelo",
+      "role": "rooftops_and_backstreets",
+      "source_room_index": 26
+    },
+    {
+      "id": "L07_R040",
+      "production_id": "L05-021",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Entrada a túnel bajo la calle",
+      "role": "underpasses_and_catacombs",
+      "source_room_index": 40
+    },
+    {
+      "id": "L07_R023",
+      "production_id": "L05-022",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Galería de drenaje antigua",
+      "role": "underpasses_and_catacombs",
+      "source_room_index": 23
+    },
+    {
+      "id": "L07_R030",
+      "production_id": "L05-023",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cámara de servicio bajo viviendas",
+      "role": "underpasses_and_catacombs",
+      "source_room_index": 30
+    },
+    {
+      "id": "L07_R031",
+      "production_id": "L05-024",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cruce subterráneo con compuertas",
+      "role": "underpasses_and_catacombs",
+      "source_room_index": 31
+    },
+    {
+      "id": "L07_R022",
+      "production_id": "L05-025",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Catacumba de acceso al complejo oculto",
+      "role": "underpasses_and_catacombs",
+      "source_room_index": 22
+    },
+    {
+      "id": "L07_R027",
+      "production_id": "L05-026",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Laboratorio biomédico exterior",
+      "role": "hidden_lab_and_core",
+      "source_room_index": 27
+    },
+    {
+      "id": "L07_R011",
+      "production_id": "L05-027",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Sala de experimentación y contención",
+      "role": "hidden_lab_and_core",
+      "source_room_index": 11
+    },
+    {
+      "id": "L07_R010",
+      "production_id": "L05-028",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cámara del núcleo y control central",
+      "role": "hidden_lab_and_core",
+      "source_room_index": 10
+    },
+    {
+      "id": "L07_R028",
+      "production_id": "L05-029",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Vestíbulo de preparación del enfrentamiento",
+      "role": "preboss_staging",
+      "source_room_index": 28
+    },
+    {
+      "id": "L07_R013",
+      "production_id": "L05-030",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Arena del núcleo: combate final",
+      "role": "final_boss_arena",
+      "source_room_index": 13
+    },
+    {
+      "id": "L07_R015",
+      "production_id": "L05-031",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Corredor de evacuación del complejo",
+      "role": "ending_and_escape",
+      "source_room_index": 15
+    },
+    {
+      "id": "L07_R012",
+      "production_id": "L05-032",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Salida nocturna hacia Simónico",
+      "role": "ending_and_escape",
+      "source_room_index": 12
+    },
+    {
+      "id": "L07_R025",
+      "production_id": "L05-033",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Archivo clandestino de la resistencia",
+      "role": "secret_room",
+      "source_room_index": 25
+    },
+    {
+      "id": "L07_R035",
+      "production_id": "L05-034",
+      "level_id": "L07",
+      "neighborhood": "Simónico",
+      "name": "Cámara secreta de recompensa final",
+      "role": "secret_room",
+      "source_room_index": 35
+    }
+  ]
+}
