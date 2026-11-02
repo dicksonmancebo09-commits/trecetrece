@@ -12,8 +12,8 @@
 | Distribución | **7/7 niveles coherentes** | Conteos por barrio y cobertura de índices fuente completos |
 | Puertas de referencia | **898 registros** | 0 destinos predeterminados y 0 variantes de evento sin sala destino |
 | Cinco lotes | **382/382 asignados** | 87 + 87 + 87 + 87 + 34, sin solapamiento ni huecos |
-| Fichas técnicas | **382/382 creadas como base** | Metadatos fuente y puertas presentes; geometría/colisiones y extracción de ROM pendientes |
-| Atlas | **5 atlas SVG nuevos** | 320 módulos conceptuales editables; todavía sin exportación GBA |
+| Fichas técnicas | **382/382 enriquecidas con referencia** | Dimensiones de clipdata/BG, longitudes declaradas, variantes de spriteset y puertas; los mapas RLE y la verificación de ROM exacta siguen pendientes |
+| Atlas | **7 bibliotecas SVG** | 2 paquetes anteriores + 5 atlas nuevos; 320 módulos nuevos; colores contrastados contra las 7 paletas declaradas; PNG indexado/4bpp aún sin resultado CI verificado |
 | Integración ROM | **No iniciada en binario** | Falta acceso a la ROM privada exacta y completar extracción técnica por sala |
 | Pruebas en emulador | **Pendientes** | No se ejecutó una ROM durante esta auditoría |
 
@@ -67,16 +67,16 @@ Correcciones aplicadas durante la auditoría:
 
 ## 4. Fichas técnicas por sala
 
-Se creó `data/world/sector-cero-room-technical-sheets-v1.json` con **382 fichas base**, una por sala. Cada entrada incorpora, según está disponible en la referencia:
+Se creó `data/world/sector-cero-room-technical-sheets-v1.json` con **382 fichas técnicas enriquecidas con metadatos de referencia**, una por sala. Cada entrada incorpora:
 
 - ID maestro, ID de producción, lote, barrio, rol y briefing.
 - Área fuente, índice de sala, coordenadas y metadatos de sala.
 - Índice de entrada de tileset y referencias de gráficos, paleta, fondo, tilemap y animaciones.
 - Puertas y destinos de referencia.
 - Conteo de salas consumidoras por recurso compartido.
-- Campos explícitos para dimensiones, mapas BG0–BG3, clipdata, sprites, enemigos, eventos, puertas adaptadas y offsets de punteros.
+- Dimensiones en bloques y píxeles (bloque fuente de 16 px), longitudes declaradas de capas clipdata/BG, variantes y recuentos de spritesets, hashes de los archivos fuente y campos pendientes para mapas BG, clipdata, enemigos, eventos, puertas adaptadas y offsets de punteros.
 
-**No se deben confundir estas fichas base con fichas técnicas de integración completas.** Siguen pendientes en las 382 salas las dimensiones reales, mapas BG, clipdata/colisiones, sets y posiciones de sprites, eventos y ubicaciones de punteros extraídas de la ROM exacta. Los campos se han dejado explícitamente pendientes para no inventar datos.
+**No se deben confundir las fichas enriquecidas con fichas de integración completas.** Ya hay dimensiones y declaraciones de capas de la referencia para las 382 salas; lo que sigue pendiente es el contenido comprimido de los mapas BG/clipdata, la distribución espacial de colisiones, coordenadas individuales de sprites, eventos y ubicaciones de punteros, todo cotejado contra la ROM exacta.
 
 ## 5. Atlas gráficos
 
@@ -92,7 +92,7 @@ Se generaron cinco bibliotecas SVG originales, cada una de 256 × 256 px, con 64
 | L06 Los Molinos | [SVG v0.1](../../assets/levels/level-06-los-molinos/level-06-atlas-v0.1.svg) · [JSON](../../assets/levels/level-06-los-molinos/level-06-atlas-v0.1.json) | Creado en esta auditoría |
 | L07 Simónico | [SVG v0.1](../../assets/levels/level-07-simonico/level-07-atlas-v0.1.svg) · [JSON](../../assets/levels/level-07-simonico/level-07-atlas-v0.1.json) | Creado en esta auditoría |
 
-Los cinco SVG nuevos son **primeras bibliotecas de módulos**, no arte final aprobado, mapas de sala ni tilemaps. Sus colores son paletas de trabajo declaradas; aún no se han convertido y comprobado como paletas de 16 colores BGR555 de cada recurso concreto.
+Los cinco SVG nuevos son **primeras bibliotecas de módulos**, no arte final aprobado, mapas de sala ni tilemaps. Se inspeccionaron los siete SVG: los colores de relleno/trazo presentes coinciden con las 16 entradas declaradas de cada paleta. Esa comprobación es estática; aún no hay PNG indexados ni archivos 4bpp/BGR555/LZ77 confirmados como artefactos de ejecución.
 
 ## 6. Automatización de la auditoría
 
@@ -120,9 +120,43 @@ La versión v1.3 figura retirada como candidata funcional tras el informe anteri
 6. Ejecutar el diagnóstico mGBA y revisar las capturas, logs y navegación real: arranque, puerta de entrada/salida, colisiones, transparencia, paleta, sprites y guardado.
 7. Solo después de superar esa prueba vertical, ampliar la integración a grupos de salas conectadas. No realizar sustituciones globales de recursos compartidos sin auditar todos sus consumidores.
 
+## 9. Dimensiones de referencia extraídas en las 382 salas
+
+La extracción se completó leyendo directamente los **382 archivos C de sala** en el repositorio de referencia `metroidret/mf`, commit fijado `de76565c897c05838503717db9aa2adfe92aeba3`. El resultado se guarda en [`sector-cero-reference-room-metadata-v1.json`](../../data/world/sector-cero-reference-room-metadata-v1.json) y se incorporó a las 382 fichas técnicas.
+
+| Comprobación de fuente | Resultado |
+|---|---:|
+| Archivos de sala recuperados y analizados | **382/382** |
+| Salas con dimensiones de clipdata declaradas | **382/382** |
+| Dimensiones coincidentes entre clipdata y capas BG declaradas | **382/382** |
+| Conflictos dimensionales encontrados | **0** |
+| Declaraciones de capa clipdata | 382 |
+| Declaraciones BG1 | 382 |
+| Declaraciones BG2 | 381 |
+| Declaraciones BG0 | 69 |
+| Declaraciones BG3 en estos archivos | 0 |
+
+**Unidad:** el código de referencia declara dimensiones en bloques de 16 × 16 píxeles. Por tanto, una sala de 34 × 24 bloques declara 544 × 384 píxeles. Esto es dimensión de mapa, no resolución de pantalla; la pantalla objetivo sigue siendo 240 × 160.
+
+### Distribución de variantes de spriteset
+
+| Variante | Salas que la declaran | Posiciones declaradas en total |
+|---:|---:|---:|
+| 0 | 382 | 1.593 |
+| 1 | 70 | 443 |
+| 2 | 17 | 114 |
+| 3 | 0 | 0 |
+| **Total de filas de posición** | — | **2.150** |
+
+Estos son recuentos de filas de colocación en los archivos fuente. No significan que se hayan importado los sprites ni que se haya probado su aparición en el juego.
+
+### Límite sobre colisiones y tilemaps
+
+El código C contiene dimensiones y referencias a recursos comprimidos, pero los binarios `.rle` de clipdata/BG no estaban disponibles en el árbol público consultado. La extracción no inventa ni reconstruye una matriz de colisión. Tampoco valida estos metadatos contra la ROM privada del usuario: para eso se necesita el archivo local, comprobar su SHA-256 y extraer sus mapas/punteros reales.
+
 ## Criterio de cierre de esta auditoría
 
-La **auditoría de inventario y asignación** está completada: 382 IDs coherentes, 5 lotes completos, 898 puertas sin destinos huérfanos y 382 fichas técnicas base. La **producción gráfica** avanza con cinco atlas SVG nuevos. La **integración y validación dentro de ROM** sigue abierta y es la siguiente fase; no se declara que el videojuego contenga ya las 382 salas.
+La **auditoría estructural de referencia** está completada: 382 IDs coherentes, 5 lotes completos, 898 puertas sin destinos huérfanos, dimensiones y declaraciones de capas recuperadas para 382 salas y 382 fichas técnicas enriquecidas. La **producción gráfica** tiene 7 bibliotecas SVG; la conversión PNG/4bpp está automatizada pero todavía sin ejecución CI confirmada. La **integración y validación dentro de la ROM privada** sigue abierta; no se declara que el videojuego contenga ya las 382 salas.
 ## 8. Automatización y extracción técnica ampliada
 
 Después del inventario inicial se añadieron dos etapas automatizadas:
