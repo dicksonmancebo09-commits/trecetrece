@@ -27,7 +27,7 @@ def tile_image(gfx: bytes, tile_index: int, palette: list[tuple[int, int, int]],
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--rom", type=Path, required=True, help="User-supplied v1.7 ROM")
+    ap.add_argument("--rom", type=Path, required=True, help="User-supplied v1.8 candidate ROM")
     ap.add_argument("--out", type=Path, required=True, help="Output directory")
     ap.add_argument("--scale", type=int, default=3, choices=range(1, 9))
     ap.add_argument("--clipdata-csv", type=Path, help="Optional original room clipdata CSV for diagnostic view")
@@ -44,7 +44,7 @@ def main() -> int:
     gfx_compressed = rom[0x416E8C:0x416E8C + 2843]
     gfx, gfx_consumed = gba_lz77_decompress(gfx_compressed)
     if len(gfx) != 11808 or gfx_consumed != len(gfx_compressed):
-        raise ValueError("Unexpected v1.7 room-0 graphics dimensions")
+        raise ValueError("Unexpected v1.8 room-0 graphics dimensions")
     palette_data = rom[0x46B494:0x46B494 + 448]
     if len(palette_data) != 448:
         raise ValueError("Unexpected room-0 palette length")
@@ -77,7 +77,7 @@ def main() -> int:
     if set(bg1_values) != {383}:
         raise ValueError("Active BG1 is not the expected transparent layer")
     if min(bg2_values) != 0 or max(bg2_values) != 304 or len(set(bg2_values)) != 305:
-        raise ValueError("Active BG2 metatile range differs from the v1.7 profile")
+        raise ValueError("Active BG2 metatile range differs from the v1.8 profile")
 
     from PIL import Image, ImageDraw
     width, height = w2 * 16, h2 * 16
@@ -141,7 +141,7 @@ def main() -> int:
         tile = tile_image(gfx, tile_id, palette_rows[1], Image)
         atlas.paste(tile, ((tile_id % 24) * 8, (tile_id // 24) * 8))
     atlas.resize((24*8*args.scale, 16*8*args.scale), Image.Resampling.NEAREST).save(
-        out / "tileset_61_v1.7_atlas.png"
+        out / "tileset_61_v1.8_atlas.png"
     )
 
     report = {
