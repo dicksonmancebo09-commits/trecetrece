@@ -52,12 +52,13 @@ def audit_data(
     warnings: list[str] = []
     expected_level_counts = expected_level_counts or EXPECTED_LEVEL_COUNTS
     expected_batch_counts = expected_batch_counts or EXPECTED_BATCH_COUNTS
+    expected_total_rooms = sum(expected_level_counts.values())
     rooms = registry.get("rooms", [])
     ids = [str(room.get("room_id", "")) for room in rooms]
     id_set = set(ids)
     duplicates = _duplicates(ids)
-    if len(rooms) != 382:
-        errors.append(f"Expected 382 registry records; found {len(rooms)}.")
+    if len(rooms) != expected_total_rooms:
+        errors.append(f"Expected {expected_total_rooms} registry records; found {len(rooms)}.")
     if duplicates:
         errors.append(f"Duplicate registry room IDs: {duplicates[:12]}.")
     if len(id_set) != len(rooms):
@@ -152,8 +153,8 @@ def audit_data(
         errors.append(f"Expected batches 1–5; found {sorted(batch_counts)}.")
     if batch_mismatches:
         errors.append(f"Batch count mismatch in: {sorted(batch_mismatches)}.")
-    if len(assigned_ids) != 382 or len(set(assigned_ids)) != 382:
-        errors.append(f"Five batches must assign 382 unique rooms; found {len(assigned_ids)} assignments and {len(set(assigned_ids))} unique IDs.")
+    if len(assigned_ids) != expected_total_rooms or len(set(assigned_ids)) != expected_total_rooms:
+        errors.append(f"Production batches must assign {expected_total_rooms} unique rooms; found {len(assigned_ids)} assignments and {len(set(assigned_ids))} unique IDs.")
     if set(assigned_ids) != id_set:
         errors.append("Five-batch assignment does not exactly cover the room registry.")
 
@@ -172,7 +173,7 @@ def audit_data(
     sheet_duplicates = _duplicates(sheet_ids)
     if sheet_duplicates:
         errors.append(f"Duplicate technical sheets: {sheet_duplicates[:12]}.")
-    if set(sheet_ids) != id_set or len(sheet_ids) != 382:
+    if set(sheet_ids) != id_set or len(sheet_ids) != expected_total_rooms:
         errors.append("Technical sheets do not cover exactly the 382 registry rooms.")
     pending_geometry = sum(1 for room in sheet_rooms if (room.get("status") or {}).get("geometry") == "pending_rom_extract")
     pending_collision = sum(1 for room in sheet_rooms if (room.get("status") or {}).get("collision") == "pending_rom_extract")
