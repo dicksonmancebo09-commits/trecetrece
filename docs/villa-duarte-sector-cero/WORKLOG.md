@@ -179,3 +179,13 @@ Para cada cambio futuro:
 - Checksum GBA válido; BPS v1.6→v1.7 reproducido byte por byte.
 - **No probado en emulador.** La corrección tiene fundamento en el flujo del código y los punteros, pero sigue pendiente abrir la ROM y comprobar title→START→hangar→primera sala.
 - Documento: [V1_7_TITLE_HANGAR_FIX.md](V1_7_TITLE_HANGAR_FIX.md).
+
+## 2026-11-02 — Canon de siete barrios y registro completo de salas
+
+- Se adopta como mapa creativo rector la distribución del atlas: L01 Villa Duarte, L02 El Caliche, L03 La Francia Nueva, L04 Calero, L05 Pueblo Nuevo, L06 Los Molinos y L07 Simónico.
+- Se cruzan las siete áreas de la referencia técnica con el canon visual, conservando los conteos de 87, 54, 61, 39, 48, 52 y 41 entradas respectivamente: **382 salas registradas**.
+- Se crea [LEVEL_ROOM_MASTER_PLAN_V2.md](LEVEL_ROOM_MASTER_PLAN_V2.md), con identidad, paleta, función narrativa, presupuesto de roles y listado individual de cada sala.
+- Se crea [sector-cero-room-registry-v1.json](../../data/world/sector-cero-room-registry-v1.json), con IDs estables, índice original 1-based/0-based, coordenadas, tileset entry, IDs de recursos y rol planeado para las 382 salas.
+- La asignación de rol dentro de cada área se hace por map_y, map_x e índice original. Esto ordena el roster, pero **no** inventa conexiones entre puertas: el grafo real de habitaciones sigue pendiente de extraer desde las tablas Door.
+- Las rutas entre los siete barrios son una propuesta macro de diseño; sus referencias binarias, puertas exactas, eventos y requisitos de habilidades siguen pendientes de cotejo.
+- La ROM original no se modifica. Ninguna de las 382 salas se declara integrada o probada en juego por este trabajo.
