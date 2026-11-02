@@ -167,3 +167,21 @@ Después del inventario inicial se añadieron dos etapas automatizadas:
 **Estado de ejecución:** la automatización está incorporada al repositorio; no se presenta como completada hasta que GitHub Actions muestre un job verde y los PNG, JSON de extracción y artifact estén disponibles en la rama.
 
 **Límite de la extracción:** los archivos C de referencia contienen las dimensiones y referencias a los bloques RLE, pero los binarios de clipdata `.rle` no están disponibles en el árbol público consultado. Por ello, la extracción no inventa una matriz de colisión ni guarda bytes de esos mapas. Para completar la disposición espacial de colisiones, sprites y eventos se necesita leer la ROM privada exacta y validar su hash.
+
+
+## Actualización de ejecución CI — 2 de noviembre de 2026
+
+Se ejecutó y completó satisfactoriamente el workflow **Zector Cero — production asset export** en GitHub Actions:
+
+- Run: [41498789079](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41498789079) — conclusión `success`.
+- Commit que disparó el proceso: `d3f618b38be5f9263e6cff62cb4196451cfbbab6` (añadió un comentario XML sin cambio visual al SVG L03 para activar la exportación).
+- Commit generado por el workflow: `8e6752ce0d7a8395b5216f4e8f697e20353d4bba`.
+- Extracción de metadatos de referencia de 382 salas: completada.
+- Auditoría de IDs y cinco lotes: completada.
+- Render de siete atlas a PNG indexado: completado.
+- Exportación 4bpp, paletas BGR555 y compresión GBA LZ77: completada para los siete atlas; todos los informes declaran round-trip 4bpp y LZ77 correctos.
+- Artefacto de Actions: `zector-cero-gba-atlas-exports` (artifact ID `13166559227`, retención de 14 días).
+
+Comprobación independiente del ZIP descargado: 7 informes, 7 ficheros 4bpp de 32.768 bytes, 7 streams LZ77 y 7 paletas de 32 bytes. SHA-256 del ZIP: `61624cfdf696f81b9c1be02c8d112d1517afb96cba0796a97f6ce443a863d192`.
+
+**Límite sin cambios:** el informe de exportación confirma `rom_modified=false`, `room_tilemap_created=false`, `room_pointer_updated=false` y `runtime_tested=false`. Por tanto, este hito entrega recursos gráficos codificados y comprobados; no integra salas en la ROM ni demuestra jugabilidad.
