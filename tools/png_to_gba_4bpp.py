@@ -336,7 +336,18 @@ def main() -> int:
             raise FileNotFoundError(args.png)
         if args.png.suffix.lower() != ".png":
             raise ValueError("Input must be a PNG file.")
-        report = export_atlas(args.png, args.output_dir, args.prefix or args.png.stem)
+        prefix = args.prefix or args.png.stem
+        if Path(prefix).name != prefix or prefix in (".", ".."):
+            raise ValueError("prefix must be a simple filename stem.")
+        repository_root = Path(__file__).resolve().parents[1]
+        private_root = (repository_root / "private-roms").resolve()
+        output_dir = args.output_dir.expanduser().resolve()
+        if not output_dir.is_relative_to(private_root):
+            raise ValueError(
+                "Generated GBA assets must be written under the Git-ignored "
+                f"private-roms/ directory. Requested: {output_dir}"
+            )
+        report = export_atlas(args.png, output_dir, prefix)
     except (OSError, ValueError, AssertionError) as exc:
         print(f"png_to_gba_4bpp: ERROR: {exc}", file=sys.stderr)
         return 2
