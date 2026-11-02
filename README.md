@@ -71,6 +71,12 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 
 > **Aviso:** este repositorio está configurado como público. Los documentos y nombres de archivo que se añadan a una rama pueden ser visibles públicamente, aunque no contengan el material del juego.
 
+## Plan de niveles y salas
+
+- [Plan maestro de siete barrios y 382 salas](docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md).
+- [Registro estructurado de las 382 salas](data/world/sector-cero-room-registry-v1.json).
+- Asignación: 87 Villa Duarte · 54 El Caliche · 61 La Francia Nueva · 39 Calero · 48 Pueblo Nuevo · 52 Los Molinos · 41 Simónico.
+
 ## Transformación visual
 
 - [Plan maestro de transformación visual](docs/villa-duarte-sector-cero/VISUAL_TRANSFORMATION_PLAN.md)
