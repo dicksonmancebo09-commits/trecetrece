@@ -1,0 +1,5277 @@
+{
+  "schema": "zector_cero.room_batch.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "batch": 2,
+  "status": "conceptual_room_blockouts",
+  "target_total_rooms": 382,
+  "completed_before_batch": 87,
+  "batch_room_count": 87,
+  "project_cumulative_planned": 174,
+  "neighborhood_distribution": {
+    "El Caliche": 54,
+    "La Francia Nueva": 33
+  },
+  "source_topology": "data/world/sector-cero-source-door-graph-v1.json",
+  "rooms": [
+    {
+      "id": "L02_R041",
+      "source_index": 41,
+      "name": "Red de callejones 01",
+      "role": "narrow_alley_network",
+      "map_x": 1,
+      "map_y": 0,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 40,
+      "source_doors": [
+        {
+          "door_index": 82,
+          "to_room_id": "L02_R038",
+          "to_door_index": 83,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 85,
+          "to_room_id": "L02_R011",
+          "to_door_index": 84,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R039",
+      "source_index": 39,
+      "name": "Red de callejones 02",
+      "role": "narrow_alley_network",
+      "map_x": 7,
+      "map_y": 0,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 38,
+      "source_doors": [
+        {
+          "door_index": 79,
+          "to_room_id": "L02_R038",
+          "to_door_index": 25,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        },
+        {
+          "door_index": 80,
+          "to_room_id": "L02_R034",
+          "to_door_index": 70,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R048",
+      "source_index": 48,
+      "name": "Red de callejones 03",
+      "role": "narrow_alley_network",
+      "map_x": 9,
+      "map_y": 0,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 47,
+      "source_doors": [
+        {
+          "door_index": 101,
+          "to_room_id": "L02_R038",
+          "to_door_index": 100,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R002",
+      "source_index": 2,
+      "name": "Red de callejones 04",
+      "role": "narrow_alley_network",
+      "map_x": 2,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 1,
+      "source_doors": [
+        {
+          "door_index": 4,
+          "to_room_id": "L02_R012",
+          "to_door_index": 90,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 5,
+          "to_room_id": "L02_R003",
+          "to_door_index": 6,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R001",
+      "source_index": 1,
+      "name": "Red de callejones 05",
+      "role": "narrow_alley_network",
+      "map_x": 3,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 0,
+      "source_doors": [
+        {
+          "door_index": 1,
+          "to_room_id": "L02_R021",
+          "to_door_index": 42,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 2,
+          "to_room_id": "L02_R012",
+          "to_door_index": 78,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 3,
+          "to_room_id": "L02_R004",
+          "to_door_index": 9,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 76,
+          "to_room_id": "L02_R040",
+          "to_door_index": 81,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 115,
+          "to_room_id": "L02_R042",
+          "to_door_index": 0,
+          "door_type": "DOOR_TYPE_NONE",
+          "source_rect_blocks": {
+            "x": [
+              0,
+              0
+            ],
+            "y": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R011",
+      "source_index": 11,
+      "name": "Red de callejones 06",
+      "role": "narrow_alley_network",
+      "map_x": 4,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 10,
+      "source_doors": [
+        {
+          "door_index": 24,
+          "to_room_id": "L02_R010",
+          "to_door_index": 23,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              4,
+              7
+            ]
+          }
+        },
+        {
+          "door_index": 84,
+          "to_room_id": "L02_R041",
+          "to_door_index": 85,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 92,
+          "to_room_id": "L02_R044",
+          "to_door_index": 93,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              5
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R054",
+      "source_index": 54,
+      "name": "Red de callejones 07",
+      "role": "narrow_alley_network",
+      "map_x": 5,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 53,
+      "source_doors": [
+        {
+          "door_index": 114,
+          "to_room_id": "L02_R027",
+          "to_door_index": 57,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R004",
+      "source_index": 4,
+      "name": "Red de callejones 08",
+      "role": "narrow_alley_network",
+      "map_x": 10,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 3,
+      "source_doors": [
+        {
+          "door_index": 9,
+          "to_room_id": "L02_R001",
+          "to_door_index": 3,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 10,
+          "to_room_id": "L02_R005",
+          "to_door_index": 11,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R032",
+      "source_index": 32,
+      "name": "Red de callejones 09",
+      "role": "narrow_alley_network",
+      "map_x": 15,
+      "map_y": 1,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 31,
+      "source_doors": [
+        {
+          "door_index": 64,
+          "to_room_id": "L02_R031",
+          "to_door_index": 63,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 65,
+          "to_room_id": "L01_R068",
+          "to_door_index": 154,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              8,
+              10
+            ],
+            "y": [
+              21,
+              21
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R049",
+      "source_index": 49,
+      "name": "Red de callejones 10",
+      "role": "narrow_alley_network",
+      "map_x": 2,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 48,
+      "source_doors": [
+        {
+          "door_index": 103,
+          "to_room_id": "L02_R040",
+          "to_door_index": 102,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 104,
+          "to_room_id": "L03_R053",
+          "to_door_index": 127,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R020",
+      "source_index": 20,
+      "name": "Red de callejones 11",
+      "role": "narrow_alley_network",
+      "map_x": 3,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 19,
+      "source_doors": [
+        {
+          "door_index": 40,
+          "to_room_id": "L02_R022",
+          "to_door_index": 95,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Callejones",
+        "motifs": [
+          "alley",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R003",
+      "source_index": 3,
+      "name": "Viviendas encajadas 01",
+      "role": "stacked_home_interiors",
+      "map_x": 7,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 2,
+      "source_doors": [
+        {
+          "door_index": 6,
+          "to_room_id": "L02_R002",
+          "to_door_index": 5,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 87,
+          "to_room_id": "L02_R042",
+          "to_door_index": 86,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R005",
+      "source_index": 5,
+      "name": "Viviendas encajadas 02",
+      "role": "stacked_home_interiors",
+      "map_x": 12,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 4,
+      "source_doors": [
+        {
+          "door_index": 11,
+          "to_room_id": "L02_R004",
+          "to_door_index": 10,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 12,
+          "to_room_id": "L02_R006",
+          "to_door_index": 13,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R006",
+      "source_index": 6,
+      "name": "Viviendas encajadas 03",
+      "role": "stacked_home_interiors",
+      "map_x": 14,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 5,
+      "source_doors": [
+        {
+          "door_index": 13,
+          "to_room_id": "L02_R005",
+          "to_door_index": 12,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 14,
+          "to_room_id": "L02_R007",
+          "to_door_index": 15,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R050",
+      "source_index": 50,
+      "name": "Viviendas encajadas 04",
+      "role": "stacked_home_interiors",
+      "map_x": 17,
+      "map_y": 2,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 49,
+      "source_doors": [
+        {
+          "door_index": 105,
+          "to_room_id": "L02_R021",
+          "to_door_index": 106,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 107,
+          "to_room_id": "L04_R039",
+          "to_door_index": 86,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R017",
+      "source_index": 17,
+      "name": "Viviendas encajadas 05",
+      "role": "stacked_home_interiors",
+      "map_x": 5,
+      "map_y": 3,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 16,
+      "source_doors": [
+        {
+          "door_index": 34,
+          "to_room_id": "L02_R016",
+          "to_door_index": 33,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 35,
+          "to_room_id": "L02_R037",
+          "to_door_index": 7,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 94,
+          "to_room_id": "L02_R013",
+          "to_door_index": 28,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R008",
+      "source_index": 8,
+      "name": "Viviendas encajadas 06",
+      "role": "stacked_home_interiors",
+      "map_x": 8,
+      "map_y": 3,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 7,
+      "source_doors": [
+        {
+          "door_index": 19,
+          "to_room_id": "L02_R007",
+          "to_door_index": 17,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              76,
+              76
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 20,
+          "to_room_id": "L02_R009",
+          "to_door_index": 21,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R007",
+      "source_index": 7,
+      "name": "Viviendas encajadas 07",
+      "role": "stacked_home_interiors",
+      "map_x": 9,
+      "map_y": 3,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 6,
+      "source_doors": [
+        {
+          "door_index": 15,
+          "to_room_id": "L02_R006",
+          "to_door_index": 14,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 16,
+          "to_room_id": "L02_R033",
+          "to_door_index": 66,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 17,
+          "to_room_id": "L02_R008",
+          "to_door_index": 19,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 18,
+          "to_room_id": "L02_R034",
+          "to_door_index": 67,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R040",
+      "source_index": 40,
+      "name": "Viviendas encajadas 08",
+      "role": "stacked_home_interiors",
+      "map_x": 9,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 39,
+      "source_doors": [
+        {
+          "door_index": 81,
+          "to_room_id": "L02_R001",
+          "to_door_index": 76,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 102,
+          "to_room_id": "L02_R049",
+          "to_door_index": 103,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R043",
+      "source_index": 43,
+      "name": "Viviendas encajadas 09",
+      "role": "stacked_home_interiors",
+      "map_x": 10,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 42,
+      "source_doors": [
+        {
+          "door_index": 91,
+          "to_room_id": "L02_R047",
+          "to_door_index": 98,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Viviendas apiladas",
+        "motifs": [
+          "stack",
+          "interior",
+          "window"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R010",
+      "source_index": 10,
+      "name": "Drenajes y alcantarillas 01",
+      "role": "drainage_and_culverts",
+      "map_x": 11,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 9,
+      "source_doors": [
+        {
+          "door_index": 23,
+          "to_room_id": "L02_R011",
+          "to_door_index": 24,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              4,
+              7
+            ]
+          }
+        },
+        {
+          "door_index": 88,
+          "to_room_id": "L02_R015",
+          "to_door_index": 89,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R009",
+      "source_index": 9,
+      "name": "Drenajes y alcantarillas 02",
+      "role": "drainage_and_culverts",
+      "map_x": 12,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 8,
+      "source_doors": [
+        {
+          "door_index": 21,
+          "to_room_id": "L02_R008",
+          "to_door_index": 20,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 31,
+          "to_room_id": "L02_R046",
+          "to_door_index": 96,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              55,
+              58
+            ]
+          }
+        },
+        {
+          "door_index": 44,
+          "to_room_id": "L02_R018",
+          "to_door_index": 37,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R033",
+      "source_index": 33,
+      "name": "Drenajes y alcantarillas 03",
+      "role": "drainage_and_culverts",
+      "map_x": 15,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 32,
+      "source_doors": [
+        {
+          "door_index": 66,
+          "to_room_id": "L02_R007",
+          "to_door_index": 16,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R034",
+      "source_index": 34,
+      "name": "Drenajes y alcantarillas 04",
+      "role": "drainage_and_culverts",
+      "map_x": 16,
+      "map_y": 4,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 33,
+      "source_doors": [
+        {
+          "door_index": 67,
+          "to_room_id": "L02_R007",
+          "to_door_index": 18,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 68,
+          "to_room_id": "L02_R035",
+          "to_door_index": 74,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 69,
+          "to_room_id": "L02_R015",
+          "to_door_index": 22,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 70,
+          "to_room_id": "L02_R039",
+          "to_door_index": 80,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 71,
+          "to_room_id": "L02_R036",
+          "to_door_index": 72,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R014",
+      "source_index": 14,
+      "name": "Drenajes y alcantarillas 05",
+      "role": "drainage_and_culverts",
+      "map_x": 14,
+      "map_y": 5,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 13,
+      "source_doors": [
+        {
+          "door_index": 29,
+          "to_room_id": "L02_R013",
+          "to_door_index": 27,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 30,
+          "to_room_id": "L02_R046",
+          "to_door_index": 97,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R024",
+      "source_index": 24,
+      "name": "Drenajes y alcantarillas 06",
+      "role": "drainage_and_culverts",
+      "map_x": 3,
+      "map_y": 6,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 23,
+      "source_doors": [
+        {
+          "door_index": 50,
+          "to_room_id": "L02_R023",
+          "to_door_index": 49,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 51,
+          "to_room_id": "L02_R025",
+          "to_door_index": 54,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 52,
+          "to_room_id": "L02_R026",
+          "to_door_index": 55,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 53,
+          "to_room_id": "L02_R027",
+          "to_door_index": 56,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R023",
+      "source_index": 23,
+      "name": "Drenajes y alcantarillas 07",
+      "role": "drainage_and_culverts",
+      "map_x": 4,
+      "map_y": 6,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 22,
+      "source_doors": [
+        {
+          "door_index": 48,
+          "to_room_id": "L02_R022",
+          "to_door_index": 45,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 49,
+          "to_room_id": "L02_R024",
+          "to_door_index": 50,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Drenaje",
+        "motifs": [
+          "drain",
+          "tunnel",
+          "water"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R037",
+      "source_index": 37,
+      "name": "Rejas y rutas de seguridad 01",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 11,
+      "map_y": 6,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 36,
+      "source_doors": [
+        {
+          "door_index": 7,
+          "to_room_id": "L02_R017",
+          "to_door_index": 35,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 8,
+          "to_room_id": "L02_R019",
+          "to_door_index": 39,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R038",
+      "source_index": 38,
+      "name": "Rejas y rutas de seguridad 02",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 12,
+      "map_y": 6,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 37,
+      "source_doors": [
+        {
+          "door_index": 25,
+          "to_room_id": "L02_R039",
+          "to_door_index": 79,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        },
+        {
+          "door_index": 77,
+          "to_room_id": "L02_R047",
+          "to_door_index": 99,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 83,
+          "to_room_id": "L02_R041",
+          "to_door_index": 82,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 100,
+          "to_room_id": "L02_R048",
+          "to_door_index": 101,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              17,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R035",
+      "source_index": 35,
+      "name": "Rejas y rutas de seguridad 03",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 16,
+      "map_y": 6,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 34,
+      "source_doors": [
+        {
+          "door_index": 74,
+          "to_room_id": "L02_R034",
+          "to_door_index": 68,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 108,
+          "to_room_id": "L02_R051",
+          "to_door_index": 109,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              8,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R022",
+      "source_index": 22,
+      "name": "Rejas y rutas de seguridad 04",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 5,
+      "map_y": 7,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 21,
+      "source_doors": [
+        {
+          "door_index": 45,
+          "to_room_id": "L02_R023",
+          "to_door_index": 48,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 46,
+          "to_room_id": "L02_R029",
+          "to_door_index": 59,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 47,
+          "to_room_id": "L02_R030",
+          "to_door_index": 60,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 95,
+          "to_room_id": "L02_R020",
+          "to_door_index": 40,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 110,
+          "to_room_id": "L02_R052",
+          "to_door_index": 111,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              10,
+              11
+            ],
+            "y": [
+              41,
+              41
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R021",
+      "source_index": 21,
+      "name": "Rejas y rutas de seguridad 05",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 7,
+      "map_y": 7,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 20,
+      "source_doors": [
+        {
+          "door_index": 42,
+          "to_room_id": "L02_R001",
+          "to_door_index": 1,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 43,
+          "to_room_id": "L02_R018",
+          "to_door_index": 36,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              27,
+              30
+            ]
+          }
+        },
+        {
+          "door_index": 106,
+          "to_room_id": "L02_R050",
+          "to_door_index": 105,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R042",
+      "source_index": 42,
+      "name": "Rejas y rutas de seguridad 06",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 9,
+      "map_y": 7,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 41,
+      "source_doors": [
+        {
+          "door_index": 0,
+          "to_room_id": "L01_R029",
+          "to_door_index": 67,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              8,
+              10
+            ],
+            "y": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "door_index": 86,
+          "to_room_id": "L02_R003",
+          "to_door_index": 87,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R046",
+      "source_index": 46,
+      "name": "Rejas y rutas de seguridad 07",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 10,
+      "map_y": 7,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 45,
+      "source_doors": [
+        {
+          "door_index": 96,
+          "to_room_id": "L02_R009",
+          "to_door_index": 31,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 97,
+          "to_room_id": "L02_R014",
+          "to_door_index": 30,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R047",
+      "source_index": 47,
+      "name": "Rejas y rutas de seguridad 08",
+      "role": "barred_gate_and_security_routes",
+      "map_x": 12,
+      "map_y": 7,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 46,
+      "source_doors": [
+        {
+          "door_index": 98,
+          "to_room_id": "L02_R043",
+          "to_door_index": 91,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 99,
+          "to_room_id": "L02_R038",
+          "to_door_index": 77,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Rejas y seguridad",
+        "motifs": [
+          "gate",
+          "fence",
+          "security"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R027",
+      "source_index": 27,
+      "name": "Cuartos de servicio 01",
+      "role": "utility_and_service_rooms",
+      "map_x": 1,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 26,
+      "source_doors": [
+        {
+          "door_index": 56,
+          "to_room_id": "L02_R024",
+          "to_door_index": 53,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 57,
+          "to_room_id": "L02_R028",
+          "to_door_index": 58,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R053",
+      "source_index": 53,
+      "name": "Cuartos de servicio 02",
+      "role": "utility_and_service_rooms",
+      "map_x": 1,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 52,
+      "source_doors": [
+        {
+          "door_index": 113,
+          "to_room_id": "L02_R052",
+          "to_door_index": 112,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R026",
+      "source_index": 26,
+      "name": "Cuartos de servicio 03",
+      "role": "utility_and_service_rooms",
+      "map_x": 2,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 25,
+      "source_doors": [
+        {
+          "door_index": 55,
+          "to_room_id": "L02_R024",
+          "to_door_index": 52,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R025",
+      "source_index": 25,
+      "name": "Cuartos de servicio 04",
+      "role": "utility_and_service_rooms",
+      "map_x": 5,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 24,
+      "source_doors": [
+        {
+          "door_index": 54,
+          "to_room_id": "L02_R024",
+          "to_door_index": 51,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R045",
+      "source_index": 45,
+      "name": "Cuartos de servicio 05",
+      "role": "utility_and_service_rooms",
+      "map_x": 9,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 44,
+      "source_doors": [
+        {
+          "door_index": 26,
+          "to_room_id": "L02_R016",
+          "to_door_index": 32,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R013",
+      "source_index": 13,
+      "name": "Cuartos de servicio 06",
+      "role": "utility_and_service_rooms",
+      "map_x": 10,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 12,
+      "source_doors": [
+        {
+          "door_index": 27,
+          "to_room_id": "L02_R014",
+          "to_door_index": 29,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 28,
+          "to_room_id": "L02_R017",
+          "to_door_index": 94,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Servicios",
+        "motifs": [
+          "utility",
+          "pipes",
+          "switch"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R044",
+      "source_index": 44,
+      "name": "Persecución y emboscada 01",
+      "role": "chase_and_ambush",
+      "map_x": 13,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 43,
+      "source_doors": [
+        {
+          "door_index": 93,
+          "to_room_id": "L02_R011",
+          "to_door_index": 92,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              5
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Persecución y emboscada",
+        "motifs": [
+          "chase",
+          "cover",
+          "vehicle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R015",
+      "source_index": 15,
+      "name": "Persecución y emboscada 02",
+      "role": "chase_and_ambush",
+      "map_x": 14,
+      "map_y": 8,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 14,
+      "source_doors": [
+        {
+          "door_index": 22,
+          "to_room_id": "L02_R034",
+          "to_door_index": 69,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 89,
+          "to_room_id": "L02_R010",
+          "to_door_index": 88,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Persecución y emboscada",
+        "motifs": [
+          "chase",
+          "cover",
+          "vehicle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R028",
+      "source_index": 28,
+      "name": "Persecución y emboscada 03",
+      "role": "chase_and_ambush",
+      "map_x": 8,
+      "map_y": 9,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 27,
+      "source_doors": [
+        {
+          "door_index": 58,
+          "to_room_id": "L02_R027",
+          "to_door_index": 57,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Persecución y emboscada",
+        "motifs": [
+          "chase",
+          "cover",
+          "vehicle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R018",
+      "source_index": 18,
+      "name": "Persecución y emboscada 04",
+      "role": "chase_and_ambush",
+      "map_x": 9,
+      "map_y": 9,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 17,
+      "source_doors": [
+        {
+          "door_index": 36,
+          "to_room_id": "L02_R021",
+          "to_door_index": 43,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              17,
+              20
+            ]
+          }
+        },
+        {
+          "door_index": 37,
+          "to_room_id": "L02_R009",
+          "to_door_index": 44,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Persecución y emboscada",
+        "motifs": [
+          "chase",
+          "cover",
+          "vehicle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R012",
+      "source_index": 12,
+      "name": "Persecución y emboscada 05",
+      "role": "chase_and_ambush",
+      "map_x": 12,
+      "map_y": 9,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 11,
+      "source_doors": [
+        {
+          "door_index": 78,
+          "to_room_id": "L02_R001",
+          "to_door_index": 2,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 90,
+          "to_room_id": "L02_R002",
+          "to_door_index": 4,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Persecución y emboscada",
+        "motifs": [
+          "chase",
+          "cover",
+          "vehicle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R016",
+      "source_index": 16,
+      "name": "Refugios 01",
+      "role": "safehouse_and_save",
+      "map_x": 13,
+      "map_y": 9,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 15,
+      "source_doors": [
+        {
+          "door_index": 32,
+          "to_room_id": "L02_R045",
+          "to_door_index": 26,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 33,
+          "to_room_id": "L02_R017",
+          "to_door_index": 34,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 75,
+          "to_room_id": "L02_R036",
+          "to_door_index": 73,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              17,
+              20
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Refugio",
+        "motifs": [
+          "safehouse",
+          "bed",
+          "table"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R030",
+      "source_index": 30,
+      "name": "Refugios 02",
+      "role": "safehouse_and_save",
+      "map_x": 3,
+      "map_y": 10,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 29,
+      "source_doors": [
+        {
+          "door_index": 60,
+          "to_room_id": "L02_R022",
+          "to_door_index": 47,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 61,
+          "to_room_id": "L02_R031",
+          "to_door_index": 62,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Refugio",
+        "motifs": [
+          "safehouse",
+          "bed",
+          "table"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R029",
+      "source_index": 29,
+      "name": "Refugios 03",
+      "role": "safehouse_and_save",
+      "map_x": 5,
+      "map_y": 10,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 28,
+      "source_doors": [
+        {
+          "door_index": 41,
+          "to_room_id": "L02_R019",
+          "to_door_index": 38,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 59,
+          "to_room_id": "L02_R022",
+          "to_door_index": 46,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Refugio",
+        "motifs": [
+          "safehouse",
+          "bed",
+          "table"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R019",
+      "source_index": 19,
+      "name": "Pasajes secretos 01",
+      "role": "secret_passages",
+      "map_x": 8,
+      "map_y": 10,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 18,
+      "source_doors": [
+        {
+          "door_index": 38,
+          "to_room_id": "L02_R029",
+          "to_door_index": 41,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 39,
+          "to_room_id": "L02_R037",
+          "to_door_index": 8,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Pasajes secretos",
+        "motifs": [
+          "secret",
+          "crack",
+          "tunnel"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R031",
+      "source_index": 31,
+      "name": "Pasajes secretos 02",
+      "role": "secret_passages",
+      "map_x": 2,
+      "map_y": 11,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 30,
+      "source_doors": [
+        {
+          "door_index": 62,
+          "to_room_id": "L02_R030",
+          "to_door_index": 61,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 63,
+          "to_room_id": "L02_R032",
+          "to_door_index": 64,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Pasajes secretos",
+        "motifs": [
+          "secret",
+          "crack",
+          "tunnel"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R051",
+      "source_index": 51,
+      "name": "Pasajes secretos 03",
+      "role": "secret_passages",
+      "map_x": 6,
+      "map_y": 11,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 50,
+      "source_doors": [
+        {
+          "door_index": 109,
+          "to_room_id": "L02_R035",
+          "to_door_index": 108,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              28,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Pasajes secretos",
+        "motifs": [
+          "secret",
+          "crack",
+          "tunnel"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R052",
+      "source_index": 52,
+      "name": "Encuentros de élite 01",
+      "role": "elite_and_boss_encounters",
+      "map_x": 8,
+      "map_y": 11,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 51,
+      "source_doors": [
+        {
+          "door_index": 111,
+          "to_room_id": "L02_R022",
+          "to_door_index": 110,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              25,
+              26
+            ],
+            "y": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "door_index": 112,
+          "to_room_id": "L02_R053",
+          "to_door_index": 113,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              7,
+              10
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Encuentro élite",
+        "motifs": [
+          "arena",
+          "cover",
+          "boss"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L02_R036",
+      "source_index": 36,
+      "name": "Encuentros de élite 02",
+      "role": "elite_and_boss_encounters",
+      "map_x": 10,
+      "map_y": 12,
+      "level_id": "L02",
+      "neighborhood": "El Caliche",
+      "source_area": "Sector 1",
+      "source_room_index_0based": 35,
+      "source_doors": [
+        {
+          "door_index": 72,
+          "to_room_id": "L02_R034",
+          "to_door_index": 71,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 73,
+          "to_room_id": "L02_R016",
+          "to_door_index": 75,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              37,
+              40
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Encuentro élite",
+        "motifs": [
+          "arena",
+          "cover",
+          "boss"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R054",
+      "source_index": 54,
+      "name": "Calles residenciales 01",
+      "role": "broad_residential_streets",
+      "map_x": 5,
+      "map_y": 0,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 53,
+      "source_doors": [
+        {
+          "door_index": 129,
+          "to_room_id": "L03_R006",
+          "to_door_index": 128,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 130,
+          "to_room_id": "L05_R045",
+          "to_door_index": 108,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R026",
+      "source_index": 26,
+      "name": "Calles residenciales 02",
+      "role": "broad_residential_streets",
+      "map_x": 8,
+      "map_y": 0,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 25,
+      "source_doors": [
+        {
+          "door_index": 57,
+          "to_room_id": "L03_R043",
+          "to_door_index": 56,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              7,
+              10
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R005",
+      "source_index": 5,
+      "name": "Calles residenciales 03",
+      "role": "broad_residential_streets",
+      "map_x": 10,
+      "map_y": 0,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 4,
+      "source_doors": [
+        {
+          "door_index": 11,
+          "to_room_id": "L03_R001",
+          "to_door_index": 5,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 12,
+          "to_room_id": "L03_R006",
+          "to_door_index": 13,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R029",
+      "source_index": 29,
+      "name": "Calles residenciales 04",
+      "role": "broad_residential_streets",
+      "map_x": 2,
+      "map_y": 1,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 28,
+      "source_doors": [
+        {
+          "door_index": 64,
+          "to_room_id": "L03_R028",
+          "to_door_index": 63,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 65,
+          "to_room_id": "L03_R047",
+          "to_door_index": 31,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R002",
+      "source_index": 2,
+      "name": "Calles residenciales 05",
+      "role": "broad_residential_streets",
+      "map_x": 3,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 1,
+      "source_doors": [
+        {
+          "door_index": 6,
+          "to_room_id": "L03_R038",
+          "to_door_index": 85,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 7,
+          "to_room_id": "L03_R003",
+          "to_door_index": 8,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R001",
+      "source_index": 1,
+      "name": "Calles residenciales 06",
+      "role": "broad_residential_streets",
+      "map_x": 4,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 0,
+      "source_doors": [
+        {
+          "door_index": 1,
+          "to_room_id": "L03_R038",
+          "to_door_index": 86,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 2,
+          "to_room_id": "L03_R004",
+          "to_door_index": 9,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 3,
+          "to_room_id": "L03_R024",
+          "to_door_index": 53,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              28,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 4,
+          "to_room_id": "L03_R007",
+          "to_door_index": 14,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 5,
+          "to_room_id": "L03_R005",
+          "to_door_index": 11,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 15,
+          "to_room_id": "L03_R034",
+          "to_door_index": 73,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 32,
+          "to_room_id": "L03_R028",
+          "to_door_index": 62,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              38,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 146,
+          "to_room_id": "L03_R030",
+          "to_door_index": 0,
+          "door_type": "DOOR_TYPE_NONE",
+          "source_rect_blocks": {
+            "x": [
+              0,
+              0
+            ],
+            "y": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R037",
+      "source_index": 37,
+      "name": "Calles residenciales 07",
+      "role": "broad_residential_streets",
+      "map_x": 5,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 36,
+      "source_doors": [
+        {
+          "door_index": 83,
+          "to_room_id": "L01_R069",
+          "to_door_index": 156,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              5
+            ]
+          }
+        },
+        {
+          "door_index": 145,
+          "to_room_id": "L03_R061",
+          "to_door_index": 144,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R061",
+      "source_index": 61,
+      "name": "Calles residenciales 08",
+      "role": "broad_residential_streets",
+      "map_x": 6,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 60,
+      "source_doors": [
+        {
+          "door_index": 143,
+          "to_room_id": "L03_R059",
+          "to_door_index": 142,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 144,
+          "to_room_id": "L03_R037",
+          "to_door_index": 145,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R004",
+      "source_index": 4,
+      "name": "Calles residenciales 09",
+      "role": "broad_residential_streets",
+      "map_x": 8,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 3,
+      "source_doors": [
+        {
+          "door_index": 9,
+          "to_room_id": "L03_R001",
+          "to_door_index": 2,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 10,
+          "to_room_id": "L03_R008",
+          "to_door_index": 16,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R053",
+      "source_index": 53,
+      "name": "Calles residenciales 10",
+      "role": "broad_residential_streets",
+      "map_x": 12,
+      "map_y": 2,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 52,
+      "source_doors": [
+        {
+          "door_index": 126,
+          "to_room_id": "L03_R034",
+          "to_door_index": 125,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 127,
+          "to_room_id": "L02_R049",
+          "to_door_index": 104,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R052",
+      "source_index": 52,
+      "name": "Calles residenciales 11",
+      "role": "broad_residential_streets",
+      "map_x": 2,
+      "map_y": 3,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 51,
+      "source_doors": [
+        {
+          "door_index": 123,
+          "to_room_id": "L03_R013",
+          "to_door_index": 26,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              16,
+              19
+            ]
+          }
+        },
+        {
+          "door_index": 124,
+          "to_room_id": "L03_R035",
+          "to_door_index": 74,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              3,
+              3
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R033",
+      "source_index": 33,
+      "name": "Calles residenciales 12",
+      "role": "broad_residential_streets",
+      "map_x": 3,
+      "map_y": 3,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 32,
+      "source_doors": [
+        {
+          "door_index": 43,
+          "to_room_id": "L03_R021",
+          "to_door_index": 46,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 44,
+          "to_room_id": "L03_R022",
+          "to_door_index": 49,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 45,
+          "to_room_id": "L03_R024",
+          "to_door_index": 52,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 71,
+          "to_room_id": "L03_R020",
+          "to_door_index": 70,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              63,
+              66
+            ]
+          }
+        },
+        {
+          "door_index": 72,
+          "to_room_id": "L03_R058",
+          "to_door_index": 54,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              65,
+              68
+            ]
+          }
+        },
+        {
+          "door_index": 117,
+          "to_room_id": "L03_R049",
+          "to_door_index": 116,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              20,
+              20
+            ]
+          }
+        },
+        {
+          "door_index": 120,
+          "to_room_id": "L03_R050",
+          "to_door_index": 119,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R006",
+      "source_index": 6,
+      "name": "Calles residenciales 13",
+      "role": "broad_residential_streets",
+      "map_x": 8,
+      "map_y": 3,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 5,
+      "source_doors": [
+        {
+          "door_index": 13,
+          "to_room_id": "L03_R005",
+          "to_door_index": 12,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 58,
+          "to_room_id": "L03_R027",
+          "to_door_index": 59,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 60,
+          "to_room_id": "L03_R027",
+          "to_door_index": 61,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 128,
+          "to_room_id": "L03_R054",
+          "to_door_index": 129,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R008",
+      "source_index": 8,
+      "name": "Calles residenciales 14",
+      "role": "broad_residential_streets",
+      "map_x": 1,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 7,
+      "source_doors": [
+        {
+          "door_index": 16,
+          "to_room_id": "L03_R004",
+          "to_door_index": 10,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 17,
+          "to_room_id": "L03_R009",
+          "to_door_index": 19,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Calles residenciales",
+        "motifs": [
+          "street",
+          "facade",
+          "cables"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R007",
+      "source_index": 7,
+      "name": "Cruces y carriles 01",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 2,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 6,
+      "source_doors": [
+        {
+          "door_index": 14,
+          "to_room_id": "L03_R001",
+          "to_door_index": 4,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R031",
+      "source_index": 31,
+      "name": "Cruces y carriles 02",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 2,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 30,
+      "source_doors": [
+        {
+          "door_index": 68,
+          "to_room_id": "L03_R001",
+          "to_door_index": 2,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R023",
+      "source_index": 23,
+      "name": "Cruces y carriles 03",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 8,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 22,
+      "source_doors": [
+        {
+          "door_index": 50,
+          "to_room_id": "L03_R013",
+          "to_door_index": 26,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              16,
+              19
+            ]
+          }
+        },
+        {
+          "door_index": 51,
+          "to_room_id": "L03_R021",
+          "to_door_index": 48,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              3,
+              3
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R032",
+      "source_index": 32,
+      "name": "Cruces y carriles 04",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 10,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 31,
+      "source_doors": [
+        {
+          "door_index": 18,
+          "to_room_id": "L03_R010",
+          "to_door_index": 20,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              26,
+              29
+            ]
+          }
+        },
+        {
+          "door_index": 69,
+          "to_room_id": "L03_R009",
+          "to_door_index": 19,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 84,
+          "to_room_id": "L03_R039",
+          "to_door_index": 87,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R035",
+      "source_index": 35,
+      "name": "Cruces y carriles 05",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 10,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 34,
+      "source_doors": [
+        {
+          "door_index": 74,
+          "to_room_id": "L03_R052",
+          "to_door_index": 124,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        },
+        {
+          "door_index": 75,
+          "to_room_id": "L03_R013",
+          "to_door_index": 25,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 76,
+          "to_room_id": "L03_R036",
+          "to_door_index": 79,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R021",
+      "source_index": 21,
+      "name": "Cruces y carriles 06",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 11,
+      "map_y": 4,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 20,
+      "source_doors": [
+        {
+          "door_index": 46,
+          "to_room_id": "L03_R033",
+          "to_door_index": 43,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 47,
+          "to_room_id": "L03_R013",
+          "to_door_index": 25,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              61,
+              61
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 48,
+          "to_room_id": "L03_R023",
+          "to_door_index": 51,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R009",
+      "source_index": 9,
+      "name": "Cruces y carriles 07",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 0,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 8,
+      "source_doors": [
+        {
+          "door_index": 19,
+          "to_room_id": "L03_R008",
+          "to_door_index": 17,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R003",
+      "source_index": 3,
+      "name": "Cruces y carriles 08",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 4,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 2,
+      "source_doors": [
+        {
+          "door_index": 8,
+          "to_room_id": "L03_R002",
+          "to_door_index": 7,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 67,
+          "to_room_id": "L03_R030",
+          "to_door_index": 66,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R030",
+      "source_index": 30,
+      "name": "Cruces y carriles 09",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 4,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 29,
+      "source_doors": [
+        {
+          "door_index": 0,
+          "to_room_id": "L01_R026",
+          "to_door_index": 68,
+          "door_type": "DOOR_TYPE_DISPLAY_LOCATION_NAME | DOOR_TYPE_NORMAL | DOOR_TYPE_AREA_CONNECTION",
+          "source_rect_blocks": {
+            "x": [
+              8,
+              10
+            ],
+            "y": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "door_index": 66,
+          "to_room_id": "L03_R003",
+          "to_door_index": 67,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R027",
+      "source_index": 27,
+      "name": "Cruces y carriles 10",
+      "role": "crossroads_and_vehicle_lanes",
+      "map_x": 8,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 26,
+      "source_doors": [
+        {
+          "door_index": 59,
+          "to_room_id": "L03_R006",
+          "to_door_index": 58,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 61,
+          "to_room_id": "L03_R006",
+          "to_door_index": 60,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 131,
+          "to_room_id": "L03_R055",
+          "to_door_index": 132,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Cruces y carriles",
+        "motifs": [
+          "intersection",
+          "road",
+          "pole"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R020",
+      "source_index": 20,
+      "name": "Viviendas de varias plantas 01",
+      "role": "multi_level_home_interiors",
+      "map_x": 11,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 19,
+      "source_doors": [
+        {
+          "door_index": 41,
+          "to_room_id": "L03_R018",
+          "to_door_index": 38,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              25,
+              28
+            ]
+          }
+        },
+        {
+          "door_index": 42,
+          "to_room_id": "L03_R015",
+          "to_door_index": 34,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 70,
+          "to_room_id": "L03_R033",
+          "to_door_index": 71,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        },
+        {
+          "door_index": 88,
+          "to_room_id": "L03_R041",
+          "to_door_index": 91,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        },
+        {
+          "door_index": 108,
+          "to_room_id": "L03_R048",
+          "to_door_index": 109,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              3,
+              6
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R034",
+      "source_index": 34,
+      "name": "Viviendas de varias plantas 02",
+      "role": "multi_level_home_interiors",
+      "map_x": 11,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 33,
+      "source_doors": [
+        {
+          "door_index": 73,
+          "to_room_id": "L03_R001",
+          "to_door_index": 15,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              46,
+              46
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 125,
+          "to_room_id": "L03_R053",
+          "to_door_index": 126,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R048",
+      "source_index": 48,
+      "name": "Viviendas de varias plantas 03",
+      "role": "multi_level_home_interiors",
+      "map_x": 11,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 47,
+      "source_doors": [
+        {
+          "door_index": 109,
+          "to_room_id": "L03_R020",
+          "to_door_index": 108,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              33,
+              36
+            ]
+          }
+        },
+        {
+          "door_index": 110,
+          "to_room_id": "L03_R014",
+          "to_door_index": 111,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              35,
+              38
+            ]
+          }
+        },
+        {
+          "door_index": 115,
+          "to_room_id": "L03_R050",
+          "to_door_index": 118,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_OPEN_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              31,
+              31
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R022",
+      "source_index": 22,
+      "name": "Viviendas de varias plantas 04",
+      "role": "multi_level_home_interiors",
+      "map_x": 13,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 21,
+      "source_doors": [
+        {
+          "door_index": 49,
+          "to_room_id": "L03_R033",
+          "to_door_index": 44,
+          "door_type": "DOOR_TYPE_LOAD_EVENT_BASED_ROOM | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R051",
+      "source_index": 51,
+      "name": "Viviendas de varias plantas 05",
+      "role": "multi_level_home_interiors",
+      "map_x": 13,
+      "map_y": 5,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 50,
+      "source_doors": [
+        {
+          "door_index": 114,
+          "to_room_id": "L03_R047",
+          "to_door_index": 113,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              6,
+              9
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R038",
+      "source_index": 38,
+      "name": "Viviendas de varias plantas 06",
+      "role": "multi_level_home_interiors",
+      "map_x": 4,
+      "map_y": 6,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 37,
+      "source_doors": [
+        {
+          "door_index": 85,
+          "to_room_id": "L03_R002",
+          "to_door_index": 6,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 86,
+          "to_room_id": "L03_R001",
+          "to_door_index": 1,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              16,
+              16
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R013",
+      "source_index": 13,
+      "name": "Viviendas de varias plantas 07",
+      "role": "multi_level_home_interiors",
+      "map_x": 6,
+      "map_y": 6,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 12,
+      "source_doors": [
+        {
+          "door_index": 25,
+          "to_room_id": "L03_R035",
+          "to_door_index": 75,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              16,
+              19
+            ]
+          }
+        },
+        {
+          "door_index": 26,
+          "to_room_id": "L03_R052",
+          "to_door_index": 123,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              5,
+              8
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R046",
+      "source_index": 46,
+      "name": "Viviendas de varias plantas 08",
+      "role": "multi_level_home_interiors",
+      "map_x": 6,
+      "map_y": 6,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 45,
+      "source_doors": [
+        {
+          "door_index": 102,
+          "to_room_id": "L03_R045",
+          "to_door_index": 101,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              6,
+              6
+            ],
+            "y": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "door_index": 103,
+          "to_room_id": "L03_R047",
+          "to_door_index": 107,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              7,
+              10
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Interiores",
+        "motifs": [
+          "interior",
+          "stairs",
+          "balcony"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    },
+    {
+      "id": "L03_R028",
+      "source_index": 28,
+      "name": "Patios y garajes 01",
+      "role": "yards_and_garages",
+      "map_x": 7,
+      "map_y": 6,
+      "level_id": "L03",
+      "neighborhood": "La Francia Nueva",
+      "source_area": "Sector 2",
+      "source_room_index_0based": 27,
+      "source_doors": [
+        {
+          "door_index": 62,
+          "to_room_id": "L03_R001",
+          "to_door_index": 32,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_NO_HATCH",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              8,
+              8
+            ]
+          }
+        },
+        {
+          "door_index": 63,
+          "to_room_id": "L03_R029",
+          "to_door_index": 64,
+          "door_type": "DOOR_TYPE_NORMAL | DOOR_TYPE_HATCH_CAN_LOCK",
+          "source_rect_blocks": {
+            "x": [
+              2,
+              2
+            ],
+            "y": [
+              15,
+              18
+            ]
+          }
+        }
+      ],
+      "design": {
+        "status": "conceptual_blockout",
+        "role_label": "Patios y garajes",
+        "motifs": [
+          "yard",
+          "garage",
+          "motorcycle"
+        ],
+        "layout_note": "Composición visual preliminar. Mantener la topología de puertas fuente; la geometría final debe ajustarse a las dimensiones y colisiones verificadas del ROM."
+      }
+    }
+  ],
+  "limits": [
+    "The SVG is a conceptual art/blockout sheet, not an indexed GBA tilemap.",
+    "Source door links are preserved from the decomp reference graph; exact binary equivalence to the user's private ROM is unverified.",
+    "Exact room dimensions, clipdata, collision, event logic, enemy placement and runtime integration remain pending source-room binary mapping."
+  ],
+  "role_counts": {
+    "narrow_alley_network": 11,
+    "stacked_home_interiors": 9,
+    "drainage_and_culverts": 7,
+    "barred_gate_and_security_routes": 8,
+    "utility_and_service_rooms": 6,
+    "chase_and_ambush": 5,
+    "safehouse_and_save": 3,
+    "secret_passages": 3,
+    "elite_and_boss_encounters": 2,
+    "broad_residential_streets": 14,
+    "crossroads_and_vehicle_lanes": 10,
+    "multi_level_home_interiors": 8,
+    "yards_and_garages": 1
+  }
+}
