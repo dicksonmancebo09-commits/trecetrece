@@ -85,6 +85,24 @@ def main() -> int:
         raise FileNotFoundError("Expected project room metadata and registry JSON.")
     metadata = json.loads(meta_path.read_text(encoding="utf-8"))
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    production_path = root / "data/world/sector-cero-production-manifest-v1.json"
+    production = json.loads(production_path.read_text(encoding="utf-8"))
+    production_by_id = {}
+    for batch_row in production.get("batches", []):
+        for production_room in batch_row.get("rooms", []):
+            rid = str(production_room.get("room_id", ""))
+            if not rid or rid in production_by_id:
+                raise ValueError(f"Missing/duplicate production room assignment: {rid!r}")
+            production_by_id[rid] = {
+                "production_batch": int(batch_row["batch"]),
+                "production_id": str(production_room["production_id"]),
+                "production_prefix": str(batch_row.get("production_prefix", "")),
+                "production_name": str(production_room.get("name", "")),
+                "production_role": str(production_room.get("role", "")),
+                "neighborhood": str(production_room.get("neighborhood", "")),
+            }
+    if len(production_by_id) != 382:
+        raise ValueError(f"Expected production assignment for 382 rooms; found {len(production_by_id)}")
     metadata_rooms, registry_rooms = metadata.get("rooms", []), registry.get("rooms", [])
     if len(metadata_rooms) != 382 or len(registry_rooms) != 382:
         raise ValueError(f"Expected exactly 382 metadata and registry rooms; got {len(metadata_rooms)}, {len(registry_rooms)}")
@@ -161,7 +179,7 @@ def main() -> int:
         } for m in re.finditer(r"const\s+u8\s+(\w+_Scrolls)\[[^\]]+\]\s*=\s*\{(.*?)\};", source, re.DOTALL)]
         rec = {
             "room_id": rid, "level_id": reg_by_id[rid].get("level_id"),
-            "production_batch": reg_by_id[rid].get("production_batch"),
+            **production_by_id[rid],
             "source_game_area": area, "source_area_folder": folder,
             "source_room_index_1based": int(meta["source_room_index_1based"]),
             "source_room_index_0based": idx, "source_file": path,
