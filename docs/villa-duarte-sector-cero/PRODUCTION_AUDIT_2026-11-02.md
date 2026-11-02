@@ -123,3 +123,13 @@ La versión v1.3 figura retirada como candidata funcional tras el informe anteri
 ## Criterio de cierre de esta auditoría
 
 La **auditoría de inventario y asignación** está completada: 382 IDs coherentes, 5 lotes completos, 898 puertas sin destinos huérfanos y 382 fichas técnicas base. La **producción gráfica** avanza con cinco atlas SVG nuevos. La **integración y validación dentro de ROM** sigue abierta y es la siguiente fase; no se declara que el videojuego contenga ya las 382 salas.
+## 8. Automatización y extracción técnica ampliada
+
+Después del inventario inicial se añadieron dos etapas automatizadas:
+
+- `tools/extract_reference_room_metadata.py` consulta los archivos fuente de las 382 salas en el commit fijado `de76565c897c05838503717db9aa2adfe92aeba3`. Extrae dimensiones de clipdata y BG presentes en las declaraciones C, longitud declarada de sus arrays, hash del archivo de referencia y variantes/recuentos de colocaciones de spritesets. El script actualiza las 382 fichas y genera `sector-cero-reference-room-metadata-v1.json`.
+- `tools/render_gba_atlas_indexed.py` rasteriza los siete SVG usando sus paletas declaradas. El workflow `.github/workflows/zector-cero-production-assets.yml` ejecuta además `png_to_gba_4bpp.py`, que comprueba round-trip 4bpp y LZ77, y publica los recursos binarios como artifact de CI.
+
+**Estado de ejecución:** la automatización está incorporada al repositorio; no se presenta como completada hasta que GitHub Actions muestre un job verde y los PNG, JSON de extracción y artifact estén disponibles en la rama.
+
+**Límite de la extracción:** los archivos C de referencia contienen las dimensiones y referencias a los bloques RLE, pero los binarios de clipdata `.rle` no están disponibles en el árbol público consultado. Por ello, la extracción no inventa una matriz de colisión ni guarda bytes de esos mapas. Para completar la disposición espacial de colisiones, sprites y eventos se necesita leer la ROM privada exacta y validar su hash.
