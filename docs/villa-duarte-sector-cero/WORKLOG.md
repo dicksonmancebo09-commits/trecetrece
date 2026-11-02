@@ -189,3 +189,12 @@ Para cada cambio futuro:
 - La asignación de rol dentro de cada área se hace por map_y, map_x e índice original. Esto ordena el roster, pero **no** inventa conexiones entre puertas: el grafo real de habitaciones sigue pendiente de extraer desde las tablas Door.
 - Las rutas entre los siete barrios son una propuesta macro de diseño; sus referencias binarias, puertas exactas, eventos y requisitos de habilidades siguen pendientes de cotejo.
 - La ROM original no se modifica. Ninguna de las 382 salas se declara integrada o probada en juego por este trabajo.
+
+## 2026-11-02 — Catálogo visual por nivel y topología de puertas
+
+- Se crean siete paquetes bajo `assets/levels/`, uno por barrio, con identidad visual, paleta, luz, módulos que se producirán, capas de composición, reglas de lectura y presupuesto de salas.
+- Villa Duarte y El Caliche enlazan a sus atlas existentes en `assets/tiles/scenario-01/` y `assets/tiles/scenario-02/`. La Francia Nueva, Calero, Pueblo Nuevo, Los Molinos y Simónico quedan especificados como paquetes nuevos; sus atlas todavía no están dibujados.
+- Se extraen las tablas Door de las siete áreas del código de referencia `metroidret/mf`: 898 registros, 34 conexiones inter-área reales, 60 variantes de destino basadas en eventos y 958 aristas incluyendo destinos por defecto y variantes. No se detectan referencias de destino sin resolver.
+- Se crea `data/world/sector-cero-source-door-graph-v1.json` con los enlaces y `source_doors` en los registros de sala de `data/world/sector-cero-room-registry-v1.json`.
+- Una sala de Main Deck no aparece como origen en la tabla de puertas; se conserva como caso pendiente de entender (no se elimina ni se inventa una puerta).
+- **Límite de evidencia:** el grafo procede de la descompilación de referencia; aún no se ha cotejado byte por byte contra la ROM AMTE exacta del usuario. Geometría, clipdata, posiciones de enemigos, spawn, eventos y ejecución en emulador siguen pendientes.
