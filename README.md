@@ -10,6 +10,7 @@ La dirección artística se inspira en Villa Duarte y sus barrios de Santo Domin
 > **Aviso de build:** la v1.3 ha sido retirada como candidata funcional tras el informe de crash y pantalla inicial ilegible. La causa exacta del crash sigue sin reproducirse en emulador.
 
 - [Estado de continuidad del proyecto — LATINO AMÉRICA Zector Cero](docs/villa-duarte-sector-cero/PROJECT_STATE_HANDOFF.md)
+- [Memoria de continuidad — tres conversaciones recientes (02-11-2026)](docs/villa-duarte-sector-cero/MEMORIA_CONTINUIDAD_TRES_CONVERSACIONES_2026-11-02.md)
 - [Prueba 01 de ROM — integridad de Urban Opening v1.0](docs/villa-duarte-sector-cero/TEST_01_ROM_INTEGRITY.md)
 - [v1.2 — sustitución real de recursos de título](docs/villa-duarte-sector-cero/REAL_TITLE_RESKIN_V1_2.md)
 - [v1.3 — título real y primer escenario conectado al mapa](docs/villa-duarte-sector-cero/ROOM0_RESKIN_V1_3.md)
