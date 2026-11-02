@@ -214,6 +214,12 @@ def main() -> int:
         "src/room.c", "src/clipdata.c", "src/connection.c",
         "include/structs/room.h", "include/structs/clipdata.h", "include/structs/connection.h",
         "include/constants/clipdata.h", "include/constants/connection.h",
+        "src/data/animated_graphics_data.c", "src/data/animated_palette_data.c",
+        "src/data/animated_tiles_data.c", "src/data/sprite_data.c",
+        "include/data/animated_graphics_data.h", "include/data/animated_palette_data.h",
+        "include/data/animated_tiles_data.h", "include/data/sprite_data.h",
+        "include/constants/animated_graphics.h", "include/structs/animated_graphics.h",
+        "include/structs/sprite.h",
     ]
     support_blobs = {p: fetch(p).decode("utf-8") for p in support_paths}
     rooms_src = support_blobs["src/data/rooms_data.c"]
