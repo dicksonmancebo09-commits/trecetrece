@@ -24,7 +24,7 @@ Esta versión adopta la distribución exacta del atlas visual acordado: Villa Du
 1. La numeración original de sala se conserva. `room_index_1based` es el índice legible del CSV; `room_index_0based` es el índice de array para la referencia C.
 2. `tileset_entry_index` se conserva separado de los IDs de gráficos, paleta, fondo y tilemap. No son equivalentes.
 3. El rol de sala es una asignación creativa inicial basada en el mapa estratégico: orden de `map_y`, después `map_x` y finalmente índice original. Las coordenadas no demuestran conexiones físicas ni puertas.
-4. No se inventan adyacencias internas. Las conexiones entre barrios incluidas aquí son rutas de diseño; las puertas originales deben extraerse de las tablas de `Door` y cruzarse con los destinos reales.
+4. El grafo de puertas de la fuente de referencia ya está extraído y resuelto en [sector-cero-source-door-graph-v1.json](../../data/world/sector-cero-source-door-graph-v1.json): 898 puertas, 34 enlaces inter-área, 60 variantes por evento y 958 aristas de destino (incluidos los destinos base y sus variantes). Es topología de la descompilación de referencia, no verificación binaria de la ROM exacta del usuario. La adaptación de esa red al trazado de los siete barrios sigue pendiente.
 5. El clipdata/colisiones originales se conservan como referencia hasta que exista un rediseño específico por sala. No convertir un fondo en plataforma sin modificar y auditar la colisión.
 6. Los recursos compartidos no se reemplazan globalmente. Antes de modificar un tileset o una paleta, listar todos sus consumidores.
 
@@ -34,16 +34,20 @@ Esta versión adopta la distribución exacta del atlas visual acordado: Villa Du
 flowchart LR
 L01["L1 · Villa Duarte"] <--> L02["L2 · El Caliche"]
 L01 <--> L03["L3 · La Francia Nueva"]
+L01 <--> L04["L4 · Calero"]
+L01 <--> L05["L5 · Pueblo Nuevo"]
+L01 <--> L06["L6 · Los Molinos"]
+L01 <--> L07["L7 · Simónico"]
 L02 <--> L03
-L03 <--> L04["L4 · Calero"]
-L03 <--> L05["L5 · Pueblo Nuevo"]
-L04 <--> L06["L6 · Los Molinos"]
+L02 <--> L04
+L03 <--> L05
+L04 <--> L06
 L05 <--> L06
-L06 <--> L07["L7 · Simónico"]
-L07 -. "atajo tras evento final" .-> L01
+L05 <--> L07
+L06 <--> L07
 ```
 
-El acceso temprano L1→L3 evita un softlock si L2 contiene una puerta que dependa de una mejora todavía no obtenida. Los requisitos de habilidades no se codifican hasta cruzar el orden real de adquisición, los eventos y las tablas de puertas.
+El esquema anterior normaliza los 34 enlaces dirigidos de las tablas de área en 13 pares de niveles para que se lea mejor. El grafo fuente contiene puertas concretas y cambios de destino ligados a eventos; no todas las conexiones se abren al mismo tiempo. L1 se comporta como nodo de distribución urbana y varias rutas entre barrios deben conservar sus requisitos de evento/seguridad para evitar saltos de progresión.
 
 ## Dirección por nivel y presupuesto de salas
 
@@ -211,7 +215,7 @@ El acceso temprano L1→L3 evita un softlock si L2 contiene una puerta que depen
 
 ## Estado de todas las salas
 
-El siguiente listado contiene las 382 salas asignadas. El número de sala y sus coordenadas apuntan a la referencia de origen; el título y el rol describen el destino creativo.
+El siguiente listado contiene las 382 salas asignadas. El número de sala y sus coordenadas apuntan a la referencia de origen; el título y el rol describen el destino creativo. Las puertas y sus destinos originales constan en el registro JSON y en el grafo fuente enlazado.
 
 ### L01 — Villa Duarte
 
@@ -635,13 +639,13 @@ El siguiente listado contiene las 382 salas asignadas. El número de sala y sus 
 - `L01_R001`…`L07_R0xx`: identificador estable de sala, alineado con el índice de sala del área fuente.
 - `source_game_area`: nombre del área del juego usado para localizar datos originales.
 - `tileset_entry_index`: entrada usada por la sala para seleccionar recursos; no es `gfx_resource`.
-- `room_geometry`, `doors_and_connections`, `clipdata`, `enemies_and_events`: se marcan pendientes hasta extraer los datos binarios exactos.
+- `doors_and_connections`: topología extraída de la descompilación de referencia y enlazada en el registro; requiere cotejo de ROM exacta y adaptación creativa. `room_geometry`, `clipdata`, `enemies_and_events`: pendientes de extracción por sala.
 - `runtime: not_tested`: no se ha afirmado que estos diseños estén funcionando dentro de la ROM.
 
 ## Orden de producción global
 
 1. **Registro maestro (este documento):** los siete niveles y las 382 salas quedan nombrados y organizados.
-2. **Grafo real de puertas:** extraer cada `Door`, puerta de salida, destino, coordenada, aparición y conexiones por evento; cotejarlo contra este registro sin alterar el índice fuente.
+2. **Adaptación del grafo de puertas:** el grafo de referencia ya está extraído; cotejarlo contra la ROM exacta y rediseñar cada cruce para la geografía de los siete barrios, conservando IDs fuente, bloqueos por evento y posiciones de aparición.
 3. **Ficha técnica por sala:** dimensiones reales de BG0/BG1/BG2/BG3, clipdata, scrolls, spritesets, eventos, puertas, mapa y recursos consumidos.
 4. **Mapa de arte por sala:** reutilizar módulos de los atlas 1–2 y crear familias originales para niveles 3–7, con interiores, suelos, plataformas, fondos y señalización propios.
 5. **Asignación de enemigos/encuentros:** conservar IDs y comportamiento de referencia mientras se rediseñan siluetas; después decidir por sala qué instancias se sustituyen.
@@ -650,9 +654,9 @@ El siguiente listado contiene las 382 salas asignadas. El número de sala y sus 
 
 ## Qué se ha hecho y qué no
 
-- **Hecho en esta versión:** mapeo de las siete áreas a los siete barrios del atlas; presupuesto de salas igual al total fuente; 382 IDs de diseño; asignación individual de cada sala por índice y coordenadas; identidades, paletas, función y roles por grupo; grafo macro propuesto.
-- **No hecho todavía:** edición de la ROM, reescritura de mapas, colisiones, puertas reales, sprites, enemigos, jefes, diálogos o música; prueba de juego.
-- **Razón:** el crosswalk actual contiene metadatos de área/sala/tileset y recursos, pero no el grafo completo de puertas, geometría por sala, posiciones de enemigos ni datos de evento. Inventarlos produciría un mapa imposible de integrar.
+- **Hecho en esta versión:** mapeo de las siete áreas a los siete barrios del atlas; 382 IDs de diseño y funciones; siete briefings visuales por nivel; 898 registros de puerta, 34 enlaces entre áreas, 60 variantes por evento y 958 aristas de destino resueltas desde la fuente de referencia; registros enlazados a las salas.
+- **No hecho todavía:** cotejo binario del grafo contra la ROM exacta, adaptación final de rutas a los barrios, dimensiones/mapas/clipdata por sala, integración ROM, sprites, enemigos, jefes, diálogos y prueba de juego.
+- **Límite:** la descompilación aporta el grafo original de puertas, pero aún faltan geometría por sala, datos completos de clipdata, posiciones de enemigos y cotejo de bytes con la ROM exacta. El registro distingue datos de referencia de decisiones nuevas de diseño.
 
 ## Archivos relacionados
 
@@ -660,4 +664,6 @@ El siguiente listado contiene las 382 salas asignadas. El número de sala y sus 
 - `assets/tiles/scenario-01/` — primeros módulos de Villa Duarte.
 - `assets/tiles/scenario-02/` — módulos de El Caliche.
 - `recovery/analysis/METROID_FUSION_ROOM_TILESET_CROSSWALK_2026-11-02.md` y `.csv` — referencia técnica de las 382 salas.
-- `sector-cero-room-registry-v1.json` — registro estructurado completo de salas, asignaciones, fuentes y estados.
+- `sector-cero-room-registry-v1.json` — registro estructurado completo de salas, asignaciones, fuentes, roles y puertas de referencia.
+- `sector-cero-source-door-graph-v1.json` — puertas y transiciones extraídas de la referencia de código.
+- `assets/levels/README.md` — índice de los siete paquetes de dirección artística por barrio.
