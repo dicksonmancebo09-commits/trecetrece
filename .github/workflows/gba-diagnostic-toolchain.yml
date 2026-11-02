@@ -13,7 +13,10 @@ on:
       - "tools/extract_sector_cero_room_maps.py"
       - "tools/extract_sector_cero_room_visual_assets.py"
       - "tools/render_v17_room0.py"
+      - "tools/render_v18_room0.py"
+      - "tools/fix_v17_room0_palette_bank.py"
       - "tools/apply_guarded_patch.py"
+      - "tests/test_fix_v17_room0_palette_bank.py"
       - "tools/generate_mgba_lua_trace.py"
       - "tools/mgba/trace_gba.lua.in"
       - "tests/test_gba_rom_audit.py"
@@ -94,13 +97,15 @@ jobs:
           python3 tools/extract_sector_cero_room_maps.py --help >/dev/null
           python3 tools/extract_sector_cero_room_visual_assets.py --help >/dev/null
           python3 tools/render_v17_room0.py --help >/dev/null
+          python3 tools/render_v18_room0.py --help >/dev/null
+          python3 tools/fix_v17_room0_palette_bank.py --help >/dev/null
           python3 tools/run_gba_diagnostic.py --help >/dev/null
           python3 tools/apply_guarded_patch.py --help >/dev/null
           python3 tools/generate_mgba_lua_trace.py --help >/dev/null
 
       - name: Check Python and shell syntax
         run: |
-          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/extract_sector_cero_room_maps.py tools/extract_sector_cero_room_visual_assets.py tools/render_v17_room0.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
+          python3 -m py_compile tools/metroid_gba_probe.py tools/gba_rom_audit.py tools/extract_sector_cero_room_maps.py tools/extract_sector_cero_room_visual_assets.py tools/render_v17_room0.py tools/render_v18_room0.py tools/fix_v17_room0_palette_bank.py tools/run_gba_diagnostic.py tools/apply_guarded_patch.py tools/generate_mgba_lua_trace.py
           bash -n tools/install_gba_emulator.sh
           bash -n tools/run_gba_diagnostic.sh
 
@@ -118,6 +123,9 @@ jobs:
 
       - name: Unit tests — ROM audit
         run: python3 -m unittest discover -s tests -p "test_gba_rom_audit.py" -v
+
+      - name: Unit tests — room-0 palette bank correction
+        run: python3 -m unittest discover -s tests -p "test_fix_v17_room0_palette_bank.py" -v
 
       - name: Unit tests — guarded patching
         run: python3 -m unittest discover -s tests -p "test_apply_guarded_patch.py" -v
