@@ -65,12 +65,12 @@ def gba_lz77_decompress(data: bytes) -> tuple[bytes, int]:
 def gba_room_rle_decompress_map(
     data: bytes, offset: int, reserved_bytes: int
 ) -> tuple[int, int, list[int], int]:
-    """Decode the game's two-plane RLE format into 16-bit room map entries.
+    """Decode the game's two-plane RLE stream into little-endian u16 map values.
 
-    The room header stores width and height as two bytes. Each following RLE
-    stream becomes one byte lane of the destination u16 map (first stream =
-    low byte, second stream = high byte), matching RoomRleDecompress(type=1).
-    Return width, height, tile/metatile IDs, and bytes consumed from offset.
+    Metroid Fusion's RoomRleDecompress(type=1) consumes one format marker per
+    byte lane. Marker 1 selects one-byte run controls; every other marker
+    selects two-byte big-endian run controls. The marker itself is NOT part
+    of the run count. Plane 0 is the low byte and plane 1 is the high byte.
     """
     if offset < 0 or reserved_bytes < 2 or offset + reserved_bytes > len(data):
         raise ValueError("room RLE range is outside ROM bounds")
@@ -98,9 +98,9 @@ def gba_room_rle_decompress_map(
         return result
 
     def decode_lane() -> list[int]:
-        first = take_u8()
+        mode = take_u8()
         output: list[int] = []
-        if first == 1:
+        if mode == 1:
             count = take_u8()
             while count != 0:
                 if count & 0x80:
@@ -117,7 +117,7 @@ def gba_room_rle_decompress_map(
                     )
                 count = take_u8()
         else:
-            count = (first << 8) | take_u8()
+            count = (take_u8() << 8) | take_u8()
             while count != 0:
                 if count & 0x8000:
                     repeat_count = count & 0x7FFF
