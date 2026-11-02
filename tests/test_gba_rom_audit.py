@@ -25,6 +25,16 @@ def synthetic_gba(title: bytes = b"TEST ROM", code: bytes = b"TEST", size: int =
 
 
 class TestGbaRomAudit(unittest.TestCase):
+    def test_4bpp_palette_bank_extraction(self):
+        words = [0x20F4, 0x30F4, 0x405E, 0x005E, 0xF05E]
+        self.assertEqual(audit.gba_4bpp_palette_banks(words), [0, 2, 3, 4, 15])
+
+    def test_room0_palette_conflict_is_detectable(self):
+        v17_words = [0x20F4] * 1536
+        v18_words = [(word & 0x0FFF) | 0x3000 for word in v17_words]
+        self.assertEqual(audit.gba_4bpp_palette_banks(v17_words), [2])
+        self.assertEqual(audit.gba_4bpp_palette_banks(v18_words), [3])
+
     def test_header_complement(self):
         info = audit.header_info(synthetic_gba(), "synthetic.gba")
         self.assertTrue(info["header"]["complement_valid"])
