@@ -288,3 +288,20 @@ Los PNG indexados y sus informes están guardados en la rama. El paquete de bina
 La extracción de los siete grupos de fuentes de sala registró **469 variantes de spriteset** y **2.150 posiciones de sprite** con coordenadas X/Y y expresión de registro de origen. Hay filas de colocación estática en 332 salas; 50 salas no declararon filas estáticas en los arrays extraídos. Esa ausencia no demuestra que no existan apariciones dinámicas o generadas por eventos.
 
 El CSV [ROOM_SPRITE_PLACEMENTS_2026-11-03.csv](../../recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv) permite consultar las posiciones por sala, variante y fuente. Las coordenadas se conservan como valores crudos del código de referencia: su unidad y semántica deben interpretarse con el motor antes de convertirlas a posiciones de gameplay. No se copiaron sprites ni arte comercial.
+
+
+## Verificación integral estructural y de exportación — workflow 41616265371
+
+El workflow [Zector Cero — production asset export, run 41616265371](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371) terminó con **success** en todos sus pasos y volvió a guardar los resultados en la rama. El validador reforzado comparó el registro con el archivo de RoomEntry fijado:
+
+- Registros RoomEntry comparados: **382/382**.
+- Índices 0-based/1-based, coordenadas, tilesets, recursos gráficos/paletas/fondos/tilemaps, áreas y símbolos BG/clipdata: **382/382 coincidencias por cada campo**.
+- Puertas de referencia: **898**; destinos predeterminados huérfanos **0**; variantes de evento huérfanas **0**.
+- Cinco lotes comparados con el manifiesto: **5/5 coinciden**, con 382 IDs únicos.
+- Dimensiones de referencia: **382/382**; concordancia entre capas **382/382**; conflictos **0**.
+- Sets de sprites de referencia: **469 variantes**; ubicaciones estáticas: **2.150** en **332** salas. Las 50 salas sin filas estáticas no se consideran libres de apariciones dinámicas.
+- Siete atlas renderizados a PNG indexado y exportados a 4bpp/BGR555/LZ77; los siete informes registran round-trip 4bpp y LZ77 correcto.
+
+El artifact [zector-cero-gba-atlas-exports](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371) contiene 28 archivos y expira el **17 de noviembre de 2026**. También puedes consultar el [CSV de posiciones de sprites](../../recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv).
+
+El mismo informe registra aún **382/382** salas con geometría jugable completa pendiente, **382/382** con contenido de colisiones/clipdata pendiente y **382/382** sin prueba runtime. La extracción y la exportación de referencia han pasado CI; **no se ha integrado ni ejecutado una ROM privada**.
