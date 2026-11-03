@@ -46,7 +46,10 @@ def fixture():
     }
     sheets = {"rooms": [
         {"room_id": f"L01_R{i:03d}", "source": {"map_coordinate": {"x": 0, "y": 0}},
-         "extraction": {"reference_dimensions_blocks": {"width": 10, "height": 8}},
+         "extraction": {
+             "reference_dimensions_blocks": {"width": 10, "height": 8},
+             "reference_spritesets": [{"variant": 0, "placements": [{"source_x": 4, "source_y": 6}]}],
+         },
          "status": {"geometry": "reference_dimensions_extracted_full_room_geometry_pending"}}
         for i in (1, 2)
     ]}
@@ -64,6 +67,9 @@ class TestRoomEntrySync(unittest.TestCase):
         self.assertEqual(result["rooms"][0]["source"]["tileset_entry_index"], 3)
         self.assertEqual(result["rooms"][0]["shared_resource_consumers"]["tile_graphics"]["room_consumers"], 2)
         self.assertEqual(result["rooms"][0]["extraction"]["reference_dimensions_blocks"]["width"], 10)
+        self.assertEqual(result["rooms"][0]["extraction"]["source_sprite_placement_count"], 1)
+        self.assertEqual(result["rooms"][0]["status"]["sprite_placement_reference"], "extracted_from_pinned_source")
+        self.assertEqual(result["source_sprite_placement_total"], 2)
 
     def test_master_plan_coordinates_update(self):
         _, _, registry = fixture()
