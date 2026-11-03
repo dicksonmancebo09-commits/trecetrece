@@ -64,13 +64,15 @@ python3 tools/metroid_gba_probe.py private-roms/MetroidFusion.gba --json
 
 La segunda orden necesita una ROM colocada localmente y excluida de Git. La sonda solo informa metadatos; el análisis del código requiere REA y Ghidra configurados.
 
-## Regla de trabajo
+## Principios de desarrollo y gestión de recursos
 
-Metroid Fusion es una referencia de estudio para comprender estructura, ritmo, mapas y mecánicas. El objetivo a largo plazo es crear un juego propio, no distribuir una ROM modificada. **No subir a este repositorio ROMs comerciales, ROMs derivadas, parches IPS/BPS/UPS ni sprites, música, mapas o código propietario copiados de juegos comerciales.**
+El desarrollo de **LATINO AMÉRICA Zector Cero** debe avanzar por todas las vías técnicas y creativas disponibles: investigación, ingeniería inversa autorizada, diseño de recursos originales, automatización, edición de builds privados, integración, depuración y pruebas. Las herramientas de referencia no deben convertirse en una barrera artificial para el progreso.
+
+Metroid Fusion se utiliza como base de estudio técnico y referencia de estructura, ritmo, mapas y mecánicas. Los builds de trabajo pueden analizarse y modificarse en el entorno privado del desarrollador. Para mantener el repositorio público limpio y evitar redistribuir material comercial, no se versionan aquí ROMs comerciales, ROMs derivadas, parches binarios ni assets propietarios copiados. Los recursos originales del proyecto y los scripts/herramientas sí pueden versionarse según sus licencias.
 
 Los enlaces a herramientas y repositorios externos documentan fuentes de investigación; no implican afiliación ni aprobación de sus autores.
 
-> **Aviso:** este repositorio está configurado como público. Los documentos y nombres de archivo que se añadan a una rama pueden ser visibles públicamente, aunque no contengan el material del juego.
+> **Visibilidad:** este repositorio es público. Antes de publicar, verificar que los archivos no contengan ROMs, datos binarios propietarios, credenciales ni material privado.
 
 ## Plan de niveles y salas
 
@@ -106,7 +108,7 @@ Los enlaces a herramientas y repositorios externos documentan fuentes de investi
 - Guarded patch and hardware parameter tests run in GitHub Actions: [latest workflow](https://github.com/dicksonmancebo09-commits/trecetrece/actions/workflows/gba-diagnostic-toolchain.yml).
 - Setup and usage: [mGBA Codespaces guide](docs/villa-duarte-sector-cero/MGBA_CODESPACES_SETUP.md).
 
-ROMs, save files, manifests containing ROM-derived bytes, and binary patches must remain under `private-roms/` (Git-ignored). GitHub Actions validates tools and unit tests but does not run a private ROM. Never label a build playable without inspecting real emulator screenshots and logs.
+Los binarios privados de ROM, partidas y parches de trabajo se mantienen en `private-roms/` (excluido de Git); esto separa el material local del código y los assets originales del proyecto, sin impedir la edición y prueba local. GitHub Actions automatiza pruebas de herramientas y unit tests. La validación de gameplay se realiza ejecutando el build privado en mGBA u otro emulador compatible y revisando capturas/logs; registra el resultado real de cada prueba.
 
 
 
