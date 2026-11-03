@@ -114,7 +114,10 @@ ROMs, save files, manifests containing ROM-derived bytes, and binary patches mus
 
 - [Informe de auditoría de las 382 salas](docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
 - [Manifiesto consolidado de los cinco lotes](data/world/sector-cero-production-manifest-v1.json).
-- [382 fichas técnicas por sala](data/world/sector-cero-room-technical-sheets-v1.json), con dimensiones de referencia y declaraciones de capas extraídas del commit fijado; los contenidos comprimidos, mapas BG/clipdata y el cotejo binario con la ROM privada siguen pendientes.
+- [382 fichas técnicas por sala](data/world/sector-cero-room-technical-sheets-v1.json), con dimensiones, declaraciones de capas y referencias RoomEntry reconciliadas con el commit fijado; los contenidos comprimidos BG/clipdata y el cotejo binario con la ROM privada siguen pendientes.
+- [Cruce RoomEntry corregido (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv) y [registro JSON](data/world/sector-cero-room-entry-reference-v1.json).
+- [Sincronizador de fichas y coordenadas](tools/sync_room_entry_reference.py) y [pruebas unitarias](tests/test_sync_room_entry_reference.py).
+- [Siete atlas exportados a PNG indexado y GBA 4bpp/BGR555/LZ77](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801); [descargar paquete GBA](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801).
 - [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
 - [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
 - [Cruce corregido RoomEntry → tileset → recursos (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv).
