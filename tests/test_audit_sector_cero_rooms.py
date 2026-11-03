@@ -49,6 +49,79 @@ class TestRoomAudit(unittest.TestCase):
         result = audit.audit_data(registry, manifest, sheets, master, expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
         self.assertTrue(any("door default destinations" in item for item in result["errors"]))
 
+    def test_pinned_room_entry_mismatch_fails(self):
+        registry, manifest, sheets, master = fixture()
+        source_reference = {
+            "rooms": [
+                {
+                    "room_id": "L01_R001",
+                    "source_game_area": "Main Deck",
+                    "source_room_index_0based": 0,
+                    "source_room_index_1based": 1,
+                    "room_entry": {
+                        "map_coordinate": {"x": 2, "y": 3},
+                        "tileset_entry_index": 5,
+                        "bg0_data_symbol": "bg0",
+                        "bg1_data_symbol": "bg1",
+                        "bg2_data_symbol": "bg2",
+                        "clipdata_symbol": "clip",
+                        "bg3_data_symbol": "bg3",
+                    },
+                    "tileset_entry": {"resource_indices": {"tile_graphics": 1}},
+                },
+                {
+                    "room_id": "L01_R002",
+                    "source_game_area": "Main Deck",
+                    "source_room_index_0based": 1,
+                    "source_room_index_1based": 2,
+                    "room_entry": {
+                        "map_coordinate": {"x": 4, "y": 5},
+                        "tileset_entry_index": 6,
+                        "bg0_data_symbol": "bg0",
+                        "bg1_data_symbol": "bg1",
+                        "bg2_data_symbol": "bg2",
+                        "clipdata_symbol": "clip",
+                        "bg3_data_symbol": "bg3",
+                    },
+                    "tileset_entry": {"resource_indices": {"tile_graphics": 2}},
+                },
+            ]
+        }
+        registry["rooms"][0]["source"].update({
+            "source_game_area": "Main Deck",
+            "room_index_0based": 0, "room_index_1based": 1,
+            "map_coordinate": {"x": 2, "y": 3}, "tileset_entry_index": 5,
+            "resource_indices": {"tile_graphics": 1},
+            "bg0_data": "bg0", "bg1_data": "bg1", "bg2_data": "bg2",
+            "clipdata_data": "clip", "bg3_data": "bg3",
+        })
+        registry["rooms"][1]["source"].update({
+            "source_game_area": "Main Deck",
+            "room_index_0based": 1, "room_index_1based": 2,
+            "map_coordinate": {"x": 4, "y": 5}, "tileset_entry_index": 6,
+            "resource_indices": {"tile_graphics": 2},
+            "bg0_data": "bg0", "bg1_data": "bg1", "bg2_data": "bg2",
+            "clipdata_data": "clip", "bg3_data": "bg3",
+        })
+        result = audit.audit_data(
+            registry, manifest, sheets, master,
+            expected_level_counts={"L01": 2},
+            expected_batch_counts={1: 2},
+            source_reference=source_reference,
+        )
+        self.assertEqual(result["source_reference_checks"]["records"], 2)
+        self.assertEqual(result["source_reference_checks"]["index_matches"], 2)
+        self.assertEqual(result["status"], "PASS")
+        registry["rooms"][0]["source"]["tileset_entry_index"] = 999
+        result = audit.audit_data(
+            registry, manifest, sheets, master,
+            expected_level_counts={"L01": 2},
+            expected_batch_counts={1: 2},
+            source_reference=source_reference,
+        )
+        self.assertEqual(result["status"], "FAIL")
+        self.assertTrue(any("tileset_matches" in item for item in result["errors"]))
+
     def test_missing_master_room_fails(self):
         registry, manifest, sheets, master = fixture()
         result = audit.audit_data(registry, manifest, sheets, ["L01_R001"], expected_level_counts={"L01": 2}, expected_batch_counts={1: 2})
