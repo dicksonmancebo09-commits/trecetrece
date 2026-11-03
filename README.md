@@ -122,6 +122,7 @@ Los binarios privados de ROM, partidas y parches de trabajo se mantienen en `pri
 - [Sincronizador de fichas y coordenadas](tools/sync_room_entry_reference.py) y [pruebas unitarias](tests/test_sync_room_entry_reference.py).
 - [Siete atlas exportados a PNG indexado y GBA 4bpp/BGR555/LZ77](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371); [descargar paquete GBA](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371).
 - [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
+- [Auditoría de recuperación: ROMs verificadas, 1.214 capas RLE recuperadas y pendientes reales](docs/villa-duarte-sector-cero/ROM_RECOVERY_AUDIT_2026-11-03.md).
 - [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
 - [Auditoría de payloads BG/clipdata no disponibles en la fuente pública](docs/villa-duarte-sector-cero/REFERENCE_MAP_PAYLOAD_AUDIT_2026-11-03.md).
 - [Siete atlas GBA exportados, run final 41616265371](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371).
