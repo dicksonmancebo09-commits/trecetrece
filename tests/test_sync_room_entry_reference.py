@@ -60,7 +60,7 @@ def fixture():
 class TestRoomEntrySync(unittest.TestCase):
     def test_reconciles_technical_sheets_and_preserves_dimensions(self):
         reference, sheets, _ = fixture()
-        result = sync.reconcile_technical_sheets(sheets, reference)
+        result = sync.reconcile_technical_sheets(sheets, reference, expected_count=2)
         self.assertEqual(result["rooms"][0]["source"]["tileset_entry_index"], 3)
         self.assertEqual(result["rooms"][0]["shared_resource_consumers"]["tile_graphics"]["room_consumers"], 2)
         self.assertEqual(result["rooms"][0]["extraction"]["reference_dimensions_blocks"]["width"], 10)
