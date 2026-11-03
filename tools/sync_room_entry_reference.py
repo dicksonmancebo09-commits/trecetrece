@@ -45,11 +45,12 @@ def _consumer_counts(reference_rooms: list[dict[str, Any]]) -> tuple[Counter, Co
 def reconcile_technical_sheets(
     sheets: dict[str, Any],
     reference: dict[str, Any],
+    expected_count: int = EXPECTED,
 ) -> dict[str, Any]:
     sheets_rooms = sheets.get("rooms", [])
     reference_rooms = reference.get("rooms", [])
-    if len(sheets_rooms) != EXPECTED or len(reference_rooms) != EXPECTED:
-        raise ValueError("Technical sheets and RoomEntry reference must each contain 382 rooms.")
+    if len(sheets_rooms) != expected_count or len(reference_rooms) != expected_count:
+        raise ValueError(f"Technical sheets and RoomEntry reference must each contain {expected_count} rooms.")
     sheet_ids = [str(room.get("room_id", "")) for room in sheets_rooms]
     reference_ids = [str(room.get("room_id", "")) for room in reference_rooms]
     if len(set(sheet_ids)) != EXPECTED or len(set(reference_ids)) != EXPECTED:
