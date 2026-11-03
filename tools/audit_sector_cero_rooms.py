@@ -47,6 +47,7 @@ def audit_data(
     batch_documents: dict[int, dict[str, Any]] | None = None,
     expected_level_counts: dict[str, int] | None = None,
     expected_batch_counts: dict[int, int] | None = None,
+    source_reference: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -112,6 +113,55 @@ def audit_data(
         source_coverage[area] = {"expected": expected, "actual": len(values), "complete": coverage_ok}
         if not coverage_ok:
             errors.append(f"Source index coverage incomplete for {area}.")
+    source_reference_checks = {
+        "records": 0, "index_matches": 0, "coordinates_match": 0,
+        "tileset_matches": 0, "resource_indices_match": 0,
+        "source_area_matches": 0, "data_symbols_match": 0,
+    }
+    if source_reference is not None:
+        ref_rooms = source_reference.get("rooms", [])
+        ref_ids = [str(room.get("room_id", "")) for room in ref_rooms]
+        if (
+            len(ref_rooms) != expected_total_rooms
+            or len(set(ref_ids)) != expected_total_rooms
+            or set(ref_ids) != id_set
+        ):
+            errors.append("Pinned RoomEntry reference does not cover exactly the registry room IDs.")
+        else:
+            source_reference_checks["records"] = len(ref_rooms)
+            registry_by_id = {str(room["room_id"]): room for room in rooms}
+            for ref_room in ref_rooms:
+                room_id = str(ref_room["room_id"])
+                source = registry_by_id[room_id].get("source", {})
+                fields = ref_room.get("room_entry", {})
+                resources = ref_room.get("tileset_entry", {}).get("resource_indices", {})
+                checks = {
+                    "index_matches": (
+                        source.get("room_index_0based") == ref_room.get("source_room_index_0based")
+                        and source.get("room_index_1based") == ref_room.get("source_room_index_1based")
+                    ),
+                    "coordinates_match": source.get("map_coordinate") == fields.get("map_coordinate"),
+                    "tileset_matches": source.get("tileset_entry_index") == fields.get("tileset_entry_index"),
+                    "resource_indices_match": source.get("resource_indices") == resources,
+                    "source_area_matches": source.get("source_game_area") == ref_room.get("source_game_area"),
+                    "data_symbols_match": (
+                        source.get("bg0_data") == fields.get("bg0_data_symbol")
+                        and source.get("bg1_data") == fields.get("bg1_data_symbol")
+                        and source.get("bg2_data") == fields.get("bg2_data_symbol")
+                        and source.get("clipdata_data") == fields.get("clipdata_symbol")
+                        and source.get("bg3_data") == fields.get("bg3_data_symbol")
+                    ),
+                }
+                for key, ok in checks.items():
+                    if ok:
+                        source_reference_checks[key] += 1
+                    else:
+                        errors.append(f"Registry metadata mismatch against pinned RoomEntry for {room_id}: {key}.")
+                        if len(errors) > 80:
+                            break
+                if len(errors) > 80:
+                    break
+
 
     door_count = 0
     dangling_defaults = []
@@ -198,6 +248,7 @@ def audit_data(
         "level_counts": level_counts,
         "source_index_coverage": source_coverage,
         "source_door_records": door_count,
+        "source_reference_checks": source_reference_checks,
         "dangling_default_destinations": len(dangling_defaults),
         "dangling_event_overrides": len(dangling_overrides),
         "batch_counts": batch_counts,
@@ -224,7 +275,11 @@ def load_and_audit(root: Path = ROOT) -> dict[str, Any]:
         number: load(root / f"data/world/sector-cero-room-batch-{number:02d}-v1.json")
         for number in range(1, 6)
     }
-    return audit_data(registry, manifest, sheets, extract_master_ids(master_text), batch_docs)
+    source_reference = load(root / "data/world/sector-cero-room-entry-reference-v1.json")
+    return audit_data(
+        registry, manifest, sheets, extract_master_ids(master_text),
+        batch_docs, source_reference=source_reference
+    )
 
 
 def main() -> int:
