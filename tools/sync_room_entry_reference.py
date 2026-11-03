@@ -124,15 +124,33 @@ def reconcile_technical_sheets(
         extraction["data_references"] = ref.get("data_references", {})
         if ref.get("scroll_data") is not None:
             extraction["scroll_data_reference"] = ref["scroll_data"]
+        sprite_sets = extraction.get("reference_spritesets", [])
+        placement_count = sum(len(item.get("placements", [])) for item in sprite_sets)
+        extraction["source_spriteset_variant_count"] = len(sprite_sets)
+        extraction["source_sprite_placement_count"] = placement_count
 
         status = sheet.setdefault("status", {})
         status["source_reference_entry"] = "verified_against_pinned_decomp_commit"
         status["resource_declaration_lengths"] = "populated_where_room_header_declares_size"
+        status["sprite_placement_reference"] = "extracted_from_pinned_source" if placement_count else "no_static_placement_rows_declared"
+        status["sprites_and_events"] = "source_sprite_positions_extracted_enemy_semantics_and_target_event_design_pending"
         status["exact_rom_match"] = "not_checked"
         # Preserve already-extracted dimensions/layer declarations; they are independent
         # metadata from each room source file, not derived from this RoomEntry lookup.
 
     sheets["created_date"] = "2026-11-03"
+    sheets["source_spriteset_variant_total"] = sum(
+        int((room.get("extraction") or {}).get("source_spriteset_variant_count", 0))
+        for room in sheets_rooms
+    )
+    sheets["source_sprite_placement_total"] = sum(
+        int((room.get("extraction") or {}).get("source_sprite_placement_count", 0))
+        for room in sheets_rooms
+    )
+    sheets["rooms_with_source_sprite_placements"] = sum(
+        1 for room in sheets_rooms
+        if int((room.get("extraction") or {}).get("source_sprite_placement_count", 0)) > 0
+    )
     sheets["source_code_reference"] = reference.get("source", {})
     sheets["status"] = (
         "reference_room_entry_fields_reconciled_reference_dimensions_populated_"
