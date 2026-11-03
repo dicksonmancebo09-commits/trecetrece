@@ -85,3 +85,17 @@ Se reescriben la tabla de metatiles y mapas BG1/BG2 privados a los que apuntan l
 ## Auditoría de v1.3 — build retirada
 
 Tras el reporte del usuario, v1.3 no es una build funcional. Fallo confirmado del título: bancos de paleta del tilemap inconsistentes con la dirección de carga de la paleta. Formatos/rangos estáticos de tabla y mapas se verificaron, pero la ejecución no. La causa del crash sigue desconocida. Las referencias de tabla/mapas privados sí están conectadas, así que la hipótesis de punteros ausentes queda rectificada. Ver [POSTMORTEM_V1_3.md](POSTMORTEM_V1_3.md).
+
+
+## Estado corregido de fuentes y producción — 03-11-2026
+
+Esta actualización complementa y, cuando haya contradicción, sustituye el estado de la matriz inicial:
+
+- ROM limpia, backup y candidata v1.7 disponibles y verificadas por SHA-256 en la Biblioteca de la conversación.
+- 382/382 IDs, cinco lotes, 382 fichas de referencia, RoomEntry, grafo de puertas y 2.150 posiciones de sprites ya inventariados en el repositorio.
+- 1.214 capas RLE originales de las 382 salas extraídas y verificadas desde la ROM base exacta; 0 errores, 0 rangos solapados. El detalle está en [ROM_RECOVERY_AUDIT_2026-11-03.md](ROM_RECOVERY_AUDIT_2026-11-03.md).
+- Los siete atlas están exportados a los formatos gráficos GBA. Eso no significa que estén compuestos como 382 salas completas.
+- **Cobertura todavía pendiente:** tilemaps urbanos finales 0/382, colisiones urbanas adaptadas 0/382, integración personalizada en ROM 0/382 y runtime 0/382.
+- Los registros de sprites son ubicaciones fuente, no sprites nuevos. Protagonista, enemigos, jefes, animaciones, proyectiles, efectos y HUD aún necesitan producción/integración visual.
+
+La falta de payloads RLE en la descompilación pública ya no bloquea la composición: se recuperaron desde la ROM base del usuario. El trabajo pasa a ser diseño por sala, adaptación de colisiones/puertas, integración y pruebas.
