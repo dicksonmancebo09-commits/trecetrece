@@ -52,6 +52,19 @@ class TestReferenceRoomMetadata(unittest.TestCase):
         self.assertEqual(result["layers"]["clipdata"]["declared_array_bytes"], 76)
         self.assertEqual(result["layers"]["bg1"]["declared_array_bytes"], 158)
         self.assertEqual(result["spriteset_placement_counts"], {"variant_0": 1, "variant_1": 2})
+        self.assertEqual(
+            result["spriteset_variants"][0]["placements"][0],
+            {
+                "source_x": 10,
+                "source_y": 9,
+                "source_record_expression": "SSP_UNINFECTED_OR_BOSS | SPRITESET_IDX(0)",
+                "coordinate_semantics": "raw source sprite placement values; unit and gameplay role require engine-level interpretation",
+            },
+        )
+        self.assertEqual(
+            result["spriteset_variants"][1]["placements"][1]["source_x"],
+            12,
+        )
         self.assertEqual(result["layer_dimension_conflicts"], [])
 
     def test_missing_clipdata_is_rejected(self):
