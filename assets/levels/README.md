@@ -34,7 +34,13 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 - Los siete se exportaron también a gráficos 4bpp (1.024 tiles × 32 bytes), paleta BGR555 de 32 bytes y LZ77; los siete informes registran round-trip 4bpp y LZ77 correctos.
 - Los archivos 4bpp/BGR555/LZ77 se publicaron en el artifact [zector-cero-gba-atlas-exports](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801). El artifact caduca el 17 de noviembre de 2026.
 
-Los SVG son bibliotecas editables; los PNG indexados y binarios exportados siguen siendo atlases, no tilemaps de habitación ni mapas de las 382 salas. No hay integración ROM. Informe de estado: [auditoría de producción](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
+Los SVG son bibliotecas editables; los PNG indexados y binarios exportados siguen siendo atlases, no tilemaps de habitación ni mapas de las 382 salas. Los archivos `.4bpp`, `.4bpp.lz` y `.bgr555.pal` están además en el directorio `exports/` de cada nivel. No hay integración ROM. Informe de estado: [auditoría de producción](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
 ## Conversión GBA automatizada
 
 El workflow [Zector Cero — production asset export](../../.github/workflows/zector-cero-production-assets.yml) rasteriza los siete atlas declarados en [gba_atlas_export_manifest.json](../../config/gba_atlas_export_manifest.json) a PNG indexado y verifica cada uno con el conversor 4bpp/BGR555/LZ77. La salida binaria se publica como artifact de GitHub Actions; no altera la ROM.
+
+
+## Datos técnicos de sprites por sala
+
+- [CSV de 2.150 posiciones de sprites de referencia](../../recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv).
+- Las coordenadas son valores crudos de los arrays del código de referencia. No se interpretan como píxeles ni como posiciones de enemigos originales sin convertir unidades y semántica del motor.
