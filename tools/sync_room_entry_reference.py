@@ -147,13 +147,13 @@ def reconcile_technical_sheets(
     return sheets
 
 
-def sync_master_coordinates(master_text: str, registry: dict[str, Any]) -> tuple[str, int]:
+def sync_master_coordinates(master_text: str, registry: dict[str, Any], expected_count: int = EXPECTED) -> tuple[str, int]:
     coordinates = {
         room["room_id"]: room["source"]["map_coordinate"]
         for room in registry.get("rooms", [])
     }
-    if len(coordinates) != EXPECTED:
-        raise ValueError("Registry must contain 382 unique room IDs before updating master coordinates.")
+    if len(coordinates) != expected_count:
+        raise ValueError(f"Registry must contain {expected_count} unique room IDs before updating master coordinates.")
     row_re = re.compile(
         r"^(\|\s*`(L\d{2}_R\d{3})`\s*\|\s*\d+\s*\|[^\n]*?\|[^\n]*?\|\s*)"
         r"\(\s*\d+\s*,\s*\d+\s*\)(\s*\|)$",
@@ -171,8 +171,8 @@ def sync_master_coordinates(master_text: str, registry: dict[str, Any]) -> tuple
         return f"{match.group(1)}({coordinate['x']}, {coordinate['y']}){match.group(3)}"
 
     updated = row_re.sub(replace, master_text)
-    if changed != EXPECTED:
-        raise ValueError(f"Expected to reconcile 382 master-plan coordinate rows; updated {changed}.")
+    if changed != expected_count:
+        raise ValueError(f"Expected to reconcile {expected_count} master-plan coordinate rows; updated {changed}.")
     old_method = (
         "3. El rol de sala es una asignación creativa inicial basada en el mapa estratégico: "
         "orden de `map_y`, después `map_x` y finalmente índice original. "
