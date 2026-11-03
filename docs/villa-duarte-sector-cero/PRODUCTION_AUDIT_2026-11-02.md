@@ -252,3 +252,19 @@ Se creó una candidata separada v1.8 con SHA-256 `3bc764355012268d4ac6ef315bb9bb
 Herramientas: `tools/fix_v17_room0_palette_bank.py`, `tools/render_v18_room0.py`; perfil `zector_cero_v1_8_palette_fix`. CI [run 41513304274](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41513304274): instalación mGBA y todos los controles/suites completados con éxito.
 
 **Runtime pendiente:** CI no cargó la ROM privada del usuario. v1.8 sigue siendo candidata estática, no una build aprobada. La corrección solo afecta L01_R001; las otras 381 salas siguen sin reskin/integración personalizada.
+
+
+## Reconciliación de metadatos RoomEntry — 3 de noviembre de 2026
+
+La comprobación de las 382 entradas `RoomEntryRom` detectó un desfase de un índice en el CSV técnico anterior. La asociación se corrigió usando `room_index_0based` como índice directo de la tabla de habitaciones y resolviendo `sTilesetEntries[98]`.
+
+- Entradas RoomEntry conciliadas: **382/382**.
+- Coordenadas corregidas: **375**.
+- Entradas de tileset corregidas: **301**.
+- Propiedades BG0 corregidas: **204**.
+- Música corregida: **91**.
+- Índices de gráficos, paleta, fondo y tilemap resueltos: **382/382**.
+
+Se conserva el canon de roles y lotes, pero la relación rol↔posición geográfica debe revisarse porque el primer reparto usó coordenadas desplazadas. El [plan maestro](LEVEL_ROOM_MASTER_PLAN_V2.md) ya tiene las coordenadas corregidas y el [CSV de RoomEntry](../../recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv) ofrece el cruce completo.
+
+Estos datos proceden del commit `de76565c897c05838503717db9aa2adfe92aeba3` de la descompilación pública: no comparan bytes con la ROM privada, no decodifican los contenidos BG/clipdata y no constituyen una prueba mGBA.
