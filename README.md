@@ -114,11 +114,13 @@ ROMs, save files, manifests containing ROM-derived bytes, and binary patches mus
 
 - [Informe de auditoría de las 382 salas](docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
 - [Manifiesto consolidado de los cinco lotes](data/world/sector-cero-production-manifest-v1.json).
-- [382 fichas técnicas base](data/world/sector-cero-room-technical-sheets-v1.json); dimensiones, clipdata y datos de integración de ROM permanecen pendientes de extracción.
+- [382 fichas técnicas por sala](data/world/sector-cero-room-technical-sheets-v1.json), con dimensiones de referencia y declaraciones de capas extraídas del commit fijado; los contenidos comprimidos, mapas BG/clipdata y el cotejo binario con la ROM privada siguen pendientes.
 - [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
 - [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
+- [Cruce corregido RoomEntry → tileset → recursos (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv).
+- [Registro JSON de RoomEntry de las 382 salas](data/world/sector-cero-room-entry-reference-v1.json).
 
-**Estado:** los IDs, lotes y referencias de puertas están auditados estructuralmente. No se ha aplicado un parche ROM ni se ha declarado una prueba de juego superada.
+**Estado:** IDs, lotes y referencias de puertas auditados; coordenadas y entradas de tileset reconciliadas con la fuente de referencia. Roles creativos pendientes de revisión espacial. No se ha aplicado un parche ROM ni se ha declarado una prueba de juego superada.
 ## Extracción técnica de referencia y exportación de atlas — 02-11-2026
 
 - [Extractor de dimensiones BG/clipdata y recuentos de sprites por sala](tools/extract_reference_room_metadata.py), fijado al commit de referencia `de76565c897c05838503717db9aa2adfe92aeba3`.
