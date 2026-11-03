@@ -1,5 +1,7 @@
 # Encargo para el agente REA — auditoría integral de Metroid Fusion
 
+> **Alcance de solo lectura:** las restricciones de este documento se aplican únicamente a esta tarea de investigación REA/Ghidra. No son una política general del proyecto ni autorizan a bloquear la producción. El PR [#7 — Autorizar transformación visual de toda la ROM](https://github.com/dicksonmancebo09-commits/trecetrece/pull/7) se fusionó el 27-10-2026 y el agente vigente `.github/agents/metroid-re.agent.md` autoriza expresamente la modificación de copias de la ROM cuando el usuario lo solicita. Para tareas de producción y edición, sigue ese mandato; no reutilices la prohibición de este encargo de investigación como regla general.
+
 Trabaja sobre la ROM privada del usuario:
 `/workspaces/gba/Metroid Fusion (USA, Australia).gba`
 
