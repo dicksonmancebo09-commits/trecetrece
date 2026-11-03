@@ -118,11 +118,13 @@ ROMs, save files, manifests containing ROM-derived bytes, and binary patches mus
 - [Cruce RoomEntry corregido (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv) y [registro JSON](data/world/sector-cero-room-entry-reference-v1.json).
 - [2.150 posiciones de sprites de referencia (CSV)](recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv), sin copiar gráficos comerciales.
 - [Sincronizador de fichas y coordenadas](tools/sync_room_entry_reference.py) y [pruebas unitarias](tests/test_sync_room_entry_reference.py).
-- [Siete atlas exportados a PNG indexado y GBA 4bpp/BGR555/LZ77](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801); [descargar paquete GBA](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801).
+- [Siete atlas exportados a PNG indexado y GBA 4bpp/BGR555/LZ77](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371); [descargar paquete GBA](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371).
 - [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
 - [Puerta de integración GBA y prueba vertical](docs/villa-duarte-sector-cero/ROM_INTEGRATION_GATE_2026-11-02.md).
+- [Siete atlas GBA exportados, run final 41616265371](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41616265371).
 - [Cruce corregido RoomEntry → tileset → recursos (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv).
 - [Registro JSON de RoomEntry de las 382 salas](data/world/sector-cero-room-entry-reference-v1.json).
+- [2.150 ubicaciones de sprites de referencia por sala](recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv).
 
 **Estado:** IDs, lotes y referencias de puertas auditados; coordenadas y entradas de tileset reconciliadas con la fuente de referencia. Roles creativos pendientes de revisión espacial. No se ha aplicado un parche ROM ni se ha declarado una prueba de juego superada.
 ## Extracción técnica de referencia y exportación de atlas — 02-11-2026
