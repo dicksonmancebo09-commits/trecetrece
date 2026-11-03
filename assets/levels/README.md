@@ -4,13 +4,13 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 
 | Nivel | Barrio | Salas | Paquete |
 |---|---|---:|---|
-| L01 | Villa Duarte | 87 | [Diseño L01](level-01-villa-duarte/README.md) · [Atlas gráfico v0.2](level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg) |
-| L02 | El Caliche | 54 | [Diseño L02](level-02-el-caliche/README.md) |
-| L03 | La Francia Nueva | 61 | [Diseño L03](level-03-la-francia-nueva/README.md) · [Atlas SVG v0.1](level-03-la-francia-nueva/level-03-atlas-v0.1.svg) |
-| L04 | Calero | 39 | [Diseño L04](level-04-calero/README.md) · [Atlas SVG v0.1](level-04-calero/level-04-atlas-v0.1.svg) |
-| L05 | Pueblo Nuevo | 48 | [Diseño L05](level-05-pueblo-nuevo/README.md) · [Atlas SVG v0.1](level-05-pueblo-nuevo/level-05-atlas-v0.1.svg) |
-| L06 | Los Molinos | 52 | [Diseño L06](level-06-los-molinos/README.md) · [Atlas SVG v0.1](level-06-los-molinos/level-06-atlas-v0.1.svg) |
-| L07 | Simónico | 41 | [Diseño L07](level-07-simonico/README.md) · [Atlas SVG v0.1](level-07-simonico/level-07-atlas-v0.1.svg) |
+| L01 | Villa Duarte | 87 | [Diseño L01](level-01-villa-duarte/README.md) · [SVG v0.2](level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg) · [PNG indexado](level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2-indexed.png) |
+| L02 | El Caliche | 54 | [Diseño L02](../tiles/scenario-02/README.md) · [PNG indexado](../tiles/scenario-02/scenario-02-el-caliche-tiles-audit-indexed.png) |
+| L03 | La Francia Nueva | 61 | [Diseño L03](level-03-la-francia-nueva/README.md) · [SVG v0.1](level-03-la-francia-nueva/level-03-atlas-v0.1.svg) · [PNG indexado](level-03-la-francia-nueva/level-03-atlas-v0.1-indexed.png) |
+| L04 | Calero | 39 | [Diseño L04](level-04-calero/README.md) · [SVG v0.1](level-04-calero/level-04-atlas-v0.1.svg) · [PNG indexado](level-04-calero/level-04-atlas-v0.1-indexed.png) |
+| L05 | Pueblo Nuevo | 48 | [Diseño L05](level-05-pueblo-nuevo/README.md) · [SVG v0.1](level-05-pueblo-nuevo/level-05-atlas-v0.1.svg) · [PNG indexado](level-05-pueblo-nuevo/level-05-atlas-v0.1-indexed.png) |
+| L06 | Los Molinos | 52 | [Diseño L06](level-06-los-molinos/README.md) · [SVG v0.1](level-06-los-molinos/level-06-atlas-v0.1.svg) · [PNG indexado](level-06-los-molinos/level-06-atlas-v0.1-indexed.png) |
+| L07 | Simónico | 41 | [Diseño L07](level-07-simonico/README.md) · [SVG v0.1](level-07-simonico/level-07-atlas-v0.1.svg) · [PNG indexado](level-07-simonico/level-07-atlas-v0.1-indexed.png) |
 
 ## Registro maestro
 
@@ -30,11 +30,11 @@ Los siete paquetes siguen la distribución del atlas creativo. Cada directorio c
 
 ## Estado de atlas — auditoría 02-11-2026
 
-- L01: atlas SVG v0.2 + JSON de módulos; exportación PNG indexada/4bpp pendiente.
-- L02: atlas SVG y exportaciones PNG descritas en [su paquete](../tiles/scenario-02/README.md); prueba en ROM pendiente.
-- L03–L07: atlas SVG v0.1 + JSON, 64 módulos de 32 × 32 px por barrio; exportación PNG indexada/4bpp y composición por sala pendientes.
+- L01–L07: los siete atlas tienen PNG indexado de 256 × 256 px, retícula de 32 × 32 tiles y 16 entradas de paleta con transparencia en índice 0.
+- Los siete se exportaron también a gráficos 4bpp (1.024 tiles × 32 bytes), paleta BGR555 de 32 bytes y LZ77; los siete informes registran round-trip 4bpp y LZ77 correctos.
+- Los archivos 4bpp/BGR555/LZ77 se publicaron en el artifact [zector-cero-gba-atlas-exports](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801). El artifact caduca el 17 de noviembre de 2026.
 
-Los atlas SVG son bibliotecas editables; no son tilemaps ni mapas de las 382 salas. Informe de estado: [auditoría de producción 02-11-2026](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
+Los SVG son bibliotecas editables; los PNG indexados y binarios exportados siguen siendo atlases, no tilemaps de habitación ni mapas de las 382 salas. No hay integración ROM. Informe de estado: [auditoría de producción](../../docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md).
 ## Conversión GBA automatizada
 
 El workflow [Zector Cero — production asset export](../../.github/workflows/zector-cero-production-assets.yml) rasteriza los siete atlas declarados en [gba_atlas_export_manifest.json](../../config/gba_atlas_export_manifest.json) a PNG indexado y verifica cada uno con el conversor 4bpp/BGR555/LZ77. La salida binaria se publica como artifact de GitHub Actions; no altera la ROM.
