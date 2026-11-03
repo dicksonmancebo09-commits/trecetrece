@@ -281,3 +281,10 @@ El workflow [Zector Cero — production asset export, run 41614610801](https://g
 - Artefacto [zector-cero-gba-atlas-exports](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801): 28 archivos — 7× gráficos 4bpp, 7× LZ77, 7× paleta BGR555 y 7× informes. El artifact expira el **17 de noviembre de 2026**.
 
 Los PNG indexados y sus informes están guardados en la rama. El paquete de binarios GBA se descarga desde el artifact de Actions. **No se integró ningún atlas en una ROM ni se ejecutó gameplay en mGBA**; el workflow no tenía acceso a la ROM privada del usuario. Los mapas por sala y colisiones siguen sin montarse.
+
+
+## Posiciones de sprites de referencia por sala — 3 de noviembre de 2026
+
+La extracción de los siete grupos de fuentes de sala registró **469 variantes de spriteset** y **2.150 posiciones de sprite** con coordenadas X/Y y expresión de registro de origen. Hay filas de colocación estática en 332 salas; 50 salas no declararon filas estáticas en los arrays extraídos. Esa ausencia no demuestra que no existan apariciones dinámicas o generadas por eventos.
+
+El CSV [ROOM_SPRITE_PLACEMENTS_2026-11-03.csv](../../recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv) permite consultar las posiciones por sala, variante y fuente. Las coordenadas se conservan como valores crudos del código de referencia: su unidad y semántica deben interpretarse con el motor antes de convertirlas a posiciones de gameplay. No se copiaron sprites ni arte comercial.
