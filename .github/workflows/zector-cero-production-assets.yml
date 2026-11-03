@@ -28,6 +28,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: zector-cero-production-assets-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   extract-render-export:
     runs-on: ubuntu-24.04
@@ -152,5 +156,7 @@ jobs:
             echo "No generated files changed."
           else
             git commit -m "Generate indexed GBA atlas exports and reference room dimensions"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
