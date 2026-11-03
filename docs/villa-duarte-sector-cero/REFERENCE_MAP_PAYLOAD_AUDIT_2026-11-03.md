@@ -53,3 +53,25 @@ La longitud declarada de un array y las dimensiones de sala no contienen el mapa
 `runtime_tested`: **0/382**.
 
 Esto no invalida la producción ya superada: 382 IDs y lotes auditados, metadatos RoomEntry conciliados, dimensiones de referencia extraídas y siete atlas exportados a PNG indexado/4bpp/BGR555/LZ77. Delimita el punto donde hacen falta los bytes que no están en la fuente pública ni disponibles en este entorno.
+
+
+## Actualización — payloads recuperados desde la ROM del usuario (03-11-2026)
+
+La auditoría original de 404 describe correctamente que los payloads `.rle` no están en el árbol público de `metroidret/mf`. No debe interpretarse como que ya no se dispone de ellos para el proyecto: se recuperó la ROM base exacta desde la Biblioteca de archivos y se extrajeron directamente sus rangos.
+
+- ROM base: `Metroid Fusion (USA, Australia).gba`, SHA-256 `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8`.
+- Paquete fuente 382-salas: artifact de GitHub Actions run `41508555361`; hash de base de datos y hashes de 382 archivos C verificados.
+- Extracción completada: **382 salas / 1.214 capas RLE**: clipdata 382, BG1 382, BG2 381, BG0 69.
+- 340.909 bytes comprimidos; 0 errores RLE; 0 rangos solapados; 0 capas con diferencias en sus offsets originales al comparar v1.7.
+- ZIP privado de extracción: `ZECTOR_CERO_382_ROOM_EXTRACTION_2026-11-03.zip`, SHA-256 `5663ef29ab795cc28737cab515c88b2dbe7ea785a1d49dc35354762cef13eb1f`. No se versiona en el repositorio público.
+
+Los indicadores deben interpretarse así:
+
+- `original_rle_layers_extracted`: **1214/1214**.
+- `original_clipdata_payloads_extracted_from_clean_rom`: **382/382**.
+- `custom_neighborhood_tilemaps_created`: **0/382**.
+- `adapted_neighborhood_collision_layouts_created`: **0/382**.
+- `rom_integration`: **0/382**.
+- `runtime_tested`: **0/382**.
+
+Por tanto, ya no hace falta recuperar ni extraer los mapas originales. La fase pendiente es reinterpretarlos y montarlos con el arte de los siete barrios, adaptar las colisiones/puertas y llevar el resultado a la ROM.
