@@ -29,6 +29,8 @@ def fixture():
     return registry, manifest, sheets, ["L01_R001", "L01_R002"]
 
 
+# Production audit includes pinned RoomEntry coordinates, tileset and resource consistency checks.
+
 class TestRoomAudit(unittest.TestCase):
     def test_clean_fixture_passes_structural_checks(self):
         registry, manifest, sheets, master = fixture()
