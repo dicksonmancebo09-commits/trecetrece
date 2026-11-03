@@ -37,3 +37,16 @@ Se omiten por ahora las tareas dependientes de la ROM privada y de shell local, 
 
 **Gate obligatorio:** no se declara una sala integrada o jugable hasta demostrar el parche sobre copia, el arranque, movimiento, colisiones, puertas y revisión de capturas/logs en emulador.
 
+
+
+## Actualización correctiva — recuperación de ROM y mapas (03-11-2026)
+
+La nota anterior que afirmaba que no había ROM binaria montada fue cierta para una revisión anterior, pero quedó obsoleta tras inspeccionar la Biblioteca de archivos. En esta sesión se recuperaron y verificaron la ROM base, su backup y la candidata v1.7; véase [auditoría de recuperación](ROM_RECOVERY_AUDIT_2026-11-03.md).
+
+- ROM base exacta disponible: SHA-256 `a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8`.
+- Candidata v1.7 disponible: SHA-256 `66e68fb0f04f89d40ecfee21996e6be62e96a22f7f66198528ee6b2c5c2c2aaf`.
+- El artifact de referencia de 382 salas fue recuperado; se verificaron los 382 archivos C y el hash de `database.json`.
+- Se regeneró la extracción privada: 382/382 salas, 1.214/1.214 capas RLE, 340.909 bytes comprimidos, 0 errores y 0 rangos solapados. La comparación de los rangos originales contra v1.7 dio 0 capas con bytes modificados.
+- Se recreó en una copia v1.8 el arreglo de banco de paleta de L01_R001. SHA de salida: `3bc764355012268d4ac6ef315bb9bb09ac0e5405d1c456bb506d1fdbe862af89`; cambio estático de 1.536 bytes; runtime no probado.
+
+**Corrección de estado:** la extracción de mapas/clipdata originales ya no está bloqueada. Lo que sigue pendiente es crear las composiciones urbanas de sala (tilemaps personalizados y colisiones adaptadas), integrar sprites/entidades y construir/testear ROM por lotes. No solicitar de nuevo los binarios ya recuperados.
