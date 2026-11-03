@@ -68,7 +68,7 @@ class TestRoomEntrySync(unittest.TestCase):
     def test_master_plan_coordinates_update(self):
         _, _, registry = fixture()
         text = "## Estado de todas las salas\n| `L01_R001` | 1 | Name | role | (99, 99) |\n| `L01_R002` | 2 | Name | role | (98, 98) |"
-        updated, count = sync.sync_master_coordinates(text, registry)
+        updated, count = sync.sync_master_coordinates(text, registry, expected_count=2)
         self.assertEqual(count, 2)
         self.assertIn("(1, 2)", updated)
         self.assertIn("(2, 2)", updated)
