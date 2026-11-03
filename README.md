@@ -116,6 +116,7 @@ ROMs, save files, manifests containing ROM-derived bytes, and binary patches mus
 - [Manifiesto consolidado de los cinco lotes](data/world/sector-cero-production-manifest-v1.json).
 - [382 fichas técnicas por sala](data/world/sector-cero-room-technical-sheets-v1.json), con dimensiones, declaraciones de capas y referencias RoomEntry reconciliadas con el commit fijado; los contenidos comprimidos BG/clipdata y el cotejo binario con la ROM privada siguen pendientes.
 - [Cruce RoomEntry corregido (CSV)](recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv) y [registro JSON](data/world/sector-cero-room-entry-reference-v1.json).
+- [2.150 posiciones de sprites de referencia (CSV)](recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv), sin copiar gráficos comerciales.
 - [Sincronizador de fichas y coordenadas](tools/sync_room_entry_reference.py) y [pruebas unitarias](tests/test_sync_room_entry_reference.py).
 - [Siete atlas exportados a PNG indexado y GBA 4bpp/BGR555/LZ77](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801); [descargar paquete GBA](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801).
 - [Validador estructural automático](tools/audit_sector_cero_rooms.py) y [pruebas unitarias](tests/test_audit_sector_cero_rooms.py).
