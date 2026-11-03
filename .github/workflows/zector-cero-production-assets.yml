@@ -18,6 +18,11 @@ on:
       - "tests/test_extract_reference_room_metadata.py"
       - "tests/test_render_gba_atlas_indexed.py"
       - "tests/test_audit_sector_cero_rooms.py"
+      - "data/world/sector-cero-room-entry-reference-v1.json"
+      - "docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md"
+      - "docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md"
+      - "tools/sync_room_entry_reference.py"
+      - "tests/test_sync_room_entry_reference.py"
       - ".github/workflows/zector-cero-production-assets.yml"
 
 permissions:
@@ -52,13 +57,15 @@ jobs:
             tools/extract_reference_room_metadata.py \
             tools/render_gba_atlas_indexed.py \
             tools/png_to_gba_4bpp.py \
-            tools/audit_sector_cero_rooms.py
+            tools/audit_sector_cero_rooms.py \
+            tools/sync_room_entry_reference.py
 
       - name: Unit tests — room metadata, atlas renderer and registry audit
         run: |
           python -m unittest discover -s tests -p "test_extract_reference_room_metadata.py" -v
           python -m unittest discover -s tests -p "test_render_gba_atlas_indexed.py" -v
           python -m unittest discover -s tests -p "test_audit_sector_cero_rooms.py" -v
+          python -m unittest discover -s tests -p "test_sync_room_entry_reference.py" -v
 
       - name: Extract reference dimensions for all 382 rooms
         run: |
@@ -67,6 +74,15 @@ jobs:
             --output data/world/sector-cero-reference-room-metadata-v1.json \
             --technical-sheets data/world/sector-cero-room-technical-sheets-v1.json
 
+      - name: Reconcile technical sheets and master coordinates against RoomEntry
+        run: |
+          python tools/sync_room_entry_reference.py \
+            --registry data/world/sector-cero-room-registry-v1.json \
+            --reference data/world/sector-cero-room-entry-reference-v1.json \
+            --technical-sheets data/world/sector-cero-room-technical-sheets-v1.json \
+            --master-plan docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md \
+            --audit-doc docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md \
+            --csv-out recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv
       - name: Audit room IDs and all five batches
         run: |
           python tools/audit_sector_cero_rooms.py \
@@ -115,6 +131,9 @@ jobs:
           git add \
             data/world/sector-cero-reference-room-metadata-v1.json \
             data/world/sector-cero-room-technical-sheets-v1.json \
+            docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md \
+            docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md \
+            recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv \
             assets/levels/level-01-villa-duarte/*-indexed.png \
             assets/levels/level-01-villa-duarte/*-indexed.png.export.json \
             assets/levels/level-03-la-francia-nueva/*-indexed.png \
