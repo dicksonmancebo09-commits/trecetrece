@@ -1,0 +1,51 @@
+{
+  "project": "LATINO AMÉRICA Zector Cero",
+  "level_id": "L04",
+  "neighborhood": "Calero",
+  "source_svg": "assets/levels/level-04-calero/level-04-atlas-v0.1.svg",
+  "source_svg_sha256": "8acda8b8ddaea82eea9d42ecc37a1e7dbe716e7981ca4e6e1d35a41b74512658",
+  "metadata_json": "assets/levels/level-04-calero/level-04-atlas-v0.1.json",
+  "indexed_png": "assets/levels/level-04-calero/exports/l04-calero-indexed.png",
+  "indexed_png_sha256": "f30e379777dbdb6fd73ac5902844ed1c1262494811251e9852ab84afcc9d3ce6",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "used_palette_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "unknown_colors": 0,
+  "partial_alpha_pixels": 0,
+  "outputs": {
+    "4bpp": "assets/levels/level-04-calero/exports/l04-calero.4bpp",
+    "4bpp_lz77": "assets/levels/level-04-calero/exports/l04-calero.4bpp.lz",
+    "bgr555_palette": "assets/levels/level-04-calero/exports/l04-calero.bgr555.pal",
+    "conversion_report": "assets/levels/level-04-calero/exports/l04-calero.export.json"
+  },
+  "validation": {
+    "exact_declared_palette": true,
+    "no_partial_alpha": true,
+    "indexed_png": true,
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "tilemap_created": false,
+    "runtime_tested": false
+  }
+}

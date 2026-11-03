@@ -1,0 +1,60 @@
+{
+  "format": "gba-4bpp-tile-atlas",
+  "source": "/home/runner/work/trecetrece/trecetrece/assets/levels/level-07-simonico/exports/l07-simonico-indexed.png",
+  "source_sha256": "797ed4cc70cecf9e283919651e41b34af3c4cb1f5a19d5c619200a2dba93ff74",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "tile_order": "row-major, top-to-bottom then left-to-right",
+  "nibble_order": "even x in low nibble; odd x in high nibble",
+  "pixel_indices_used": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "source_transparency_present": false,
+  "transparency_note": "Alpha-zero pixels map to palette index 0. For OBJ graphics this is the conventional transparent index. For BG graphics, verify the target layer's color-0/backdrop behavior before integration.",
+  "palette_format": "GBA BGR555, 16 little-endian 16-bit entries (32 bytes)",
+  "tile_bytes": 32768,
+  "compressed_bytes": 5180,
+  "compression": "GBA BIOS LZ77 type 0x10",
+  "output_sha256": {
+    "tiles": "1ab8188e11a96e330e57c326f1431657d175bef65d92b823c9674afa95797e68",
+    "compressed_tiles": "65f8547daf362a66a5edb63c382ae1734ee1cd1b3e704824a323227c1a01512e",
+    "palette": "f29b4043548589b0cd01631d8739eb2f1da608d4f1c6dffaff46fb984c87011e"
+  },
+  "validation": {
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "room_tilemap_created": false,
+    "room_pointer_updated": false,
+    "runtime_tested": false
+  },
+  "next_required_work": [
+    "Choose the exact target room and determine whether this atlas is BG or OBJ content.",
+    "Create a room-specific tilemap that references only the required tiles.",
+    "Resolve the target room's palette bank, tile base, VRAM allocation, and shared-resource consumers.",
+    "Integrate on a private ROM copy with hash-pinned preconditions.",
+    "Run the room in mGBA and inspect player path, collisions, transparency, and palette output."
+  ]
+}

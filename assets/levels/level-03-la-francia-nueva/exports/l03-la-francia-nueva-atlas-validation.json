@@ -1,0 +1,52 @@
+{
+  "project": "LATINO AMÉRICA Zector Cero",
+  "level_id": "L03",
+  "neighborhood": "La Francia Nueva",
+  "source_svg": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.svg",
+  "source_svg_sha256": "45d0bdc14e53999af4079fd0d03a30804736099de3c4198ebd5ee6c86666e032",
+  "metadata_json": "assets/levels/level-03-la-francia-nueva/level-03-atlas-v0.1.json",
+  "indexed_png": "assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva-indexed.png",
+  "indexed_png_sha256": "9cdf89fb28b35bcb92296c3a744f6e2fd9a2ce173fbf17a6fb7b83b6da3d1968",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "used_palette_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "unknown_colors": 0,
+  "partial_alpha_pixels": 0,
+  "outputs": {
+    "4bpp": "assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva.4bpp",
+    "4bpp_lz77": "assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva.4bpp.lz",
+    "bgr555_palette": "assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva.bgr555.pal",
+    "conversion_report": "assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva.export.json"
+  },
+  "validation": {
+    "exact_declared_palette": true,
+    "no_partial_alpha": true,
+    "indexed_png": true,
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "tilemap_created": false,
+    "runtime_tested": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "project": "LATINO AMÉRICA Zector Cero",
+  "level_id": "L07",
+  "neighborhood": "Simónico",
+  "source_svg": "assets/levels/level-07-simonico/level-07-atlas-v0.1.svg",
+  "source_svg_sha256": "1cb36a8a3a12ce91245da1b2fcab938e5e7107645d828c4430e4dad0fe52fb5e",
+  "metadata_json": "assets/levels/level-07-simonico/level-07-atlas-v0.1.json",
+  "indexed_png": "assets/levels/level-07-simonico/exports/l07-simonico-indexed.png",
+  "indexed_png_sha256": "797ed4cc70cecf9e283919651e41b34af3c4cb1f5a19d5c619200a2dba93ff74",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "used_palette_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "unknown_colors": 0,
+  "partial_alpha_pixels": 0,
+  "outputs": {
+    "4bpp": "assets/levels/level-07-simonico/exports/l07-simonico.4bpp",
+    "4bpp_lz77": "assets/levels/level-07-simonico/exports/l07-simonico.4bpp.lz",
+    "bgr555_palette": "assets/levels/level-07-simonico/exports/l07-simonico.bgr555.pal",
+    "conversion_report": "assets/levels/level-07-simonico/exports/l07-simonico.export.json"
+  },
+  "validation": {
+    "exact_declared_palette": true,
+    "no_partial_alpha": true,
+    "indexed_png": true,
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "tilemap_created": false,
+    "runtime_tested": false
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "format": "gba-4bpp-tile-atlas",
+  "source": "/home/runner/work/trecetrece/trecetrece/assets/levels/level-06-los-molinos/exports/l06-los-molinos-indexed.png",
+  "source_sha256": "4638c54c6bc4060255626d940a8e807f1c1eefe21541b3af76392edccfcaa91f",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "tile_order": "row-major, top-to-bottom then left-to-right",
+  "nibble_order": "even x in low nibble; odd x in high nibble",
+  "pixel_indices_used": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "source_transparency_present": false,
+  "transparency_note": "Alpha-zero pixels map to palette index 0. For OBJ graphics this is the conventional transparent index. For BG graphics, verify the target layer's color-0/backdrop behavior before integration.",
+  "palette_format": "GBA BGR555, 16 little-endian 16-bit entries (32 bytes)",
+  "tile_bytes": 32768,
+  "compressed_bytes": 5208,
+  "compression": "GBA BIOS LZ77 type 0x10",
+  "output_sha256": {
+    "tiles": "61d664fd06d249cb8ebaadf3ae60dc190758bdcdf43d72575df9851ae84bc917",
+    "compressed_tiles": "de82b46d4f60f64e2056242b48d105c7cf897fe4c53f403ef03b7f8df31fdc7a",
+    "palette": "09ab98e62767713705f526d59eb2f43e62003203182c608f2e28f4f2b4864bbe"
+  },
+  "validation": {
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "room_tilemap_created": false,
+    "room_pointer_updated": false,
+    "runtime_tested": false
+  },
+  "next_required_work": [
+    "Choose the exact target room and determine whether this atlas is BG or OBJ content.",
+    "Create a room-specific tilemap that references only the required tiles.",
+    "Resolve the target room's palette bank, tile base, VRAM allocation, and shared-resource consumers.",
+    "Integrate on a private ROM copy with hash-pinned preconditions.",
+    "Run the room in mGBA and inspect player path, collisions, transparency, and palette output."
+  ]
+}

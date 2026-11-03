@@ -1,0 +1,60 @@
+{
+  "format": "gba-4bpp-tile-atlas",
+  "source": "/home/runner/work/trecetrece/trecetrece/assets/levels/level-03-la-francia-nueva/exports/l03-la-francia-nueva-indexed.png",
+  "source_sha256": "9cdf89fb28b35bcb92296c3a744f6e2fd9a2ce173fbf17a6fb7b83b6da3d1968",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "tile_order": "row-major, top-to-bottom then left-to-right",
+  "nibble_order": "even x in low nibble; odd x in high nibble",
+  "pixel_indices_used": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "source_transparency_present": false,
+  "transparency_note": "Alpha-zero pixels map to palette index 0. For OBJ graphics this is the conventional transparent index. For BG graphics, verify the target layer's color-0/backdrop behavior before integration.",
+  "palette_format": "GBA BGR555, 16 little-endian 16-bit entries (32 bytes)",
+  "tile_bytes": 32768,
+  "compressed_bytes": 5212,
+  "compression": "GBA BIOS LZ77 type 0x10",
+  "output_sha256": {
+    "tiles": "9cb238016ddf17112a87471fe8f799510ada85e3b006ee220caded7ffab1c649",
+    "compressed_tiles": "d8fe5229dc0330dd6dfd5976d699c514deb19a2cd1956b822f8ffffc99ff1090",
+    "palette": "cab886a54bec0f0a5caaca21ab39b8b49d86caba43dca69953d6ddc3b10dbe06"
+  },
+  "validation": {
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "room_tilemap_created": false,
+    "room_pointer_updated": false,
+    "runtime_tested": false
+  },
+  "next_required_work": [
+    "Choose the exact target room and determine whether this atlas is BG or OBJ content.",
+    "Create a room-specific tilemap that references only the required tiles.",
+    "Resolve the target room's palette bank, tile base, VRAM allocation, and shared-resource consumers.",
+    "Integrate on a private ROM copy with hash-pinned preconditions.",
+    "Run the room in mGBA and inspect player path, collisions, transparency, and palette output."
+  ]
+}

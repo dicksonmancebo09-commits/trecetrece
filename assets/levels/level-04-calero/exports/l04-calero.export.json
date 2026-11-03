@@ -1,0 +1,59 @@
+{
+  "format": "gba-4bpp-tile-atlas",
+  "source": "/home/runner/work/trecetrece/trecetrece/assets/levels/level-04-calero/exports/l04-calero-indexed.png",
+  "source_sha256": "f30e379777dbdb6fd73ac5902844ed1c1262494811251e9852ab84afcc9d3ce6",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "tile_order": "row-major, top-to-bottom then left-to-right",
+  "nibble_order": "even x in low nibble; odd x in high nibble",
+  "pixel_indices_used": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "source_transparency_present": false,
+  "transparency_note": "Alpha-zero pixels map to palette index 0. For OBJ graphics this is the conventional transparent index. For BG graphics, verify the target layer's color-0/backdrop behavior before integration.",
+  "palette_format": "GBA BGR555, 16 little-endian 16-bit entries (32 bytes)",
+  "tile_bytes": 32768,
+  "compressed_bytes": 4744,
+  "compression": "GBA BIOS LZ77 type 0x10",
+  "output_sha256": {
+    "tiles": "9a0e4e6c96237698149ca23ab93ef3052b99914e8a2dfb4ad747702edc2808a8",
+    "compressed_tiles": "96c4926db93a43fa645b278c9e87db4848ca9b9b5667237765ee28f1158c234f",
+    "palette": "cd36c300bd5378f3db3cedc437f7609e1692051f4b95af04f6e74a5afe79213a"
+  },
+  "validation": {
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "room_tilemap_created": false,
+    "room_pointer_updated": false,
+    "runtime_tested": false
+  },
+  "next_required_work": [
+    "Choose the exact target room and determine whether this atlas is BG or OBJ content.",
+    "Create a room-specific tilemap that references only the required tiles.",
+    "Resolve the target room's palette bank, tile base, VRAM allocation, and shared-resource consumers.",
+    "Integrate on a private ROM copy with hash-pinned preconditions.",
+    "Run the room in mGBA and inspect player path, collisions, transparency, and palette output."
+  ]
+}

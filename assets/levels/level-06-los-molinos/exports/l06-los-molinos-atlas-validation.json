@@ -1,0 +1,51 @@
+{
+  "project": "LATINO AMÉRICA Zector Cero",
+  "level_id": "L06",
+  "neighborhood": "Los Molinos",
+  "source_svg": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.svg",
+  "source_svg_sha256": "29f136eb05fb095a90dadd8019fa0f3c823c60018060c2cbb804da31b8051bcc",
+  "metadata_json": "assets/levels/level-06-los-molinos/level-06-atlas-v0.1.json",
+  "indexed_png": "assets/levels/level-06-los-molinos/exports/l06-los-molinos-indexed.png",
+  "indexed_png_sha256": "4638c54c6bc4060255626d940a8e807f1c1eefe21541b3af76392edccfcaa91f",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "used_palette_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15
+  ],
+  "unknown_colors": 0,
+  "partial_alpha_pixels": 0,
+  "outputs": {
+    "4bpp": "assets/levels/level-06-los-molinos/exports/l06-los-molinos.4bpp",
+    "4bpp_lz77": "assets/levels/level-06-los-molinos/exports/l06-los-molinos.4bpp.lz",
+    "bgr555_palette": "assets/levels/level-06-los-molinos/exports/l06-los-molinos.bgr555.pal",
+    "conversion_report": "assets/levels/level-06-los-molinos/exports/l06-los-molinos.export.json"
+  },
+  "validation": {
+    "exact_declared_palette": true,
+    "no_partial_alpha": true,
+    "indexed_png": true,
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "tilemap_created": false,
+    "runtime_tested": false
+  }
+}

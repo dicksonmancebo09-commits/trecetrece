@@ -1,0 +1,55 @@
+{
+  "project": "LATINO AMÉRICA Zector Cero",
+  "level_id": "L01",
+  "neighborhood": "Villa Duarte",
+  "source_svg": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.svg",
+  "source_svg_sha256": "f83ba4d76d6f1a744ed5cae0dafeaae1d796390870f19fe9a5b218419cb7747e",
+  "metadata_json": "assets/levels/level-01-villa-duarte/level-01-villa-duarte-atlas-v0.2.json",
+  "indexed_png": "assets/levels/level-01-villa-duarte/exports/l01-villa-duarte-indexed.png",
+  "indexed_png_sha256": "465b8e64063599bba0b98cfa019d4a50f03b251b13169cc679f01ec05e64fca1",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "palette_entries": 16,
+  "used_palette_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "unknown_colors": 0,
+  "partial_alpha_pixels": 0,
+  "outputs": {
+    "4bpp": "assets/levels/level-01-villa-duarte/exports/l01-villa-duarte.4bpp",
+    "4bpp_lz77": "assets/levels/level-01-villa-duarte/exports/l01-villa-duarte.4bpp.lz",
+    "bgr555_palette": "assets/levels/level-01-villa-duarte/exports/l01-villa-duarte.bgr555.pal",
+    "conversion_report": "assets/levels/level-01-villa-duarte/exports/l01-villa-duarte.export.json"
+  },
+  "validation": {
+    "exact_declared_palette": true,
+    "no_partial_alpha": true,
+    "indexed_png": true,
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "tilemap_created": false,
+    "runtime_tested": false
+  }
+}

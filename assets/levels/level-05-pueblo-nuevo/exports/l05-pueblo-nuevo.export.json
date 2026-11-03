@@ -1,0 +1,60 @@
+{
+  "format": "gba-4bpp-tile-atlas",
+  "source": "/home/runner/work/trecetrece/trecetrece/assets/levels/level-05-pueblo-nuevo/exports/l05-pueblo-nuevo-indexed.png",
+  "source_sha256": "63f5b77b72b1f1ff64ccb99d390a59714ca1b6264bccc707414f079d2eb3c534",
+  "dimensions_px": [
+    256,
+    256
+  ],
+  "tile_dimensions_px": [
+    8,
+    8
+  ],
+  "tile_grid": [
+    32,
+    32
+  ],
+  "tile_count": 1024,
+  "tile_order": "row-major, top-to-bottom then left-to-right",
+  "nibble_order": "even x in low nibble; odd x in high nibble",
+  "pixel_indices_used": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15
+  ],
+  "source_transparency_present": false,
+  "transparency_note": "Alpha-zero pixels map to palette index 0. For OBJ graphics this is the conventional transparent index. For BG graphics, verify the target layer's color-0/backdrop behavior before integration.",
+  "palette_format": "GBA BGR555, 16 little-endian 16-bit entries (32 bytes)",
+  "tile_bytes": 32768,
+  "compressed_bytes": 5244,
+  "compression": "GBA BIOS LZ77 type 0x10",
+  "output_sha256": {
+    "tiles": "8491e68d0af4812c59df8e9ed888a14680e7d6a0e989d1c43e1c468861b69828",
+    "compressed_tiles": "5e73c1770dd1abbfac2cf2016451dc30c3b32fb18407fc036af1229ac820c7be",
+    "palette": "f21285c6c206421ee67320ba8d97b8272a116000e8392c45a5946a5747de35e2"
+  },
+  "validation": {
+    "4bpp_round_trip": true,
+    "lz77_round_trip": true,
+    "rom_modified": false,
+    "room_tilemap_created": false,
+    "room_pointer_updated": false,
+    "runtime_tested": false
+  },
+  "next_required_work": [
+    "Choose the exact target room and determine whether this atlas is BG or OBJ content.",
+    "Create a room-specific tilemap that references only the required tiles.",
+    "Resolve the target room's palette bank, tile base, VRAM allocation, and shared-resource consumers.",
+    "Integrate on a private ROM copy with hash-pinned preconditions.",
+    "Run the room in mGBA and inspect player path, collisions, transparency, and palette output."
+  ]
+}
