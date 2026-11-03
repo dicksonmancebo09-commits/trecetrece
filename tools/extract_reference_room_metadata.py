@@ -75,10 +75,20 @@ def parse_room_source(source: str, room_id: str = "") -> dict[str, Any]:
     spritesets = []
     for match in SPRITE_RE.finditer(source):
         body = match.group("body")
+        placement_rows = list(SPRITE_ROW_RE.finditer(body))
         spritesets.append({
             "variant": int(match.group("variant")),
             "declared_array_entries": int(match.group("declared_entries")),
-            "actual_sprite_placements": len(SPRITE_ROW_RE.findall(body)),
+            "actual_sprite_placements": len(placement_rows),
+            "placements": [
+                {
+                    "source_x": int(row.group("x")),
+                    "source_y": int(row.group("y")),
+                    "source_record_expression": row.group("record").strip(),
+                    "coordinate_semantics": "raw source sprite placement values; unit and gameplay role require engine-level interpretation",
+                }
+                for row in placement_rows
+            ],
         })
     spritesets.sort(key=lambda item: item["variant"])
     return {
