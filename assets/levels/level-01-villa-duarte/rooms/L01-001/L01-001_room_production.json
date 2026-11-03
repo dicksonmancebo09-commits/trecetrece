@@ -1,0 +1,57 @@
+{
+  "schema": "zector-cero.room-production-draft.v1",
+  "project": "LATINO AMÉRICA Zector Cero",
+  "production_id": "L01-001",
+  "room_id": "L01_R082",
+  "name": "Hangar de cuarentena 01",
+  "neighborhood": "Villa Duarte",
+  "source_rom_sha256": "a56ce3d7f8f3f4f4d0468d421fff5dd3ee3aec99a58244377e43aae769dc3fe8",
+  "source_room": {
+    "area": "Main Deck",
+    "source_room_index_1based": 82,
+    "dimensions_blocks": [19, 14],
+    "dimensions_pixels": [304, 224],
+    "rle_layers": {
+      "clipdata": {"rom_offset": "0x4811D6", "payload_bytes": 74},
+      "bg0": {"rom_offset": "0x481363", "payload_bytes": 12},
+      "bg1": {"rom_offset": "0x4812C6", "payload_bytes": 149},
+      "bg2": {"rom_offset": "0x481222", "payload_bytes": 162}
+    }
+  },
+  "atlas": {
+    "file": "level-01-villa-duarte-atlas-v0.2.4bpp",
+    "sha256": "b178da09ca92afc7d565fcb459023958546650c64ae0303e5c25f5038e4292f1",
+    "palette_file": "level-01-villa-duarte-atlas-v0.2.bgr555.pal",
+    "tile_format": "GBA 4bpp 8x8",
+    "tile_count": 1024
+  },
+  "draft_tilemap": {
+    "width_tiles": 38,
+    "height_tiles": 28,
+    "tile_size_px": [8, 8],
+    "csv": "L01-001_tilemap_8x8.csv",
+    "preview": "L01-001_Hangar_Cuarentena01_preview.png",
+    "cell_count": 1064,
+    "atlas_tile_ids_min": 28,
+    "atlas_tile_ids_max": 751
+  },
+  "collision": {
+    "source_clipdata_extracted": true,
+    "source_clipdata_csv": "clipdata.csv",
+    "custom_collision_adapted": false,
+    "status": "pending semantic remap and playability validation"
+  },
+  "integration": {
+    "rom_modified": false,
+    "pointers_updated": false,
+    "runtime_tested": false,
+    "status": "visual tilemap draft only; requires target tileset/VRAM/palette allocation and engine-compatible map conversion"
+  },
+  "design_notes": [
+    "Quarantine hangar framed by concrete neighborhood architecture",
+    "central security shutter with side access doors",
+    "barred upper windows and wall-mounted consoles",
+    "service trench and cable/light fixtures",
+    "tile IDs require visual QA and may need replacement"
+  ]
+}
