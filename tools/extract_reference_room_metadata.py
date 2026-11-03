@@ -43,7 +43,7 @@ SPRITE_RE = re.compile(
     r"\s*=\s*\{(?P<body>.*?)\};",
     re.IGNORECASE | re.DOTALL,
 )
-SPRITE_ROW_RE = re.compile(r"^\s*\d+\s*,\s*\d+\s*,", re.MULTILINE)
+SPRITE_ROW_RE = re.compile(r"^\s*(?P<x>\d+)\s*,\s*(?P<y>\d+)\s*,\s*(?P<record>[^,\n]+)", re.MULTILINE)
 
 
 def source_path(area: str, room_index_0based: int) -> str:
