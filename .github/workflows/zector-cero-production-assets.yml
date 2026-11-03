@@ -19,6 +19,7 @@ on:
       - "tests/test_render_gba_atlas_indexed.py"
       - "tests/test_audit_sector_cero_rooms.py"
       - "data/world/sector-cero-room-entry-reference-v1.json"
+      - "recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv"
       - "docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md"
       - "docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md"
       - "tools/sync_room_entry_reference.py"
@@ -138,6 +139,7 @@ jobs:
             docs/villa-duarte-sector-cero/LEVEL_ROOM_MASTER_PLAN_V2.md \
             docs/villa-duarte-sector-cero/PRODUCTION_AUDIT_2026-11-02.md \
             recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv \
+            recovery/analysis/ROOM_SPRITE_PLACEMENTS_2026-11-03.csv \
             assets/levels/level-01-villa-duarte/*-indexed.png \
             assets/levels/level-01-villa-duarte/*-indexed.png.export.json \
             assets/levels/level-03-la-francia-nueva/*-indexed.png \
