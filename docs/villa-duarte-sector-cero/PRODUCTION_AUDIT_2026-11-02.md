@@ -268,3 +268,16 @@ La comprobación de las 382 entradas `RoomEntryRom` detectó un desfase de un í
 Se conserva el canon de roles y lotes, pero la relación rol↔posición geográfica debe revisarse porque el primer reparto usó coordenadas desplazadas. El [plan maestro](LEVEL_ROOM_MASTER_PLAN_V2.md) ya tiene las coordenadas corregidas y el [CSV de RoomEntry](../../recovery/analysis/ROOM_ENTRY_REFERENCE_CROSSWALK_2026-11-03.csv) ofrece el cruce completo.
 
 Estos datos proceden del commit `de76565c897c05838503717db9aa2adfe92aeba3` de la descompilación pública: no comparan bytes con la ROM privada, no decodifican los contenidos BG/clipdata y no constituyen una prueba mGBA.
+
+
+## Ejecución de producción y exportación de los siete atlas — 3 de noviembre de 2026
+
+El workflow [Zector Cero — production asset export, run 41614610801](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801) finalizó con **success** en todos sus pasos. Resultados comprobados:
+
+- **382/382** entradas de dimensión recuperadas desde los ficheros de sala de la referencia; **0 conflictos** entre dimensiones declaradas por capas.
+- Las 382 fichas técnicas se sincronizaron con las entradas `RoomEntryRom` correctas. Las fichas preservan dimensiones de referencia; BG maps, payloads de clipdata, posiciones de puertas adaptadas y eventos siguen pendientes.
+- **7/7** atlas renderizados a PNG indexado de 256 × 256 px, 1.024 tiles y 16 entradas de paleta.
+- **7/7** conversiones a 4bpp, BGR555 y LZ77 completadas; los informes confirman round-trip correcto de 4bpp y LZ77.
+- Artefacto [zector-cero-gba-atlas-exports](https://github.com/dicksonmancebo09-commits/trecetrece/actions/runs/41614610801): 28 archivos — 7× gráficos 4bpp, 7× LZ77, 7× paleta BGR555 y 7× informes. El artifact expira el **17 de noviembre de 2026**.
+
+Los PNG indexados y sus informes están guardados en la rama. El paquete de binarios GBA se descarga desde el artifact de Actions. **No se integró ningún atlas en una ROM ni se ejecutó gameplay en mGBA**; el workflow no tenía acceso a la ROM privada del usuario. Los mapas por sala y colisiones siguen sin montarse.
