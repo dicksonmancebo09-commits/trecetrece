@@ -53,7 +53,7 @@ def reconcile_technical_sheets(
         raise ValueError(f"Technical sheets and RoomEntry reference must each contain {expected_count} rooms.")
     sheet_ids = [str(room.get("room_id", "")) for room in sheets_rooms]
     reference_ids = [str(room.get("room_id", "")) for room in reference_rooms]
-    if len(set(sheet_ids)) != EXPECTED or len(set(reference_ids)) != EXPECTED:
+    if len(set(sheet_ids)) != expected_count or len(set(reference_ids)) != expected_count:
         raise ValueError("Duplicate room IDs found in technical sheets or reference metadata.")
     ref_by_id = {room["room_id"]: room for room in reference_rooms}
     if set(sheet_ids) != set(reference_ids):
