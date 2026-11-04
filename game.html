@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promesa Rota en Villa Duarte - Zector Cero</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Fira+Code:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #07060b;
+    --ink: #e8e5f0;
+    --mut: #938ba1;
+    --past: #a855f7;
+    --now: #10b981;
+    --fut: #00ffcc;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: var(--fut);
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 8px rgba(0,255,204,0.4);
+  }
+  canvas {
+    border: 2px solid #2a2238;
+    box-shadow: 0 0 25px rgba(168,85,247,0.3);
+    background: #050408;
+  }
+  .hud {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--mut);
+    display: flex;
+    gap: 20px;
+  }
+  .hud span { color: var(--now); }
+</style>
+</head>
+<body>
+
+<h1>PROMESA ROTA EN VILLA DUARTE • [AGENTE 13]</h1>
+<canvas id="gameCanvas" width="800" height="450"></canvas>
+<div class="hud">
+  <div>Controles: <span style="color:var(--fut)">Flechas / A-D</span> (Mover) | <span style="color:var(--fut)">Espacio / W</span> (Saltar)</div>
+  <div>Estado: <span id="statusText">Explorando Sector Cero</span></div>
+</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const statusText = document.getElementById('statusText');
+
+const player = {
+  x: 100,
+  y: 300,
+  width: 24,
+  height: 42,
+  vx: 0,
+  vy: 0,
+  speed: 4,
+  jumpForce: -11,
+  gravity: 0.5,
+  grounded: false,
+  facing: 'right'
+};
+
+const platforms = [
+  { x: 0, y: 410, w: 800, h: 40, type: 'ground' },
+  { x: 150, y: 320, w: 180, h: 16, type: 'plat' },
+  { x: 400, y: 240, w: 200, h: 16, type: 'plat' },
+  { x: 650, y: 170, w: 120, h: 16, type: 'plat' },
+  { x: 100, y: 160, w: 140, h: 16, type: 'plat' }
+];
+
+const nodes = [
+  { x: 480, y: 200, r: 8, collected: false, label: 'JANO_NODE_01' },
+  { x: 160, y: 120, r: 8, collected: false, label: 'LORE_PAKA_13' }
+];
+
+const keys = {};
+window.addEventListener('keydown', e => keys[e.code] = true);
+window.addEventListener('keyup', e => keys[e.code] = false);
+
+function update() {
+  if (keys['ArrowLeft'] || keys['KeyA']) {
+    player.vx = -player.speed;
+    player.facing = 'left';
+  } else if (keys['ArrowRight'] || keys['KeyD']) {
+    player.vx = player.speed;
+    player.facing = 'right';
+  } else {
+    player.vx = 0;
+  }
+
+  player.vy += player.gravity;
+  player.x += player.vx;
+  player.y += player.vy;
+
+  if (player.x < 0) player.x = 0;
+  if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+
+  player.grounded = false;
+  platforms.forEach(p => {
+    if (
+      player.x < p.x + p.w &&
+      player.x + player.width > p.x &&
+      player.y + player.height >= p.y &&
+      player.y + player.height - player.vy <= p.y + 8 &&
+      player.vy > 0
+    ) {
+      player.y = p.y - player.height;
+      player.vy = 0;
+      player.grounded = true;
+    }
+  });
+
+  if ((keys['Space'] || keys['KeyW']) && player.grounded) {
+    player.vy = player.jumpForce;
+    player.grounded = false;
+  }
+
+  nodes.forEach(n => {
+    if (!n.collected && Math.hypot((player.x + player.width/2) - n.x, (player.y + player.height/2) - n.y) < 20) {
+      n.collected = true;
+      statusText.textContent = `Fragmento sincronizado: ${n.label}`;
+    }
+  });
+}
+
+function draw() {
+  ctx.fillStyle = '#07060b';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = 'rgba(168, 85, 247, 0.08)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(400, 225, 180, 0, Math.PI * 2);
+  ctx.stroke();
+
+  platforms.forEach(p => {
+    ctx.fillStyle = p.type === 'ground' ? '#130d1f' : '#110d1a';
+    ctx.fillRect(p.x, p.y, p.w, p.h);
+    ctx.strokeStyle = '#2a2238';
+    ctx.strokeRect(p.x, p.y, p.w, p.h);
+    
+    ctx.fillStyle = '#10b981';
+    ctx.fillRect(p.x, p.y, p.w, 2);
+  });
+
+  nodes.forEach(n => {
+    if (!n.collected) {
+      ctx.fillStyle = '#00ffcc';
+      ctx.shadowColor = '#00ffcc';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  });
+
+  ctx.fillStyle = '#1a0f2e';
+  ctx.fillRect(player.x, player.y, player.width, player.height);
+  
+  ctx.strokeStyle = '#a855f7';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(player.x, player.y, player.width, player.height);
+
+  ctx.fillStyle = '#00ffcc';
+  const eyeX = player.facing === 'right' ? player.x + 14 : player.x + 4;
+  ctx.fillRect(eyeX, player.y + 8, 6, 3);
+}
+
+function loop() {
+  update();
+  draw();
+  requestAnimationFrame(loop);
+}
+
+loop();
+</script>
+
+</body>
+</html>
